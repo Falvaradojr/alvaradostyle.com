@@ -184,6 +184,9 @@ header.nav.solid { background: var(--navy); box-shadow: 0 1px 0 color-mix(in srg
 .photo-slot.is-placeholder { background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px); background-size: 24px 24px; }
 .photo-slot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
 .photo-slot video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* An upright (portrait) photo or clip keeps the slot's shape and is shown whole, centred over a blurred copy of the still, instead of being cropped. */
+.photo-slot.is-tall img, .photo-slot.is-tall video { object-fit: contain; }
+.photo-slot.is-tall img.fill { object-fit: cover; filter: blur(22px) brightness(0.72); transform: scale(1.12); }
 .ph-mark small { display: block; max-width: 30ch; text-align: center; font-size: 13px; color: var(--on-navy-muted); }
 
 /* Featured project */
@@ -206,12 +209,15 @@ header.nav.solid { background: var(--navy); box-shadow: 0 1px 0 color-mix(in srg
 .div-panel:hover, .div-panel:focus-visible { border-color: var(--gold); }
 .div-panel .photo-slot { aspect-ratio: 16 / 9; }
 .div-panel:hover .photo-slot img { transform: scale(1.03); }
+.div-panel:hover .photo-slot.is-tall img.fill { transform: scale(1.12); }
 .div-body { padding: 20px 22px 24px; display: grid; gap: 6px; align-content: start; border-top: 1px solid var(--on-navy-line); }
 .div-body .c { font-family: var(--caps); font-weight: 800; font-size: 22px; letter-spacing: 0.16em; }
 .div-body p { color: var(--on-navy-muted); font-size: 15.5px; }
 .div-body .more { margin-top: 8px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
 .div-panel:hover .more { color: var(--gold-bright); }
 @media (max-width: 760px) { .div-grid { grid-template-columns: 1fr; } .divisions { padding-block: 56px 64px; } }
+/* On phones, where the panels stack in one column, an upright picture gets a taller slot so it shows larger. */
+@media (max-width: 760px) { .photo-slot.is-tall, .feat > .photo-slot.is-tall, .div-panel .photo-slot.is-tall { aspect-ratio: 4 / 5; } }
 
 /* Division pages */
 .page-hero { background: var(--navy); color: var(--on-navy); padding-block: calc(var(--nav-h) + 52px) 68px; }
@@ -1223,7 +1229,7 @@ const CATEGORY_NAMES = { construction: 'Construction', concepts: 'Concepts', str
 const PHOTOS = {
   'div-construction': { src: 'photos/slots/div-construction.jpg', alt: 'New shingle-style house with a wraparound porch, exterior nearly finished' },
   'div-concepts': { src: 'photos/slots/div-concepts.jpg', alt: 'Finished modern kitchen with white cabinets, a wood island and a dark marble floor' },
-  'div-structural': { src: '', alt: '' },
+  'div-structural': { src: 'photos/slots/div-structural.jpg', alt: 'Room opened up for structural work: new floor joists going in, exposed ceiling framing with insulation, a steel support post and a sliding glass door', video: 'video/div-structural.mp4', videoPhone: 'video/div-structural-phone.mp4' },
   'div-demo': { src: '', alt: '' },
   'page-construction': { src: '', alt: '' },
   'page-concepts': { src: '', alt: '' },
@@ -1371,7 +1377,7 @@ const FEATURED = { photo: 'video/featured-poster.jpg', alt: 'Drone view of a fra
     const v = el('video', { muted: '', loop: '', playsinline: '', preload: 'none', poster: poster, 'aria-hidden': 'true', tabindex: '-1' });
     v.muted = true;
     v.appendChild(el('source', { src: phone || src, type: 'video/mp4' }));
-    v.addEventListener('loadedmetadata', () => { if (v.videoWidth && v.videoHeight) slot.style.aspectRatio = v.videoWidth + ' / ' + v.videoHeight; });
+    v.addEventListener('loadedmetadata', () => { if (!v.videoWidth || !v.videoHeight) return; if (v.videoHeight > v.videoWidth) markTall(slot, poster); else slot.style.aspectRatio = v.videoWidth + ' / ' + v.videoHeight; });
     slot.classList.add('has-video');
     slot.appendChild(v);
     const play = () => v.play().catch(() => {});
@@ -1380,13 +1386,22 @@ const FEATURED = { photo: 'video/featured-poster.jpg', alt: 'Drone view of a fra
     clips.push(v);
     return v;
   }
+  // Upright photos and clips: keep the slot's shape and show the whole picture over a blurred copy of the still.
+  function markTall(slot, src) {
+    if (slot.classList.contains('is-tall')) return;
+    slot.classList.add('is-tall');
+    slot.insertBefore(el('img', { class: 'fill', src: src, alt: '', 'aria-hidden': 'true', loading: 'lazy', decoding: 'async' }), slot.firstChild);
+  }
   function fillSlot(slot) {
     const ph = PHOTOS[slot.dataset.photo] || {};
     slot.textContent = '';
-    slot.classList.remove('has-video'); slot.style.aspectRatio = '';
+    slot.classList.remove('has-video', 'is-tall'); slot.style.aspectRatio = '';
     if (ph.src) {
       slot.classList.remove('is-placeholder');
-      slot.appendChild(el('img', { src: ph.src, alt: ph.alt || '', loading: 'lazy', decoding: 'async' }));
+      const img = el('img', { src: ph.src, alt: ph.alt || '', loading: 'lazy', decoding: 'async' });
+      const check = () => { if (img.naturalHeight > img.naturalWidth) markTall(slot, ph.src); };
+      if (img.complete && img.naturalWidth) check(); else img.addEventListener('load', check, { once: true });
+      slot.appendChild(img);
       addClip(slot, ph.video, ph.videoPhone, ph.src);
     } else {
       slot.classList.add('is-placeholder');
