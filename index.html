@@ -179,6 +179,7 @@ header.nav.solid { background: var(--navy); box-shadow: 0 1px 0 color-mix(in srg
 .photo-slot { position: relative; display: grid; place-items: center; max-width: 100%; overflow: hidden; background: var(--navy); color: var(--on-navy); }
 .photo-slot.is-placeholder { background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px); background-size: 24px 24px; }
 .photo-slot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+.photo-slot video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .ph-mark small { display: block; max-width: 30ch; text-align: center; font-size: 13px; color: var(--on-navy-muted); }
 
 /* Featured project */
@@ -1226,7 +1227,9 @@ const PHOTOS = {
 
 // The big featured project at the top of the homepage. Leave photo empty to show the placeholder.
 // project (optional) is the id of a PROJECTS entry with photos, which adds a "View project" button.
-const FEATURED = { photo: '', alt: '', title: '', location: '', divisions: '', project: '' };
+// video (optional): a short muted clip that loops in the panel while it is on screen; photo is its still frame.
+// videoPhone (optional): a smaller copy of the same clip for phones. Reduced-motion and data-saver visitors see the still only.
+const FEATURED = { photo: 'video/hero-poster.jpg', alt: 'Drone view of a framed building under construction', title: '', location: '', divisions: '', project: '', video: 'video/hero.mp4', videoPhone: 'video/hero-phone.mp4' };
 
 (function () {
   const nav = document.getElementById('nav');
@@ -1349,6 +1352,7 @@ const FEATURED = { photo: '', alt: '', title: '', location: '', divisions: '', p
 
   /* Photo slots and the featured project */
   const CAM = CAMERA;
+  let featVid = null;
   function fillSlot(slot) {
     const ph = PHOTOS[slot.dataset.photo] || {};
     slot.textContent = '';
@@ -1380,6 +1384,19 @@ const FEATURED = { photo: '', alt: '', title: '', location: '', divisions: '', p
       box.appendChild(cap);
     }
     fillSlot(slot);
+    const saveData = navigator.connection && navigator.connection.saveData;
+    if (FEATURED.video && FEATURED.photo && !saveData && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const phone = matchMedia('(max-width: 760px)').matches && FEATURED.videoPhone;
+      const v = el('video', { muted: '', loop: '', playsinline: '', preload: 'none', poster: FEATURED.photo, 'aria-hidden': 'true', tabindex: '-1' });
+      v.muted = true;
+      v.appendChild(el('source', { src: phone || FEATURED.video, type: 'video/mp4' }));
+      slot.classList.add('has-video');
+      slot.appendChild(v);
+      featVid = v;
+      const play = () => v.play().catch(() => {});
+      if ('IntersectionObserver' in window) new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting && document.body.dataset.page === 'home') play(); else v.pause(); }), { threshold: 0.2 }).observe(slot);
+      else play();
+    }
   }
   document.querySelectorAll('.photo-slot[data-photo]').forEach(fillSlot);
   renderFeatured();
@@ -1416,6 +1433,7 @@ const FEATURED = { photo: '', alt: '', title: '', location: '', divisions: '', p
     document.querySelectorAll('[data-view]').forEach(v => { v.hidden = v.dataset.view !== view; });
     document.body.dataset.page = view;
     if (heroVid) { if (view === 'home') heroPlay(); else heroVid.pause(); }
+    if (featVid && view !== 'home') featVid.pause();
     document.querySelectorAll('.nav-links a, .menu a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + view));
     if (view !== 'home') {
       stopIntro();
