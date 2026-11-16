@@ -195,6 +195,8 @@ header.nav.solid { background: var(--navy); box-shadow: 0 1px 0 color-mix(in srg
 .feat-cap h2 { font-family: var(--caps); font-size: clamp(20px, 2.6vw, 30px); font-weight: 800; letter-spacing: 0.03em; margin-top: 6px; }
 .feat-cap p { color: var(--on-navy-muted); font-size: 15.5px; }
 @media (max-width: 760px) { .feat > .photo-slot { aspect-ratio: 4 / 3; } .feat-cap { padding: 36px 16px 16px; } }
+/* With a clip in the panel, the panel takes the clip's shape so nothing is cropped away on any screen. */
+.feat > .photo-slot.has-video { aspect-ratio: 16 / 9; }
 
 /* Divisions: four image panels */
 .divisions { background: var(--navy-deep); color: var(--on-navy); padding-block: 72px 84px; }
@@ -1397,6 +1399,7 @@ const FEATURED = { photo: 'video/featured-poster.jpg', alt: 'Drone view of a fra
       v.muted = true;
       v.appendChild(el('source', { src: phone || FEATURED.video, type: 'video/mp4' }));
       slot.classList.add('has-video');
+      v.addEventListener('loadedmetadata', () => { if (v.videoWidth && v.videoHeight) slot.style.aspectRatio = v.videoWidth + ' / ' + v.videoHeight; });
       slot.appendChild(v);
       featVid = v;
       const play = () => v.play().catch(() => {});
