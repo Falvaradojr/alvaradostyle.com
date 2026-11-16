@@ -1,0 +1,1517 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Alvarado Style Services</title>
+<meta name="description" content="Alvarado Style Services: investor and family focused construction in Monmouth and Ocean County, NJ. Construction, Concepts, Structural and Demo divisions, 35 years building in New Jersey. Call or text 848-223-1364.">
+<meta name="theme-color" content="#14165b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Alvarado Style Services">
+<meta property="og:description" content="Alvarado Style Services: investor and family focused construction in Monmouth and Ocean County, NJ. Construction, Concepts, Structural and Demo divisions, 35 years building in New Jersey. Call or text 848-223-1364.">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yellowtail&family=Cinzel:wght@500;700;800&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<style>
+/* Layout: cinematic dark logo intro, division lockups, Keystone Walkthrough (offer + two-outcome comparison), house cutaway of what we check, services by division, kids and pets builds on a night sky, process, family companies, quick quote. Palette from the logo: royal navy, white, antique gold. */
+:root {
+  --bg: #f5f4f0;
+  --surface: #ffffff;
+  --ink: #161a3d;
+  --muted: #565b78;
+  --line: #dcdbe3;
+  --rule: #14165b;
+  --navy: #14165b;
+  --navy-deep: #0d0f42;
+  --night: #020312;
+  --glow: #262a8f;
+  --on-navy: #ffffff;
+  --on-navy-muted: rgba(255, 255, 255, 0.74);
+  --on-navy-line: rgba(255, 255, 255, 0.16);
+  --gold: #c9a66b;
+  --gold-bright: #e8cf9a;
+  --gold-ink: #8a6a2e;
+  --gold-soft: #f2eadb;
+  --cta-bg: #14165b;
+  --cta-ink: #ffffff;
+  --bad: #b8432f;
+  --bad-soft: #f7ebe8;
+  --good: #2f7d4f;
+  --cw-line: rgba(255, 255, 255, 0.55);
+  --cw-fill: rgba(255, 255, 255, 0.05);
+  --cw-solid: rgba(255, 255, 255, 0.26);
+  --cw-struct: rgba(201, 166, 107, 0.6);
+  --cw-ground: rgba(201, 166, 107, 0.08);
+  --cw-glass: rgba(140, 185, 255, 0.14);
+  --cw-water: rgba(110, 160, 255, 0.28);
+  --cw-water-line: rgba(150, 190, 255, 0.9);
+  --cw-text: rgba(255, 255, 255, 0.7);
+  --star: rgba(255, 255, 255, 0.75);
+  --script: "Yellowtail", "Brush Script MT", cursive;
+  --caps: "Cinzel", "Trajan Pro", Georgia, serif;
+  --body: "Source Sans 3", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --wrap: 1180px;
+  --nav-h: 76px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b0d2e; --surface: #12153f; --ink: #eceef8; --muted: #a3a8c8; --line: #262a5c; --rule: #d4b47c;
+    --gold: #d4b47c; --gold-ink: #d4b47c; --gold-soft: #1a1c4a;
+    --cta-bg: #d4b47c; --cta-ink: #14165b;
+    --bad: #e57a62; --bad-soft: #24173a; --good: #5cc287;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b0d2e; --surface: #12153f; --ink: #eceef8; --muted: #a3a8c8; --line: #262a5c; --rule: #d4b47c;
+  --gold: #d4b47c; --gold-ink: #d4b47c; --gold-soft: #1a1c4a;
+  --cta-bg: #d4b47c; --cta-ink: #14165b;
+  --bad: #e57a62; --bad-soft: #24173a; --good: #5cc287;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+h1, h2, h3 { line-height: 1.12; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-inline: 20px; }
+section[id] { scroll-margin-top: calc(var(--nav-h) - 6px); }
+.eyebrow { font-family: var(--caps); font-weight: 700; font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-ink); }
+.eyebrow::before { content: "-"; margin-right: 0.1em; }
+.eyebrow::after { content: "-"; }
+.section { padding-block: 92px; }
+.section-head { display: grid; gap: 14px; max-width: 780px; margin-bottom: 44px; }
+.section-head h2 { font-family: var(--caps); font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: 0.02em; }
+.section-head p { color: var(--muted); font-size: 18.5px; max-width: 62ch; }
+.on-navy { background: var(--navy); color: var(--on-navy); }
+.on-navy .eyebrow { color: var(--gold); }
+.on-navy .section-head p { color: var(--on-navy-muted); }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: var(--caps); font-weight: 700; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; padding: 15px 24px; border: 1.5px solid transparent; cursor: pointer; transition: transform .15s ease, background-color .15s ease; }
+.btn:hover { transform: translateY(-1px); }
+.btn-gold { background: var(--gold); color: var(--navy); }
+.btn-gold:hover { background: var(--gold-bright); }
+.btn-cta { background: var(--cta-bg); color: var(--cta-ink); }
+.btn-ghost { border-color: currentColor; background: transparent; color: inherit; }
+.btn-ghost:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+
+/* Nav: transparent over the intro, solid navy once you scroll */
+header.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 30; padding-top: env(safe-area-inset-top, 0px); color: var(--on-navy); background: transparent; transition: background-color .35s ease, box-shadow .35s ease; }
+header.nav.solid { background: var(--navy); box-shadow: 0 1px 0 color-mix(in srgb, var(--gold) 40%, transparent); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; height: var(--nav-h); }
+.nav-logo { display: block; width: 78px; flex: none; }
+.nav-logo svg { display: block; width: 100%; height: auto; fill: var(--on-navy); }
+.nav-links { display: flex; align-items: center; gap: 24px; }
+.nav-links a { text-decoration: none; font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--on-navy-muted); padding-bottom: 3px; border-bottom: 2px solid transparent; }
+.nav-links a:hover { color: var(--on-navy); }
+.nav-links a.active { color: var(--gold); border-bottom-color: var(--gold); }
+.nav-links .nav-phone { display: grid; line-height: 1.1; color: var(--on-navy); font-size: 14.5px; letter-spacing: 0.06em; text-transform: none; border-bottom: 0; padding-bottom: 0; }
+.nav-links .nav-phone small { font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+.nav-links .btn { color: var(--navy); padding: 10px 16px; font-size: 12.5px; }
+.skip { position: absolute; left: 20px; top: -60px; z-index: 40; padding: 10px 14px; background: var(--gold); color: var(--navy); font-weight: 700; text-decoration: none; }
+.skip:focus { top: calc(env(safe-area-inset-top, 0px) + 10px); }
+.menu-btn { display: none; width: 44px; height: 44px; margin-left: -4px; padding: 0; background: transparent; border: 0; color: var(--on-navy); cursor: pointer; }
+.menu-btn svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.menu-btn .x, .menu-btn[aria-expanded="true"] .bars { display: none; }
+.menu-btn[aria-expanded="true"] .x { display: block; }
+.menu { position: absolute; left: 0; right: 0; top: 100%; display: grid; gap: 2px; padding: 6px 20px 18px; background: var(--navy); border-top: 1px solid color-mix(in srgb, var(--gold) 40%, transparent); box-shadow: 0 18px 30px -18px rgba(0, 0, 0, 0.6); }
+.menu a { text-decoration: none; font-weight: 600; font-size: 16px; color: var(--on-navy); padding: 10px 0; border-bottom: 1px solid var(--on-navy-line); }
+.menu .menu-phone { color: var(--gold); border-bottom: 0; letter-spacing: 0.04em; }
+@media (max-width: 1040px) { .nav-links .nav-sec { display: none; } .menu-btn { display: inline-grid; place-items: center; } .nav .wrap { gap: 10px; } .nav-logo { margin-right: auto; } }
+@media (max-width: 560px) { .nav-links .nav-phone { display: none; } .nav-logo { width: 66px; } }
+
+/* Hero: dark, the logo collapses in like a shadow, then appears */
+.hero { position: relative; overflow: hidden; isolation: isolate; min-height: 100vh; min-height: 100svh; display: grid; place-items: center; text-align: center; background: var(--night); color: var(--on-navy); padding-block: calc(var(--nav-h) + 28px) 96px; }
+.hero-glow { position: absolute; inset: 0; z-index: -1; background:
+  linear-gradient(to bottom, transparent 72%, var(--navy-deep) 100%),
+  radial-gradient(ellipse 70% 60% at 50% 42%, var(--glow) 0%, var(--navy) 40%, var(--navy-deep) 68%, var(--night) 100%); }
+.hero-inner { display: grid; justify-items: center; gap: 24px; padding-inline: 20px; max-width: 900px; }
+.hero-title { display: grid; justify-items: center; gap: 26px; }
+.hero-mark { position: relative; display: block; width: min(76vw, 500px); filter: drop-shadow(0 0 40px rgba(80, 100, 255, 0.18)); }
+.hero-mark svg { display: block; width: 100%; height: auto; }
+.hero-shadow { position: absolute; inset: 0; fill: var(--night); transform-origin: 50% 50%; transform: translateY(12px) scale(1.06); opacity: 0.6; filter: blur(14px); }
+.hero-logo { position: relative; fill: var(--on-navy); }
+.hero-tag { display: block; font-family: var(--caps); font-weight: 700; font-size: clamp(15px, 2.2vw, 23px); letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); }
+.hero-lede { font-size: clamp(17px, 1.9vw, 20px); color: var(--on-navy-muted); max-width: 52ch; }
+.hero-ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.hero-sheen { transform: translateX(760px); }
+.replay { position: absolute; right: 20px; bottom: 22px; display: inline-flex; align-items: center; gap: 8px; font: 600 12.5px var(--body); letter-spacing: 0.12em; text-transform: uppercase; color: var(--on-navy-muted); background: transparent; border: 1px solid var(--on-navy-line); padding: 8px 12px; cursor: pointer; }
+.replay:hover { color: var(--on-navy); border-color: var(--on-navy-muted); }
+.replay svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.cue { position: absolute; left: 50%; bottom: 30px; width: 14px; height: 14px; margin-left: -7px; border-right: 2px solid var(--on-navy-muted); border-bottom: 2px solid var(--on-navy-muted); transform: rotate(45deg); }
+
+@keyframes as-glow { from { opacity: 0; } to { opacity: 1; } }
+@keyframes as-collapse {
+  0% { transform: scale(5.5) rotate(-8deg); opacity: 0; filter: blur(0px); }
+  12% { opacity: 1; }
+  72% { transform: scale(1.05) rotate(0deg); opacity: 1; filter: blur(0px); }
+  100% { transform: translateY(12px) scale(1.06); opacity: 0.6; filter: blur(14px); }
+}
+@keyframes as-reveal { from { opacity: 0; transform: scale(0.96); filter: blur(14px); } to { opacity: 1; transform: none; filter: blur(0px); } }
+@keyframes as-sheen { from { transform: translateX(0px); } to { transform: translateX(760px); } }
+@keyframes as-rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes as-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes as-bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 6px; } }
+.hero.play .hero-glow { animation: as-glow 3.2s ease-in .2s both; }
+.hero.play .hero-shadow { animation: as-collapse 4.6s cubic-bezier(.22, .7, .18, 1) .1s both; }
+.hero.play .hero-logo { animation: as-reveal 2.4s ease-out 2.9s both; }
+.hero.play .hero-sheen { animation: as-sheen 1.9s ease-in-out 4.9s both; }
+.hero.play .hero-tag { animation: as-rise 1.6s ease-out 4.5s both; }
+.hero.play .hero-lede { animation: as-rise 1.4s ease-out 5.3s both; }
+.hero.play .hero-ctas { animation: as-rise 1.4s ease-out 5.6s both; }
+.hero.play .replay { animation: as-fade 1s ease 6.2s both; }
+.hero.play .cue { animation: as-fade 1s ease 6.2s both, as-bob 2.4s ease-in-out 7.2s infinite; }
+.nav.intro { animation: as-fade 1.2s ease 5s both; }
+
+/* Photo slots: a real photo when one is configured, otherwise a marked placeholder */
+.photo-slot { position: relative; display: grid; place-items: center; max-width: 100%; overflow: hidden; background: var(--navy); color: var(--on-navy); }
+.photo-slot.is-placeholder { background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px); background-size: 24px 24px; }
+.photo-slot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+.ph-mark small { display: block; max-width: 30ch; text-align: center; font-size: 13px; color: var(--on-navy-muted); }
+
+/* Featured project */
+.featured { background: var(--navy-deep); color: var(--on-navy); padding-block: 28px 20px; }
+.feat { position: relative; border: 1px solid var(--on-navy-line); }
+.feat > .photo-slot { aspect-ratio: 21 / 9; }
+.feat-cap { position: absolute; left: 0; right: 0; bottom: 0; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px; padding: 48px 24px 22px; background: linear-gradient(to top, rgba(2, 3, 18, 0.88), rgba(2, 3, 18, 0)); }
+.feat-cap .eyebrow { color: var(--gold); }
+.feat-cap h2 { font-family: var(--caps); font-size: clamp(20px, 2.6vw, 30px); font-weight: 800; letter-spacing: 0.03em; margin-top: 6px; }
+.feat-cap p { color: var(--on-navy-muted); font-size: 15.5px; }
+@media (max-width: 760px) { .feat > .photo-slot { aspect-ratio: 4 / 3; } .feat-cap { padding: 36px 16px 16px; } }
+
+/* Divisions: four image panels */
+.divisions { background: var(--navy-deep); color: var(--on-navy); padding-block: 72px 84px; }
+.divisions .section-head { margin-bottom: 34px; }
+.div-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.div-panel { display: grid; grid-template-rows: auto 1fr; text-decoration: none; color: var(--on-navy); border: 1px solid var(--on-navy-line); overflow: hidden; min-width: 0; transition: border-color .2s ease; }
+.div-panel:hover, .div-panel:focus-visible { border-color: var(--gold); }
+.div-panel .photo-slot { aspect-ratio: 16 / 9; }
+.div-panel:hover .photo-slot img { transform: scale(1.03); }
+.div-body { padding: 20px 22px 24px; display: grid; gap: 6px; align-content: start; border-top: 1px solid var(--on-navy-line); }
+.div-body .c { font-family: var(--caps); font-weight: 800; font-size: 22px; letter-spacing: 0.16em; }
+.div-body p { color: var(--on-navy-muted); font-size: 15.5px; }
+.div-body .more { margin-top: 8px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+.div-panel:hover .more { color: var(--gold-bright); }
+@media (max-width: 760px) { .div-grid { grid-template-columns: 1fr; } .divisions { padding-block: 56px 64px; } }
+
+/* Division pages */
+.page-hero { background: var(--navy); color: var(--on-navy); padding-block: calc(var(--nav-h) + 52px) 68px; }
+.page-hero .wrap { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 48px; align-items: center; }
+.page-copy { display: grid; gap: 20px; min-width: 0; }
+.crumb { display: flex; flex-wrap: wrap; gap: 10px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--on-navy-muted); }
+.crumb a { text-decoration: none; color: var(--gold); }
+.page-hero h1 { font-family: var(--caps); font-weight: 800; font-size: clamp(36px, 5.2vw, 60px); letter-spacing: 0.08em; }
+.page-hero .lede { font-size: 19px; color: var(--on-navy-muted); max-width: 54ch; }
+.page-hero .hero-ctas { justify-content: flex-start; }
+.page-hero .photo-slot { aspect-ratio: 4 / 3; border: 1px solid var(--on-navy-line); }
+.page-cta { background: var(--navy-deep); color: var(--on-navy); }
+.page-cta .section-head { margin-bottom: 24px; }
+.page-cta .hero-ctas { justify-content: flex-start; }
+.page-cta .phone-line { margin-top: 18px; color: var(--on-navy-muted); }
+.page-cta .phone-line b { color: var(--on-navy); user-select: all; }
+.tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.tier { border: 1px solid var(--line); border-top: 3px solid var(--gold); background: var(--surface); padding: 24px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.tier h3 { font-family: var(--caps); font-size: 18px; font-weight: 800; letter-spacing: 0.04em; }
+.tier p { color: var(--muted); font-size: 15.5px; }
+.tier ul { margin: 6px 0 0; padding-left: 18px; color: var(--muted); font-size: 15px; display: grid; gap: 4px; }
+.table-wrap { overflow-x: auto; }
+.inc { width: 100%; border-collapse: collapse; font-size: 15.5px; min-width: 520px; }
+.inc th, .inc td { padding: 12px 14px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.inc th { font-family: var(--caps); font-size: 12.5px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-ink); }
+.inc th:not(:first-child), .inc td:not(:first-child) { width: 150px; text-align: center; }
+.inc td small { display: block; font-size: 13px; color: var(--muted); }
+.inc svg { width: 18px; height: 18px; fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; vertical-align: middle; }
+.inc .yes svg { stroke: var(--good); }
+.inc .no svg { stroke: var(--muted); }
+.on-navy .inc td small { color: var(--on-navy-muted); }
+.on-navy .inc th, .on-navy .inc td { border-bottom-color: var(--on-navy-line); }
+.on-navy .inc .no svg { stroke: var(--on-navy-muted); }
+.checks { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 28px; }
+.checks li { display: flex; gap: 12px; align-items: flex-start; font-size: 16.5px; }
+.checks svg { flex: none; width: 20px; height: 20px; margin-top: 4px; fill: none; stroke: var(--gold-ink); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.ba { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.ba figure { margin: 0; position: relative; min-width: 0; }
+.ba .photo-slot { aspect-ratio: 4 / 3; }
+.ba figcaption { position: absolute; left: 10px; top: 10px; z-index: 1; padding: 4px 10px; background: var(--gold); color: var(--navy); font-family: var(--caps); font-weight: 700; font-size: 11px; letter-spacing: 0.2em; }
+.ba-copy { display: grid; gap: 14px; margin-top: 26px; max-width: 70ch; color: var(--muted); font-size: 17px; }
+.audience { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.audience > div { border-top: 3px solid var(--rule); padding-top: 14px; display: grid; gap: 6px; align-content: start; }
+.audience h3 { font-family: var(--caps); font-size: 17px; font-weight: 800; letter-spacing: 0.04em; }
+.audience p { color: var(--muted); font-size: 15.5px; }
+@media (max-width: 900px) { .page-hero .wrap { grid-template-columns: 1fr; gap: 28px; } .page-hero { padding-block: calc(var(--nav-h) + 32px) 48px; } .tiers { grid-template-columns: 1fr; } .audience { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .checks { grid-template-columns: 1fr; } .ba { grid-template-columns: 1fr; } .audience { grid-template-columns: 1fr; } .inc { min-width: 0; font-size: 14.5px; } .inc th, .inc td { padding: 10px 8px; } .inc th:not(:first-child), .inc td:not(:first-child) { width: 62px; } }
+
+/* Keystone Walkthrough */
+.ks-start { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-bottom: 72px; }
+.ks-start > div { border-top: 3px solid var(--rule); padding-top: 16px; display: grid; gap: 6px; align-content: start; }
+.ks-start h3 { font-family: var(--caps); font-size: 19px; font-weight: 800; letter-spacing: 0.04em; }
+.ks-start p { color: var(--muted); }
+.cmp-title { font-family: var(--caps); font-size: clamp(22px, 3vw, 30px); font-weight: 800; letter-spacing: 0.02em; margin-bottom: 22px; }
+.compare { display: grid; gap: 8px; }
+.cmp-row { display: grid; grid-template-columns: 170px 1fr 1fr; gap: 8px; }
+.cmp-col { display: flex; align-items: center; gap: 8px; padding: 0 18px 4px; font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; }
+.cmp-col.bad { color: var(--bad); }
+.cmp-col.good { color: var(--gold-ink); }
+.cmp-stage { align-self: center; font-family: var(--caps); font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.cmp-cell { display: flex; gap: 12px; align-items: flex-start; padding: 16px 18px; font-size: 16.5px; min-width: 0; }
+.cmp-cell svg, .cmp-col svg { flex: none; width: 18px; height: 18px; fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.cmp-cell svg { margin-top: 3px; }
+.cmp-col.bad svg, .cmp-bad svg { stroke: var(--bad); }
+.cmp-col.good svg, .cmp-good svg { stroke: var(--gold-ink); }
+.cmp-bad { background: var(--bad-soft); color: var(--muted); }
+.cmp-good { background: var(--gold-soft); color: var(--ink); box-shadow: inset 3px 0 0 var(--gold); }
+.cmp-result .cmp-cell { font-size: 19px; font-weight: 700; padding-block: 20px; }
+.cmp-result .cmp-good { background: var(--navy); color: var(--on-navy); }
+.cmp-result .cmp-good svg { stroke: var(--gold); }
+.cmp-tag { display: none; }
+.ks-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; margin-top: 40px; }
+.ks-cta p { color: var(--muted); }
+.ks-cta b { color: var(--ink); user-select: all; }
+@media (max-width: 860px) { .ks-start { grid-template-columns: 1fr; gap: 22px; margin-bottom: 56px; } }
+@media (max-width: 760px) {
+  .cmp-head { display: none; }
+  .cmp-row { grid-template-columns: 1fr; gap: 6px; margin-top: 14px; }
+  .cmp-tag { display: block; font-size: 11.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 2px; }
+  .cmp-bad .cmp-tag { color: var(--bad); }
+  .cmp-good .cmp-tag { color: var(--gold-ink); }
+  .cmp-result .cmp-good .cmp-tag { color: var(--gold); }
+}
+
+/* House cutaway */
+.detail-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 44px; align-items: start; }
+.cutaway { margin: 0; min-width: 0; }
+.cutaway svg { display: block; width: 100%; height: auto; }
+.cutaway figcaption { display: flex; gap: 10px; align-items: center; margin-top: 12px; font-size: 14px; color: var(--on-navy-muted); }
+.cutaway figcaption i { flex: none; width: 22px; height: 10px; background: var(--cw-struct); }
+.cw-line { fill: none; stroke: var(--cw-line); stroke-width: 2; }
+.cw-thin { stroke-width: 1.3; }
+.cw-fill { fill: var(--cw-fill); stroke: var(--cw-line); stroke-width: 1.6; }
+.cw-solid { fill: var(--cw-solid); }
+.cw-struct { fill: var(--cw-struct); }
+.cw-ground { fill: var(--cw-ground); }
+.cw-glass { fill: var(--cw-glass); stroke: var(--cw-line); stroke-width: 1.6; }
+.cw-water { fill: var(--cw-water); }
+.cw-water-line { fill: none; stroke: var(--cw-water-line); stroke-width: 2; stroke-linecap: round; }
+.cw-bfe { fill: none; stroke: var(--cw-water-line); stroke-width: 1.4; stroke-dasharray: 7 6; }
+.cw-crack { fill: none; stroke: var(--night); stroke-width: 2; stroke-linejoin: round; }
+.cw-knob { fill: var(--cw-line); }
+.cw-label { fill: var(--cw-text); font: 600 12px var(--body); letter-spacing: 0.1em; }
+.spot .spot-dot { fill: var(--gold); transform-box: fill-box; transform-origin: center; transition: transform .2s ease, fill .2s ease; }
+.spot .spot-ring { fill: none; stroke: var(--gold); stroke-width: 2; opacity: 0; transform-box: fill-box; transform-origin: center; animation: spot-ring 2.6s ease-out infinite; }
+.spot text { fill: var(--navy); font: 700 15px var(--body); text-anchor: middle; pointer-events: none; }
+.spot { cursor: pointer; }
+.spot.active .spot-dot { transform: scale(1.3); fill: var(--gold-bright); }
+@keyframes spot-ring { 0% { opacity: 0.8; transform: scale(1); } 100% { opacity: 0; transform: scale(1.9); } }
+.spots { list-style: none; margin: 0; padding: 0; display: grid; border-top: 2px solid var(--gold); }
+.spot-item { width: 100%; display: grid; grid-template-columns: 30px 1fr; gap: 14px; align-items: start; text-align: left; padding: 12px 10px; background: transparent; color: inherit; border: 0; border-bottom: 1px solid var(--on-navy-line); font: inherit; cursor: default; }
+.spot-item .n { width: 28px; height: 28px; border-radius: 50%; background: var(--gold); color: var(--navy); font-weight: 700; font-size: 14px; display: grid; place-items: center; }
+.spot-item b { display: block; font-family: var(--caps); font-size: 15px; letter-spacing: 0.06em; color: var(--on-navy); }
+.spot-item .t { display: block; color: var(--on-navy-muted); font-size: 15.5px; line-height: 1.5; }
+.spot-item.active, .spot-item:hover { background: rgba(255, 255, 255, 0.06); }
+@media (max-width: 960px) { .detail-grid { grid-template-columns: 1fr; gap: 28px; } }
+
+/* Services */
+.svc-groups { display: grid; gap: 40px; }
+.svc-group { display: grid; grid-template-columns: 260px 1fr; gap: 32px; padding-top: 26px; border-top: 2px solid var(--rule); }
+.svc-group > header { display: grid; gap: 6px; align-content: start; }
+.svc-group > header .s { font-family: var(--script); font-size: 34px; line-height: 1; }
+.svc-group > header .c { font-family: var(--caps); font-weight: 800; font-size: 20px; letter-spacing: 0.2em; color: var(--ink); }
+.svc-group > header .more { font-size: 12.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-ink); text-decoration: none; margin-top: 10px; }
+.svc-group > header .more:hover { color: var(--ink); }
+.svc-group > header p { font-size: 15px; color: var(--muted); margin-top: 6px; }
+.svc-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.svc { background: var(--surface); padding: 20px 22px; display: grid; gap: 4px; align-content: start; min-width: 0; }
+.svc h3 { font-family: var(--body); font-size: 19px; font-weight: 700; }
+.svc p { font-size: 15.5px; color: var(--muted); }
+.svc-list.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.on-navy .step { border-top-color: var(--gold); }
+.on-navy .step-n { color: var(--gold); }
+.on-navy .step p { color: var(--on-navy-muted); }
+@media (max-width: 900px) { .svc-group { grid-template-columns: 1fr; gap: 18px; } .svc-list.cols-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .svc-list, .svc-list.cols-3 { grid-template-columns: 1fr; } }
+
+/* Our Work: project cards per division, gallery dialog for each project */
+.work { background: var(--surface); }
+.work-groups { display: grid; gap: 40px; }
+.work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.proj { position: relative; display: grid; align-content: start; padding: 0; border: 1px solid var(--line); background: var(--bg); color: inherit; font: inherit; text-align: left; cursor: pointer; min-width: 0; }
+.proj-media { position: relative; aspect-ratio: 4 / 3; max-width: 100%; background: var(--navy); overflow: hidden; }
+.proj-media img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+.proj:hover .proj-media img, .proj:focus-visible .proj-media img { transform: scale(1.03); }
+.proj-count { position: absolute; right: 10px; bottom: 10px; padding: 3px 8px; background: rgba(13, 15, 66, 0.82); color: #ffffff; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; }
+.proj-body { padding: 12px 14px 14px; display: grid; gap: 2px; }
+.proj-body b { font-weight: 700; font-size: 16px; line-height: 1.3; }
+.proj-body span { font-size: 13.5px; color: var(--muted); }
+.proj.is-placeholder { cursor: default; border: 1px dashed color-mix(in srgb, var(--gold) 75%, transparent); }
+.proj.is-placeholder .proj-media { display: grid; place-items: center; background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px); background-size: 24px 24px; }
+.ph-mark { display: grid; justify-items: center; gap: 10px; }
+.ph-mark svg { width: 36px; height: 36px; fill: none; stroke: var(--gold); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.ph-mark span { font-family: var(--caps); font-weight: 700; font-size: 11px; letter-spacing: 0.22em; color: var(--gold); }
+.work-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; margin-top: 44px; }
+.work-cta p { color: var(--muted); }
+@media (max-width: 1100px) { .work-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .work-grid { grid-template-columns: 1fr; } }
+
+.gallery { overflow: auto; width: min(1000px, calc(100vw - 32px)); max-height: calc(100vh - 32px); max-height: calc(100dvh - 32px); margin: auto; padding: 0; border: 0; background: var(--surface); color: var(--ink); box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.8); }
+.gallery::backdrop { background: rgba(2, 3, 18, 0.84); }
+.gal-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; padding: 20px 22px 0; }
+.gal-head .cat { display: block; font-family: var(--caps); font-weight: 700; font-size: 12px; letter-spacing: 0.3em; color: var(--gold-ink); }
+.gal-head h3 { font-family: var(--caps); font-size: 21px; font-weight: 800; letter-spacing: 0.02em; margin-top: 4px; }
+.gal-close { flex: none; width: 40px; height: 40px; padding: 0; border: 1px solid var(--line); background: transparent; color: inherit; cursor: pointer; }
+.gal-close svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.gal-stage { position: relative; margin: 16px 22px 0; background: var(--navy); }
+.gal-single, .gal-pair figure { margin: 0; aspect-ratio: 3 / 2; max-width: 100%; }
+.gal-stage img { display: block; width: 100%; height: 100%; object-fit: contain; background: var(--navy-deep); }
+.gal-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.gal-pair figure { position: relative; }
+.gal-pair figcaption, .gal-single-tag { position: absolute; left: 10px; top: 10px; padding: 4px 10px; background: var(--gold); color: var(--navy); font-family: var(--caps); font-weight: 700; font-size: 11px; letter-spacing: 0.2em; }
+.gal-single { position: relative; }
+.gal-nav { position: absolute; top: 50%; width: 42px; height: 42px; margin-top: -21px; padding: 0; border: 0; background: rgba(13, 15, 66, 0.85); color: #ffffff; cursor: pointer; }
+.gal-nav svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.gal-nav.prev { left: 8px; } .gal-nav.next { right: 8px; }
+.gal-nav[disabled] { opacity: 0.3; cursor: default; }
+.gal-caption { padding: 10px 22px 0; font-size: 14.5px; color: var(--muted); }
+.gal-thumbs { display: flex; gap: 6px; overflow-x: auto; padding: 12px 22px 0; }
+.gal-thumbs button { flex: none; width: 72px; aspect-ratio: 4 / 3; padding: 0; border: 2px solid transparent; background: var(--navy); cursor: pointer; }
+.gal-thumbs button img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.gal-thumbs button.active { border-color: var(--gold); }
+.gal-summary { padding: 16px 22px 0; }
+.gal-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px 24px; padding: 16px 22px 22px; margin-top: 16px; border-top: 1px solid var(--line); }
+.gal-meta div { display: grid; gap: 2px; min-width: 0; }
+.gal-meta span { font-size: 11.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.gal-meta b { font-weight: 600; font-size: 15.5px; }
+@media (max-width: 640px) { .gal-pair { grid-template-columns: 1fr; } .gal-head, .gal-caption, .gal-thumbs, .gal-summary, .gal-meta { padding-inline: 14px; } .gal-stage { margin-inline: 14px; } }
+
+/* Social icons */
+.social { display: flex; align-items: center; gap: 10px; }
+.soc { display: inline-grid; place-items: center; width: 38px; height: 38px; border: 1px solid var(--on-navy-line); color: var(--on-navy); text-decoration: none; transition: border-color .15s ease, color .15s ease; }
+.soc svg { width: 19px; height: 19px; fill: currentColor; }
+.soc:hover { border-color: var(--gold); color: var(--gold); }
+.soc[aria-disabled="true"] { opacity: 0.45; cursor: default; }
+.soc[aria-disabled="true"]:hover { border-color: var(--on-navy-line); color: var(--on-navy); }
+.social-sm .soc { width: 34px; height: 34px; }
+.social-sm .soc svg { width: 17px; height: 17px; }
+
+/* Kids and pets */
+.kids { background-color: var(--navy); background-image:
+  radial-gradient(circle at 6% 12%, var(--star) 0 1.4px, transparent 2px),
+  radial-gradient(circle at 17% 34%, var(--star) 0 1px, transparent 1.6px),
+  radial-gradient(circle at 29% 8%, var(--star) 0 1.2px, transparent 1.8px),
+  radial-gradient(circle at 41% 22%, var(--star) 0 0.9px, transparent 1.5px),
+  radial-gradient(circle at 55% 6%, var(--star) 0 1.5px, transparent 2.1px),
+  radial-gradient(circle at 63% 30%, var(--star) 0 1px, transparent 1.6px),
+  radial-gradient(circle at 74% 11%, var(--star) 0 1.2px, transparent 1.8px),
+  radial-gradient(circle at 86% 25%, var(--star) 0 1px, transparent 1.6px),
+  radial-gradient(circle at 94% 7%, var(--star) 0 1.4px, transparent 2px),
+  radial-gradient(circle at 90% 46%, var(--star) 0 0.9px, transparent 1.5px),
+  radial-gradient(circle at 3% 52%, var(--star) 0 1px, transparent 1.6px),
+  radial-gradient(circle at 80% 4%, var(--gold) 0 1.8px, transparent 2.4px); }
+.kids-head h2 { font-family: inherit; }
+.kids-head .dream { display: block; font-family: var(--script); font-weight: 400; font-size: clamp(54px, 8vw, 92px); line-height: 1; }
+.kids-head .build { display: block; margin-top: 8px; font-family: var(--caps); font-weight: 800; font-size: clamp(20px, 2.6vw, 28px); letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+.kids-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--on-navy-line); border: 1px solid var(--on-navy-line); }
+.kid { background: var(--navy); padding: 24px 22px 26px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.kid svg { width: 46px; height: 46px; fill: none; stroke: var(--gold); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.kid svg .dot { fill: var(--gold); stroke: none; }
+.kid h3 { font-family: var(--caps); font-size: 16.5px; font-weight: 800; letter-spacing: 0.04em; color: var(--on-navy); }
+.kid p { font-size: 15px; color: var(--on-navy-muted); }
+.kids-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; margin-top: 34px; }
+.kids-cta p { color: var(--on-navy-muted); }
+@media (max-width: 980px) { .kids-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 760px) { .kids { background-size: 100% 60px; background-repeat: no-repeat; } }
+@media (max-width: 560px) { .kid { padding: 18px 16px 20px; } .kid h3 { font-size: 15px; } .kid p { font-size: 14px; } .kid svg { width: 40px; height: 40px; } }
+@media (max-width: 340px) { .kids-grid { grid-template-columns: 1fr; } }
+
+/* Process */
+.process-band { background: var(--gold-soft); }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.step { display: grid; gap: 8px; align-content: start; padding-top: 18px; border-top: 3px solid var(--gold); min-width: 0; }
+.step-n { font-family: var(--caps); font-weight: 700; font-size: 12.5px; letter-spacing: 0.24em; color: var(--gold-ink); }
+.step h3 { font-family: var(--caps); font-size: 20px; font-weight: 800; letter-spacing: 0.03em; }
+.step p { font-size: 15.5px; color: var(--muted); }
+@media (max-width: 900px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+
+/* Family companies */
+.family { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.fam { background: var(--surface); border: 1px solid var(--line); padding: 26px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.fam .tag { font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-ink); }
+.fam h3 { font-family: var(--caps); font-size: 22px; font-weight: 800; letter-spacing: 0.04em; }
+.fam p { color: var(--muted); font-size: 15.5px; }
+@media (max-width: 900px) { .family { grid-template-columns: 1fr; } }
+
+/* Area + quick quote */
+.contact { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: start; }
+.area { display: grid; gap: 22px; }
+.towns { display: flex; flex-wrap: wrap; gap: 8px; }
+.towns span { font-size: 14.5px; padding: 6px 12px; border: 1px solid var(--line); background: var(--surface); }
+.reach { display: grid; gap: 14px; padding: 22px; background: var(--navy); color: var(--on-navy); box-shadow: inset 4px 0 0 var(--gold); }
+.reach-row { display: grid; grid-template-columns: 76px minmax(0, 1fr) auto; align-items: center; gap: 12px; }
+.reach-row span { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+.reach-row b { font-weight: 600; font-size: 17px; letter-spacing: 0.02em; user-select: all; overflow-wrap: anywhere; }
+.copy { font: inherit; font-size: 12px; background: transparent; color: inherit; border: 1px solid currentColor; padding: 4px 10px; cursor: pointer; opacity: 0.85; }
+form.quote { background: var(--surface); border: 1px solid var(--line); border-top: 4px solid var(--rule); padding: 28px; display: grid; gap: 16px; min-width: 0; }
+form.quote h3 { font-family: var(--caps); font-size: 24px; font-weight: 800; letter-spacing: 0.04em; }
+form.quote > p { color: var(--muted); font-size: 15.5px; margin-top: -8px; }
+.field { display: grid; gap: 6px; min-width: 0; }
+.field label { font-size: 12.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.field input, .field select, .field textarea { width: 100%; font: inherit; font-size: 16px; padding: 11px 12px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 0; }
+.form-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-msg { font-size: 15px; color: var(--good); }
+@media (max-width: 900px) { .contact { grid-template-columns: 1fr; } }
+@media (max-width: 520px) { .form-2 { grid-template-columns: 1fr; } }
+
+footer { background: var(--navy-deep); color: var(--on-navy); font-size: 14.5px; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; padding-block: 38px; }
+.foot-brand { display: flex; align-items: center; gap: 20px; min-width: 0; }
+.foot-logo { width: 92px; flex: none; fill: var(--on-navy); }
+.foot-brand p { color: var(--on-navy-muted); }
+.foot-brand .foot-tag { font-family: var(--caps); font-weight: 700; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+.foot-divs a { text-decoration: none; color: var(--on-navy); font-weight: 600; }
+.foot-divs a:hover { color: var(--gold); }
+.foot-links { display: grid; gap: 16px; justify-items: end; }
+footer nav { display: flex; flex-wrap: wrap; gap: 18px; }
+footer nav a { text-decoration: none; color: var(--on-navy-muted); }
+footer nav a:hover { color: var(--on-navy); }
+@media (max-width: 760px) { .foot-links { justify-items: start; } }
+
+@media (max-width: 900px) { .section { padding-block: 68px; } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero.play *, .nav.intro, .spot .spot-ring { animation: none !important; }
+}
+</style>
+
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <path id="as-mark" fill-rule="evenodd" clip-rule="evenodd" d="M165 287.4C163.5 286.6 162.3 285.3 162 284.3C161.5 282.9 161.8 280.6 162.6 279.5C163.9 277.5 167.4 275 168.9 275C169.2 275 169.9 274.8 170.5 274.5C171.1 274.2 171.9 274 172.4 274C172.8 274 173.3 273.8 173.6 273.6C174 273 174.3 271.9 174.1 271.4C173.9 270.8 172.2 270.9 170.4 271.5C169.2 271.9 168.4 272 164.9 272C160.8 272 160.7 272 159.2 271.3C158.3 270.8 157.1 270.1 156.6 269.7L155.5 268.9L154.9 269.5C154.6 269.8 154.2 270 153.9 270C153.7 270 153.1 270.2 152.6 270.5C152.1 270.8 151.3 271 151 271C150.6 271 149.7 271.2 149 271.5C148.3 271.8 147.4 272 147 272C146.6 272 145.7 272.2 145 272.5C143.9 272.9 143.1 273 138.8 273C134.2 273 133.9 273 133.2 272.5C132.8 272.2 132.4 272 132.3 272C131.9 272 130.2 270.6 129.7 269.8C128.5 268.1 128.4 266.5 128.9 262C129.3 258.2 129.3 257.9 128.9 257.5C128.6 257.2 128.2 257 127.8 257C127.5 257 126.8 256.8 126.2 256.5C124.5 255.6 123.4 255.9 123.1 257.4C123 258 122.7 258.8 122.5 259.2C120 264.4 119.9 264.6 117.9 266.5C116.9 267.6 115.6 268.7 115.2 268.9C114.7 269.1 114.3 269.4 114.2 269.5C114.1 269.7 113 270.3 112 270.8C111.7 270.9 111 271.3 110.5 271.5C109.9 271.8 109.3 272 109 272C108.6 272 108 272.2 107.6 272.5C107.2 272.8 106.5 273 105.9 273C105.4 273 104.6 273.2 104.1 273.4C103.3 273.8 102.1 273.9 96.6 273.9C90.4 274 90 274 88.9 273.5C88.2 273.2 87.4 273 87.1 273C86.7 273 86.2 272.8 85.8 272.5C85.5 272.2 85 272 84.7 272C84.5 272 84.2 271.9 84.1 271.7C84 271.6 83.5 271.2 83 270.9C82.1 270.3 80 267.8 80 267.3C80 267.1 79.8 266.6 79.5 266.1C78.9 264.9 78.8 261.4 79.4 259.9C79.6 259.3 79.9 258.5 80 258.1C80.5 256.4 82 254.3 83.9 252.9C84.9 252.1 86.9 251 87.4 251C87.6 251 88.2 250.8 88.8 250.5C89.3 250.2 90.1 250 90.5 250C90.9 250 91.8 249.8 92.5 249.5C93.6 249.1 94.4 249 97.6 249C99.7 248.9 102.7 248.9 104.2 248.8C107 248.6 107.1 248.6 107.2 248.1C107.2 247.8 107 246.9 106.6 246.1C106.3 245.4 106 244.7 106 244.5C106 244.3 105.8 243.9 105.5 243.6C105.2 243.2 105 242.8 105 242.6C105 242.3 104.7 241.7 103.5 238.8C103.2 238.3 103 237.6 103 237.3C103 237.1 102.8 236.4 102.5 235.9C102.2 235.3 102 234.6 102 234.2C102 233.9 101.8 233 101.6 232.2C100.5 228.2 102.1 222.8 105.3 219.5C106.3 218.5 109.1 216.6 110.2 216.1C110.5 216 110.9 215.8 111.3 215.6C111.6 215.4 112.8 215 113.9 214.6C115.7 214 116.2 213.9 120.6 213.9C125.2 213.9 125.4 213.9 126.6 214.5C128.7 215.5 129.6 216.3 130.3 217.4C131 218.4 131 218.6 131 221C131 223.4 130.9 223.8 130.3 225.2C129.4 226.9 127.4 229.1 125.9 230C125.3 230.3 124.7 230.6 124.5 230.7C123.3 231.4 121.6 232 120.9 232C120.4 232 119.8 232.2 119.4 232.5C118.7 233.1 118 233 118 232.3C118 232 118.4 231.3 118.8 230.7C121.2 227.7 123.3 221.9 122.8 220C122.4 218.4 121.4 217.2 120.3 217.2C119 217.2 116 219.4 116 220.3C116 220.4 115.7 220.9 115.4 221.3C114.9 222 114.9 222.3 114.9 225.5C114.9 228.3 115 229.1 115.4 230C115.7 230.6 116 231.7 116.1 232.4C116.2 233.1 116.5 233.8 116.6 234C117.1 234.5 118 236.4 118 236.8C118 237.1 118.7 238.7 119.5 240.3C119.8 240.8 120 241.4 120 241.5C120 241.7 120.2 242.3 120.5 242.8C120.7 243.4 121.2 244.6 121.5 245.4C121.8 246.2 122.2 247.3 122.5 247.8C122.8 248.3 123 248.9 123 249.1C123 249.3 123.3 250.1 123.6 250.8C124.1 251.6 124.4 252 124.8 252C125 252 125.9 252.2 126.7 252.5C128.3 253 130.3 253.2 131.2 252.9C131.5 252.8 131.8 252.4 131.9 252C132 251.7 132.3 251.1 132.5 250.7C132.8 250.3 133 249.9 133 249.8C133 249.7 133.3 249 133.6 248.3C134.5 246.6 134.3 246 132.9 246C131.7 246 130.8 245.4 130.8 244.7C130.8 244.3 132 242.6 132.9 241.6C133.7 240.7 135.1 240 135.9 240C136.7 240 136.8 239.9 137.4 238.8C137.7 238.1 138 237.3 138 237.1C138 236.9 138.2 236.3 138.5 235.8C138.8 235.3 139 234.7 139 234.5C139 234.4 139.2 233.8 139.4 233.4C139.8 232.5 140.7 230 141 228.9C141.3 227.7 142.2 225.8 142.6 225.5C143.1 225.1 147.4 224.1 149.2 223.9C150.1 223.8 151.3 223.6 151.8 223.4C152.8 223 156.1 222.9 156.4 223.2C156.5 223.5 155.8 225.9 155.3 226.6C155.2 226.9 155 227.3 155 227.6C155 227.9 154.8 228.6 154.5 229.1C154.2 229.7 154 230.3 154 230.5C154 230.7 153.8 231.3 153.5 231.9C153.2 232.4 153 233.1 153 233.3C153 233.6 152.8 234.1 152.6 234.5C152.4 234.8 152.1 235.6 151.9 236.2C151.7 236.8 151.3 237.7 151.1 238.3C150.8 239.1 150.8 239.5 151 239.9C151.2 240.5 151.4 240.5 153.2 240.5C155.3 240.5 156.3 240.9 155.9 241.6C155.7 241.8 155.2 242.6 154.7 243.4C153 246 153 246 150.5 246L148.3 246L147.6 247.3C147.3 248 147 248.7 147 248.9C147 249.1 146.8 249.7 146.5 250.2C146.2 250.7 146 251.3 146 251.4C146 251.6 145.8 252.2 145.5 252.7C145.2 253.2 145 253.8 145 253.9C145 254.1 144.8 254.7 144.5 255.2C144.2 255.8 144 256.4 144 256.7C144 256.9 143.8 257.4 143.6 257.8C143.4 258.2 143.2 258.9 143.1 259.4C143 260 142.7 260.9 142.5 261.5C142 262.8 141.7 265.7 141.9 266.9C142.1 268.2 143.1 268.6 145.2 268.4C148.4 268.1 150.1 267.8 150.9 267.4C151.3 267.2 151.9 267 152.3 267C152.6 267 153.2 266.8 153.6 266.5C153.9 266.2 154.3 266 154.4 266C155 266 155.3 265.2 155.7 262.7C155.9 261.3 156.3 259.3 156.5 258.4C157.5 254.8 158.1 253.1 158.5 252.1C158.8 251.5 159 250.9 159 250.8C159 250.6 159.2 250 159.5 249.4C159.7 248.9 160.2 247.8 160.5 247C160.8 246.2 161.3 245.2 161.5 244.6C161.8 244 162 243.4 162 243.3C162 242.8 163.3 240.8 163.8 240.4C164.1 240.2 164.9 240 165.7 240C166.5 240 167.4 239.8 168 239.5C168.6 239.2 169.5 239 170.2 239C170.9 239 172.2 238.8 172.9 238.5C174.6 237.9 176.9 237.8 177.2 238.4C177.2 238.5 177 239.4 176.6 240.3C176.3 241.2 176 242.1 176 242.3C176 242.5 175.8 243 175.5 243.4C175.2 243.8 175 244.3 175 244.6C175 244.8 174.8 245.4 174.6 245.8C174.3 246.6 174 247.3 173.2 249.5C173.1 250 172.7 250.9 172.5 251.4C172.2 252 172 252.7 172 252.9C172 253.1 171.8 253.7 171.5 254.3C171.3 254.9 170.8 256.2 170.5 257.2C170.2 258.3 169.8 259.6 169.6 260.2C169.1 261.7 168.5 264.2 168.3 265.5C168.2 266.6 168.2 266.7 169.2 267.4L170.3 268.1L171.6 267.5C172.3 267.2 173.1 267 173.3 267C173.5 267 174 266.8 174.3 266.5C174.7 266.2 175 266 175.2 266C175.9 266 178 263.1 178 262.1C178 261.9 178.2 261.3 178.5 260.7C179 259.4 179.7 257.5 180 256.2C180.1 255.7 180.4 255 180.6 254.6C180.8 254.2 181 253.7 181 253.4C181 253.1 181.2 252.4 181.5 251.9C181.8 251.3 182 250.7 182 250.4C182 250.2 182.2 249.5 182.5 248.9C183.1 247.6 183.5 246.4 183.8 245.1C184 244.6 184.3 243.5 184.6 242.7C185.1 241.3 185.2 241.1 186.4 240.6C187.2 240.2 188.1 240 189.1 240C190.1 240 191 239.8 191.6 239.5C192.2 239.2 193.2 239 194 239C194.8 239 195.9 238.8 196.6 238.6C197.2 238.4 198 238.3 198.4 238.3C199.1 238.4 199.1 238.4 199.1 239.5C199 240.1 198.8 241 198.5 241.4C198.2 241.8 198 242.4 198 242.6C198 242.9 197.8 243.4 197.6 243.8C197.2 244.8 196.3 247.3 196 248.4C195.9 248.8 195.6 249.5 195.4 249.9C195.2 250.4 195 250.9 195 251.2C195 251.4 194.8 252.1 194.5 252.6C194.2 253.1 194 253.7 194 254C194 254.3 193.8 255 193.5 255.5C193.2 256 193 256.6 193 256.8C193 257 192.8 257.7 192.5 258.4C192.3 259.1 191.9 260 191.8 260.5C191.6 261 191.2 262.1 190.8 263C190.5 263.9 190.1 265 190 265.5C189.9 266 189.6 266.7 189.4 267.1C189.2 267.5 189 268.3 189 268.9C188.9 269.8 188.9 269.9 189.7 270C190.2 270 190.8 269.8 191.3 269.5C191.8 269.2 192.4 269 192.7 269C193 269 193.7 268.8 194.2 268.5C194.8 268.2 195.4 268 195.7 268C195.9 268 196.5 267.8 196.9 267.5C197.3 267.2 197.8 267 198.1 267C198.3 267 198.8 266.8 199.2 266.5C199.5 266.2 199.9 266 200.1 266C200.2 266 200.7 265.7 201.2 265.3C201.9 264.6 202.6 262.9 203.2 260.1C203.6 258.3 204 256.8 204.5 255.5C204.8 254.8 205 254 205 253.8C205 253.5 205.2 252.8 205.5 252.2C205.8 251.7 206 251 206 250.7C206 250.4 206.2 249.7 206.5 249.1C206.8 248.6 207 247.9 207 247.6C207 247.3 207.2 246.7 207.5 246.1C207.8 245.6 208 244.9 208 244.7C208 244.4 208.2 243.8 208.5 243.3C208.8 242.8 209 242.2 209 242.1C209 241.9 209.2 241.3 209.5 240.8C209.8 240.2 210 239.6 210 239.3C210 239.1 210.2 238.4 210.5 237.9C210.8 237.3 211 236.7 211 236.6C211 236.4 211.2 235.8 211.5 235.2C211.7 234.6 212.1 233.7 212.2 233.2C213 231.1 213.3 230.3 213.6 229.6C213.8 229.2 214 228.6 214 228.4C214 228.1 214.2 227.7 214.4 227.3C214.6 226.9 214.9 226.2 215.1 225.6C215.9 223.2 216.1 222.8 216.5 221.8C216.8 221.3 217 220.7 217 220.5C217 219.8 218.5 218 219.1 218C219.4 218 220.4 217.8 221.2 217.5C222.1 217.2 223.2 217 223.8 217C224.3 217 225.2 216.8 225.8 216.5C226.4 216.2 227.4 216 228.1 216C228.8 216 229.8 215.9 230.3 215.7C231.9 215.3 232.4 216.1 231.6 217.8C231.1 218.9 230 222.3 230 222.8C230 223 229.8 223.6 229.5 224.1C229.2 224.7 229 225.3 229 225.6C229 225.8 228.8 226.5 228.5 227C228.2 227.5 228 228.2 228 228.4C228 228.7 227.8 229.3 227.5 229.8C227.2 230.3 227 230.9 227 231.2C227 231.4 226.8 232.1 226.5 232.6C226.2 233.2 226 233.8 226 234C226 234.2 225.8 234.7 225.6 235.1C225.4 235.5 225.1 236.4 224.9 237C224.7 237.6 224.3 238.9 223.9 239.9C223.5 240.8 223.1 242 223 242.5C222.9 243 222.6 243.7 222.4 244.1C222.2 244.5 222 245 222 245.3C222 245.5 221.8 246.1 221.5 246.6C221.2 247.1 221 247.7 221 248C221 248.3 220.8 249 220.5 249.6C220 250.9 219.3 252.8 219 254.1C218.8 254.6 218.6 255.3 218.4 255.6C218.2 255.9 218 256.4 218 256.7C218 257.1 217.8 257.7 217.6 258.1C217.4 258.5 217.1 259.4 216.9 260.2C216.7 261 216.3 262.4 216 263.4C214.9 266.9 214.9 267.2 215.9 268.4C216.4 268.9 216.7 269 217.9 269C218.6 269 219.8 268.8 220.5 268.5C221.2 268.2 222 268 222.3 268C222.6 268 223.3 267.8 223.8 267.5C224.3 267.2 224.9 267 225.2 267C225.4 267 226 266.7 226.5 266.3C227.2 265.6 227.3 265.3 227.6 263.3C227.8 262.1 228 260.7 228 260.1C228 259.6 228.2 258.7 228.5 258.1C228.8 257.6 229 256.9 229 256.6C229 255.5 231.8 249.8 233.4 247.6C234.6 245.9 238 242.6 239.2 241.8C239.7 241.5 240.7 241 241.5 240.6C242.3 240.3 243.3 239.7 243.9 239.4C244.8 239 245.4 238.9 249.1 238.9C253 238.9 253.2 238.9 254 239.4C254.4 239.7 254.9 240 255.1 240C255.6 240 256.6 241 257.3 242.3C258 243.4 258 243.7 258 246.3C258 248.6 257.9 249.3 257.5 250.1C257.2 250.7 257 251.2 257 251.3C257 251.4 256.6 252.1 256.1 252.9C254.8 255 252 257.7 250 258.9C249.8 259 249.4 259.3 249.1 259.5C248.6 259.9 248.3 260.1 246.2 261.2C245.4 261.6 244.5 262 244.4 262C244.2 262 243.6 262.3 243 262.7C242 263.3 241.8 263.7 241.5 264.6C241.3 265.5 241.3 265.8 241.7 267.1C242 268 242.5 268.9 243 269.3C243.8 270 243.8 270 247.5 270C250.8 270 251.4 269.9 252.2 269.5C252.8 269.2 253.5 269 253.7 269C254 269 254.7 268.8 255.2 268.5C255.7 268.2 256.3 268 256.5 268C256.8 268 257 267.9 257.1 267.8C257.4 267.3 260.3 266 261.1 266C261.8 266 262 266.2 262.5 267.1C263.1 268.2 263.1 268.2 262.7 268.9C262.2 269.6 260.1 271 259.5 271C259.3 271 258.8 271.2 258.4 271.5C258 271.8 257.4 272 257.2 272C256.9 272 256.3 272.2 255.8 272.5C255.2 272.8 254.5 273 254.1 273C253.7 273 253 273.2 252.6 273.5C252.2 273.8 251.5 274 251 274C250.6 274 249.4 274.2 248.4 274.4C245.9 275.1 237.4 275.1 235.8 274.4C235.2 274.2 234.4 274 234.1 274C233.3 274 231.6 273 229.5 271.4C228.5 270.6 227.6 270 227.5 270C227.3 270 226.9 270.2 226.6 270.5C226.2 270.8 225.7 271 225.3 271C225 271 224.3 271.2 223.8 271.5C223.2 271.8 222.5 272 222.2 272C221.9 272 221.3 272.2 220.9 272.5C220.5 272.8 219.8 273 219.3 273C218.9 273 218.1 273.2 217.6 273.4C216.8 273.7 215.6 273.9 212.5 273.9C208.6 274 208.2 274 207.3 273.5C206.7 273.2 206.1 273 205.9 273C205.6 273 204.6 272.2 203.6 271.1C202.5 270.1 201.5 269.2 201.4 269.2C201.2 269.2 200.9 269.4 200.8 269.6C200.6 269.8 200.3 270 200.1 270C200 270 199.5 270.2 199.2 270.5C198.8 270.8 198.3 271 198.1 271C197.8 271 197.3 271.2 196.9 271.5C196.5 271.8 195.8 272 195.5 272C195.2 272 194.5 272.2 194.1 272.5C193.7 272.8 193.1 273 192.8 273C192.4 273 191.8 273.2 191.4 273.5C191 273.8 190.3 274 189.9 274C189.5 274 188.6 274.3 187.9 274.7C186.7 275.4 186.3 275.8 184.9 278.6C184 280.4 183.7 280.8 182.3 282.2C181 283.6 179.2 285 178.8 285C178.7 285 178.3 285.2 178 285.5C177.7 285.8 177.2 286 177 286C176.8 286 176.4 286.2 176.1 286.5C175.9 286.8 175.4 287 175.1 287C174.8 287 173.9 287.2 173 287.5C171.8 287.9 170.8 288 168.8 288C166.5 288 166 287.9 165 287.4ZM168.4 283.2C169.9 282.4 170.5 281.7 171.2 280.4C172.2 278.3 171.8 277.5 170.2 278.5C169.7 278.8 169.2 279 169 279C168.7 279 168 279.5 167.3 280.2C166.2 281.2 166 281.4 166 282.2C166 283.8 166.8 284.1 168.4 283.2ZM101 269.5C101.4 269.2 101.9 269 102.2 269C102.8 269 106 266 107.1 264.5C109.1 261.6 109.8 259.4 109.8 256.2C109.9 254 109.8 253.8 109.2 252.9L108.5 252L106.2 252C104.6 252 103.6 252.1 102.6 252.5C101.8 252.8 100.8 253 100.4 253C100.1 253 99.3 253.2 98.8 253.5C98.3 253.8 97.7 254 97.5 254C96.9 254 93.7 256.1 92.5 257.3C91.8 258 91 259.1 90.6 259.9C90.1 261 90 261.6 90 263.8C90 266.1 90.1 266.4 90.7 267.3C91.8 269 93.3 270 94.6 270C97.4 270.2 100.4 270 101 269.5ZM244.4 255.3C245 254.8 246.1 253.4 247.4 251.5C247.9 250.7 248.4 250.1 248.5 250C249 249.7 251 245.5 251.1 244.6C251.3 243.4 251 242.8 250.4 242.8C249.8 242.8 248.3 244.2 247.9 245.1C247.7 245.5 247.2 246.4 246.9 247C246.2 248.1 245.9 248.8 245.1 251.1C244.9 251.6 244.6 252.4 244.4 252.8C244.2 253.1 244 253.7 243.9 254.2C243.8 254.6 243.6 255.1 243.5 255.1C243.1 255.3 243.2 255.8 243.6 255.7C243.7 255.7 244.1 255.5 244.4 255.3ZM111.2 201.1C111.2 200.7 115 197.8 117.7 196.1C117.9 196 118.8 195.5 119.5 194.9C120.3 194.4 121 194 121.1 194C121.2 194 121.9 193.5 122.7 192.9C123.4 192.3 124.1 191.8 124.2 191.8C124.6 191.8 126.8 189.4 127.7 188.1C128.7 186.5 129.8 185.4 132 183.5C132.9 182.8 134.5 181.3 135.6 180.1C137.8 177.9 140.1 176 140.4 176C140.6 176 140.9 175.8 141.1 175.5C141.4 175.2 141.8 175 142 175C142.2 175 142.6 174.8 142.8 174.6C142.9 174.4 143.4 174.1 143.9 173.9C145.4 173.1 146 172.7 146.9 171.7C149 169.5 150.4 168.2 151.5 167.5C152.1 167.1 152.8 166.6 153 166.5C153.2 166.4 153.8 166 154.3 165.6C154.8 165.3 155.3 165 155.4 165C155.5 165 159.8 161.6 160.6 160.8C160.9 160.6 162.1 159.6 163.4 158.6C165.7 156.9 166.4 156.3 169.9 153C171 151.9 172.9 150.1 174.2 149C179.1 144.6 182.1 141.4 183 139.6C183.5 138.7 184.4 137.3 185.1 136.7C185.7 136 186.2 135.4 186.2 135.3C186.2 134.7 185.5 134.5 184.1 134.8C183.3 134.9 181.9 135 181.1 135C180.3 135 179.2 135.2 178.6 135.4C178.1 135.6 176.3 135.9 174.7 136C173.2 136.1 171.6 136.3 171.2 136.5C170.8 136.6 169.5 136.8 168.2 137C166.9 137.1 165.5 137.4 165.1 137.6C164.7 137.8 164 138 163.6 138C163.2 138 162.5 138.2 162.1 138.5C161.7 138.8 161.2 139 160.9 139C160.6 139 160 139.2 159.6 139.5C159.2 139.8 158.7 140 158.4 140C158 140 157 140.5 155.5 141.3C155.3 141.4 154.8 141.6 154.5 141.8C154.2 142 153.7 142.2 153.5 142.4C153.3 142.6 152.4 143.1 151.6 143.5C150.8 144 149.9 144.5 149.7 144.7C149.5 144.8 149.2 145 149 145C148.7 145 148.4 145.2 148.1 145.5C147.9 145.8 147.6 146 147.5 146C147.2 146 144.6 147.9 143.6 148.8C143.2 149.2 142.3 150 141.5 150.5C140.8 151 140.1 151.5 139.9 151.6C139.2 152.1 139 151.5 139.3 149.7C139.7 147.5 139.3 146.4 137.8 146C136.7 145.7 136.5 145.4 136.5 144.1C136.5 143 136.2 142.4 135 141.1C133.9 140 133.9 139.6 134.2 138.3C134.5 137.5 134.2 135.7 133.6 134.9C133 134.1 133.2 133.5 134.3 132.5C135.4 131.4 135.4 131 134.5 129.7C134 129 133.8 128 134.2 128C134.3 128 135.8 127.9 137.6 127.9C139.5 127.8 141.6 127.6 142.4 127.4C143.3 127.2 144.2 127 144.6 127C145 127 145.7 126.8 146.3 126.5C146.8 126.2 147.5 126 147.9 126C148.3 126 149 125.8 149.4 125.5C149.8 125.2 150.5 125 150.9 125C151.3 125 151.9 124.8 152.2 124.6C152.4 124.4 153.2 124.1 153.9 124C154.6 123.8 155.4 123.5 155.7 123.3C156 123.2 156.4 123 156.6 123C157.1 123 158.9 122.1 160.6 121.1C161.2 120.8 162 120.3 162.5 120.1C164 119.3 164.6 118.9 165.8 117.9C166.5 117.4 167.1 117 167.2 117C167.3 117 167.8 116.6 168.4 116.1C168.9 115.5 170 114.6 170.9 113.9C173.3 112 174.3 111.2 175.5 110.1C176.1 109.5 177.6 108.3 178.8 107.3C180.1 106.3 181.9 104.6 183 103.6C184 102.7 185.3 101.5 185.9 101C189 98.2 189 98.2 189 97.4C188.9 96.8 188.6 96.5 187.8 95.9C187.1 95.4 186.3 94.6 186 94.1C185.3 93.2 185 92.5 184.1 89.8C183.7 88.7 182.3 87.4 180.4 86.4C179.7 86 179 85.6 178.8 85.4C178.5 85.2 178.1 85 177.8 84.8C177.4 84.6 177 84.4 176.8 84.3C175.9 83.8 173.6 83 173 83C172.6 83 171.8 82.8 171.2 82.5C170.6 82.2 169.6 82 169.1 82C168.5 82 167.3 81.8 166.6 81.5C165.8 81.2 164.6 81 164 81C163.4 81 162.2 80.8 161.5 80.6C159.3 80 150.8 79.6 148.5 80C146 80.4 143 80.2 142.2 79.5C141.8 79.2 141.2 79 140.8 79C140.4 79 139.6 78.8 139.1 78.5C138.4 78.2 137.3 78 135.4 77.9C133.9 77.8 131.9 77.6 131.1 77.4C130 77.2 126.6 77.1 118.5 77.1C109.1 77.1 107 77.2 104.7 77.6C101.3 78.1 97.5 78.2 97.3 77.6C97.3 77.4 97.3 77.1 97.5 76.9C97.7 76.7 97.8 76.4 97.7 76.4C97.6 76.3 96.5 76.2 95.2 76.1C93.9 76 92.6 75.8 92.3 75.7C91.4 75.2 91.4 74.4 92.4 74.2C92.8 74 93.7 73.7 94.3 73.5C94.9 73.2 95.9 73 96.4 73C96.9 73 97.7 72.8 98.3 72.5C98.8 72.2 99.6 72 100.1 72C100.6 72 101.4 71.8 102 71.5C102.6 71.2 103.5 71 103.9 71C104.3 71 105.4 70.8 106.2 70.5C107.1 70.2 108.3 70 108.8 70C109.4 70 110.6 69.8 111.5 69.5C112.3 69.2 113.6 69 114.4 69C115.1 69 116.3 68.8 117 68.5C117.7 68.2 118.9 68 119.6 68C120.3 68 121.5 67.8 122.4 67.6C123.2 67.4 125 67.1 126.4 67C127.8 66.9 129.3 66.6 129.9 66.4C130.4 66.2 131.7 66 132.6 66C133.6 66 134.8 65.8 135.4 65.6C135.9 65.4 137.6 65.1 139 65C140.4 64.9 142 64.7 142.5 64.5C143 64.4 145.3 64.1 147.8 64C150.2 63.8 153 63.6 154 63.5C155 63.3 160 63.2 165.1 63.1C173.1 63 174.7 63 176.5 63.4C177.7 63.6 180.6 63.8 183 63.9C186.3 64 187.7 64.2 188.7 64.5C189.5 64.8 190.5 65 191 65C191.5 65 192.2 65.2 192.6 65.5C193 65.8 193.6 66 193.9 66C194.2 66 194.9 66.2 195.3 66.5C195.8 66.8 196.4 67 196.6 67C196.9 67 197.6 67.2 198.1 67.5C198.6 67.8 199.3 68 199.6 68C199.9 68 200.5 68.2 200.9 68.5C201.3 68.8 201.8 69 202.1 69C202.3 69 203 69.2 203.6 69.5C204.2 69.8 204.8 70.2 205.1 70.3C206.1 70.8 207.4 71.5 207.8 71.8C208.1 71.9 208.4 72.1 208.6 72.2C208.9 72.4 211.6 74.1 212.1 74.6C213.6 75.7 215.6 77.4 216.1 78.1C216.9 79.1 218 81.2 218 81.6C218 81.8 218.2 82.4 218.5 83C218.8 83.6 219 84.5 219 84.9C219 85.6 219.2 85.9 220 86.4C220.9 87 221.2 87.1 222.6 86.9C223.5 86.9 224.5 86.6 224.8 86.4C225.1 86.2 225.6 86 226 86C226.3 86 226.8 85.8 227.2 85.5C227.5 85.2 228 85 228.3 85C228.5 85 229.2 84.8 229.8 84.5C233.2 83.1 235.9 82.6 240.1 82.9C242 83 243.1 83.2 243.7 83.5C244.2 83.8 244.9 84.1 245.2 84.2C245.6 84.4 246.2 84.7 246.5 84.9C248.7 86.3 249.7 86.8 251.1 87C252.4 87.1 253.5 87.7 253.5 88.3C253.5 88.5 252.8 89.3 252 90.2C250.6 91.7 250.1 92.4 249.1 94.5C248.9 95 248.6 95.4 248.5 95.5C248.4 95.6 248 96.4 247.5 97.4C247 98.3 246.3 99.7 245.9 100.4C245.5 101.1 245 101.9 244.8 102.2C244.5 102.9 243.3 104.6 242.2 106.1C241.3 107.3 237.9 110.8 237.2 111.1C236.5 111.5 235.6 112 234.8 112.3C234.3 112.5 233 114.6 233 115.2C233 115.8 229.3 123 228.5 123.9C228.3 124.2 227.8 124.9 227.4 125.6C226.1 127.8 217 137 213.1 140C211.8 141.1 210.4 142.2 210.1 142.5C209.8 142.8 209.5 143 209.4 143C209.4 143 208.4 143.6 207.4 144.3C206.3 145 205.2 145.8 204.9 146C204.6 146.2 203.8 146.7 203.1 147.2C202.5 147.6 201.9 148 201.9 148C201.8 148 201.2 148.4 200.5 149C199.8 149.6 199.1 150 199 150C198.9 150 198.1 150.4 197.3 151C196.5 151.5 195.6 152 195.3 152.1C195 152.2 194.7 152.4 194.8 152.5C194.8 152.6 194.4 152.8 193.9 153C193.4 153.1 192.9 153.4 192.7 153.6C192.6 153.8 192.3 154 192.1 154C191.7 154 191.1 154.4 187.8 156.9C186.4 157.8 185.1 158.8 184.8 159.1C184.4 159.3 183.6 159.8 183.1 160.2C182.5 160.7 181.9 161 181.8 161C181.7 161 181.4 161.2 181.1 161.5C180.9 161.8 180.5 162 180.4 162C180.2 162 179.9 162.2 179.7 162.4C179.6 162.6 179.1 162.9 178.6 163.1C178.2 163.3 177.1 164 176.1 164.6C175.2 165.2 174.2 165.9 173.9 166C173.6 166.1 172.9 166.6 172.2 167C171.6 167.4 170.9 167.8 170.6 168C170.3 168.1 170 168.4 169.8 168.6C169.6 168.8 169.3 169 169.2 169C169.1 169 168.4 169.4 167.6 169.9C166 171 165.6 171.2 164.2 172C163.8 172.3 163 172.7 162.6 173C162.2 173.3 161.5 173.7 161 174C160.5 174.3 159.4 175 158.6 175.5C157.8 176 156.4 176.9 155.6 177.4C154.8 177.9 153.6 178.6 153 179C151 180.3 149.3 181.4 148.6 181.8C147.8 182.2 145.8 183.5 143.4 185C142.6 185.6 141.9 186 141.8 186C141.7 186 141.4 186.2 141.1 186.5C140.9 186.8 140.6 187 140.5 187C140.3 187 138.6 188 138.1 188.5C137.9 188.6 137.5 188.9 137.2 189C136.9 189.1 136.1 189.6 135.5 190C134.9 190.4 133.6 191.1 132.6 191.6C131.6 192.1 130.7 192.6 130.6 192.8C130.5 192.9 130.3 193 130 193C129.8 193 129.3 193.2 128.9 193.5C128.6 193.8 128.2 194 128 194C127.8 194 127.4 194.2 127.1 194.5C126.7 194.8 126.2 195 126 195C125.8 195 125.4 195.2 125.1 195.5C124.9 195.8 124.5 196 124.2 196C124 196 123.5 196.2 123.2 196.5C122.8 196.8 122.4 197 122.2 197C122 197 121.5 197.2 121.1 197.5C120.7 197.8 120.2 198 120 198C119.7 198 119.3 198.2 118.9 198.5C118.6 198.8 118.1 199 117.8 199C117.5 199 117.1 199.2 116.9 199.5C116.6 199.8 116.2 200 115.8 200C115.5 200 115 200.2 114.7 200.4C114.2 200.7 111.9 201.5 111.4 201.5C111.3 201.5 111.2 201.3 111.2 201.1ZM145.1 181.5C145.4 181.2 145.8 181 146.1 181C146.4 181 146.8 180.8 147 180.6C147.2 180.4 147.4 180.2 147.6 180.2C147.7 180.2 148.7 179.7 149.9 179.1C151.6 178.1 152.9 177.3 157.1 174.5C157.7 174.2 158.5 173.6 158.9 173.3C159.9 172.5 160 172.5 161.2 171.6C161.9 171.2 163.4 170.1 164.6 169.1C165.9 168.1 167.4 167 168.1 166.6C170.5 165.3 173.9 162.5 177.7 158.8C179.7 156.8 182.1 154.5 182.8 153.8C184.4 152.3 187.4 150.5 187.9 150.7C188.1 150.8 188.2 151.2 188.2 151.8C188.2 152.6 188.3 152.8 188.7 152.8C189.4 152.8 190.2 151.5 191.1 149.1C192.1 146.4 192.3 145.9 193.1 144.8C193.6 144.1 194 143.4 194 143.2C194 143.1 195.1 141.9 196.3 140.5C197.6 139.1 198.9 137.5 199.2 136.9C199.8 135.8 203.1 132.4 204.2 131.9C204.7 131.7 205 131.1 205 130.1C205 129.7 206.2 128.3 208.4 126C210.2 124 211.8 122.1 211.9 121.8C212 121.5 211.9 121 211.5 120.6C211.2 120.2 210.7 119.5 210.4 119C209.9 118.2 209.7 118.1 208.4 117.9C207.7 117.8 206.7 117.6 206.3 117.4C205.9 117.2 205.2 117 204.9 117C204.6 117 204.2 116.9 204.1 116.7C203.9 116.3 205.3 115 206 115C206.3 115 206.9 114.8 207.3 114.5C207.8 114.2 208.3 114 208.5 114C208.7 114 209.3 113.8 209.8 113.5C211.5 112.6 213.7 112.7 214.4 113.7C214.7 114 214.6 114.3 213.6 115.3C213 115.9 212.5 116.6 212.6 116.7C212.9 117.2 213.6 117 214.1 116.5C214.4 116.2 214.7 116 214.9 116C215 116 215.4 115.8 215.6 115.5C216.2 114.8 217.9 114.8 218.9 115.5C219.3 115.8 219.8 116 220.1 116C221.3 116 219.8 117.4 218.1 117.8C217.4 118 215.8 119.2 215.8 119.5C215.8 120 216.6 120 217.2 119.5C217.5 119.2 218.1 119 218.4 119C218.7 119 219.1 118.8 219.4 118.5C220 117.8 220.7 117.9 221.2 118.6C221.6 119.3 221.6 119.3 221 120.4C220.7 121.1 220.2 121.6 219.8 121.8C219.4 121.9 218.8 122.2 218.4 122.4C218 122.6 217.2 122.8 216.8 122.9C216.3 123 215.6 123.2 215.4 123.4C215.1 123.5 214.5 123.8 214.1 123.9C213.5 124 213.2 124.2 213.2 124.5C213.2 124.9 213.4 125 214.1 125C214.6 125 215.3 124.9 215.6 124.7C216.1 124.4 218.6 123.8 219.3 123.8C219.7 123.7 220.3 125.2 220.1 125.6C220 125.7 219.7 125.9 219.4 126C219.1 126.1 218.7 126.4 218.5 126.5C217.9 126.8 214.1 128 213.6 128C213.3 128 212.6 128.2 212 128.5C211.4 128.8 210.6 129 210.2 129C209.5 129 208 130.1 208 130.6C208 130.7 208.3 130.7 208.7 130.7C209.1 130.6 210.3 130.3 211.4 130.1C212.5 130 213.9 129.6 214.5 129.4C215.1 129.2 215.7 129 215.9 129C216.1 129 216.7 128.7 217.3 128.2C219.1 127.1 219.3 127.2 219.8 129.2C220 129.9 220.3 130.4 220.5 130.4C220.8 130.4 221.5 128.6 222 126.8C222.1 126.4 222.4 125.8 222.6 125.5C223.1 124.7 223.1 123.6 222.6 122.7C222.2 122 222.2 122 223.1 120.7C224.1 119.1 224.2 118.9 223.5 118C223.3 117.7 223 116.8 222.9 116.1C222.7 114.6 222.1 114 221.1 114C220.7 114 220 113.8 219.5 113.5C219 113.2 218.4 113 218.2 113C217.5 113 215.2 111.7 215.2 111.3C215.2 111.2 215.3 111 215.4 111C215.6 111 217 110.8 218.6 110.6C221.1 110.3 222.1 110.3 224.1 110.5C225.5 110.6 227.1 110.8 227.8 110.9C228.4 110.9 229 110.9 229.2 110.7C229.6 110.5 229.5 110.4 228.9 109.9C228.5 109.5 227.7 109.1 227.1 109C226.6 108.8 226 108.6 225.8 108.4C225.3 108 220 108.1 217.8 108.6C216.8 108.8 215.3 109 214.5 109C213.5 109 212.7 109.2 212 109.5C211.5 109.8 210.8 110 210.4 110C210.1 110 209.5 110.2 209.1 110.5C208.7 110.8 208.2 111 207.9 111C207.6 111 207 111.2 206.6 111.5C206.1 111.8 205.5 112 205.3 112C205 112 204.5 112.2 204.2 112.5C203.8 112.8 203.4 113 203.2 113C203 113 202.5 113.2 202.1 113.5C201.7 113.8 201.2 114 201 114C200.9 114 200.4 114.2 200.1 114.5C199.7 114.8 199.2 115 199 115C198.8 115 198.4 115.2 198.2 115.4C198.1 115.6 197.6 115.9 197.1 116.1C195 117.2 192.5 119 192.5 119.6C192.5 119.8 193.1 120.3 193.8 120.9C195.6 122.3 196.7 123.5 196.9 124.2C197.1 124.9 196.3 126.2 194.6 128C193.8 128.8 193.2 129.6 193.2 129.9C193.2 130.4 194.1 130.3 194.9 129.7C195.3 129.4 196.1 128.8 196.7 128.4C198.6 127.1 199 126.4 199 124.6C199 123.1 198.9 123 197.9 121.6C197.2 120.8 196.8 120 196.8 119.8C196.9 119.5 198.2 118.6 199.2 118.1C199.5 118 200 117.8 200.4 117.6C201.1 117.3 201.3 117.4 202.3 117.9C202.9 118.3 203.6 118.8 203.9 119C204.3 119.5 204.3 119.5 203.7 119.7C203.3 119.9 202.7 120 202.3 120C201.5 120 200.9 120.4 201.1 120.7C201.4 121.2 202.9 121.3 205.1 121C207.6 120.7 208.8 120.8 208.7 121.5C208.7 121.7 208.3 121.9 207.9 122C207.5 122.1 206.9 122.3 206.6 122.5C206.2 122.6 205.5 122.9 204.9 123C204.2 123.1 203.9 123.3 203.9 123.5C203.9 123.9 205.2 124 206.8 123.7L207.8 123.5L207.3 124.1C207 124.5 206.2 125.1 205.6 125.6C204.1 126.5 203 127.5 201.2 129.3C199.8 130.7 199.4 130.9 197.1 131.1C195.7 131.1 195.7 131.8 197.1 132C198.5 132.2 198.5 132.7 197.1 133.6C195.5 134.6 194.4 135 192.9 135C192.2 135 191.3 135.2 190.9 135.4C190.5 135.6 189.7 135.9 189.3 136C188.6 136.1 188.4 136.3 188.3 136.7C188.2 137.3 188.2 137.3 190.2 137.1C191.2 137 192.5 136.9 193 136.7C194 136.5 194.5 136.7 194.5 137.2C194.5 138.4 193.3 139 189.6 139.8C188.8 140 187.9 140.3 187.6 140.5C187.3 140.6 186.8 140.9 186.4 141C186 141.1 185.8 141.4 185.8 141.6C186 142 187.6 142.1 188.4 141.7C189.5 141.1 191.4 140.9 191.6 141.3C191.9 141.8 189.7 143.8 188.6 144C187.3 144.3 185.3 145 184.2 145.5C183.7 145.8 183.1 146 183 146C182.8 146 182.4 146.2 182.1 146.5C181.7 146.8 181.2 147 181 147C180.4 147 180.1 147.7 180.6 147.9C181.1 148.1 181.9 147.9 183.6 147.4C188.6 145.8 188.2 145.9 188.7 146.3C189.1 146.7 189.1 146.8 188.6 147.8C188.1 149 186.9 150 186.1 150C185.8 150 185.5 150.1 185.4 150.2C185.3 150.4 184.7 150.7 183.9 150.9C183.2 151.1 182.4 151.5 182.1 151.7C181.9 151.8 181.4 152 181.1 152C180.8 152 180.3 152.2 180 152.5C179.7 152.8 179.2 153 179 153C178.7 153 178.1 153.2 177.6 153.5C177.1 153.8 176.4 154 176.2 154C176 154 175.7 154.2 175.5 154.4C175.3 154.6 174.9 154.8 174.4 154.9C173.6 155.1 173 155.4 173 155.8C173 156.2 174.9 156 175.9 155.5C176.8 155 178.3 154.8 178.2 155.2C178.2 155.9 175.6 157.6 171.8 159.3C171 159.7 169.9 160.2 169.2 160.5C168.6 160.8 168 161 167.9 161C167.4 161 161 164.3 161.1 164.6C161.1 164.7 161.6 164.9 162.1 165C163.1 165 166.1 163.8 170.4 161.6C172.5 160.5 173.2 160.3 172.4 161.1C172.2 161.3 172 161.6 172 161.7C171.6 162.5 165.5 166.9 163.1 168.1C162.7 168.3 162.2 168.6 161.9 168.7C160.8 169.4 160.6 169.5 160 169.8C159.7 169.9 158.5 170.5 157.4 171C156.3 171.6 155.3 172 155.1 172C155 172 154.6 172.2 154.4 172.5C154.1 172.8 153.7 173 153.4 173C152.5 173 152 173.3 152 173.7C152 174.2 153.7 174.1 154.7 173.5C155.7 172.9 157 173 156.5 173.6C156.3 173.8 156 174 155.7 174C155.5 174 155.2 174.1 155.1 174.2C155.1 174.3 154.1 175 152.9 175.6C150.4 177.1 146.8 179.4 146.6 179.8C146.5 179.9 146.3 180 146 180C145.7 180 145.4 180.2 145.2 180.5C145.1 180.8 144.8 181 144.5 181C144 181 143.6 181.4 143.9 181.8C144.1 182.1 144.6 182 145.1 181.5ZM172.7 156.4C172.8 156.1 172.6 156 172.2 156C171.5 156 171.1 156.3 171.4 156.8C171.6 157.2 172.6 156.9 172.7 156.4ZM198.4 145.6C198.5 145.4 199 145.2 199.5 145.1C200.3 144.9 202.7 143.7 204.4 142.4C207.3 140.3 208.7 139 212.4 134.9C213 134.2 214 132.8 214 132.5C214 131.8 212.9 132.2 211.4 133.4C211 133.8 207.9 135.3 203.3 137.5C202.2 138 201.8 138.4 202.2 138.8C202.5 139.1 204.9 138.5 207 137.6C207.5 137.4 208.1 137.2 208.2 137.3C208.5 137.4 207.4 138.7 206.1 139.7C205.5 140.1 205.1 140.4 205 140.5C204.6 141 201.5 142.8 199.5 143.8C196.9 145.1 196.6 145.3 196.9 145.7C197.1 146.1 198.2 146.1 198.4 145.6ZM146.8 143.6C147.4 143.1 147.9 142.6 148 142.5C148.1 142.4 148.8 141.8 149.5 141.1L150.9 139.8L152.8 139.9C154.7 140.1 154.8 140 154.8 139.5C154.8 139.1 154.6 139 154.2 139C153.9 139 153.2 138.8 152.7 138.5C152.2 138.2 151.4 138 151.1 138C150.7 138 150.1 137.8 149.9 137.6C149.6 137.5 148.9 137.2 148.2 137C146.9 136.6 146 136.1 146 135.6C146 135.4 146.5 134.8 147.2 134.2C147.8 133.6 148.6 132.8 149 132.5C150.2 131.4 151.3 130.4 152.5 129.5C153.1 129 153.8 128.5 154 128.2C154.2 128 155.2 127.2 156.2 126.4C157.9 124.9 158.3 124.4 157.8 124.1C157.6 124 156.9 124.2 154.8 125.2C153.2 126 150.4 127.7 149.4 128.5C148.9 128.9 144.8 130 143.7 130C143.4 130 142.8 130.2 142.5 130.4C142.2 130.7 141.3 130.9 140.6 131C139.7 131.1 139.4 131.2 139.4 131.5C139.4 132 140.9 132.1 142.8 131.6C146 130.8 146.9 131.4 145 133C144.4 133.6 143.7 134 143.5 134C143.3 134 142.9 134.2 142.6 134.4C142.3 134.6 141.6 134.8 141 134.9C140.4 135 139.7 135.3 139.4 135.5C139.1 135.8 138.6 136 138.3 136C137.9 136.1 137.6 136.3 137.5 136.6C137.4 137.2 138.9 137.2 139.2 136.5C139.5 136 140.7 135.8 141.6 136.2C142.3 136.4 142.1 136.7 140.2 138.5C139.3 139.4 138.5 140.3 138.5 140.4C138.5 140.8 139.7 140.2 141.5 138.9C143.2 137.8 144.4 137.5 144.7 138.1C144.8 138.4 144.4 138.9 143.5 139.8C142.7 140.5 142 141.4 141.8 141.8C141.5 142.5 141.5 142.5 142.1 142.2C142.5 142.1 143.6 141.1 144.6 140.1C146 138.8 146.7 138.2 147.1 138.2C148.2 138.2 148.1 138.9 147 140.5C146.5 141.3 146 142.1 146 142.2C146 142.3 145.8 142.6 145.5 142.9C144.9 143.4 144.8 144.5 145.4 144.5C145.5 144.5 146.2 144.1 146.8 143.6ZM331.8 114.2C329.7 113.2 326.8 110.5 325.5 108.3C324.2 106 324.7 106.2 319.2 106.1C314.7 106.1 314.2 106 313.4 105.5C312.9 105.2 312.3 105 312 105C311.2 105 307.8 103 305.9 101.5C303.8 99.8 301.4 97.1 300.6 95.7C299.2 93.2 299 92.4 299 89.9C299 88.5 298.9 87.5 298.7 87.3C298.5 87.1 297.9 87 297.3 87C296.6 87 295.6 86.8 295 86.5C294.4 86.2 293.5 86 293 86C292.5 86 291.8 85.8 291.4 85.5C291 85.2 290.4 85 290.1 85C289.9 85 289.3 84.8 288.9 84.5C288.5 84.2 288 84 287.8 84C287.6 84 287.2 83.8 286.8 83.5C286.5 83.2 286 83 285.8 83C285.6 83 285.2 82.8 285 82.6C284.8 82.4 284.1 81.9 283.4 81.4C280.8 79.8 278.2 76.9 277.9 75.3C277.6 74 276.5 73.2 274.7 73C273.8 72.9 272.8 72.6 272.5 72.4C272.1 72.2 271.6 72 271.2 72C270.8 72 270.2 71.8 269.8 71.5C269.5 71.2 269 71 268.8 71C268.5 71 268 70.8 267.7 70.6C266.9 70 266.3 69.6 265.2 69C264.2 68.4 262 66.3 262 65.9C262 65.8 261.8 65.4 261.6 65.1C261.2 64.7 260.9 64 260.1 61.1C259.9 60.5 259.7 60.4 259 60.4C249.3 60.1 246.6 59.9 245.2 59.5C244.4 59.2 243.5 59 243.2 59C242 59 240 56.3 240 54.7C240 54.3 239.8 53.8 239.5 53.5C239 53 238.7 53 234.7 53C231.1 53 230.3 52.9 229.1 52.5C228.3 52.2 227.3 52 226.9 52C226.5 52 225.8 51.8 225.4 51.5C225 51.2 224.4 51 224.2 51C223.9 51 223.4 50.8 223.1 50.5C222.7 50.2 222.3 50 222.1 50C221.5 50 219.3 47.6 218.6 46.2C218 45 217.9 44.7 218.1 42.4C218.2 40.1 218.2 40 217.6 39.6C217.3 39.4 216.5 39.2 215.7 39.1C215 39 214.1 38.7 213.8 38.5C213.5 38.2 213 38 212.8 38C212.1 38 208.6 35.3 207.4 33.7C206.9 33.1 206.5 32.8 206.1 32.8C205.9 32.8 204.6 34.3 203 36.4C199.5 41 197.3 43.2 195.2 44.2C193.7 45 193.3 45.1 192.1 44.9C191.4 44.9 190.5 44.6 190.2 44.4C189.9 44.2 189.4 44 189.2 44C188.6 44 186.3 42.1 185.6 41C185.1 40.2 184.8 40 184.2 40C183.7 40 183 40.2 182.6 40.5C182.2 40.8 181.7 41 181.4 41C181.1 41 180.5 41.2 180.1 41.5C179.7 41.8 179.1 42 178.8 42C178.4 42 177.8 42.2 177.4 42.5C177 42.8 176.3 43 175.8 43C175.4 43 174.6 43.2 174 43.4C172.6 43.9 168.4 44.1 167.1 43.8C164.3 43 163.4 42.7 163 42.4C162.4 41.8 160.4 41.9 159.4 42.5C159 42.8 158.3 43 158 43C157.7 43 156.9 43.2 156.4 43.5C155.8 43.8 155 44 154.5 44C154 44 153 44.2 152.2 44.4C148.3 45.4 144 44.2 141.8 41.4L140.6 40L138.1 40.1C136.8 40.2 134.3 40.2 132.7 40C130.8 39.9 129.5 39.9 129.2 40C129 40.1 128.5 40.8 128.1 41.4C126.9 43.3 124.4 46.3 122.6 48C121 49.5 120.3 49.9 118.2 50.9C117.8 51.1 117.3 51.4 117.2 51.5C117.2 51.6 116.7 51.9 116.2 52.1C115.8 52.3 115.2 52.6 115 52.7C113.6 53.5 112.5 54 112 54C111.7 54 111.1 54.2 110.6 54.5C109.2 55.2 104.1 55.2 102.9 54.5C101.2 53.5 100.9 53.6 99 55.3C98.1 56.2 95.9 58.1 94.1 59.5C89.6 63 89.6 63 89.2 63C89 63 88.6 63.2 88.2 63.5C87.9 63.8 87.5 64 87.3 64C87.1 64 86.5 64.2 86 64.5C85.2 64.9 84.5 65 82.5 65C80.1 65 79.9 64.9 78.9 64.3C78.3 63.9 77.6 63.3 77.2 62.8C76.9 62.4 76.5 62 76.4 62C76.1 62 75 63.2 75 63.6C75 63.9 71.6 68.7 70.6 69.9C70 70.7 69.1 71.8 68.6 72.4C66.5 75.2 61.8 79 60.5 79C60.2 79 59.6 79.2 59.1 79.4C58.6 79.6 57.9 79.7 57.5 79.7C56.6 79.7 54.5 79 53.5 78.3C52.5 77.6 51 76 51 75.6C51 75.4 50.8 75.2 50.6 75C50.4 74.8 50.1 74.3 49.9 73.9C49.7 73.5 49.4 73 49.3 72.8C48.5 71.4 48 70.2 48 69.9C48 69.7 47.8 69 47.5 68.5C47.2 68 47 67.3 47 66.9C47 66.6 46.8 66 46.6 65.6C46.4 65.2 46.1 64.4 46 63.9C45.9 62.9 45.8 62.9 45 62.9C44 62.9 42.3 64 41.7 65C41.3 65.6 41.3 65.9 41.5 66.7C41.7 67.2 41.9 70.1 41.9 73.9C42 79.1 42 80.6 41.6 82.2C41.4 83.3 41.1 85.1 41 86.1C40.9 87.1 40.6 88.3 40.4 88.7C40.2 89.1 40 89.8 40 90.2C40 90.6 39.8 91.2 39.5 91.6C39.2 92 39 92.6 39 92.8C39 93.1 38.8 93.6 38.5 93.9C38.2 94.3 38 94.7 38 95C38 95.2 37.8 95.7 37.5 96C37.2 96.3 37 96.8 37 96.9C37 97.7 33.1 102.9 31.1 104.8C28.1 107.5 26.2 109 25.8 109C25.6 109 25.4 109.1 25.2 109.3C24.7 109.8 22.3 111 21.8 111C21.6 111 20.9 111.2 20.4 111.5C19.1 112.2 15.8 112.2 14.3 111.5C13.7 111.2 13 111 12.7 111C12 111 8.4 107.3 7.7 105.8C7 104.2 6.4 101.9 6.4 100.4C6.4 99.3 6.9 96.6 7.3 95.4C7.8 93.7 8.1 93.1 8.3 92.6C8.5 92.3 8.8 91.8 9 91.4C9.7 89.9 12.3 86.3 14.1 84.4C18.8 79.1 27.8 70.8 32.5 67.3C32.9 67 33.9 66.2 34.6 65.6C36.2 64.2 36.3 63.6 35.5 61.5C35.2 60.8 35 59.9 35 59.5C35 59.2 34.8 58.2 34.5 57.4C34.2 56.7 34 55.7 34 55.3C34 54.9 33.8 54 33.5 53.2C33.2 52.4 33 51.2 33 50.5C33 49.8 32.8 48.4 32.6 47.3C32.2 44.9 32.2 42.1 32.6 40C32.8 39.1 33 37.9 33 37.2C33 36.6 33.2 35.7 33.5 35.1C33.8 34.6 34 33.9 34 33.7C34 32.4 37.4 28 38.4 28C38.5 28 38.9 27.8 39.1 27.5C39.6 26.9 42.1 26.6 44.2 26.9C45.4 27 45.7 27.2 46.8 28.2C48.5 29.8 51 33.7 51 34.7C51 34.9 51.2 35.5 51.5 35.9C51.8 36.3 52 36.9 52 37.2C52 37.6 52.2 38.2 52.5 38.6C52.8 39 53 39.7 53 40.1C53 40.5 53.2 41.1 53.4 41.5C53.6 41.9 53.9 42.8 54 43.4C54.3 45 55.1 47 55.5 47C55.7 47 56.8 46 58 44.8C59.3 43.6 60.4 42.6 60.5 42.5C61 42.4 61.3 43.9 61.2 46.2L61.1 48.5L59.9 49.5C56.7 52.2 56.6 52.5 57.5 54.4C57.8 54.9 58 55.5 58 55.8C58 56 58.2 56.6 58.5 57.1C58.8 57.6 59 58.2 59 58.4C59 58.6 59.2 59.2 59.5 59.7C59.9 60.6 60.1 61 60.9 63.4C61.1 63.9 61.4 64.7 61.6 65C61.8 65.4 62 65.9 62 66.2C62 66.4 62.2 66.9 62.5 67.2C62.8 67.6 63 68.1 63 68.3C63 68.8 64.1 69.8 64.7 69.8C66.3 69.8 69.8 66.3 72.2 62.4C72.8 61.3 74 58.3 74 57.7C74 57.5 74.2 57.1 74.5 57C75 56.7 75.1 56.6 74.9 54.7C74.8 53.5 74.6 52.2 74.5 51.8C74.4 51.3 74.2 48.8 74 46.3C73.9 43.8 73.6 41.2 73.5 40.4C73.3 39.7 73.1 35.8 73 31.7C72.9 27.6 72.7 23.3 72.5 22.1C72.3 19.9 72.2 17.4 72.2 16.3C72.3 15.6 73.3 14.5 74.6 13.6C75.2 13.2 76.2 12.4 76.8 11.9C80.2 9.1 83.3 6.8 83.6 6.9C84.1 7.1 84.2 7.8 84.3 10.1C84.3 11.2 84.4 12.9 84.5 13.8C84.6 14.8 84.9 18.3 85 21.7C85.1 25.1 85.4 28.6 85.5 29.4C85.6 30.2 85.9 33.2 86 36C86.1 38.8 86.4 42 86.6 43.1C86.8 44.2 87 45.9 87 46.8C87 49.8 88 55.4 88.6 56.4C89.3 57.4 90 57.6 91.4 57.1C92 56.9 92.8 56.5 93.1 56.3C93.4 56.1 93.9 55.7 94.3 55.5C95.7 54.5 97.3 53.2 98.2 52.1L99.1 50.9L99.2 46.3C99.2 43.7 99.4 40.8 99.5 39.9C99.7 38.9 99.9 37 100 35.6C100.1 34.3 100.4 32.3 100.6 31.3C100.8 30.2 101.1 29 101.1 28.5C101.2 27.8 101.5 27.4 102.1 27C103.6 26 103.7 26 108.4 23.6C110.4 22.6 112.4 21.5 112.8 21.3C113.9 20.6 114.1 21.1 113.8 23.2C113.6 24.1 113.4 25.8 113.2 26.9C112.8 30.2 112.5 32.5 112.2 34C112.1 34.8 112 38.3 111.9 41.8L111.9 48.2L112.6 49C113.5 49.9 113.7 49.9 115.4 49.1C116.9 48.4 118.2 47.3 119.1 45.9C120.2 44.3 122 40.8 122 40.2C122 40 122.2 39.2 122.5 38.5C123.1 37 123.1 36.7 122.7 36.2C121.2 34.7 118.9 31.7 117.8 29.6C117.1 28.5 116.3 25.3 116.3 24.1C116.2 22.9 117.1 19.9 117.8 19C118.5 18 119.5 17 119.9 17C120 17 120.6 16.8 121.1 16.5C123.3 15.5 125.9 16.3 128.3 18.7C129.4 19.9 129.8 20.6 130.4 22.2C131.1 24 131.1 24.3 131.1 28.4C131.1 30.7 131 33.3 130.9 34.1C130.6 36.6 131.3 36.9 136.6 36.2C140 35.8 139.9 35.9 140.1 34.9C141.4 28.5 142.8 25.1 146 21.3C147.9 18.8 151.8 15.4 153 15.1C153.3 15 153.9 14.7 154.2 14.5C154.5 14.2 155 14 155.3 14C155.5 14 156.3 13.8 157 13.5C158.2 13 158.9 13 162.2 13C165.8 12.9 166 13 167.1 13.6C168.2 14.2 168.4 14.3 169.9 14.1C170.8 14 172.1 13.7 172.9 13.5C173.6 13.2 174.6 13 175.1 13C175.5 13 176.3 12.8 176.9 12.5C177.9 12 180.1 11.8 180.4 12.3C180.5 12.5 179.8 15.7 179.5 16.1C179.4 16.3 179.2 16.9 179 17.6C178.9 18.3 178.6 19.2 178.4 19.6C178.2 20 178 20.6 178 20.9C178 21.2 177.8 22.1 177.5 22.8C177.3 23.5 176.8 25 176.5 26C176.2 27 175.7 28.5 175.5 29.2C175.3 30 174.8 31.4 174.5 32.4C174.2 33.3 173.8 34.8 173.5 35.7C173 37.3 173 37.8 173.7 38.6C174.3 39.2 178.8 39.2 179.9 38.5C180.3 38.2 180.9 38 181.2 38C181.9 38 184.1 36.8 185.4 35.6C186 35.2 186.8 34 187.4 33C187.9 31.9 188.5 30.7 188.8 30.2C189.9 28.4 191.3 26.1 191.8 25.2C192.1 24.7 193.1 23.1 193.9 21.8C196.3 17.7 196.4 17.5 196.9 16.9C197.6 16.3 200 16 205.8 16C209.3 16 210.3 16.1 210.4 16.3C210.5 16.5 210 17.6 209.4 18.6C208.7 19.7 208 21 207.8 21.4C207.6 21.8 207.2 22.6 206.9 23.1C205.7 25.1 205 26.6 205 26.8C205 27 204.8 27.3 204.5 27.7C204.2 28 204 28.4 204.1 28.6C204.3 29.1 204.7 29.1 204.9 28.6C205 28.3 205.5 27.7 206 27.1C206.6 26.5 207 25.7 207.1 25.2C207.2 24.7 207.5 24.1 207.7 24C207.8 23.8 208 23.5 208 23.4C208 23 210.5 19.8 211.5 18.9C213.2 17.4 214.3 17 216.5 17C218.2 17 218.5 17.1 219.4 17.7C222.1 19.7 221.5 21.5 217 24.9C215.7 25.9 214.5 26.8 214.2 26.9C212.4 27.8 210.5 29.6 210.5 30.4C210.5 32.2 211.9 34.5 213.4 34.9C213.6 35 214.1 35.3 214.5 35.5C215 35.9 215.5 36 217.8 36L220.5 36L221.7 34.6C224 31.8 228.2 28 229 28C229.2 28 229.6 27.8 229.9 27.5C230.3 27.2 230.7 27 231 27C231.2 27 231.7 26.8 232.1 26.5C232.5 26.2 233.1 26 233.3 26C233.6 26 234.2 25.8 234.8 25.5C235.6 25.1 236.2 25 240 25C243.8 25 244.4 25.1 245.2 25.5C245.8 25.8 246.5 26 246.9 26C247.3 26 247.9 26.2 248.2 26.5C248.6 26.8 249 27 249.1 27C249.6 27 252 28.8 252.5 29.6C253.4 30.9 253.7 31 255.6 31C256.8 31 257.9 31.2 258.8 31.5C259.6 31.8 260.9 32 261.6 32C263.5 32 265 32.6 265 33.4C265 33.7 264.9 34.1 264.7 34.2C264.5 34.3 263.8 35.2 263 36.2C262.3 37.2 261.6 38 261.5 38C261.4 38 260.7 38.8 260 39.8C259.2 40.8 258.5 41.7 258.4 41.9C258.2 42 256.4 44.1 254.4 46.6C252.3 49.1 250.6 51.2 250.5 51.2C250.4 51.3 250.1 51.8 249.7 52.2C248.3 54.1 248.6 55.4 250.4 56.3C251.5 56.8 252.1 56.9 256.3 56.9C260.9 57 261 57 262.1 56.4C262.7 56 263.7 55.2 264.3 54.4C266.2 52.2 267.8 50.9 269.9 49.9C270.3 49.7 270.8 49.4 270.9 49.3C271 49.1 271.3 49 271.6 49C271.9 49 272.5 48.8 272.8 48.5C273.2 48.2 273.7 48 274 48C274.3 48 275 47.8 275.6 47.5C276.2 47.3 277.9 47 279.8 46.8C282.4 46.5 283.3 46.5 285.6 46.8C287.1 47 288.7 47.4 289.1 47.6C289.5 47.8 290 48 290.2 48C290.4 48 290.8 48.2 291.2 48.5C291.5 48.8 292 49 292.1 49C292.3 49 292.6 49.2 292.9 49.5C293.1 49.8 293.4 50 293.5 50C294 50 296 51.6 297.1 52.9C297.8 53.6 298.5 54.3 298.7 54.3C299.1 54.3 302.3 52.2 302.9 51.6C303 51.5 303.6 51 304.2 50.6C304.9 50.2 305.9 49.5 306.5 48.9C307.2 48.4 307.8 48 307.8 48C307.9 48 308.5 47.7 309.1 47.2C309.6 46.8 310.4 46.3 310.8 46.1C311.1 45.8 312.1 45.1 312.9 44.4C314.5 43.2 316.1 42.5 316.8 42.7C317 42.7 317.7 43.1 318.4 43.4C319.1 43.7 319.9 44.1 320.2 44.2C320.6 44.4 321 44.6 321.2 44.7C321.9 45.1 323.1 45.7 324.5 46.4C325.3 46.7 326.4 47.3 327 47.6C328.1 48.2 328.4 48.5 328.1 49.1C327.8 49.6 323.2 53 322.8 53C322.7 53 322.4 53.2 322.3 53.4C322.1 53.6 321 54.4 319.9 55.1C318.8 55.9 317.3 56.9 316.5 57.5C314.2 59.2 313 60 312.9 60C312.8 60 312.2 60.5 311.5 61C310.8 61.6 310.1 62 310 62C309.9 62 309.6 62.2 309.3 62.4C309 62.7 308.4 63.2 307.9 63.5C307.4 63.8 306.4 64.6 305.7 65.1C305 65.7 303.7 66.6 302.9 67.1C302.1 67.7 301 68.5 300.5 69C300 69.4 299.2 70.1 298.6 70.4C297.5 71.2 294.9 73.2 291.6 75.8C289.1 77.7 288.5 78.7 289 79.7C289.3 80.4 291.4 82 291.9 82C292.1 82 292.6 82.2 292.9 82.5C293.3 82.8 293.8 83 294.1 83C294.4 83 295.2 83.2 296 83.5C296.9 83.8 298.1 84 299.3 84C301.2 84 301.3 84 302.6 83C303.4 82.5 304.1 82 304.2 82C304.3 82 304.6 81.8 304.9 81.5C305.1 81.2 305.4 81 305.6 81C305.7 81 306.1 80.8 306.4 80.5C306.8 80.2 307.3 80 307.6 80C307.9 80 308.5 79.8 308.8 79.5C309.1 79.3 309.9 79 310.5 78.9C311.1 78.9 312.1 78.6 312.6 78.4C313.4 78.1 314.6 78 317.8 78C321.5 78 322.1 78.1 323 78.5C323.5 78.8 324.4 79 324.9 79C325.5 79 326.2 79.2 326.6 79.5C327 79.8 327.5 80 327.7 80C328.2 80 329.8 81.2 331.3 82.8C332.5 83.9 333.1 84.3 334.1 84.6C334.9 84.8 335.6 85 335.9 85C336.1 85 336.6 85.3 337 85.6C337.4 85.9 337.9 86.3 338.2 86.5C339.3 87.4 339.9 88.5 340.2 90.2C340.5 91.5 340.5 92.1 340.3 92.9C340.1 93.4 340 94.1 340 94.4C340 95.1 338.2 98 336.8 99.5C336.3 100.1 335.3 101 334.5 101.5C333.7 102 333.1 102.4 333 102.5C332.9 102.6 332.6 102.8 332.2 103C330.5 103.7 328.1 105.2 328.1 105.5C327.9 106.2 330.7 109.4 332.7 110.6C333.9 111.5 334 111.6 334 112.5C334 113.3 333.9 113.6 333.3 114C332.9 114.3 332.5 114.5 332.5 114.5C332.4 114.5 332.1 114.3 331.8 114.2ZM194.2 109.5C194.8 109.2 195.4 109 195.6 109C195.8 109 196.2 108.8 196.6 108.5C196.9 108.2 197.4 108 197.7 108C197.9 108 198.5 107.8 198.9 107.5C199.4 107.2 200 107 200.2 107C200.4 107 201.1 106.8 201.6 106.5C202.1 106.2 202.8 106 203.1 106C203.5 106 204.2 105.8 204.7 105.5C205.2 105.2 205.9 105 206.2 105C206.4 105 207.3 104.7 208.1 104.4C210.7 103.2 209.2 102.6 205.9 103.5C204.8 103.8 203.6 104 203.2 104C202.8 104 201.8 104.2 201.1 104.5C200.3 104.8 199.3 105 199 105C198.6 105 198.1 105.2 197.8 105.5C197.4 105.8 197.1 106 196.9 106C196.6 106 193.9 107.8 192.6 108.8C191.3 109.9 192.5 110.4 194.2 109.5ZM235.2 106.5C236 106.2 236.8 106 237 106C237.3 106 237.6 105.8 237.8 105.6C237.9 105.4 238.4 105.1 238.9 104.9C240.6 104.2 246 98.6 246 97.5C246 96.8 244.9 96.8 243.9 97.5C243.5 97.8 242.8 98 242.4 98C242.1 98 241.5 98.1 241.1 98.3C240.5 98.6 240.4 98.5 240.1 98.1C239.6 97.5 239.6 97.5 240.6 96.2C241.4 95.2 241.7 95 242.4 95C243.8 95 244 94.8 244 93.6C244 92.4 243.7 92 242.5 92C241.7 92 241.5 92.2 240.8 93C240.4 93.5 240 94 240 94.1C240 94.2 239.3 95.1 238.5 96.1C236.4 98.7 234.4 100.3 232.4 101C232.1 101.1 231.8 101.4 231.8 101.6C231.8 102.1 233.7 102.2 234.2 101.7C234.9 101 237.5 100.2 239.5 100C240.7 99.9 241.8 99.7 242.1 99.6C243.6 99 240.7 102.1 239 103C238.5 103.2 237.9 103.5 237.6 103.7C234.7 105.2 233.3 105.5 229.3 105.7C227.2 105.8 225.9 106 225.7 106.2C225 106.9 226.7 107.3 230.6 107.1C233.2 107.1 234.2 106.9 235.2 106.5ZM26.3 102.5C28.7 101.3 30 100.3 31.3 98.9C32.7 97.4 34.5 94.8 35.1 93.5C35.3 93 35.6 92.5 35.7 92.4C35.9 92.3 36 91.9 36 91.5C36 91.2 36.2 90.6 36.4 90.3C36.8 89.8 37.3 87.1 37.8 83.6C38.1 81.1 37.9 73.9 37.4 72C37.2 71.3 37 70.3 37 69.9C36.9 69.3 36.7 69.1 36.3 69C35.9 69 35.5 69.1 35.4 69.3C35.2 69.5 34.3 70.2 33.3 70.9C32.4 71.6 30.7 72.9 29.6 73.9C28.6 74.8 27.2 76 26.6 76.5C24.6 78 22.8 79.9 20.5 82.9C20.1 83.5 18 87.3 18 87.5C18 87.6 17.8 88.2 17.5 88.8C17.1 89.6 17 90.2 17 92.8C17 94.9 17.1 96.1 17.3 96.5C17.5 96.9 17.8 97.6 18 98.1C18.4 99.2 20.6 101.6 22 102.4C23.4 103.1 25 103.2 26.3 102.5ZM198.6 99.2C199.3 99 200.4 98.5 201 98.1C201.6 97.8 202.5 97.3 202.9 97.1C203.3 96.9 204.1 96.3 204.6 95.9C205.6 95.1 206 94.9 208.9 93.4C209.8 92.9 210.8 92.4 211 92.3C211.2 92.2 212 91.8 212.8 91.5C213.5 91.2 214.6 90.7 215.2 90.5C215.8 90.2 216.5 90 216.7 90C216.9 90 217.5 89.8 217.9 89.5C218.3 89.2 218.8 89 219 89C219.8 89 219.8 88.4 219 87.7C218.2 87 218.2 87 215 87L211.7 87L210.3 85.9C209 84.8 209 84.7 209.2 83.7C209.3 82.6 209.3 82.6 207.8 81.4C206.9 80.8 206.2 80.1 206.2 79.9C206.2 79.8 205.5 78.9 204.5 78C202.7 76.3 202.7 76.3 202.9 75.3C203 74.4 203 74.3 202.1 73.7C201.5 73.3 200.9 73 200.8 73C200.6 73 200.2 72.7 199.8 72.4C199.5 72.1 199.1 71.7 198.8 71.5C198.6 71.2 198 70.6 197.5 70C196.6 68.9 196.3 68.8 195.6 69.5C195.2 70 194.9 70 191.5 69.9C189 69.9 187.7 70 187.5 70.2C186.8 70.9 187.6 71 192 71L196.5 71L197.7 72C198.4 72.5 199.1 73 199.4 73C199.8 73 200 73.2 200.2 73.8L200.5 74.6L198.3 74.3C197.1 74.2 194.7 74.1 192.9 74.1C190.2 74.1 189.6 74.2 189.6 74.5C189.6 74.8 189.9 74.9 190.6 74.9C191.5 75 196.1 75.5 199.4 75.9C200.2 76 200.6 76.2 201 76.7C201.3 77 201.4 77.4 201.3 77.5C201.2 77.6 199.3 77.8 197 77.9C193.6 78.1 192.9 78.2 192.9 78.5C192.9 78.8 193.4 78.9 195.2 79.1C199.2 79.4 203.3 80 203.6 80.3C203.8 80.4 203.8 80.6 203.6 80.9C203.4 81.3 202.7 81.4 200.8 81.6C199.4 81.8 198.1 82 198 82.2C197.3 82.8 198.1 83 201.8 83C205.4 83 205.5 83 205.9 83.6C206.2 84 206.2 84.5 206.1 85.1C206 85.8 206 86.2 206.5 86.8C207 87.5 207.2 88.4 206.8 88.6C206.6 88.7 206 88.9 205.5 89C204.9 89.1 203.6 89.5 202.5 89.9C201.5 90.2 200.6 90.5 200.4 90.4C200.1 90.3 200 89.9 200 89.1C200 88.1 199.9 88 198.3 86.6C197.4 85.8 196 84.5 195.3 83.7C194.5 83 193.3 81.9 192.5 81.4C187.9 78.3 188 78.4 188 77.5C188 76.3 185 72.9 182.8 71.6C181.4 70.8 181.1 70.5 181 69.8C180.9 69.3 180.5 68.6 180 68.2C179.1 67.2 179.1 66.9 179.9 66.3C181.1 65.4 180.6 65 178.1 65C176 65 175.6 65.4 176.7 66.8C177.7 68 178.8 70.3 178.8 71C178.8 71.6 180.1 72.9 181 73.1C181.4 73.2 182 73.6 182.4 74.1C182.8 74.6 183.6 75.6 184.2 76.3C185.7 77.9 185.4 78.3 183.1 77.5C182.2 77.2 181.2 77 180.8 77C180.4 77 179.7 76.8 179.2 76.5C178.7 76.2 178.1 76 177.8 76C177.6 76 177 75.8 176.6 75.5C176.2 75.2 175.6 75 175.2 75C174.8 75 174.2 74.8 173.8 74.5C172.9 73.9 167.3 73 164.4 73C162.7 73 162 72.9 161.3 72.5C160.8 72.2 160 72 159.6 72C159.2 72 158.5 71.8 158.1 71.6C157.7 71.4 156.4 71.1 155 71C153.6 70.9 152.3 70.7 152 70.5C151.8 70.4 151 70.2 150.4 70.2C149.5 70.2 149.2 70.3 149.3 70.6C149.3 70.9 149.7 71.2 150.1 71.5C150.5 71.7 151.1 72.1 151.3 72.4C151.7 72.9 152 73 154 73C156 73 158.7 73.3 158.9 73.6C159.3 73.9 158.6 74.7 157.8 74.9C156.6 75.2 156.5 75.8 157.7 76C158.1 76 159.4 75.8 160.6 75.5C162.4 75.1 163.5 75 168 75C172.9 75 173.9 75.1 173.4 75.7C173.3 75.8 172 75.9 170.6 76C168.8 76.1 167.9 76.3 167.4 76.6C166.1 77.5 166.7 77.6 172.1 77.8C177 78 177.9 78.1 182.7 79.1C183.8 79.4 183.1 79.9 181.4 80.1C179.1 80.3 176.9 81 176.9 81.5C176.9 81.8 177.3 81.9 178.9 81.9C180.9 82 182.3 81.9 185 81.2C186.4 80.9 186.5 80.9 187.7 81.5C188.5 81.9 189 82.3 189 82.6C189 82.9 186.2 85 185.7 85C185.6 85 185.5 85.2 185.5 85.5C185.5 85.8 185.7 86 186 86C186.3 86 186.8 85.8 187.2 85.5C187.5 85.2 188 85 188.2 85C188.4 85 188.8 84.8 189.2 84.5C189.9 83.9 191.5 83.8 191.9 84.3C192.7 85.1 192.2 85.6 189.2 87.5C188.5 87.9 188 88.4 188 88.5C188 89.1 188.9 89.1 190 88.5C192.4 87.3 192.9 87.1 193.5 86.9C194.3 86.7 195 86.9 195 87.3C195 87.5 194.4 88 193.6 88.4C192.1 89.1 190.8 90.2 190.8 90.5C190.8 90.8 191.7 90.8 191.9 90.5C191.9 90.4 192.3 90.2 192.7 90.1C193.1 90 193.5 89.8 193.8 89.6C194 89.5 194.4 89.2 194.8 89.1C195.1 89 195.6 88.7 195.9 88.4C196.3 88.1 196.6 88 196.9 88.2C197.5 88.5 197.8 89.2 197.6 89.5C197.6 89.6 196.8 90.1 195.9 90.5C194.1 91.3 191 93.8 191 94.4C191 95 191.6 94.8 193.2 93.9C194.1 93.4 194.9 93 195 93C195.1 93 195.6 92.7 196.2 92.2C197.5 91.4 197.8 91.3 197.8 92C197.8 92.5 196.1 93.8 195.2 94.1C194.9 94.2 194.3 94.6 193.9 95C193.3 95.6 193.2 95.8 193.6 95.9C193.8 96 194.3 95.8 194.7 95.6C195.8 94.8 196.3 94.5 197 94.2C197.3 94.1 197.8 93.8 198 93.7C198.4 93.5 198.7 93.3 200.8 92.4C203 91.4 203.4 91.3 204.5 90.9C205.1 90.6 206.6 90.2 207.7 90C208.8 89.7 210 89.4 210.3 89.2C210.9 88.9 212.8 89 212.9 89.4C213 89.6 212.6 89.8 212.1 90C211 90.3 207.2 92.2 205.6 93.1C205.1 93.4 204.3 93.9 203.9 94.1C202.7 94.7 202.1 95.1 201.6 95.5C201.4 95.7 200.9 96 200.5 96.2C198.6 97.2 197.1 98.3 196.6 98.7C196.1 99.3 196.3 100.1 196.9 99.9C197.2 99.8 197.9 99.5 198.6 99.2ZM318.5 99.5C319.1 99.2 319.9 99 320.2 99C320.6 99 321.2 98.8 321.5 98.6C322.1 98.1 323 96.4 323 95.6C323 95.3 323.2 94.5 323.5 93.9C323.7 93.4 324.1 92.6 324.2 92.2C324.6 91.5 324.8 91 326.1 89.3C326.6 88.6 327 87.8 327 87.6C327 87.1 326 87.1 325.4 87.6C325.1 87.8 324.5 88 323.9 88C323.4 88 322.5 88.2 322 88.5C321.5 88.8 320.7 89 320.4 89C320 89 319.3 89.2 318.8 89.5C318.3 89.8 317.7 90 317.4 90C317.1 90 316.5 90.2 316.1 90.5C315.7 90.8 315.2 91 314.9 91C314.7 91 314.2 91.2 313.8 91.5C313.5 91.8 313 92 312.8 92C312.5 92 312.1 92.2 311.9 92.5C311.6 92.8 311.2 93 311 93C310.1 93 307.2 96.3 307.2 97.3C307.2 97.7 308.3 98.8 309.2 99.4C310.1 99.9 310.4 100 313.8 100C316.8 100 317.5 99.9 318.5 99.5ZM219 96.5C219.1 96.3 219.2 95.7 219.2 95.4C219.2 94.5 220.3 92.1 221.6 90.2C222.2 89.4 222 89 220.9 89C220.3 89 220 89.1 219.8 89.7C219.7 90.1 219.4 90.5 219.3 90.8C218.3 92.5 218 93.3 218 94.9C218 95.9 218.1 96.7 218.2 96.8C218.5 97.1 218.7 97 219 96.5ZM248.2 94.1C248.9 92.9 249.4 88.8 248.9 88.3C248.4 87.8 248.2 88 247.5 89.8C247.2 90.8 247 91.9 247 93C247 95.3 247.3 95.6 248.2 94.1ZM329.5 94C330.3 93.4 331.6 92.2 332.4 91.3C333.8 89.9 334 89.5 333.9 88.9C333.9 88.2 333.8 88.1 333.1 88C332.4 88 332.1 88.2 330.8 89.7C328.5 92.2 327 95 328 95C328.1 95 328.8 94.5 329.5 94ZM120.6 72.6C121.1 72.4 122.5 72.2 123.7 72.1C124.9 72 126.7 71.7 127.6 71.5C129.9 70.9 131.1 70.8 131 71.4C130.9 71.7 130.6 71.9 130.1 72C129.7 72.1 129.3 72.3 129.3 72.6C129.2 73.2 130.9 73.2 132.3 72.5C132.9 72.2 133.8 72 134.3 72C135.4 72 137.2 71.1 137.2 70.6C137.2 70.3 136.7 70.3 134.9 70.3C133.7 70.3 131.4 70.2 130 70.1C127.8 70 127 70 124.8 70.5C123.4 70.8 122 71 121.8 71C121.5 71 120.8 71.2 120.2 71.5C119.7 71.8 119 72 118.6 72C118 72 117.6 72.3 117.9 72.8C118.1 73.1 119.6 73.1 120.6 72.6ZM279.9 68.4C281.5 66.7 284.4 64.2 284.8 64C285 64 285.5 63.6 286.1 63.2C286.7 62.8 287.7 62.1 288.5 61.6C289.3 61.1 290 60.5 290.1 60.4C290.7 60 292.3 59 292.5 59C292.6 59 292.8 58.8 293 58.6C293.3 58.3 293.9 57.8 294.3 57.5C294.9 57.1 295.2 56.7 295.2 56.3C295.3 55.4 293.9 54.1 292.5 53.7C291.4 53.3 291.2 53.3 290.1 53.6C289.5 53.8 288.6 54 288.3 54C288 54 287.4 54.2 287.1 54.5C286.7 54.8 286.2 55 285.9 55C285.5 55 285.2 55.2 285.1 55.3C285 55.5 284.5 55.9 284 56.1C283.5 56.3 282.7 56.8 282.1 57.1C281.6 57.5 281 57.8 280.8 57.9C280.5 58 280.2 58.2 279.9 58.5C279.7 58.7 278.9 59.2 278.3 59.6C276.4 60.8 273.4 63.4 272.6 64.5C271.8 65.7 271.7 67.4 272.6 68.2C274 69.5 275.1 70 276.7 70L278.4 70L279.9 68.4ZM42.8 58.7L44.1 57.5L43.5 56.3C43.2 55.6 43 54.8 43 54.5C43 54.2 42.8 53.5 42.5 53C42.2 52.5 42 51.8 42 51.5C42 51.3 41.8 50.6 41.5 50C41.2 49.4 41 48.6 41 48.3C41 48 40.8 47.3 40.5 46.8C40.2 46.2 40 45.5 40 45.2C40 44.9 39.8 44.3 39.5 43.9C39.2 43.5 39 42.8 39 42.5C39 42.1 38.8 41.6 38.6 41.4C38.5 41.1 38.2 40.4 38 39.8C37.7 38.6 36.8 37.7 36.5 38.3C36.2 38.7 36.2 40.5 36.5 42.4C36.6 43.2 36.9 45 37 46.4C37.1 47.8 37.3 49.2 37.5 49.5C37.6 49.7 37.9 50.8 38 51.7C38.1 52.7 38.4 53.9 38.6 54.3C38.8 54.6 39 55.3 39 55.7C39 56.2 39.2 57 39.5 57.5C39.8 58 40 58.7 40 59.1C40 59.8 40.5 60.3 41.1 60.1C41.4 60 42.1 59.4 42.8 58.7ZM236.4 49C237.4 48.4 238.4 47 239.1 45.6C239.7 44.5 241.1 42.3 241.5 41.9C241.7 41.8 242.4 41 243 40.2C243.6 39.5 245.1 37.8 246.2 36.5C247.4 35.2 248.6 33.8 249 33.3C250 32.2 250 31.5 248.8 30.7C246.3 29 243.2 30.3 238.4 35.1C234.5 39 231.2 43.3 230.5 45.2C230.2 46 230 46.9 230 47.1C230 47.7 231.1 48.8 232.3 49.3C233.9 49.9 235.2 49.9 236.4 49ZM158.9 39.4C159.6 39 160.3 38.6 160.5 38.4C160.6 38.3 160.8 37.2 160.9 36.1C161 35 161.2 33.7 161.4 33.1C161.6 32.6 161.8 31.4 162 30.6C162.2 29.8 162.4 29 162.5 28.8C162.7 28.7 162.9 28.1 163 27.5C163.2 26.4 164.1 23.8 164.5 22.9C164.8 22.2 165.7 19.5 166 18.5C166.1 18.1 166.1 17.4 166 17.1C165.8 16.5 164.6 16 163.6 16C162.6 16 160.8 17.2 159.8 18.5C158.8 19.7 156 25.1 156 25.8C156 25.9 155.8 26.4 155.5 27C155.1 27.8 154.6 29.2 153.5 33.2C152.7 36 153 38.5 154.5 39.7C155.1 40.2 157.4 40.1 158.9 39.4ZM123.1 30.6C123.3 30 122.8 25.6 122.4 24.8C122.2 24.4 122 23.8 122 23.6C122 23 121 21.2 120.6 21.1C119.8 20.8 119.7 21.4 119.9 23.8C120.2 25.9 120.4 26.7 121.4 28.9C121.6 29.3 121.8 29.9 122 30.3C122.3 31.1 122.9 31.2 123.1 30.6Z"/>
+    <clipPath id="as-clip"><use href="#as-mark"/></clipPath>
+    <linearGradient id="as-sheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" style="stop-color: var(--gold-bright); stop-opacity: 0"/>
+      <stop offset="0.5" style="stop-color: var(--gold-bright); stop-opacity: 0.95"/>
+      <stop offset="1" style="stop-color: var(--gold-bright); stop-opacity: 0"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav intro" id="nav">
+  <div class="wrap">
+    <button class="menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <svg class="bars" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg class="x" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+    <a class="nav-logo" href="#top" aria-label="Alvarado Style, back to top">
+      <svg viewBox="0 0 347 294" aria-hidden="true" focusable="false"><use href="#as-mark"/></svg>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a class="nav-sec" href="#concepts">Concepts</a>
+      <a class="nav-sec" href="#structural">Structural</a>
+      <a class="nav-sec" href="#demo">Demo</a>
+      <a class="nav-sec" href="#companies">Our companies</a>
+      <a class="nav-phone" href="tel:+18482231364"><small>Call us</small>848-223-1364</a>
+      <a class="btn btn-gold" href="#contact">Get a quote</a>
+    </nav>
+  </div>
+  <nav class="menu" id="menu" aria-label="Menu" hidden>
+    <a href="#concepts">Concepts</a>
+    <a href="#structural">Structural</a>
+    <a href="#demo">Demo</a>
+    <a href="#construction">Construction</a>
+    <a href="#work">Our Work</a>
+    <a href="#walkthrough">Walkthrough</a>
+    <a href="#companies">Our companies</a>
+    <a href="#contact">Contact</a>
+    <a class="menu-phone" href="tel:+18482231364">Call or text 848-223-1364</a>
+  </nav>
+</header>
+
+<main id="main">
+<div data-view="home" id="view-home">
+<section class="hero play" id="top" aria-label="Alvarado Style">
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <h1 class="hero-title">
+      <span class="hero-mark">
+        <svg class="hero-shadow" viewBox="0 0 347 294" aria-hidden="true" focusable="false"><use href="#as-mark"/></svg>
+        <svg class="hero-logo" viewBox="0 0 347 294" role="img" aria-label="Alvarado Style">
+          <use href="#as-mark"/>
+          <g clip-path="url(#as-clip)"><g transform="skewX(-20)"><rect class="hero-sheen" x="-200" y="-40" width="130" height="380" fill="url(#as-sheen)"/></g></g>
+        </svg>
+      </span>
+      <span class="hero-tag">Investor &amp; Family Focused Construction</span>
+    </h1>
+    <p class="hero-lede">35 years building in New Jersey. Get a contractor's opinion and a quick priced quote before you buy, build or swing a hammer.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-gold" href="#contact" data-need="keystone">Book a walkthrough</a>
+      <a class="btn btn-ghost" href="#walkthrough">See how it works</a>
+    </div>
+  </div>
+  <button class="replay" type="button" id="replay">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 8a5.5 5.5 0 1 0 1.6-3.9"/><path d="M2.5 1.8v2.8h2.8"/></svg>
+    Replay intro
+  </button>
+  <span class="cue" aria-hidden="true"></span>
+</section>
+
+<section class="featured" id="featured" aria-label="Featured project">
+  <div class="wrap">
+    <div class="feat" id="feat"></div>
+  </div>
+</section>
+
+<section class="divisions" id="divisions">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Alvarado Style Services</p>
+      <h2>One company. Four divisions.</h2>
+      <p>Alvarado Style Services is the general contractor. Each division is a specialized department under the same roof, so a project moves through demolition, structure and finish on one schedule with one point of contact.</p>
+    </div>
+    <div class="div-grid">
+      <a class="div-panel" href="#construction">
+        <div class="photo-slot" data-photo="div-construction" data-note="Finished exterior or whole-house renovation"></div>
+        <div class="div-body"><span class="c">CONSTRUCTION</span><p>Renovations, additions and new builds, managed from permits to punch list.</p><span class="more">See Construction</span></div>
+      </a>
+      <a class="div-panel" href="#concepts">
+        <div class="photo-slot" data-photo="div-concepts" data-note="Finished open-concept living space"></div>
+        <div class="div-body"><span class="c">CONCEPTS</span><p>Open-floor-plan transformations and interior remodeling.</p><span class="more">See Concepts</span></div>
+      </a>
+      <a class="div-panel" href="#structural">
+        <div class="photo-slot" data-photo="div-structural" data-note="LVL beam set in an opened wall"></div>
+        <div class="div-body"><span class="c">STRUCTURAL</span><p>LVL beams, flitch plates and headers, supplied or installed.</p><span class="more">See Structural</span></div>
+      </a>
+      <a class="div-panel" href="#demo">
+        <div class="photo-slot" data-photo="div-demo" data-note="Gutted interior, cleared and swept"></div>
+        <div class="div-body"><span class="c">DEMO</span><p>Interior and selective demolition, cleared and broom-clean.</p><span class="more">See Demo</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="walkthrough">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The Keystone Walkthrough</p>
+      <h2>Get a 35-year contractor's opinion before you start</h2>
+      <p>Buying a house, planning a project, or just have an idea and don't know where to begin? We walk it with you, give you a quick priced quote, and find the problems before anyone swings a hammer.</p>
+    </div>
+    <div class="ks-start">
+      <div><h3>Buying a home</h3><p>Walk it with us before you close, and know what the work will really cost.</p></div>
+      <div><h3>Starting a project</h3><p>Get a quick priced quote, with the hard parts found up front.</p></div>
+      <div><h3>Just an idea</h3><p>Bring a sketch or a photo. We'll show you where to start and what it takes.</p></div>
+    </div>
+
+    <h3 class="cmp-title">Same house. Two very different projects.</h3>
+    <div class="compare">
+      <div class="cmp-row cmp-head" aria-hidden="true">
+        <span></span>
+        <span class="cmp-col bad"><svg viewBox="0 0 18 18"><path d="M5 5l8 8M13 5l-8 8"/></svg>Without a walkthrough</span>
+        <span class="cmp-col good"><svg viewBox="0 0 18 18"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg>With Alvarado Style first</span>
+      </div>
+      <div class="cmp-row">
+        <span class="cmp-stage">The showing</span>
+        <div class="cmp-cell cmp-bad"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M5 5l8 8M13 5l-8 8"/></svg><div><span class="cmp-tag">Without a walkthrough</span>New paint and new carpet. The house looks fine.</div></div>
+        <div class="cmp-cell cmp-good"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><div><span class="cmp-tag">With Alvarado Style first</span>We find a soft floor under the tub and an outdated electrical panel.</div></div>
+      </div>
+      <div class="cmp-row">
+        <span class="cmp-stage">The price</span>
+        <div class="cmp-cell cmp-bad"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M5 5l8 8M13 5l-8 8"/></svg><div><span class="cmp-tag">Without a walkthrough</span>You guess at the rehab and hope it holds.</div></div>
+        <div class="cmp-cell cmp-good"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><div><span class="cmp-tag">With Alvarado Style first</span>You get a priced quote and use it to negotiate.</div></div>
+      </div>
+      <div class="cmp-row">
+        <span class="cmp-stage">Demo day</span>
+        <div class="cmp-cell cmp-bad"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M5 5l8 8M13 5l-8 8"/></svg><div><span class="cmp-tag">Without a walkthrough</span>Rot and old wiring turn up behind the walls. Work stops.</div></div>
+        <div class="cmp-cell cmp-good"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><div><span class="cmp-tag">With Alvarado Style first</span>No surprises. The fixes are already in the plan and the price.</div></div>
+      </div>
+      <div class="cmp-row">
+        <span class="cmp-stage">The open floor plan</span>
+        <div class="cmp-cell cmp-bad"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M5 5l8 8M13 5l-8 8"/></svg><div><span class="cmp-tag">Without a walkthrough</span>That wall holds up the second floor. Now you need an engineer and a beam.</div></div>
+        <div class="cmp-cell cmp-good"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><div><span class="cmp-tag">With Alvarado Style first</span>We spotted the bearing wall on day one. The beam is sized and ordered before demo.</div></div>
+      </div>
+      <div class="cmp-row cmp-result">
+        <span class="cmp-stage">The finish</span>
+        <div class="cmp-cell cmp-bad"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M5 5l8 8M13 5l-8 8"/></svg><div><span class="cmp-tag">Without a walkthrough</span>Change orders, delays and a blown budget.</div></div>
+        <div class="cmp-cell cmp-good"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><div><span class="cmp-tag">With Alvarado Style first</span>On budget, on schedule, and built right.</div></div>
+      </div>
+    </div>
+
+    <div class="ks-cta">
+      <a class="btn btn-cta" href="#contact" data-need="keystone">Book a Keystone Walkthrough</a>
+      <p>Or call or text <b>848-223-1364</b></p>
+    </div>
+  </div>
+</section>
+
+<section class="section on-navy" id="details">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Attention to detail</p>
+      <h2>We look where other contractors don't</h2>
+      <p>35 years of opening up New Jersey houses teaches you where problems hide. These are the places we check on every walkthrough.</p>
+    </div>
+    <div class="detail-grid">
+      <figure class="cutaway">
+        <svg viewBox="0 0 640 470" role="img" aria-labelledby="cw-title">
+          <title id="cw-title">Cutaway drawing of a two-story house marking the eight places we check: roof and attic, bathroom floors, bearing walls, window and door headers, flood elevation, sill plate, electrical panel and foundation.</title>
+          <rect class="cw-ground" x="0" y="340" width="640" height="130"/>
+          <path class="cw-water" d="M-10 306q10-6 20 0t20 0t20 0t20 0t20 0t20 0t20 0V340H-10Z"/>
+          <path class="cw-water" d="M510 306q10-6 20 0t20 0t20 0t20 0t20 0t20 0t20 0V340H510Z"/>
+          <path class="cw-line" d="M0 340H130M510 340H640"/>
+          <path class="cw-bfe" d="M0 292H640"/>
+          <text class="cw-label" x="8" y="284">BASE FLOOD ELEVATION</text>
+
+          <rect class="cw-fill" x="142" y="336" width="356" height="104"/>
+          <path class="cw-solid" d="M130 328h12v112h-12zM498 328h12v112h-12z"/>
+          <rect class="cw-solid" x="130" y="440" width="380" height="8"/>
+          <rect class="cw-solid" x="122" y="448" width="28" height="10"/>
+          <rect class="cw-solid" x="490" y="448" width="28" height="10"/>
+          <rect class="cw-struct" x="308" y="324" width="24" height="12"/>
+          <rect class="cw-struct" x="316" y="336" width="8" height="104"/>
+          <rect class="cw-fill" x="160" y="356" width="28" height="40" rx="2"/>
+          <path class="cw-line cw-thin" d="M166 365h16M166 372h16M166 379h16M166 386h16M174 356v-20"/>
+          <path class="cw-line" d="M372 440h12v-16h12v-16h12v-16h12v-16h12v-16h12v-16h12v-16"/>
+          <path class="cw-line cw-thin" d="M386 440L464 336"/>
+          <path class="cw-crack" d="M505 344l-4 10 5 9-5 11 4 10-3 10"/>
+          <path class="cw-water-line" d="M462 437h30"/>
+
+          <rect class="cw-struct" x="130" y="324" width="12" height="4"/>
+          <rect class="cw-struct" x="498" y="324" width="12" height="4"/>
+          <rect class="cw-fill" x="130" y="316" width="380" height="8"/>
+
+          <rect class="cw-fill" x="130" y="216" width="10" height="100"/>
+          <rect class="cw-fill" x="500" y="216" width="10" height="100"/>
+          <rect class="cw-struct" x="316" y="216" width="8" height="100"/>
+          <rect class="cw-glass" x="168" y="252" width="56" height="46"/>
+          <path class="cw-line cw-thin" d="M196 252v46M168 275h56"/>
+          <rect class="cw-struct" x="160" y="242" width="72" height="10"/>
+          <rect class="cw-fill" x="430" y="244" width="40" height="72"/>
+          <circle class="cw-knob" cx="462" cy="282" r="2.5"/>
+          <rect class="cw-struct" x="424" y="234" width="52" height="10"/>
+
+          <rect class="cw-fill" x="130" y="208" width="380" height="8"/>
+          <rect class="cw-fill" x="130" y="120" width="10" height="88"/>
+          <rect class="cw-fill" x="500" y="120" width="10" height="88"/>
+          <rect class="cw-struct" x="316" y="120" width="8" height="88"/>
+          <rect class="cw-glass" x="168" y="146" width="56" height="42"/>
+          <path class="cw-line cw-thin" d="M196 146v42M168 167h56"/>
+          <rect class="cw-struct" x="160" y="136" width="72" height="10"/>
+          <rect class="cw-glass" x="392" y="134" width="56" height="30"/>
+          <rect class="cw-struct" x="384" y="124" width="72" height="10"/>
+          <path class="cw-fill" d="M372 182h104v12a14 14 0 0 1-14 14h-76a14 14 0 0 1-14-14z"/>
+          <path class="cw-line cw-thin" d="M466 182v-12h-9"/>
+
+          <rect class="cw-fill" x="130" y="114" width="380" height="6"/>
+          <path class="cw-line cw-thin" d="M154 110q4.5-6 9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0"/>
+          <path class="cw-fill" d="M104 122L320 24L536 122H518L320 42L122 122Z"/>
+
+          <g aria-hidden="true">
+            <g class="spot" data-spot="1" transform="translate(320 80)"><circle class="spot-ring" r="15"/><circle class="spot-dot" r="15"/><text y="5">1</text></g>
+            <g class="spot" data-spot="2" transform="translate(424 212)"><circle class="spot-ring" r="15" style="animation-delay: .3s"/><circle class="spot-dot" r="15"/><text y="5">2</text></g>
+            <g class="spot" data-spot="3" transform="translate(320 262)"><circle class="spot-ring" r="15" style="animation-delay: .6s"/><circle class="spot-dot" r="15"/><text y="5">3</text></g>
+            <g class="spot" data-spot="4" transform="translate(196 247)"><circle class="spot-ring" r="15" style="animation-delay: .9s"/><circle class="spot-dot" r="15"/><text y="5">4</text></g>
+            <g class="spot" data-spot="5" transform="translate(585 306)"><circle class="spot-ring" r="15" style="animation-delay: 1.2s"/><circle class="spot-dot" r="15"/><text y="5">5</text></g>
+            <g class="spot" data-spot="6" transform="translate(136 326)"><circle class="spot-ring" r="15" style="animation-delay: 1.5s"/><circle class="spot-dot" r="15"/><text y="5">6</text></g>
+            <g class="spot" data-spot="7" transform="translate(174 376)"><circle class="spot-ring" r="15" style="animation-delay: 1.8s"/><circle class="spot-dot" r="15"/><text y="5">7</text></g>
+            <g class="spot" data-spot="8" transform="translate(504 392)"><circle class="spot-ring" r="15" style="animation-delay: 2.1s"/><circle class="spot-dot" r="15"/><text y="5">8</text></g>
+          </g>
+        </svg>
+        <figcaption><i aria-hidden="true"></i>Gold shows the structure: headers, bearing walls, the girder and the lally column.</figcaption>
+      </figure>
+
+      <ol class="spots">
+        <li><button class="spot-item" type="button" data-spot="1"><span class="n">1</span><span><b>Roof &amp; attic</b><span class="t">Old leaks, rotted sheathing and poor venting.</span></span></button></li>
+        <li><button class="spot-item" type="button" data-spot="2"><span class="n">2</span><span><b>Bathroom floors</b><span class="t">Soft subfloor and slow leaks under tubs and toilets.</span></span></button></li>
+        <li><button class="spot-item" type="button" data-spot="3"><span class="n">3</span><span><b>Bearing walls</b><span class="t">Which walls hold the house up, before anyone plans to take one out.</span></span></button></li>
+        <li><button class="spot-item" type="button" data-spot="4"><span class="n">4</span><span><b>Headers</b><span class="t">Sagging or undersized headers over windows and doors.</span></span></button></li>
+        <li><button class="spot-item" type="button" data-spot="5"><span class="n">5</span><span><b>Flood zone</b><span class="t">At the Shore, a big enough renovation can mean raising the house. We check before you commit.</span></span></button></li>
+        <li><button class="spot-item" type="button" data-spot="6"><span class="n">6</span><span><b>Sill plate</b><span class="t">Termite and water damage where the house sits on the foundation.</span></span></button></li>
+        <li><button class="spot-item" type="button" data-spot="7"><span class="n">7</span><span><b>Electrical panel</b><span class="t">Outdated panels and old wiring that insurance companies flag.</span></span></button></li>
+        <li><button class="spot-item" type="button" data-spot="8"><span class="n">8</span><span><b>Foundation</b><span class="t">Cracks, water in the basement and grading that sends rain toward the house.</span></span></button></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What we build</p>
+      <h2>Full-scope construction, under one roof</h2>
+      <p>From one bearing wall to a ground-up custom home. Each service is run by the division built for it, so nothing falls between trades.</p>
+    </div>
+    <div class="svc-groups">
+      <div class="svc-group" id="svc-style">
+        <header><span class="c">CONSTRUCTION</span><p>The full build, from permits to final punch.</p><a class="more" href="#construction">More about Construction</a></header>
+        <div class="svc-list">
+          <div class="svc"><h3>Full residential renovations</h3><p>Gut rehabs and whole-house updates planned around how you'll live in it or sell it.</p></div>
+          <div class="svc"><h3>Investor flip renovations</h3><p>Scopes priced against your ARV, with a timeline built for a fast sale.</p></div>
+          <div class="svc"><h3>Multifamily renovations</h3><p>Unit turns and building-wide upgrades scheduled to keep rents coming in.</p></div>
+          <div class="svc"><h3>ADU construction</h3><p>Accessory dwelling units and in-law suites that add rent and value.</p></div>
+          <div class="svc"><h3>New construction</h3><p>Ground-up homes and additions, from permit set to certificate of occupancy.</p></div>
+          <div class="svc"><h3>Custom &amp; high-end homes</h3><p>Shore homes and custom builds with the finish level the market expects.</p></div>
+          <div class="svc"><h3>Energy-efficient building</h3><p>Insulation, envelope and systems upgrades that cut operating costs.</p></div>
+          <div class="svc"><h3>Custom designs</h3><p>Built-ins, outdoor spaces and one-of-a-kind ideas, designed with you.</p></div>
+        </div>
+      </div>
+      <div class="svc-group" id="svc-concepts">
+        <header><span class="c">CONCEPTS</span><p>Layouts that live bigger and appraise higher.</p><a class="more" href="#concepts">More about Concepts</a></header>
+        <div class="svc-list">
+          <div class="svc"><h3>Open-floor-plan conversions</h3><p>Walls out, sightlines open, and a layout people walk into and want.</p></div>
+          <div class="svc"><h3>Interior remodeling</h3><p>Kitchens, baths, basements and finish work that photographs well and lasts.</p></div>
+          <div class="svc"><h3>Kitchen &amp; living reconfigurations</h3><p>Moving rooms around to fit how people actually use a house.</p></div>
+          <div class="svc"><h3>Finish selections</h3><p>Materials matched to the house and the budget, so nothing is over-built.</p></div>
+        </div>
+      </div>
+      <div class="svc-group" id="svc-structural">
+        <header><span class="c">STRUCTURAL</span><p>The steel and lumber that make the open plan possible.</p><a class="more" href="#structural">More about Structural</a></header>
+        <div class="svc-list">
+          <div class="svc"><h3>LVL &amp; glulam beams</h3><p>Fabricated and set to the engineer's drawings, flush or dropped.</p></div>
+          <div class="svc"><h3>Flitch plates</h3><p>Steel-and-wood beams for long spans and heavy loads.</p></div>
+          <div class="svc"><h3>Headers, posts &amp; point loads</h3><p>Load paths carried all the way down to the footing.</p></div>
+          <div class="svc"><h3>Structural repairs</h3><p>Sagging floors, framing corrections and foundation work.</p></div>
+        </div>
+      </div>
+      <div class="svc-group" id="svc-demo">
+        <header><span class="c">DEMO</span><p>Clean demolition so the build crew starts on day one.</p><a class="more" href="#demo">More about Demo</a></header>
+        <div class="svc-list">
+          <div class="svc"><h3>Interior gut-outs</h3><p>Down to the studs, ready for inspection and rough-in.</p></div>
+          <div class="svc"><h3>Selective demolition</h3><p>Taking out exactly what has to go and protecting what stays.</p></div>
+          <div class="svc"><h3>Structural &amp; full tear-downs</h3><p>Garages, additions and whole houses, cleared for new construction.</p></div>
+          <div class="svc"><h3>Debris removal</h3><p>Hauled away by our own trucks, with the site left broom-clean.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section work" id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Our Work</p>
+      <h2>Built by Alvarado</h2>
+      <p>Completed projects, organized by the division that did the work. Most renovations use all four: Demo clears the space, Structural opens it up, Concepts finishes it, and Construction runs the whole job.</p>
+    </div>
+    <div class="work-groups">
+      <div class="svc-group work-group" id="work-construction">
+        <header><span class="c">CONSTRUCTION</span><p>Whole-house renovations, additions and new builds. The broader construction work that brings the divisions together.</p></header>
+        <div class="work-grid" data-cat="construction"></div>
+      </div>
+      <div class="svc-group work-group" id="work-concepts">
+        <header><span class="c">CONCEPTS</span><p>Open-floor-plan transformations, interior remodeling and finish work that changes how a space looks and lives.</p></header>
+        <div class="work-grid" data-cat="concepts"></div>
+      </div>
+      <div class="svc-group work-group" id="work-structural">
+        <header><span class="c">STRUCTURAL</span><p>Beams, headers, LVLs and flitch plates. The structural work behind open-concept conversions and additions.</p></header>
+        <div class="work-grid" data-cat="structural"></div>
+      </div>
+      <div class="svc-group work-group" id="work-demo">
+        <header><span class="c">DEMO</span><p>Interior and selective demolition that gets a property ready for its next stage.</p></header>
+        <div class="work-grid" data-cat="demo"></div>
+      </div>
+    </div>
+    <div class="work-cta">
+      <a class="btn btn-cta" href="#contact" data-need="quote">Discuss your project</a>
+      <p>Have something like this in mind? Call or text <b>848-223-1364</b>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section on-navy kids" id="kids">
+  <div class="wrap">
+    <div class="section-head kids-head">
+      <p class="eyebrow">Family focused</p>
+      <h2><span class="dream">Dream it.</span><span class="build">We'll build it.</span></h2>
+      <p>For the kids, and the pets too. Give us an idea, even a drawing on a napkin, and we'll turn it into the room they never want to leave.</p>
+    </div>
+    <div class="kids-grid">
+      <article class="kid">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 6v38M34 6v38"/><rect x="10" y="14" width="24" height="7" rx="1"/><rect x="10" y="31" width="24" height="7" rx="1"/><path d="M38 12v32M44 12v32M38 18h6M38 25h6M38 32h6M38 39h6"/></svg>
+        <h3>Loft &amp; bunk beds</h3><p>Built-in bunks with ladders, storage stairs and reading lights.</p>
+      </article>
+      <article class="kid">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 12v32M17 12v32M6 12h11M6 22h11M6 32h11"/><path d="M17 12c12 0 13 28 27 28"/><path d="M17 18c9 0 10 26 27 26"/></svg>
+        <h3>Indoor slides</h3><p>From the loft to the playroom floor, the fun way down.</p>
+      </article>
+      <article class="kid">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="6" width="32" height="38" rx="2"/><circle class="dot" cx="16" cy="14" r="2.4"/><circle class="dot" cx="30" cy="12" r="2.8"/><circle class="dot" cx="22" cy="23" r="2.4"/><circle class="dot" cx="33" cy="27" r="2.4"/><circle class="dot" cx="15" cy="32" r="2.8"/><circle class="dot" cx="27" cy="37" r="2.4"/></svg>
+        <h3>Climbing walls &amp; ladders</h3><p>Rock walls, rope ladders and monkey bars, anchored into the framing.</p>
+      </article>
+      <article class="kid">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="6" width="36" height="38" rx="1"/><path d="M6 6l18 4v32l-18 2"/><path d="M9 17l12 1.5M9 27l12 1M9 37l12 .5"/><path d="M33 21l1.5 3 3.3.5-2.4 2.3.6 3.2-3-1.6-3 1.6.6-3.2-2.4-2.3 3.3-.5z"/></svg>
+        <h3>Secret doors &amp; hideouts</h3><p>Bookcase doors, under-stair forts and reading nooks.</p>
+      </article>
+      <article class="kid">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M21 44l2-16M29 44l-2-16"/><path d="M10 28h30"/><path d="M14 28V17l11-8 11 8v11"/><path d="M22 28v-6h6v6"/><path d="M38 28v16M43 28v16M38 33h5M38 39h5"/></svg>
+        <h3>Tree houses</h3><p>Built around the tree, with real framing and safe railings.</p>
+      </article>
+      <article class="kid">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M7 23L24 8l17 15"/><path d="M11 20v22h26V20"/><path d="M19 42v-9a5 5 0 0 1 10 0v9"/><path d="M20 16h8"/></svg>
+        <h3>Dog houses</h3><p>Raised, insulated and sized right for your dog.</p>
+      </article>
+      <article class="kid">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 42h14M16 30h14M28 18h14"/><path d="M9 42v3M27 30v3M39 18v3"/><path d="M31 18v-6l2-4 2 3h3l2-3 2 4v6"/><path d="M42 16c3 0 3.5-4 1.5-6"/></svg>
+        <h3>Cat walks &amp; cat houses</h3><p>Wall shelves, ceiling runs and cozy perches up high.</p>
+      </article>
+      <article class="kid">
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 44V14h6v6h5v-6h6v6h5v-6h6v30"/><path d="M20 44v-8a4 4 0 0 1 8 0v8"/><path d="M24 14V4l7 3-7 3"/></svg>
+        <h3>Dream playrooms</h3><p>A basement or attic turned into a castle, a spaceship or a fort.</p>
+      </article>
+    </div>
+    <div class="kids-cta">
+      <a class="btn btn-gold" href="#contact" data-need="kids">Tell us your idea</a>
+      <p>If they can dream it up, we can build it.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section process-band">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How a job runs</p>
+      <h2>From first walkthrough to keys</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="step-n">STEP 1</span><h3>Keystone Walkthrough</h3><p>We walk the house or talk through the idea with you, and look for the hard parts.</p></div>
+      <div class="step"><span class="step-n">STEP 2</span><h3>Quick priced quote</h3><p>A written price with the problems found up front, so you can decide with real numbers.</p></div>
+      <div class="step"><span class="step-n">STEP 3</span><h3>Build</h3><p>Demo, Structural and Concepts work on one schedule, run by Alvarado Style Services.</p></div>
+      <div class="step"><span class="step-n">STEP 4</span><h3>Punch &amp; handoff</h3><p>Final walk, punch list closed, and the keys back in your hands.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="companies">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The Alvarado Style family</p>
+      <h2>Everything around the jobsite, covered</h2>
+      <p>Alvarado Style Services is the parent company behind a small group of local businesses that keep projects and people moving.</p>
+    </div>
+    <div class="family">
+      <article class="fam"><p class="tag">Logistics</p><h3>Supply Run</h3><p>Jobsite delivery and logistics. We pick up contractor-ordered materials and drop them where the crew needs them, keeping the job moving.</p></article>
+      <article class="fam"><p class="tag">Hauling · Moving</p><h3>Holy Cow Services</h3><p>Hauling, facility work and moving, with box trucks, flatbeds and trailers ready to go.</p></article>
+      <article class="fam"><p class="tag">Nonprofit</p><h3>Grandsons</h3><p>Helping seniors through home transitions, from downsizing to move-in, with care and a plan.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact" style="padding-top: 0">
+  <div class="wrap contact">
+    <div class="area">
+      <div class="section-head" style="margin-bottom: 0">
+        <p class="eyebrow">Monmouth / Ocean County</p>
+        <h2>Building the Jersey Shore</h2>
+        <p>We work across Monmouth and Ocean County, and travel for the right project.</p>
+      </div>
+      <div class="towns">
+        <span>Toms River</span><span>Brick</span><span>Lakewood</span><span>Point Pleasant</span><span>Wall</span><span>Howell</span><span>Freehold</span><span>Manalapan</span><span>Long Branch</span><span>Asbury Park</span><span>Red Bank</span><span>Jackson</span>
+      </div>
+      <div class="reach">
+        <div class="reach-row"><span>Phone</span><b id="r-phone">848-223-1364</b><button class="copy" type="button" data-copy="r-phone">Copy</button></div>
+        <div class="reach-row"><span>Email</span><b id="r-email">bids@alvaradostyle.com</b><button class="copy" type="button" data-copy="r-email">Copy</button></div>
+        <div class="reach-row"><span>NJ HIC #</span><b>13VH00000000</b></div>
+        <div class="reach-row"><span>Follow</span>
+          <div class="social social-sm">
+            <a class="soc" data-social="instagram" href="#" aria-label="Alvarado Style on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c2.7 0 3 0 4 .1 1 0 1.5.2 1.9.3.5.2.8.4 1.2.8.4.4.6.7.8 1.2.1.4.3.9.3 1.9.1 1 .1 1.3.1 4s0 3-.1 4c0 1-.2 1.5-.3 1.9-.2.5-.4.8-.8 1.2-.4.4-.7.6-1.2.8-.4.1-.9.3-1.9.3-1 .1-1.3.1-4 .1s-3 0-4-.1c-1 0-1.5-.2-1.9-.3-.5-.2-.8-.4-1.2-.8-.4-.4-.6-.7-.8-1.2-.1-.4-.3-.9-.3-1.9-.1-1-.1-1.3-.1-4s0-3 .1-4c0-1 .2-1.5.3-1.9.2-.5.4-.8.8-1.2.4-.4.7-.6 1.2-.8.4-.1.9-.3 1.9-.3 1-.1 1.3-.1 4-.1M12 0C9.3 0 8.9 0 7.9.1 6.8.1 6.1.3 5.5.5c-.7.2-1.2.6-1.8 1.1C3.1 2.2 2.8 2.8 2.5 3.4 2.3 4 2.1 4.7 2.1 5.8 2 6.9 2 7.3 2 10v4c0 2.7 0 3.1.1 4.1 0 1.1.2 1.8.5 2.4.3.7.6 1.2 1.2 1.8.5.5 1.1.9 1.8 1.2.6.2 1.3.4 2.4.5 1 .1 1.4.1 4.1.1s3.1 0 4.1-.1c1.1 0 1.8-.2 2.4-.5.7-.3 1.2-.6 1.8-1.2.5-.5.9-1.1 1.2-1.8.2-.6.4-1.3.5-2.4.1-1 .1-1.4.1-4.1v-4c0-2.7 0-3.1-.1-4.1 0-1.1-.2-1.8-.5-2.4-.3-.7-.6-1.2-1.2-1.8C19.8 1.1 19.2.8 18.5.5 17.9.3 17.2.1 16.1.1 15.1 0 14.7 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg></a>
+            <a class="soc" data-social="tiktok" href="#" aria-label="Alvarado Style on TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 1h-3.5v14.3a3 3 0 1 1-3-3c.3 0 .7 0 1 .1V8.8a6.6 6.6 0 0 0-1-.1 6.5 6.5 0 1 0 6.5 6.5V8.4a8.4 8.4 0 0 0 4.9 1.6V6.5a4.9 4.9 0 0 1-4.9-4.9V1z"/></svg></a>
+            <a class="soc" data-social="facebook" href="#" aria-label="Alvarado Style on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 22v-8.2h2.8l.4-3.3h-3.2V8.4c0-.9.3-1.6 1.6-1.6h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.4v3.3h2.8V22h3.4z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form class="quote" id="quote">
+      <h3>Get a quick quote</h3>
+      <p>Tell us what you're thinking. We'll call you back to set up a walkthrough.</p>
+      <div class="form-2">
+        <div class="field"><label for="f-name">Name</label><input id="f-name" required autocomplete="name"></div>
+        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" required autocomplete="tel" inputmode="tel"></div>
+      </div>
+      <div class="form-2">
+        <div class="field"><label for="f-type">I am a</label>
+          <select id="f-type"><option>Homeowner</option><option>Home buyer</option><option>Investor / flipper</option><option>Developer</option><option>Landlord / property manager</option><option>Realtor</option></select></div>
+        <div class="field"><label for="f-addr">Town or address</label><input id="f-addr" placeholder="e.g. Toms River"></div>
+      </div>
+      <div class="field"><label for="f-job">What do you need?</label>
+        <select id="f-job">
+          <option value="keystone">Keystone Walkthrough before I buy</option>
+          <option value="quote">Quick quote on a project</option>
+          <option value="idea">I just have an idea</option>
+          <option value="kids">Kids room or pet build</option>
+          <option value="build">Renovation or new build</option>
+          <option value="concepts">Remodel or open floor plan (Concepts)</option>
+          <option value="structural">Beam or structural work (Structural)</option>
+          <option value="demo">Demolition (Demo)</option>
+        </select></div>
+      <div class="field"><label for="f-msg">What are you planning?</label><textarea id="f-msg" rows="4" placeholder="The house, the idea, your budget and timeline"></textarea></div>
+      <button class="btn btn-cta" type="submit" style="justify-self: start">Send</button>
+      <p class="form-msg" id="f-out" hidden></p>
+    </form>
+  </div>
+</section>
+</div>
+
+<div data-view="construction" id="view-construction" hidden>
+<section class="page-hero">
+  <div class="wrap">
+    <div class="page-copy">
+      <p class="crumb"><a href="#top">Alvarado Style Services</a><span>/</span><span>Construction</span></p>
+      <h1>Construction</h1>
+      <p class="lede">General contracting for renovations, additions and new builds across Monmouth and Ocean County. One company runs the job, coordinates the trades and hands you a finished property.</p>
+      <div class="hero-ctas"><a class="btn btn-gold" href="#contact" data-need="build">Get a quote</a><a class="btn btn-ghost" href="tel:+18482231364">Call 848-223-1364</a></div>
+    </div>
+    <div class="photo-slot" data-photo="page-construction" data-note="Finished whole-house renovation or new build, wide exterior shot"></div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">What we build</p><h2>The whole job, one point of contact</h2><p>From a gut renovation to a ground-up build, we price the whole scope, schedule every trade and stay on the job until the punch list is closed.</p></div>
+    <div class="svc-list cols-3"><div class="svc"><h3>Full residential renovations</h3><p>Gut rehabs and whole-house updates planned around how you'll live in it or sell it.</p></div><div class="svc"><h3>Additions &amp; new construction</h3><p>Ground-up homes and additions, from permit set to certificate of occupancy.</p></div><div class="svc"><h3>Investor flip renovations</h3><p>Scopes priced against your ARV, with a timeline built for a fast sale.</p></div><div class="svc"><h3>Multifamily renovations</h3><p>Unit turns and building-wide upgrades scheduled to keep rents coming in.</p></div><div class="svc"><h3>ADUs &amp; in-law suites</h3><p>Accessory dwelling units that add rent and value.</p></div><div class="svc"><h3>Custom &amp; high-end homes</h3><p>Shore homes and custom builds with the finish level the market expects.</p></div><div class="svc"><h3>Exterior improvements</h3><p>Siding, decks, roofing and entries that change the first impression.</p></div><div class="svc"><h3>Energy-efficient upgrades</h3><p>Insulation, envelope and systems upgrades that cut operating costs.</p></div></div>
+  </div>
+</section>
+<section class="section on-navy">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">How we run a job</p><h2>Coordinated, not pieced together</h2><p>Demolition, structure and finish work are our own divisions, so the schedule never waits on three different companies.</p></div>
+    <div class="steps"><div class="step"><span class="step-n">STEP 1</span><h3>Walkthrough &amp; quote</h3><p>We walk the property, find the hard parts and write a priced scope.</p></div><div class="step"><span class="step-n">STEP 2</span><h3>Plan &amp; permits</h3><p>Drawings, selections and permit paperwork lined up before demo day.</p></div><div class="step"><span class="step-n">STEP 3</span><h3>Build</h3><p>Demo clears it, Structural opens it, Concepts finishes it, all on one schedule.</p></div><div class="step"><span class="step-n">STEP 4</span><h3>Punch &amp; handoff</h3><p>Final walk, punch list closed, and the keys back in your hands.</p></div></div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Who we work with</p><h2>Built for the people who build and buy</h2></div>
+    <div class="audience">
+      <div><h3>Homeowners</h3><p>Renovations, additions and custom work, explained in plain language and priced before we start.</p></div>
+      <div><h3>Investors &amp; flippers</h3><p>Scopes priced against your ARV, timelines built for the sale, and the hard parts found before you close.</p></div>
+      <div><h3>Developers &amp; landlords</h3><p>Multifamily turns and building-wide upgrades scheduled to keep units rented.</p></div>
+      <div><h3>Builders &amp; contractors</h3><p>Need one piece of a bigger job? Structural and Demo take scopes inside your project.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section work">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Our Work</p><h2>Construction projects</h2></div>
+    <div class="work-grid" data-cat="construction"></div>
+  </div>
+</section>
+<section class="section page-cta">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Start here</p><h2>Tell us about the project</h2><p>Send the address, what you're planning and your timeline. We'll set up a walkthrough and come back with a priced quote.</p></div>
+    <div class="hero-ctas"><a class="btn btn-gold" href="#contact" data-need="build">Get a quote</a><a class="btn btn-ghost" href="#work">See all our work</a></div>
+    <p class="phone-line">Or call or text <b>848-223-1364</b></p>
+  </div>
+</section>
+</div>
+
+<div data-view="concepts" id="view-concepts" hidden>
+<section class="page-hero">
+  <div class="wrap">
+    <div class="page-copy">
+      <p class="crumb"><a href="#top">Alvarado Style Services</a><span>/</span><span>Concepts</span></p>
+      <h1>Concepts</h1>
+      <p class="lede">Interior transformations and open-concept spaces. We take the walls out, rework the layout and finish the room, so a house lives bigger and shows better.</p>
+      <div class="hero-ctas"><a class="btn btn-gold" href="#contact" data-need="concepts">Get a quote</a><a class="btn btn-ghost" href="tel:+18482231364">Call 848-223-1364</a></div>
+    </div>
+    <div class="photo-slot" data-photo="page-concepts" data-note="Finished open-concept kitchen and living room"></div>
+  </div>
+</section>
+<section class="section work">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Before and after</p><h2>The difference a layout makes</h2></div>
+    <div class="ba">
+      <figure><figcaption>Before</figcaption><div class="photo-slot" data-photo="concepts-before" data-note="The room before: wall in place, closed-off kitchen"></div></figure>
+      <figure><figcaption>After</figcaption><div class="photo-slot" data-photo="concepts-after" data-note="The same room after, from the same spot: wall out, one open space"></div></figure>
+    </div>
+    <div class="ba-copy">
+      <p>Same house, same footprint. The wall between the kitchen and the living room comes out, a beam carries the load, and the finished room is one open space with sightlines front to back.</p>
+      <p>When the wall is bearing, Structural sizes and sets the beam as part of the same job. Nothing is subbed out and nothing waits.</p>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">What we do</p><h2>Layouts that live bigger and appraise higher</h2></div>
+    <div class="svc-list cols-3"><div class="svc"><h3>Open-floor-plan conversions</h3><p>Walls out, sightlines open, and a layout people walk into and want.</p></div><div class="svc"><h3>Load-bearing wall removal</h3><p>When the wall holds the house up, the beam is sized to the engineer's drawing and set by Structural as part of the scope.</p></div><div class="svc"><h3>Interior remodeling</h3><p>Kitchens, baths, basements and finish work that photographs well and lasts.</p></div><div class="svc"><h3>Room reconfigurations</h3><p>Moving a kitchen, adding a bath, or turning three small rooms into one that works.</p></div><div class="svc"><h3>Finish work</h3><p>Trim, built-ins, flooring, tile and paint, done to the level the house deserves.</p></div><div class="svc"><h3>Finish selections</h3><p>Materials matched to the house and the budget, so nothing is over-built.</p></div></div>
+  </div>
+</section>
+<section class="section on-navy">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">How a Concepts job runs</p><h2>From closed rooms to one open space</h2></div>
+    <div class="steps"><div class="step"><span class="step-n">STEP 1</span><h3>Walkthrough</h3><p>We look at the layout, find the bearing walls and talk through what you want the space to do.</p></div><div class="step"><span class="step-n">STEP 2</span><h3>Layout &amp; price</h3><p>A plan for the new layout and a priced scope, with the structural work included.</p></div><div class="step"><span class="step-n">STEP 3</span><h3>Demo &amp; structure</h3><p>Demo opens the wall, Structural sets the beam, and the load is carried to the foundation.</p></div><div class="step"><span class="step-n">STEP 4</span><h3>Finish</h3><p>Floors patched, ceilings closed, trim and paint done. One room, ready to live in.</p></div></div>
+  </div>
+</section>
+<section class="section work">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Our Work</p><h2>Concepts projects</h2></div>
+    <div class="work-grid" data-cat="concepts"></div>
+  </div>
+</section>
+<section class="section page-cta">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Start here</p><h2>Show us the room</h2><p>Send a few photos of the space and tell us what you'd like it to become. We'll walk it with you and price the transformation.</p></div>
+    <div class="hero-ctas"><a class="btn btn-gold" href="#contact" data-need="concepts">Get a quote</a><a class="btn btn-ghost" href="#work">See all our work</a></div>
+    <p class="phone-line">Or call or text <b>848-223-1364</b></p>
+  </div>
+</section>
+</div>
+
+<div data-view="structural" id="view-structural" hidden>
+<section class="page-hero">
+  <div class="wrap">
+    <div class="page-copy">
+      <p class="crumb"><a href="#top">Alvarado Style Services</a><span>/</span><span>Structural</span></p>
+      <h1>Structural</h1>
+      <p class="lede">Beams, headers and the load path, built to the engineer's drawings. LVL beams, flitch plates and structural headers, supplied or installed, for contractors, builders and homeowners.</p>
+      <div class="hero-ctas"><a class="btn btn-gold" href="#contact" data-need="structural">Get a quote</a><a class="btn btn-ghost" href="tel:+18482231364">Call 848-223-1364</a></div>
+    </div>
+    <div class="photo-slot" data-photo="page-structural" data-note="LVL beam set in an opened wall, before drywall"></div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Three ways to work with us</p><h2>Supply it, install it, or run the whole scope</h2><p>Contractors and builders can bring us one piece of their job. Homeowners can hand us the whole wall. Either way, the beam is built to the drawings.</p></div>
+    <div class="tiers">
+      <div class="tier"><h3>Beam supply</h3><p>You have the drawings and your own crew. We put together the beam package to the plan and get it to the site.</p><ul><li>LVL plies, flitch plate steel, hangers and posts</li><li>Multi-ply beams assembled to spec</li><li>Jobsite delivery through Supply Run, our delivery company</li></ul></div>
+      <div class="tier"><h3>Fabricate &amp; install</h3><p>We build the beam, shore the structure, open the wall and set it, then carry the load down to the foundation.</p><ul><li>Temporary shoring before anything comes out</li><li>Beam, posts, hangers and bearing set and inspected</li><li>Framing left ready for the next trade</li></ul></div>
+      <div class="tier"><h3>Full structural scope</h3><p>Wall removal through finish, with our other divisions on the same schedule.</p><ul><li>Demo opens the wall</li><li>Structural sets the beam</li><li>Concepts closes it up and finishes the room</li></ul></div>
+    </div>
+  </div>
+</section>
+<section class="section on-navy">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Supply vs. install</p><h2>What's included</h2></div>
+    <div class="table-wrap">
+      <table class="inc">
+        <thead><tr><th>Scope</th><th>Supply</th><th>Install</th></tr></thead>
+        <tbody>
+          <tr><td>Review of the engineer's drawings</td><td class="yes"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></td><td class="yes"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></td></tr>
+          <tr><td>Material takeoff and beam package<small>LVL plies, steel plate, hangers, posts, bolts</small></td><td class="yes"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></td><td class="yes"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></td></tr>
+          <tr><td>Delivery to the jobsite<small>Through Supply Run</small></td><td class="yes"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></td><td class="yes"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></td></tr>
+          <tr><td>Temporary shoring</td><td class="no"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9h10"/></svg></td><td class="yes"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></td></tr>
+          <tr><td>Opening the wall<small>With Demo</small></td><td class="no"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9h10"/></svg></td><td class="yes"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></td></tr>
+          <tr><td>Setting the beam, posts and hangers</td><td class="no"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9h10"/></svg></td><td class="yes"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></td></tr>
+          <tr><td>Framing ready for inspection</td><td class="no"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9h10"/></svg></td><td class="yes"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></td></tr>
+          <tr><td>Patch and finish<small>With Concepts, as part of a full scope</small></td><td class="no"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9h10"/></svg></td><td class="yes"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="phone-line" style="margin-top: 18px">Engineering is by your engineer. We build to stamped drawings and don't provide engineering or permits for supply-only orders.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Products and services</p><h2>What we build and set</h2></div>
+    <div class="svc-list cols-3"><div class="svc"><h3>LVL &amp; glulam beams</h3><p>Laminated veneer lumber in 1¾ in. plies, built up 2-, 3- or 4-ply, depths from 9¼ to 18 in. Set flush or dropped.</p></div><div class="svc"><h3>Flitch plates</h3><p>A steel plate bolted between lumber plies for long spans and heavy loads where an LVL alone will not do.</p></div><div class="svc"><h3>Structural headers</h3><p>Headers for new and widened window and door openings, with jack and king studs sized to the load.</p></div><div class="svc"><h3>Posts, hangers &amp; bearing</h3><p>Point loads carried through posts, hangers and bearing plates down to a footing that can take them.</p></div><div class="svc"><h3>Temporary shoring</h3><p>Shoring walls set before anything comes out, so the house is never carrying itself on hope.</p></div><div class="svc"><h3>Structural repairs</h3><p>Sagging floors, sistered joists, framing corrections and foundation work where the load path has failed.</p></div></div>
+  </div>
+</section>
+<section class="section process-band">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">How a beam job runs</p><h2>From drawing to inspection</h2></div>
+    <div class="steps"><div class="step"><span class="step-n">STEP 1</span><h3>Drawings &amp; quote</h3><p>Send the engineer's drawing or a sketch with the span. We price supply or install.</p></div><div class="step"><span class="step-n">STEP 2</span><h3>Shore &amp; open</h3><p>Temporary walls carry the load, then the wall comes out.</p></div><div class="step"><span class="step-n">STEP 3</span><h3>Set the beam</h3><p>Beam, posts and hangers set and bolted, load carried to the foundation.</p></div><div class="step"><span class="step-n">STEP 4</span><h3>Inspect &amp; close</h3><p>Framing inspected, then closed up by your crew or by Concepts.</p></div></div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">For a fast quote</p><h2>What to send us</h2></div>
+    <ul class="checks">
+      <li><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span>The engineer's drawing, or a sketch of the wall and the opening you want</span></li>
+      <li><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span>The span, and what's above it: floor, roof or both</span></li>
+      <li><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span>Photos of the wall from both sides</span></li>
+      <li><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span>Supply only, or supply and install</span></li>
+      <li><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span>The town and when you need it</span></li>
+      <li><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span>Who's doing the demo and the finish, if not us</span></li>
+    </ul>
+  </div>
+</section>
+<section class="section work">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Our Work</p><h2>Structural projects</h2></div>
+    <div class="work-grid" data-cat="structural"></div>
+  </div>
+</section>
+<section class="section page-cta">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Request a quote</p><h2>Send us the drawing</h2><p>Supply only or full install, we'll come back with a price and a date.</p></div>
+    <div class="hero-ctas"><a class="btn btn-gold" href="#contact" data-need="structural">Request a structural quote</a><a class="btn btn-ghost" href="#work">See all our work</a></div>
+    <p class="phone-line">Or call or text <b>848-223-1364</b></p>
+  </div>
+</section>
+</div>
+
+<div data-view="demo" id="view-demo" hidden>
+<section class="page-hero">
+  <div class="wrap">
+    <div class="page-copy">
+      <p class="crumb"><a href="#top">Alvarado Style Services</a><span>/</span><span>Demo</span></p>
+      <h1>Demo</h1>
+      <p class="lede">Interior and selective demolition that gets a property ready for its next stage. We take out exactly what has to go, protect what stays, and leave the site broom-clean for the build crew.</p>
+      <div class="hero-ctas"><a class="btn btn-gold" href="#contact" data-need="demo">Get a quote</a><a class="btn btn-ghost" href="tel:+18482231364">Call 848-223-1364</a></div>
+    </div>
+    <div class="photo-slot" data-photo="page-demo" data-note="Gutted interior, down to the studs and swept"></div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">What we remove</p><h2>Clean demolition, ready for the rebuild</h2></div>
+    <div class="svc-list cols-3"><div class="svc"><h3>Interior gut-outs</h3><p>Down to the studs, ready for inspection and rough-in.</p></div><div class="svc"><h3>Selective demolition</h3><p>Taking out exactly what has to go and protecting what stays.</p></div><div class="svc"><h3>Kitchen &amp; bath strip-outs</h3><p>Cabinets, fixtures, tile and finishes removed for the remodel.</p></div><div class="svc"><h3>Wall removal</h3><p>Non-bearing walls out in a day. Bearing walls come out with Structural, shored and ready for the beam.</p></div><div class="svc"><h3>Flooring, tile &amp; finish removal</h3><p>Old floors, tile, paneling and ceilings taken back to a clean surface.</p></div><div class="svc"><h3>Structural &amp; full tear-downs</h3><p>Garages, additions and whole houses, cleared for new construction.</p></div><div class="svc"><h3>Debris removal</h3><p>Loaded onto our own trucks and hauled away.</p></div><div class="svc"><h3>Site preparation</h3><p>Swept, cleared and ready for inspection, rough-in or the next crew.</p></div></div>
+  </div>
+</section>
+<section class="section work">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Before and after</p><h2>Day one of the rebuild</h2></div>
+    <div class="ba">
+      <figure><figcaption>Before</figcaption><div class="photo-slot" data-photo="demo-before" data-note="Kitchen or room before demo"></div></figure>
+      <figure><figcaption>After</figcaption><div class="photo-slot" data-photo="demo-after" data-note="The same space stripped to the studs and swept"></div></figure>
+    </div>
+    <div class="ba-copy"><p>Demolition is the first day of the rebuild. What comes out, what stays and how clean we leave it decides how fast the next crew can start.</p></div>
+  </div>
+</section>
+<section class="section on-navy">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">How demo fits the job</p><h2>Protect, remove, haul, hand off</h2></div>
+    <div class="steps"><div class="step"><span class="step-n">STEP 1</span><h3>Protect</h3><p>Floors covered, finishes that stay masked off, dust barriers up.</p></div><div class="step"><span class="step-n">STEP 2</span><h3>Remove</h3><p>Exactly the scope on the sheet, with bearing walls shored before they come out.</p></div><div class="step"><span class="step-n">STEP 3</span><h3>Haul</h3><p>Debris loaded on our own trucks and off the site the same day the demo finishes.</p></div><div class="step"><span class="step-n">STEP 4</span><h3>Hand off</h3><p>Swept and ready for Structural, Concepts or your own crew.</p></div></div>
+  </div>
+</section>
+<section class="section work">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Our Work</p><h2>Demo projects</h2></div>
+    <div class="work-grid" data-cat="demo"></div>
+  </div>
+</section>
+<section class="section page-cta">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Need it cleared?</p><h2>Tell us what has to go</h2><p>Send a few photos and the address. We'll price the demo and the haul-away together.</p></div>
+    <div class="hero-ctas"><a class="btn btn-gold" href="#contact" data-need="demo">Get a quote</a><a class="btn btn-ghost" href="#work">See all our work</a></div>
+    <p class="phone-line">Or call or text <b>848-223-1364</b></p>
+  </div>
+</section>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <svg class="foot-logo" viewBox="0 0 347 294" role="img" aria-label="Alvarado Style"><use href="#as-mark"/></svg>
+      <div>
+        <p class="foot-tag">Alvarado Style Services</p>
+        <p>Investor &amp; Family Focused Construction</p>
+        <p class="foot-divs"><a href="#construction">Construction</a> · <a href="#concepts">Concepts</a> · <a href="#structural">Structural</a> · <a href="#demo">Demo</a></p>
+        <p>Monmouth and Ocean County, NJ · 848-223-1364</p>
+      </div>
+    </div>
+    <div class="foot-links">
+      <nav aria-label="Footer">
+        <a href="#walkthrough">Walkthrough</a><a href="#work">Our Work</a><a href="#kids">Kids &amp; pets</a><a href="#companies">Our companies</a><a href="#contact">Contact</a>
+      </nav>
+      <div class="social" aria-label="Social media">
+        <a class="soc" data-social="instagram" href="#" aria-label="Alvarado Style on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c2.7 0 3 0 4 .1 1 0 1.5.2 1.9.3.5.2.8.4 1.2.8.4.4.6.7.8 1.2.1.4.3.9.3 1.9.1 1 .1 1.3.1 4s0 3-.1 4c0 1-.2 1.5-.3 1.9-.2.5-.4.8-.8 1.2-.4.4-.7.6-1.2.8-.4.1-.9.3-1.9.3-1 .1-1.3.1-4 .1s-3 0-4-.1c-1 0-1.5-.2-1.9-.3-.5-.2-.8-.4-1.2-.8-.4-.4-.6-.7-.8-1.2-.1-.4-.3-.9-.3-1.9-.1-1-.1-1.3-.1-4s0-3 .1-4c0-1 .2-1.5.3-1.9.2-.5.4-.8.8-1.2.4-.4.7-.6 1.2-.8.4-.1.9-.3 1.9-.3 1-.1 1.3-.1 4-.1M12 0C9.3 0 8.9 0 7.9.1 6.8.1 6.1.3 5.5.5c-.7.2-1.2.6-1.8 1.1C3.1 2.2 2.8 2.8 2.5 3.4 2.3 4 2.1 4.7 2.1 5.8 2 6.9 2 7.3 2 10v4c0 2.7 0 3.1.1 4.1 0 1.1.2 1.8.5 2.4.3.7.6 1.2 1.2 1.8.5.5 1.1.9 1.8 1.2.6.2 1.3.4 2.4.5 1 .1 1.4.1 4.1.1s3.1 0 4.1-.1c1.1 0 1.8-.2 2.4-.5.7-.3 1.2-.6 1.8-1.2.5-.5.9-1.1 1.2-1.8.2-.6.4-1.3.5-2.4.1-1 .1-1.4.1-4.1v-4c0-2.7 0-3.1-.1-4.1 0-1.1-.2-1.8-.5-2.4-.3-.7-.6-1.2-1.2-1.8C19.8 1.1 19.2.8 18.5.5 17.9.3 17.2.1 16.1.1 15.1 0 14.7 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg></a>
+        <a class="soc" data-social="tiktok" href="#" aria-label="Alvarado Style on TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 1h-3.5v14.3a3 3 0 1 1-3-3c.3 0 .7 0 1 .1V8.8a6.6 6.6 0 0 0-1-.1 6.5 6.5 0 1 0 6.5 6.5V8.4a8.4 8.4 0 0 0 4.9 1.6V6.5a4.9 4.9 0 0 1-4.9-4.9V1z"/></svg></a>
+        <a class="soc" data-social="facebook" href="#" aria-label="Alvarado Style on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 22v-8.2h2.8l.4-3.3h-3.2V8.4c0-.9.3-1.6 1.6-1.6h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.4v3.3h2.8V22h3.4z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<dialog class="gallery" id="gallery" aria-labelledby="gal-title">
+  <div class="gal-head">
+    <div><span class="cat" id="gal-cat"></span><h3 id="gal-title"></h3></div>
+    <button class="gal-close" type="button" id="gal-close" aria-label="Close"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4 4l10 10M14 4L4 14"/></svg></button>
+  </div>
+  <div class="gal-stage" id="gal-stage"></div>
+  <p class="gal-caption" id="gal-caption"></p>
+  <div class="gal-thumbs" id="gal-thumbs"></div>
+  <p class="gal-summary" id="gal-summary"></p>
+  <div class="gal-meta" id="gal-meta"></div>
+</dialog>
+
+<script>
+/* ---- Site settings: edit these, nothing below needs to change ---- */
+
+// Paste the full profile links here. An empty value shows the icon dimmed with no link.
+const SOCIAL = {
+  instagram: '',
+  tiktok: '',
+  facebook: ''
+};
+
+// Each project is one entry. Photos live in photos/<project-id>/ next to this page.
+// A photo with a "before" shows as a before-and-after pair. Fields other than
+// id, category, title and photos are optional: leave out anything you don't know.
+// placeholder: true marks a slot that is waiting for real photos.
+const PROJECTS = [
+  { id: 'c-whole-house', category: 'construction', title: 'Whole-house renovation', note: 'Exterior and interior, before and after', placeholder: true, photos: [] },
+  { id: 'c-addition', category: 'construction', title: 'Addition or new build', note: 'Framing through finish', placeholder: true, photos: [] },
+  { id: 'c-exterior', category: 'construction', title: 'Exterior improvements', note: 'Siding, decks, roofing and entries', placeholder: true, photos: [] },
+  { id: 'k-open-plan', category: 'concepts', title: 'Open-floor-plan conversion', note: 'Before and after from the same spot', placeholder: true, photos: [] },
+  { id: 'k-kitchen', category: 'concepts', title: 'Kitchen remodel', note: 'Finished kitchen, wide shot and details', placeholder: true, photos: [] },
+  { id: 'k-bath', category: 'concepts', title: 'Bathroom remodel', note: 'Finished bath, wide shot and details', placeholder: true, photos: [] },
+  { id: 's-lvl', category: 'structural', title: 'LVL beam installation', note: 'Shoring, beam set, finished ceiling', placeholder: true, photos: [] },
+  { id: 's-flitch', category: 'structural', title: 'Flitch plate beam', note: 'Steel plate and lumber, bolted and set', placeholder: true, photos: [] },
+  { id: 's-header', category: 'structural', title: 'Header and post work', note: 'Opening framed, load carried to the floor', placeholder: true, photos: [] },
+  { id: 'd-gut', category: 'demo', title: 'Interior gut-out', note: 'Before, during and broom-clean after', placeholder: true, photos: [] },
+  { id: 'd-selective', category: 'demo', title: 'Selective demolition', note: 'What came out and what stayed', placeholder: true, photos: [] },
+  { id: 'd-fixtures', category: 'demo', title: 'Finish and fixture removal', note: 'Kitchen or bath stripped for remodel', placeholder: true, photos: [] }
+  // Example of a real project, ready to fill in:
+  // { id: 'brick-open-concept', category: 'concepts', title: 'Open-concept kitchen and living room',
+  //   type: 'Interior remodel', scope: 'Removed the bearing wall between kitchen and living room, new LVL beam, new kitchen',
+  //   services: ['Demo', 'Structural', 'Concepts'], location: 'Brick, NJ',
+  //   outcome: 'One open room with a 12 ft island', summary: 'A short paragraph about the job.',
+  //   photos: [
+  //     { src: 'photos/brick-open-concept/after-1.jpg', alt: 'Finished open kitchen and living room', before: 'photos/brick-open-concept/before-1.jpg', beforeAlt: 'The same room before, with the wall in place' },
+  //     { src: 'photos/brick-open-concept/after-2.jpg', alt: 'Kitchen island and pendant lights' }
+  //   ] }
+];
+
+const CATEGORY_NAMES = { construction: 'Construction', concepts: 'Concepts', structural: 'Structural', demo: 'Demo' };
+
+// Large photo slots around the site. Put a file path in src to replace that placeholder.
+// Keys: div-* are the four division panels on the homepage, page-* are the division page headers,
+// *-before / *-after are the before-and-after pairs on the Concepts and Demo pages.
+const PHOTOS = {
+  'div-construction': { src: '', alt: '' },
+  'div-concepts': { src: '', alt: '' },
+  'div-structural': { src: '', alt: '' },
+  'div-demo': { src: '', alt: '' },
+  'page-construction': { src: '', alt: '' },
+  'page-concepts': { src: '', alt: '' },
+  'page-structural': { src: '', alt: '' },
+  'page-demo': { src: '', alt: '' },
+  'concepts-before': { src: '', alt: '' },
+  'concepts-after': { src: '', alt: '' },
+  'demo-before': { src: '', alt: '' },
+  'demo-after': { src: '', alt: '' }
+};
+
+// The big featured project at the top of the homepage. Leave photo empty to show the placeholder.
+// project (optional) is the id of a PROJECTS entry with photos, which adds a "View project" button.
+const FEATURED = { photo: '', alt: '', title: '', location: '', divisions: '', project: '' };
+
+(function () {
+  const nav = document.getElementById('nav');
+  const hero = document.getElementById('top');
+  const onScroll = () => nav.classList.toggle('solid', window.scrollY > 40 || menu.hidden === false || document.body.dataset.page !== 'home');
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  const menu = document.getElementById('menu');
+  const menuBtn = document.getElementById('menu-btn');
+  const setMenu = open => { menu.hidden = !open; menuBtn.setAttribute('aria-expanded', String(open)); onScroll(); };
+  menuBtn.addEventListener('click', () => setMenu(menu.hidden));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden) { setMenu(false); menuBtn.focus(); } });
+  onScroll();
+
+  /* Social links */
+  document.querySelectorAll('[data-social]').forEach(a => {
+    const url = (SOCIAL[a.dataset.social] || '').trim();
+    if (url) {
+      a.href = url; a.target = '_blank'; a.rel = 'noopener';
+    } else {
+      a.setAttribute('aria-disabled', 'true');
+      a.title = 'Profile link coming soon';
+      a.addEventListener('click', e => e.preventDefault());
+    }
+  });
+
+  /* Our Work: cards */
+  const el = (tag, attrs, children) => {
+    const n = document.createElement(tag);
+    Object.entries(attrs || {}).forEach(([k, v]) => { if (k === 'text') n.textContent = v; else n.setAttribute(k, v); });
+    (children || []).forEach(c => n.appendChild(c));
+    return n;
+  };
+  const CAMERA = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l1.5-2.5h7L17 8h3v11H4z"/><circle cx="12" cy="13.5" r="3.5"/></svg>';
+  document.querySelectorAll('.work-grid[data-cat]').forEach(grid => {
+    PROJECTS.filter(p => p.category === grid.dataset.cat).forEach(p => {
+      const isPh = p.placeholder || !p.photos || !p.photos.length;
+      const body = el('div', { class: 'proj-body' }, [el('b', { text: p.title })]);
+      if (p.note || p.type) body.appendChild(el('span', { text: p.note || p.type }));
+      let card;
+      if (isPh) {
+        const mark = el('div', { class: 'ph-mark' }, [el('span', { text: 'Photos coming soon' })]);
+        mark.insertAdjacentHTML('afterbegin', CAMERA);
+        card = el('div', { class: 'proj is-placeholder' }, [el('div', { class: 'proj-media', 'aria-hidden': 'true' }, [mark]), body]);
+      } else {
+        const cover = p.photos[0];
+        const img = el('img', { src: cover.src, alt: cover.alt || p.title, loading: 'lazy', decoding: 'async', width: '800', height: '600' });
+        const media = el('div', { class: 'proj-media' }, [img]);
+        if (p.photos.length > 1) media.appendChild(el('span', { class: 'proj-count', text: p.photos.length + ' photos' }));
+        card = el('button', { class: 'proj', type: 'button', 'aria-haspopup': 'dialog', 'aria-label': 'Open gallery: ' + p.title }, [media, body]);
+        card.addEventListener('click', () => openProject(p));
+      }
+      grid.appendChild(card);
+    });
+  });
+
+  /* Our Work: gallery dialog */
+  const dlg = document.getElementById('gallery');
+  const stage = document.getElementById('gal-stage');
+  const thumbs = document.getElementById('gal-thumbs');
+  let cur = null, idx = 0;
+  const ARROW_L = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4L6.5 10l6 6"/></svg>';
+  const ARROW_R = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7.5 4l6 6-6 6"/></svg>';
+
+  function show(i) {
+    idx = (i + cur.photos.length) % cur.photos.length;
+    const ph = cur.photos[idx];
+    stage.textContent = '';
+    if (ph.before) {
+      const pair = el('div', { class: 'gal-pair' }, [
+        el('figure', {}, [el('img', { src: ph.before, alt: ph.beforeAlt || 'Before: ' + cur.title, decoding: 'async' }), el('figcaption', { text: 'Before' })]),
+        el('figure', {}, [el('img', { src: ph.src, alt: ph.alt || 'After: ' + cur.title, decoding: 'async' }), el('figcaption', { text: 'After' })])
+      ]);
+      stage.appendChild(pair);
+    } else {
+      stage.appendChild(el('div', { class: 'gal-single' }, [el('img', { src: ph.src, alt: ph.alt || cur.title, decoding: 'async' })]));
+    }
+    if (cur.photos.length > 1) {
+      const prev = el('button', { class: 'gal-nav prev', type: 'button', 'aria-label': 'Previous photo' });
+      const next = el('button', { class: 'gal-nav next', type: 'button', 'aria-label': 'Next photo' });
+      prev.innerHTML = ARROW_L; next.innerHTML = ARROW_R;
+      prev.addEventListener('click', () => show(idx - 1));
+      next.addEventListener('click', () => show(idx + 1));
+      stage.appendChild(prev); stage.appendChild(next);
+    }
+    document.getElementById('gal-caption').textContent = (ph.caption || ph.alt || '') + (cur.photos.length > 1 ? '  (' + (idx + 1) + ' of ' + cur.photos.length + ')' : '');
+    thumbs.querySelectorAll('button').forEach((b, j) => b.classList.toggle('active', j === idx));
+  }
+
+  function openProject(p) {
+    cur = p;
+    document.getElementById('gal-cat').textContent = CATEGORY_NAMES[p.category] || '';
+    document.getElementById('gal-title').textContent = p.title;
+    document.getElementById('gal-summary').textContent = p.summary || '';
+    document.getElementById('gal-summary').hidden = !p.summary;
+    const meta = document.getElementById('gal-meta');
+    meta.textContent = '';
+    [['Type', p.type], ['Scope', p.scope], ['Services', Array.isArray(p.services) ? p.services.join(', ') : p.services], ['Location', p.location], ['Outcome', p.outcome]]
+      .filter(([, v]) => v).forEach(([k, v]) => meta.appendChild(el('div', {}, [el('span', { text: k }), el('b', { text: v })])));
+    meta.hidden = !meta.children.length;
+    thumbs.textContent = '';
+    thumbs.hidden = p.photos.length < 2;
+    p.photos.forEach((ph, j) => {
+      const b = el('button', { type: 'button', 'aria-label': 'Photo ' + (j + 1) }, [el('img', { src: ph.src, alt: '', loading: 'lazy' })]);
+      b.addEventListener('click', () => show(j));
+      thumbs.appendChild(b);
+    });
+    show(0);
+    dlg.showModal();
+  }
+  document.getElementById('gal-close').addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+  dlg.addEventListener('keydown', e => {
+    if (!cur || cur.photos.length < 2) return;
+    if (e.key === 'ArrowRight') show(idx + 1);
+    if (e.key === 'ArrowLeft') show(idx - 1);
+  });
+  window.openProject = openProject;
+
+  /* Photo slots and the featured project */
+  const CAM = CAMERA;
+  function fillSlot(slot) {
+    const ph = PHOTOS[slot.dataset.photo] || {};
+    slot.textContent = '';
+    if (ph.src) {
+      slot.classList.remove('is-placeholder');
+      slot.appendChild(el('img', { src: ph.src, alt: ph.alt || '', loading: 'lazy', decoding: 'async' }));
+    } else {
+      slot.classList.add('is-placeholder');
+      const mark = el('div', { class: 'ph-mark' }, [el('span', { text: 'Project photo coming soon' })]);
+      if (slot.dataset.note) mark.appendChild(el('small', { text: slot.dataset.note }));
+      mark.insertAdjacentHTML('afterbegin', CAM);
+      slot.appendChild(mark);
+    }
+  }
+  function renderFeatured() {
+    const box = document.getElementById('feat');
+    box.textContent = '';
+    const slot = el('div', { class: 'photo-slot', 'data-photo': 'featured', 'data-note': 'Featured project: one wide shot of the job you are proudest of' });
+    box.appendChild(slot);
+    if (FEATURED.photo) {
+      PHOTOS.featured = { src: FEATURED.photo, alt: FEATURED.alt || FEATURED.title || 'Featured project' };
+      const txt = el('div', {}, [el('p', { class: 'eyebrow', text: 'Featured project' })]);
+      if (FEATURED.title) txt.appendChild(el('h2', { text: FEATURED.title }));
+      const line = [FEATURED.location, FEATURED.divisions].filter(Boolean).join(' · ');
+      if (line) txt.appendChild(el('p', { text: line }));
+      const cap = el('div', { class: 'feat-cap' }, [txt]);
+      const proj = PROJECTS.find(p => p.id === FEATURED.project && p.photos && p.photos.length);
+      if (proj) { const b = el('button', { class: 'btn btn-gold', type: 'button', text: 'View project' }); b.addEventListener('click', () => openProject(proj)); cap.appendChild(b); }
+      box.appendChild(cap);
+    }
+    fillSlot(slot);
+  }
+  document.querySelectorAll('.photo-slot[data-photo]').forEach(fillSlot);
+  renderFeatured();
+
+  /* Division pages: #construction, #concepts, #structural and #demo show their own page; anything else is the homepage */
+  const VIEWS = ['construction', 'concepts', 'structural', 'demo'];
+  const stopIntro = () => { hero.classList.remove('play'); nav.classList.remove('intro'); };
+  function route() {
+    const h = decodeURIComponent(location.hash.slice(1));
+    const view = VIEWS.includes(h) ? h : 'home';
+    document.querySelectorAll('[data-view]').forEach(v => { v.hidden = v.dataset.view !== view; });
+    document.body.dataset.page = view;
+    document.querySelectorAll('.nav-links a, .menu a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + view));
+    if (view !== 'home') {
+      stopIntro();
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    } else if (h) {
+      const t = document.getElementById(h);
+      if (t) requestAnimationFrame(() => t.scrollIntoView());
+    }
+    if (!menu.hidden) setMenu(false);
+    onScroll();
+  }
+  window.addEventListener('hashchange', route);
+  route();
+
+  document.getElementById('replay').addEventListener('click', () => {
+    hero.classList.remove('play');
+    nav.classList.remove('intro');
+    void hero.offsetWidth;
+    hero.classList.add('play');
+    nav.classList.add('intro');
+  });
+
+  const setSpot = (n, on) => document.querySelectorAll('[data-spot="' + n + '"]').forEach(el => el.classList.toggle('active', on));
+  document.querySelectorAll('[data-spot]').forEach(el => {
+    const n = el.dataset.spot;
+    el.addEventListener('mouseenter', () => setSpot(n, true));
+    el.addEventListener('mouseleave', () => setSpot(n, false));
+    el.addEventListener('focus', () => setSpot(n, true));
+    el.addEventListener('blur', () => setSpot(n, false));
+    el.addEventListener('click', () => {
+      document.querySelectorAll('.active[data-spot]').forEach(a => a.classList.remove('active'));
+      setSpot(n, true);
+    });
+  });
+
+  document.querySelectorAll('[data-need]').forEach(a => a.addEventListener('click', () => {
+    document.getElementById('f-job').value = a.dataset.need;
+  }));
+
+  document.querySelectorAll('[data-copy]').forEach(btn => btn.addEventListener('click', () => {
+    const el = document.getElementById(btn.dataset.copy);
+    const done = () => { btn.textContent = 'Copied'; setTimeout(() => { btn.textContent = 'Copy'; }, 1500); };
+    try { navigator.clipboard.writeText(el.textContent).then(done, () => selectText(el)); }
+    catch (e) { selectText(el); }
+  }));
+  function selectText(el) { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+
+  document.getElementById('quote').addEventListener('submit', e => {
+    e.preventDefault();
+    const out = document.getElementById('f-out');
+    out.textContent = 'Thanks. This is a preview of the form, so nothing was sent yet. Call or text 848-223-1364 to reach us today.';
+    out.hidden = false;
+  });
+})();
+</script>
+
+</body>
+</html>
