@@ -184,6 +184,12 @@ header.nav.solid { background: var(--navy); box-shadow: 0 1px 0 color-mix(in srg
 .photo-slot.is-placeholder { background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px); background-size: 24px 24px; }
 .photo-slot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
 .photo-slot video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* Play button for a clip the browser would not start on its own */
+.clip-play { position: absolute; left: 50%; top: 50%; width: 72px; height: 72px; margin: -36px 0 0 -36px; padding: 0; border-radius: 50%; border: 1px solid var(--gold); background: rgba(13, 15, 66, 0.72); color: var(--gold); display: grid; place-items: center; cursor: pointer; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35); transition: transform .2s ease, background .2s ease; z-index: 2; }
+.clip-play svg { width: 30px; height: 30px; fill: currentColor; margin-left: 4px; }
+.clip-play:hover, .clip-play:focus-visible { transform: scale(1.06); background: rgba(13, 15, 66, 0.9); }
+.clip-play[hidden] { display: none; }
+@media (max-width: 760px) { .clip-play { width: 60px; height: 60px; margin: -30px 0 0 -30px; } .clip-play svg { width: 26px; height: 26px; } }
 /* An upright (portrait) photo or clip keeps the slot's shape and is shown whole, centred over a blurred copy of the still, instead of being cropped. */
 .photo-slot.is-tall img, .photo-slot.is-tall video { object-fit: contain; }
 .photo-slot.is-tall img.fill { object-fit: cover; filter: blur(22px) brightness(0.72); transform: scale(1.12); }
@@ -1058,7 +1064,8 @@ const PHOTOS = {
 // The big featured project at the top of the homepage. Leave photo empty to show the placeholder.
 // project (optional) is the id of a PROJECTS entry with photos, which adds a "View project" button.
 // video (optional): a short muted clip that loops in the panel while it is on screen; photo is its still frame.
-// videoPhone (optional): a smaller copy of the same clip for phones. Reduced-motion and data-saver visitors see the still only.
+// videoPhone (optional): a smaller copy of the same clip for phones. Reduced-motion and data-saver visitors see the still only;
+// a browser that blocks autoplay shows a play button on the still instead.
 const FEATURED = { photo: 'video/featured-poster.jpg', alt: 'Drone view of a framed building under construction, roof trusses going on', title: '', location: '', divisions: '', project: '', video: 'video/featured.mp4', videoPhone: 'video/featured-phone.mp4' };
 
 (function () {
@@ -1185,21 +1192,36 @@ const FEATURED = { photo: 'video/featured-poster.jpg', alt: 'Drone view of a fra
   const clips = [];
   const noClips = (navigator.connection && navigator.connection.saveData) || matchMedia('(prefers-reduced-motion: reduce)').matches;
   // A short muted clip over a slot's still: loops while the slot is on screen, pauses off screen or on a hidden page.
+  // A browser that refuses to start it by itself (Low Power Mode, autoplay switched off) gets a play button on the still,
+  // and any tap on the page tries again. A clip that cannot load at all is dropped so the still shows as before.
   function addClip(slot, src, srcPhone, poster) {
     if (!src || !poster || noClips) return null;
     const phone = matchMedia('(max-width: 760px)').matches && srcPhone;
-    const v = el('video', { muted: '', loop: '', playsinline: '', preload: 'none', poster: poster, 'aria-hidden': 'true', tabindex: '-1' });
+    const v = el('video', { muted: '', loop: '', playsinline: '', preload: 'metadata', poster: poster, 'aria-hidden': 'true', tabindex: '-1' });
     v.muted = true;
     v.appendChild(el('source', { src: phone || src, type: 'video/mp4' }));
     v.addEventListener('loadedmetadata', () => { if (!v.videoWidth || !v.videoHeight) return; if (v.videoHeight > v.videoWidth) markTall(slot, poster); else slot.style.aspectRatio = v.videoWidth + ' / ' + v.videoHeight; });
     slot.classList.add('has-video');
     slot.appendChild(v);
-    const play = () => v.play().catch(() => {});
-    if ('IntersectionObserver' in window) new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) play(); else v.pause(); }), { threshold: 0.2 }).observe(slot);
-    else play();
+    const btn = slot.closest('a') ? null : el('button', { class: 'clip-play', type: 'button', 'aria-label': 'Play the video', hidden: '' });
+    if (btn) { btn.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>'; slot.appendChild(btn); }
+    const blocked = on => { slot.classList.toggle('needs-tap', on); if (btn) btn.hidden = !on; };
+    v.inView = false;
+    v.wanted = () => v.inView && !v.closest('[data-view][hidden]') && document.visibilityState !== 'hidden';
+    v.go = () => { if (v.wanted()) v.play().then(() => blocked(false), e => { if (e && e.name === 'NotAllowedError') blocked(true); }); };
+    v.addEventListener('playing', () => blocked(false));
+    if (btn) btn.addEventListener('click', () => v.play().then(() => blocked(false), () => {}));
+    v.addEventListener('error', () => { const i = clips.indexOf(v); if (i > -1) clips.splice(i, 1); v.remove(); if (btn) btn.remove(); slot.classList.remove('has-video', 'needs-tap'); slot.style.aspectRatio = ''; }, true);
+    if ('IntersectionObserver' in window) new IntersectionObserver(es => es.forEach(x => { v.inView = x.isIntersecting; if (x.isIntersecting) v.go(); else v.pause(); }), { threshold: 0.2 }).observe(slot);
+    else { v.inView = true; v.go(); }
     clips.push(v);
     return v;
   }
+  // Clips the browser paused on its own (app switch, screen lock, a tap needed first) start again.
+  const wakeClips = () => clips.forEach(v => { if (v.paused) v.go(); });
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') wakeClips(); });
+  window.addEventListener('pageshow', wakeClips);
+  ['pointerup', 'touchend', 'keydown'].forEach(t => document.addEventListener(t, wakeClips, { passive: true }));
   // Upright photos and clips: keep the slot's shape and show the whole picture over a blurred copy of the still.
   function markTall(slot, src) {
     if (slot.classList.contains('is-tall')) return;
@@ -1301,7 +1323,7 @@ const FEATURED = { photo: 'video/featured-poster.jpg', alt: 'Drone view of a fra
     document.querySelectorAll('[data-view]').forEach(v => { v.hidden = v.dataset.view !== view; });
     document.body.dataset.page = view;
     if (heroVid) { if (view === 'home') heroPlay(); else heroVid.pause(); }
-    clips.forEach(v => v.pause());
+    clips.forEach(v => { if (v.wanted()) v.go(); else v.pause(); });
     document.querySelectorAll('.nav-links a, .menu a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + view));
     if (view !== 'home') {
       stopIntro();
