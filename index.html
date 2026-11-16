@@ -1190,6 +1190,15 @@ const SOCIAL = {
 // id, category, title and photos are optional: leave out anything you don't know.
 // placeholder: true marks a slot that is waiting for real photos.
 const PROJECTS = [
+  // Example of a real project, ready to fill in:
+  // { id: 'brick-open-concept', category: 'concepts', title: 'Open-concept kitchen and living room',
+  //   type: 'Interior remodel', scope: 'Removed the bearing wall between kitchen and living room, new LVL beam, new kitchen',
+  //   services: ['Demo', 'Structural', 'Concepts'], location: 'Brick, NJ',
+  //   outcome: 'One open room with a 12 ft island', summary: 'A short paragraph about the job.',
+  //   photos: [
+  //     { src: 'photos/brick-open-concept/after-1.jpg', alt: 'Finished open kitchen and living room', before: 'photos/brick-open-concept/before-1.jpg', beforeAlt: 'The same room before, with the wall in place' },
+  //     { src: 'photos/brick-open-concept/after-2.jpg', alt: 'Kitchen island and pendant lights' }
+  //   ] }
   { id: 'c-whole-house', category: 'construction', title: 'Whole-house renovation', note: 'Exterior and interior, before and after', placeholder: true, photos: [] },
   { id: 'c-addition', category: 'construction', title: 'Addition or new build', note: 'Framing through finish', placeholder: true, photos: [] },
   { id: 'c-exterior', category: 'construction', title: 'Exterior improvements', note: 'Siding, decks, roofing and entries', placeholder: true, photos: [] },
@@ -1202,15 +1211,6 @@ const PROJECTS = [
   { id: 'd-gut', category: 'demo', title: 'Interior gut-out', note: 'Before, during and broom-clean after', placeholder: true, photos: [] },
   { id: 'd-selective', category: 'demo', title: 'Selective demolition', note: 'What came out and what stayed', placeholder: true, photos: [] },
   { id: 'd-fixtures', category: 'demo', title: 'Finish and fixture removal', note: 'Kitchen or bath stripped for remodel', placeholder: true, photos: [] }
-  // Example of a real project, ready to fill in:
-  // { id: 'brick-open-concept', category: 'concepts', title: 'Open-concept kitchen and living room',
-  //   type: 'Interior remodel', scope: 'Removed the bearing wall between kitchen and living room, new LVL beam, new kitchen',
-  //   services: ['Demo', 'Structural', 'Concepts'], location: 'Brick, NJ',
-  //   outcome: 'One open room with a 12 ft island', summary: 'A short paragraph about the job.',
-  //   photos: [
-  //     { src: 'photos/brick-open-concept/after-1.jpg', alt: 'Finished open kitchen and living room', before: 'photos/brick-open-concept/before-1.jpg', beforeAlt: 'The same room before, with the wall in place' },
-  //     { src: 'photos/brick-open-concept/after-2.jpg', alt: 'Kitchen island and pendant lights' }
-  //   ] }
 ];
 
 const CATEGORY_NAMES = { construction: 'Construction', concepts: 'Concepts', structural: 'Structural', demo: 'Demo' };
@@ -1219,7 +1219,7 @@ const CATEGORY_NAMES = { construction: 'Construction', concepts: 'Concepts', str
 // Keys: div-* are the four division panels on the homepage, page-* are the division page headers,
 // *-before / *-after are the before-and-after pairs on the Concepts and Demo pages.
 const PHOTOS = {
-  'div-construction': { src: '', alt: '' },
+  'div-construction': { src: 'photos/slots/div-construction.jpg', alt: 'New shingle-style house with a wraparound porch, exterior nearly finished' },
   'div-concepts': { src: '', alt: '' },
   'div-structural': { src: '', alt: '' },
   'div-demo': { src: '', alt: '' },
