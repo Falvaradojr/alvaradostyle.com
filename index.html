@@ -18,7 +18,7 @@
 </head>
 <body>
 <style>
-/* Layout: cinematic dark logo intro, division lockups, Keystone Walkthrough (offer + two-outcome comparison), house cutaway of what we check, services by division, kids and pets builds on a night sky, process, family companies, quick quote. Palette from the logo: royal navy, white, antique gold. */
+/* Layout: cinematic dark logo intro, division lockups, Keystone Walkthrough (offer + two-outcome comparison), house cutaway of what we check, services by division, process, family companies, quick quote. Palette from the logo: royal navy, white, antique gold. */
 :root {
   --bg: #f5f4f0;
   --surface: #ffffff;
@@ -402,35 +402,6 @@ header.nav.solid { background: var(--navy); box-shadow: 0 1px 0 color-mix(in srg
 .social-sm .soc { width: 34px; height: 34px; }
 .social-sm .soc svg { width: 17px; height: 17px; }
 
-/* Kids and pets */
-.kids { background-color: var(--navy); background-image:
-  radial-gradient(circle at 6% 12%, var(--star) 0 1.4px, transparent 2px),
-  radial-gradient(circle at 17% 34%, var(--star) 0 1px, transparent 1.6px),
-  radial-gradient(circle at 29% 8%, var(--star) 0 1.2px, transparent 1.8px),
-  radial-gradient(circle at 41% 22%, var(--star) 0 0.9px, transparent 1.5px),
-  radial-gradient(circle at 55% 6%, var(--star) 0 1.5px, transparent 2.1px),
-  radial-gradient(circle at 63% 30%, var(--star) 0 1px, transparent 1.6px),
-  radial-gradient(circle at 74% 11%, var(--star) 0 1.2px, transparent 1.8px),
-  radial-gradient(circle at 86% 25%, var(--star) 0 1px, transparent 1.6px),
-  radial-gradient(circle at 94% 7%, var(--star) 0 1.4px, transparent 2px),
-  radial-gradient(circle at 90% 46%, var(--star) 0 0.9px, transparent 1.5px),
-  radial-gradient(circle at 3% 52%, var(--star) 0 1px, transparent 1.6px),
-  radial-gradient(circle at 80% 4%, var(--gold) 0 1.8px, transparent 2.4px); }
-.kids-head h2 { font-family: inherit; }
-.kids-head .dream { display: block; font-family: var(--script); font-weight: 400; font-size: clamp(54px, 8vw, 92px); line-height: 1; }
-.kids-head .build { display: block; margin-top: 8px; font-family: var(--caps); font-weight: 800; font-size: clamp(20px, 2.6vw, 28px); letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
-.kids-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--on-navy-line); border: 1px solid var(--on-navy-line); }
-.kid { background: var(--navy); padding: 24px 22px 26px; display: grid; gap: 10px; align-content: start; min-width: 0; }
-.kid svg { width: 46px; height: 46px; fill: none; stroke: var(--gold); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.kid svg .dot { fill: var(--gold); stroke: none; }
-.kid h3 { font-family: var(--caps); font-size: 16.5px; font-weight: 800; letter-spacing: 0.04em; color: var(--on-navy); }
-.kid p { font-size: 15px; color: var(--on-navy-muted); }
-.kids-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; margin-top: 34px; }
-.kids-cta p { color: var(--on-navy-muted); }
-@media (max-width: 980px) { .kids-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 760px) { .kids { background-size: 100% 60px; background-repeat: no-repeat; } }
-@media (max-width: 560px) { .kid { padding: 18px 16px 20px; } .kid h3 { font-size: 15px; } .kid p { font-size: 14px; } .kid svg { width: 40px; height: 40px; } }
-@media (max-width: 340px) { .kids-grid { grid-template-columns: 1fr; } }
 
 /* Process */
 .process-band { background: var(--gold-soft); }
@@ -826,53 +797,6 @@ footer nav a:hover { color: var(--on-navy); }
   </div>
 </section>
 
-<section class="section on-navy kids" id="kids">
-  <div class="wrap">
-    <div class="section-head kids-head">
-      <p class="eyebrow">Family focused</p>
-      <h2><span class="dream">Dream it.</span><span class="build">We'll build it.</span></h2>
-      <p>For the kids, and the pets too. Give us an idea, even a drawing on a napkin, and we'll turn it into the room they never want to leave.</p>
-    </div>
-    <div class="kids-grid">
-      <article class="kid">
-        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 6v38M34 6v38"/><rect x="10" y="14" width="24" height="7" rx="1"/><rect x="10" y="31" width="24" height="7" rx="1"/><path d="M38 12v32M44 12v32M38 18h6M38 25h6M38 32h6M38 39h6"/></svg>
-        <h3>Loft &amp; bunk beds</h3><p>Built-in bunks with ladders, storage stairs and reading lights.</p>
-      </article>
-      <article class="kid">
-        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 12v32M17 12v32M6 12h11M6 22h11M6 32h11"/><path d="M17 12c12 0 13 28 27 28"/><path d="M17 18c9 0 10 26 27 26"/></svg>
-        <h3>Indoor slides</h3><p>From the loft to the playroom floor, the fun way down.</p>
-      </article>
-      <article class="kid">
-        <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="6" width="32" height="38" rx="2"/><circle class="dot" cx="16" cy="14" r="2.4"/><circle class="dot" cx="30" cy="12" r="2.8"/><circle class="dot" cx="22" cy="23" r="2.4"/><circle class="dot" cx="33" cy="27" r="2.4"/><circle class="dot" cx="15" cy="32" r="2.8"/><circle class="dot" cx="27" cy="37" r="2.4"/></svg>
-        <h3>Climbing walls &amp; ladders</h3><p>Rock walls, rope ladders and monkey bars, anchored into the framing.</p>
-      </article>
-      <article class="kid">
-        <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="6" width="36" height="38" rx="1"/><path d="M6 6l18 4v32l-18 2"/><path d="M9 17l12 1.5M9 27l12 1M9 37l12 .5"/><path d="M33 21l1.5 3 3.3.5-2.4 2.3.6 3.2-3-1.6-3 1.6.6-3.2-2.4-2.3 3.3-.5z"/></svg>
-        <h3>Secret doors &amp; hideouts</h3><p>Bookcase doors, under-stair forts and reading nooks.</p>
-      </article>
-      <article class="kid">
-        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M21 44l2-16M29 44l-2-16"/><path d="M10 28h30"/><path d="M14 28V17l11-8 11 8v11"/><path d="M22 28v-6h6v6"/><path d="M38 28v16M43 28v16M38 33h5M38 39h5"/></svg>
-        <h3>Tree houses</h3><p>Built around the tree, with real framing and safe railings.</p>
-      </article>
-      <article class="kid">
-        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M7 23L24 8l17 15"/><path d="M11 20v22h26V20"/><path d="M19 42v-9a5 5 0 0 1 10 0v9"/><path d="M20 16h8"/></svg>
-        <h3>Dog houses</h3><p>Raised, insulated and sized right for your dog.</p>
-      </article>
-      <article class="kid">
-        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 42h14M16 30h14M28 18h14"/><path d="M9 42v3M27 30v3M39 18v3"/><path d="M31 18v-6l2-4 2 3h3l2-3 2 4v6"/><path d="M42 16c3 0 3.5-4 1.5-6"/></svg>
-        <h3>Cat walks &amp; cat houses</h3><p>Wall shelves, ceiling runs and cozy perches up high.</p>
-      </article>
-      <article class="kid">
-        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 44V14h6v6h5v-6h6v6h5v-6h6v30"/><path d="M20 44v-8a4 4 0 0 1 8 0v8"/><path d="M24 14V4l7 3-7 3"/></svg>
-        <h3>Dream playrooms</h3><p>A basement or attic turned into a castle, a spaceship or a fort.</p>
-      </article>
-    </div>
-    <div class="kids-cta">
-      <a class="btn btn-gold" href="#contact" data-need="kids">Tell us your idea</a>
-      <p>If they can dream it up, we can build it.</p>
-    </div>
-  </div>
-</section>
 
 <section class="section process-band">
   <div class="wrap">
@@ -946,7 +870,6 @@ footer nav a:hover { color: var(--on-navy); }
           <option value="keystone">Keystone Walkthrough before I buy</option>
           <option value="quote">Quick quote on a project</option>
           <option value="idea">I just have an idea</option>
-          <option value="kids">Kids room or pet build</option>
           <option value="build">Renovation or new build</option>
           <option value="concepts">Remodel or open floor plan (Concepts)</option>
           <option value="structural">Beam or structural work (Structural)</option>
@@ -1213,7 +1136,7 @@ footer nav a:hover { color: var(--on-navy); }
     </div>
     <div class="foot-links">
       <nav aria-label="Footer">
-        <a href="#walkthrough">Walkthrough</a><a href="#work">Our Work</a><a href="#kids">Kids &amp; pets</a><a href="#companies">Our companies</a><a href="#contact">Contact</a>
+        <a href="#walkthrough">Walkthrough</a><a href="#work">Our Work</a><a href="#companies">Our companies</a><a href="#contact">Contact</a>
       </nav>
       <div class="social" aria-label="Social media">
         <a class="soc" data-social="instagram" href="#" aria-label="Alvarado Style on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c2.7 0 3 0 4 .1 1 0 1.5.2 1.9.3.5.2.8.4 1.2.8.4.4.6.7.8 1.2.1.4.3.9.3 1.9.1 1 .1 1.3.1 4s0 3-.1 4c0 1-.2 1.5-.3 1.9-.2.5-.4.8-.8 1.2-.4.4-.7.6-1.2.8-.4.1-.9.3-1.9.3-1 .1-1.3.1-4 .1s-3 0-4-.1c-1 0-1.5-.2-1.9-.3-.5-.2-.8-.4-1.2-.8-.4-.4-.6-.7-.8-1.2-.1-.4-.3-.9-.3-1.9-.1-1-.1-1.3-.1-4s0-3 .1-4c0-1 .2-1.5.3-1.9.2-.5.4-.8.8-1.2.4-.4.7-.6 1.2-.8.4-.1.9-.3 1.9-.3 1-.1 1.3-.1 4-.1M12 0C9.3 0 8.9 0 7.9.1 6.8.1 6.1.3 5.5.5c-.7.2-1.2.6-1.8 1.1C3.1 2.2 2.8 2.8 2.5 3.4 2.3 4 2.1 4.7 2.1 5.8 2 6.9 2 7.3 2 10v4c0 2.7 0 3.1.1 4.1 0 1.1.2 1.8.5 2.4.3.7.6 1.2 1.2 1.8.5.5 1.1.9 1.8 1.2.6.2 1.3.4 2.4.5 1 .1 1.4.1 4.1.1s3.1 0 4.1-.1c1.1 0 1.8-.2 2.4-.5.7-.3 1.2-.6 1.8-1.2.5-.5.9-1.1 1.2-1.8.2-.6.4-1.3.5-2.4.1-1 .1-1.4.1-4.1v-4c0-2.7 0-3.1-.1-4.1 0-1.1-.2-1.8-.5-2.4-.3-.7-.6-1.2-1.2-1.8C19.8 1.1 19.2.8 18.5.5 17.9.3 17.2.1 16.1.1 15.1 0 14.7 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg></a>
