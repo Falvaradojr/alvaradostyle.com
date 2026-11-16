@@ -135,9 +135,13 @@ header.nav.solid { background: var(--navy); box-shadow: 0 1px 0 color-mix(in srg
 .hero-glow { position: absolute; inset: 0; z-index: -1; background:
   linear-gradient(to bottom, transparent 72%, var(--navy-deep) 100%),
   radial-gradient(ellipse 70% 60% at 50% 42%, var(--glow) 0%, var(--navy) 40%, var(--navy-deep) 68%, var(--night) 100%); }
-/* Optional backdrop behind the opening screen (HERO_BACKDROP in the script): a still image, plus a muted clip on desktop and tablet only. */
-.hero-backdrop { position: absolute; inset: 0; z-index: -2; overflow: hidden; background: var(--night) center / cover no-repeat; }
-.hero-backdrop video { display: block; width: 100%; height: 100%; object-fit: cover; }
+/* Optional backdrop behind the opening screen (HERO_BACKDROP in the script): a still image, plus a muted clip on desktop and tablet only.
+   The image is scaled so its focus box always fits on screen; where it then no longer fills the screen, a blurred copy fills in behind it. */
+.hero-backdrop { position: absolute; inset: 0; z-index: -2; overflow: hidden; background: var(--night); }
+.hero-backdrop::before, .hero-backdrop::after { content: ""; position: absolute; background: var(--backdrop-img) center / cover no-repeat; }
+.hero-backdrop::before { inset: -40px; filter: blur(28px) brightness(0.8); }
+.hero-backdrop::after { left: var(--backdrop-x, 0); top: var(--backdrop-y, 0); width: var(--backdrop-w, 100%); height: var(--backdrop-h, 100%); -webkit-mask-image: linear-gradient(to bottom, transparent, #000 var(--backdrop-fade, 0px), #000 calc(100% - var(--backdrop-fade, 0px)), transparent); mask-image: linear-gradient(to bottom, transparent, #000 var(--backdrop-fade, 0px), #000 calc(100% - var(--backdrop-fade, 0px)), transparent); }
+.hero-backdrop video { position: relative; z-index: 1; display: block; width: 100%; height: 100%; object-fit: cover; }
 .hero.has-backdrop .hero-glow { background: linear-gradient(to bottom, rgba(2, 3, 18, 0.46) 0%, rgba(13, 15, 66, 0.56) 55%, var(--navy-deep) 100%), radial-gradient(ellipse 70% 60% at 50% 42%, rgba(20, 22, 91, 0.3) 0%, rgba(2, 3, 18, 0.6) 100%); }
 .hero.play .hero-backdrop { animation: as-fade 3.2s ease-in .2s both; }
 @media (max-width: 760px), (prefers-reduced-motion: reduce) { .hero-backdrop video { display: none; } }
@@ -1167,10 +1171,11 @@ footer nav a:hover { color: var(--on-navy); }
 // FormSubmit (formsubmit.co), which emails each one. Leave empty and the form stays a preview that sends nothing.
 const QUOTE_EMAIL = 'my@alvaradostyle.com';
 
-// Backdrop behind the opening screen: a still image (position = the part to keep in view, as CSS background-position)
-// and, optionally, a short muted clip that plays over it on desktop and tablet. Phones and people who prefer reduced
-// motion see the image only. Leave both empty for the plain navy opening.
-const HERO_BACKDROP = { image: 'photos/hero/van.jpg', position: '38% 45%', video: '' };
+// Backdrop behind the opening screen: a still image and, optionally, a short muted clip that plays over it on desktop
+// and tablet. focus marks the part of the image that must stay fully in view (left, top, width, height as fractions of
+// the image): the image is scaled so that box fits, and a blurred copy fills any part of the screen it then leaves open.
+// Phones and people who prefer reduced motion see the image only. Leave image and video empty for the plain navy opening.
+const HERO_BACKDROP = { image: 'photos/hero/van.jpg', focus: { x: 0.07, y: 0.23, w: 0.59, h: 0.51 }, video: '' };
 
 const SOCIAL = {
   instagram: '',
@@ -1409,8 +1414,27 @@ const FEATURED = { photo: 'video/featured-poster.jpg', alt: 'Drone view of a fra
     const box = document.getElementById('hero-backdrop');
     box.hidden = false; hero.classList.add('has-backdrop');
     if (HERO_BACKDROP.image) {
-      box.style.backgroundImage = 'url("' + HERO_BACKDROP.image + '")';
-      if (HERO_BACKDROP.position) box.style.backgroundPosition = HERO_BACKDROP.position;
+      box.style.setProperty('--backdrop-img', 'url("' + HERO_BACKDROP.image + '")');
+      const f = HERO_BACKDROP.focus;
+      if (f) {
+        const img = new Image();
+        const fit = () => {
+          const W = img.naturalWidth, H = img.naturalHeight, vw = box.clientWidth, vh = box.clientHeight;
+          if (!W || !H || !vw || !vh) return;
+          const s = Math.min(Math.max(vw / W, vh / H), vw / (f.w * W), vh / (f.h * H));
+          const iw = W * s, ih = H * s;
+          let ox = vw / 2 - (f.x + f.w / 2) * iw, oy = vh / 2 - (f.y + f.h / 2) * ih;
+          ox = iw > vw ? Math.min(0, Math.max(vw - iw, ox)) : (vw - iw) / 2;
+          oy = ih > vh ? Math.min(0, Math.max(vh - ih, oy)) : (vh - ih) / 2;
+          box.style.setProperty('--backdrop-x', ox.toFixed(1) + 'px'); box.style.setProperty('--backdrop-y', oy.toFixed(1) + 'px');
+          box.style.setProperty('--backdrop-w', iw.toFixed(1) + 'px'); box.style.setProperty('--backdrop-h', ih.toFixed(1) + 'px');
+          box.style.setProperty('--backdrop-fade', ih < vh - 1 ? '48px' : '0px');
+        };
+        img.addEventListener('load', fit);
+        img.src = HERO_BACKDROP.image;
+        let raf = 0;
+        window.addEventListener('resize', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(fit); });
+      }
     }
     const wantsVideo = !!HERO_BACKDROP.video && !matchMedia('(max-width: 760px)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (wantsVideo) {
