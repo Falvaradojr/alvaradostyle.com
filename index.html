@@ -18,7 +18,7 @@
 </head>
 <body>
 <style>
-/* Layout: cinematic dark logo intro, division lockups, Keystone Walkthrough (offer + two-outcome comparison), house cutaway of what we check, process, family companies, quick quote. Palette from the logo: royal navy, white, antique gold. */
+/* Layout: cinematic dark logo intro, division lockups, Keystone Walkthrough (free walkthrough, then the written quote), house cutaway of what we check, process, family companies, quick quote. Palette from the logo: royal navy, white, antique gold. */
 :root {
   --bg: #f5f4f0;
   --surface: #ffffff;
@@ -267,40 +267,24 @@ header.nav.solid { background: var(--navy); box-shadow: 0 1px 0 color-mix(in srg
 @media (max-width: 640px) { .checks { grid-template-columns: 1fr; } .ba { grid-template-columns: 1fr; } .audience { grid-template-columns: 1fr; } .inc { min-width: 0; font-size: 14.5px; } .inc th, .inc td { padding: 10px 8px; } .inc th:not(:first-child), .inc td:not(:first-child) { width: 62px; } }
 
 /* Keystone Walkthrough */
-.ks-start { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-bottom: 72px; }
-.ks-start > div { border-top: 3px solid var(--rule); padding-top: 16px; display: grid; gap: 6px; align-content: start; }
-.ks-start h3 { font-family: var(--caps); font-size: 19px; font-weight: 800; letter-spacing: 0.04em; }
-.ks-start p { color: var(--muted); }
-.cmp-title { font-family: var(--caps); font-size: clamp(22px, 3vw, 30px); font-weight: 800; letter-spacing: 0.02em; margin-bottom: 22px; }
-.compare { display: grid; gap: 8px; }
-.cmp-row { display: grid; grid-template-columns: 170px 1fr 1fr; gap: 8px; }
-.cmp-col { display: flex; align-items: center; gap: 8px; padding: 0 18px 4px; font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; }
-.cmp-col.bad { color: var(--bad); }
-.cmp-col.good { color: var(--gold-ink); }
-.cmp-stage { align-self: center; font-family: var(--caps); font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
-.cmp-cell { display: flex; gap: 12px; align-items: flex-start; padding: 16px 18px; font-size: 16.5px; min-width: 0; }
-.cmp-cell svg, .cmp-col svg { flex: none; width: 18px; height: 18px; fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
-.cmp-cell svg { margin-top: 3px; }
-.cmp-col.bad svg, .cmp-bad svg { stroke: var(--bad); }
-.cmp-col.good svg, .cmp-good svg { stroke: var(--gold-ink); }
-.cmp-bad { background: var(--bad-soft); color: var(--muted); }
-.cmp-good { background: var(--gold-soft); color: var(--ink); box-shadow: inset 3px 0 0 var(--gold); }
-.cmp-result .cmp-cell { font-size: 19px; font-weight: 700; padding-block: 20px; }
-.cmp-result .cmp-good { background: var(--navy); color: var(--on-navy); }
-.cmp-result .cmp-good svg { stroke: var(--gold); }
-.cmp-tag { display: none; }
-.ks-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; margin-top: 40px; }
-.ks-cta p { color: var(--muted); }
-.ks-cta b { color: var(--ink); user-select: all; }
-@media (max-width: 860px) { .ks-start { grid-template-columns: 1fr; gap: 22px; margin-bottom: 56px; } }
-@media (max-width: 760px) {
-  .cmp-head { display: none; }
-  .cmp-row { grid-template-columns: 1fr; gap: 6px; margin-top: 14px; }
-  .cmp-tag { display: block; font-size: 11.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 2px; }
-  .cmp-bad .cmp-tag { color: var(--bad); }
-  .cmp-good .cmp-tag { color: var(--gold-ink); }
-  .cmp-result .cmp-good .cmp-tag { color: var(--gold); }
-}
+/* Keystone Walkthrough: one dark panel, the lead on the left and the two-step offer on the right */
+.ks-panel { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; background: var(--navy-deep); color: var(--on-navy); border: 1px solid var(--on-navy-line); outline: 1px solid var(--gold); outline-offset: -10px; padding: 56px; }
+.ks-panel .eyebrow { color: var(--gold); }
+.ks-panel h2 { font-family: var(--caps); font-size: clamp(28px, 3.6vw, 40px); font-weight: 800; letter-spacing: 0.02em; margin-top: 12px; }
+.ks-panel .lede { color: var(--on-navy-muted); font-size: 18px; margin-top: 16px; max-width: 46ch; }
+.ks-uses { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.ks-uses span { font-size: 12.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--on-navy-line); padding: 7px 12px; }
+.ks-offer { display: grid; gap: 12px; }
+.ks-step { display: grid; grid-template-columns: 96px 1fr; gap: 18px; align-items: start; padding: 22px 24px; background: rgba(255, 255, 255, 0.05); border-left: 3px solid var(--gold); }
+.ks-step .tag { font-family: var(--caps); font-weight: 800; font-size: 19px; letter-spacing: 0.1em; color: var(--gold-bright); line-height: 1.1; }
+.ks-step .tag small { display: block; font-family: var(--body); font-weight: 600; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--on-navy-muted); margin-top: 4px; }
+.ks-step h3 { font-size: 19px; font-weight: 700; }
+.ks-step p { color: var(--on-navy-muted); font-size: 15.5px; margin-top: 4px; }
+.ks-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; margin-top: 16px; }
+.ks-cta p { color: var(--on-navy-muted); }
+.ks-cta b { color: var(--on-navy); user-select: all; }
+@media (max-width: 900px) { .ks-panel { grid-template-columns: 1fr; gap: 32px; padding: 36px 24px; } }
+@media (max-width: 480px) { .ks-step { grid-template-columns: 1fr; gap: 8px; } }
 
 /* House cutaway */
 .detail-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 44px; align-items: start; }
@@ -583,54 +567,18 @@ footer nav a:hover { color: var(--on-navy); }
 
 <section class="section" id="walkthrough">
   <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">The Keystone Walkthrough</p>
-      <h2>Get a 35-year contractor's opinion before you start</h2>
-      <p>Buying a house, planning a project, or just have an idea and don't know where to begin? We walk it with you, give you a quick priced quote, and find the problems before anyone swings a hammer.</p>
-    </div>
-    <div class="ks-start">
-      <div><h3>Buying a home</h3><p>Walk it with us before you close, and know what the work will really cost.</p></div>
-      <div><h3>Starting a project</h3><p>Get a quick priced quote, with the hard parts found up front.</p></div>
-      <div><h3>Just an idea</h3><p>Bring a sketch or a photo. We'll show you where to start and what it takes.</p></div>
-    </div>
-
-    <h3 class="cmp-title">Same house. Two very different projects.</h3>
-    <div class="compare">
-      <div class="cmp-row cmp-head" aria-hidden="true">
-        <span></span>
-        <span class="cmp-col bad"><svg viewBox="0 0 18 18"><path d="M5 5l8 8M13 5l-8 8"/></svg>Without a walkthrough</span>
-        <span class="cmp-col good"><svg viewBox="0 0 18 18"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg>With Alvarado Style first</span>
+    <div class="ks-panel">
+      <div>
+        <p class="eyebrow">The Keystone Walkthrough</p>
+        <h2>A 35-year contractor's opinion before you commit</h2>
+        <p class="lede">Buying a house, planning a project or just have an idea? We walk it with you, find the problems before anyone swings a hammer, and tell you what it really takes.</p>
+        <div class="ks-uses" aria-label="Good for"><span>Buying a home</span><span>Starting a project</span><span>Just an idea</span></div>
       </div>
-      <div class="cmp-row">
-        <span class="cmp-stage">The showing</span>
-        <div class="cmp-cell cmp-bad"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M5 5l8 8M13 5l-8 8"/></svg><div><span class="cmp-tag">Without a walkthrough</span>New paint and new carpet. The house looks fine.</div></div>
-        <div class="cmp-cell cmp-good"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><div><span class="cmp-tag">With Alvarado Style first</span>We find a soft floor under the tub and an outdated electrical panel.</div></div>
+      <div class="ks-offer">
+        <div class="ks-step"><span class="tag">Free<small>Step 1</small></span><div><h3>The walkthrough</h3><p>We walk the property with you and point out the structure, the problems and the possibilities.</p></div></div>
+        <div class="ks-step"><span class="tag">Priced<small>Step 2</small></span><div><h3>The written quote</h3><p>A priced scope you can plan around, negotiate with or build from.</p></div></div>
+        <div class="ks-cta"><a class="btn btn-gold" href="#contact" data-need="keystone">Book a free walkthrough</a><p>Or call or text <b>732-470-1583</b></p></div>
       </div>
-      <div class="cmp-row">
-        <span class="cmp-stage">The price</span>
-        <div class="cmp-cell cmp-bad"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M5 5l8 8M13 5l-8 8"/></svg><div><span class="cmp-tag">Without a walkthrough</span>You guess at the rehab and hope it holds.</div></div>
-        <div class="cmp-cell cmp-good"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><div><span class="cmp-tag">With Alvarado Style first</span>You get a priced quote and use it to negotiate.</div></div>
-      </div>
-      <div class="cmp-row">
-        <span class="cmp-stage">Demo day</span>
-        <div class="cmp-cell cmp-bad"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M5 5l8 8M13 5l-8 8"/></svg><div><span class="cmp-tag">Without a walkthrough</span>Rot and old wiring turn up behind the walls. Work stops.</div></div>
-        <div class="cmp-cell cmp-good"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><div><span class="cmp-tag">With Alvarado Style first</span>No surprises. The fixes are already in the plan and the price.</div></div>
-      </div>
-      <div class="cmp-row">
-        <span class="cmp-stage">The open floor plan</span>
-        <div class="cmp-cell cmp-bad"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M5 5l8 8M13 5l-8 8"/></svg><div><span class="cmp-tag">Without a walkthrough</span>That wall holds up the second floor. Now you need an engineer and a beam.</div></div>
-        <div class="cmp-cell cmp-good"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><div><span class="cmp-tag">With Alvarado Style first</span>We spotted the bearing wall on day one. The beam is sized and ordered before demo.</div></div>
-      </div>
-      <div class="cmp-row cmp-result">
-        <span class="cmp-stage">The finish</span>
-        <div class="cmp-cell cmp-bad"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M5 5l8 8M13 5l-8 8"/></svg><div><span class="cmp-tag">Without a walkthrough</span>Change orders, delays and a blown budget.</div></div>
-        <div class="cmp-cell cmp-good"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><div><span class="cmp-tag">With Alvarado Style first</span>On budget, on schedule, and built right.</div></div>
-      </div>
-    </div>
-
-    <div class="ks-cta">
-      <a class="btn btn-cta" href="#contact" data-need="keystone">Book a Keystone Walkthrough</a>
-      <p>Or call or text <b>732-470-1583</b></p>
     </div>
   </div>
 </section>
