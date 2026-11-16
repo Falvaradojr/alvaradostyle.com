@@ -1218,6 +1218,8 @@ const CATEGORY_NAMES = { construction: 'Construction', concepts: 'Concepts', str
 // Large photo slots around the site. Put a file path in src to replace that placeholder.
 // Keys: div-* are the four division panels on the homepage, page-* are the division page headers,
 // *-before / *-after are the before-and-after pairs on the Concepts and Demo pages.
+// Any slot can also play a short muted clip: add video (and optionally videoPhone, a smaller copy for phones);
+// src is then the still frame shown first. The clip loops while the slot is on screen and nothing downloads before.
 const PHOTOS = {
   'div-construction': { src: 'photos/slots/div-construction.jpg', alt: 'New shingle-style house with a wraparound porch, exterior nearly finished' },
   'div-concepts': { src: 'photos/slots/div-concepts.jpg', alt: 'Finished modern kitchen with white cabinets, a wood island and a dark marble floor' },
@@ -1360,13 +1362,32 @@ const FEATURED = { photo: 'video/featured-poster.jpg', alt: 'Drone view of a fra
 
   /* Photo slots and the featured project */
   const CAM = CAMERA;
-  let featVid = null;
+  const clips = [];
+  const noClips = (navigator.connection && navigator.connection.saveData) || matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // A short muted clip over a slot's still: loops while the slot is on screen, pauses off screen or on a hidden page.
+  function addClip(slot, src, srcPhone, poster) {
+    if (!src || !poster || noClips) return null;
+    const phone = matchMedia('(max-width: 760px)').matches && srcPhone;
+    const v = el('video', { muted: '', loop: '', playsinline: '', preload: 'none', poster: poster, 'aria-hidden': 'true', tabindex: '-1' });
+    v.muted = true;
+    v.appendChild(el('source', { src: phone || src, type: 'video/mp4' }));
+    v.addEventListener('loadedmetadata', () => { if (v.videoWidth && v.videoHeight) slot.style.aspectRatio = v.videoWidth + ' / ' + v.videoHeight; });
+    slot.classList.add('has-video');
+    slot.appendChild(v);
+    const play = () => v.play().catch(() => {});
+    if ('IntersectionObserver' in window) new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) play(); else v.pause(); }), { threshold: 0.2 }).observe(slot);
+    else play();
+    clips.push(v);
+    return v;
+  }
   function fillSlot(slot) {
     const ph = PHOTOS[slot.dataset.photo] || {};
     slot.textContent = '';
+    slot.classList.remove('has-video'); slot.style.aspectRatio = '';
     if (ph.src) {
       slot.classList.remove('is-placeholder');
       slot.appendChild(el('img', { src: ph.src, alt: ph.alt || '', loading: 'lazy', decoding: 'async' }));
+      addClip(slot, ph.video, ph.videoPhone, ph.src);
     } else {
       slot.classList.add('is-placeholder');
       const mark = el('div', { class: 'ph-mark' }, [el('span', { text: 'Project photo coming soon' })]);
@@ -1392,20 +1413,7 @@ const FEATURED = { photo: 'video/featured-poster.jpg', alt: 'Drone view of a fra
       box.appendChild(cap);
     }
     fillSlot(slot);
-    const saveData = navigator.connection && navigator.connection.saveData;
-    if (FEATURED.video && FEATURED.photo && !saveData && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      const phone = matchMedia('(max-width: 760px)').matches && FEATURED.videoPhone;
-      const v = el('video', { muted: '', loop: '', playsinline: '', preload: 'none', poster: FEATURED.photo, 'aria-hidden': 'true', tabindex: '-1' });
-      v.muted = true;
-      v.appendChild(el('source', { src: phone || FEATURED.video, type: 'video/mp4' }));
-      slot.classList.add('has-video');
-      v.addEventListener('loadedmetadata', () => { if (v.videoWidth && v.videoHeight) slot.style.aspectRatio = v.videoWidth + ' / ' + v.videoHeight; });
-      slot.appendChild(v);
-      featVid = v;
-      const play = () => v.play().catch(() => {});
-      if ('IntersectionObserver' in window) new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting && document.body.dataset.page === 'home') play(); else v.pause(); }), { threshold: 0.2 }).observe(slot);
-      else play();
-    }
+    if (FEATURED.photo) addClip(slot, FEATURED.video, FEATURED.videoPhone, FEATURED.photo);
   }
   document.querySelectorAll('.photo-slot[data-photo]').forEach(fillSlot);
   renderFeatured();
@@ -1464,7 +1472,7 @@ const FEATURED = { photo: 'video/featured-poster.jpg', alt: 'Drone view of a fra
     document.querySelectorAll('[data-view]').forEach(v => { v.hidden = v.dataset.view !== view; });
     document.body.dataset.page = view;
     if (heroVid) { if (view === 'home') heroPlay(); else heroVid.pause(); }
-    if (featVid && view !== 'home') featVid.pause();
+    clips.forEach(v => v.pause());
     document.querySelectorAll('.nav-links a, .menu a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + view));
     if (view !== 'home') {
       stopIntro();
