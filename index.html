@@ -18,7 +18,7 @@
 </head>
 <body>
 <style>
-/* Layout: cinematic dark logo intro, division lockups, Keystone Walkthrough (free walkthrough, then the written quote), house cutaway of what we check, process, family companies, quick quote. Palette from the logo: royal navy, white, antique gold. */
+/* Layout: cinematic dark logo intro, division lockups, Keystone Walkthrough (free walkthrough, then the written quote), house cutaway of what we check, process, quick quote. Palette from the logo: royal navy, white, antique gold. */
 :root {
   --bg: #f5f4f0;
   --surface: #ffffff;
@@ -412,14 +412,6 @@ header.nav.solid { background: var(--navy); box-shadow: 0 1px 0 color-mix(in srg
 @media (max-width: 900px) { .steps { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
 
-/* Family companies */
-.family { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.fam { background: var(--surface); border: 1px solid var(--line); padding: 26px; display: grid; gap: 10px; align-content: start; min-width: 0; }
-.fam .tag { font-size: 12px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-ink); }
-.fam h3 { font-family: var(--caps); font-size: 22px; font-weight: 800; letter-spacing: 0.04em; }
-.fam p { color: var(--muted); font-size: 15.5px; }
-@media (max-width: 900px) { .family { grid-template-columns: 1fr; } }
-
 /* Area + quick quote */
 .contact { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: start; }
 .area { display: grid; gap: 22px; }
@@ -488,7 +480,6 @@ footer nav a:hover { color: var(--on-navy); }
       <a class="nav-sec" href="#concepts">Concepts</a>
       <a class="nav-sec" href="#structural">Structural</a>
       <a class="nav-sec" href="#demo">Demo</a>
-      <a class="nav-sec" href="#companies">Our companies</a>
       <a class="nav-phone" href="tel:+17324701583"><small>Call us</small>732-470-1583</a>
       <a class="btn btn-gold" href="#contact">Get a quote</a>
     </nav>
@@ -499,7 +490,6 @@ footer nav a:hover { color: var(--on-navy); }
     <a href="#demo">Demo</a>
     <a href="#construction">Construction</a>
     <a href="#walkthrough">Walkthrough</a>
-    <a href="#companies">Our companies</a>
     <a href="#contact">Contact</a>
     <a class="menu-phone" href="tel:+17324701583">Call or text 732-470-1583</a>
   </nav>
@@ -684,21 +674,6 @@ footer nav a:hover { color: var(--on-navy); }
       <div class="step"><span class="step-n">STEP 2</span><h3>Quick priced quote</h3><p>A written price with the problems found up front, so you can decide with real numbers.</p></div>
       <div class="step"><span class="step-n">STEP 3</span><h3>Build</h3><p>Demo, Structural and Concepts work on one schedule, run by Alvarado Style Services.</p></div>
       <div class="step"><span class="step-n">STEP 4</span><h3>Punch &amp; handoff</h3><p>Final walk, punch list closed, and the keys back in your hands.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="companies">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">The Alvarado Style family</p>
-      <h2>Everything around the jobsite, covered</h2>
-      <p>Alvarado Style Services is the parent company behind a small group of local businesses that keep projects and people moving.</p>
-    </div>
-    <div class="family">
-      <article class="fam"><p class="tag">Logistics</p><h3>Supply Run</h3><p>Jobsite delivery and logistics. We pick up contractor-ordered materials and drop them where the crew needs them, keeping the job moving.</p></article>
-      <article class="fam"><p class="tag">Hauling · Moving</p><h3>Holy Cow Services</h3><p>Hauling, facility work and moving, with box trucks, flatbeds and trailers ready to go.</p></article>
-      <article class="fam"><p class="tag">Nonprofit</p><h3>Grandsons</h3><p>Helping seniors through home transitions, from downsizing to move-in, with care and a plan.</p></article>
     </div>
   </div>
 </section>
@@ -987,7 +962,7 @@ footer nav a:hover { color: var(--on-navy); }
     </div>
     <div class="foot-links">
       <nav aria-label="Footer">
-        <a href="#walkthrough">Walkthrough</a><a href="#companies">Our companies</a><a href="#contact">Contact</a>
+        <a href="#walkthrough">Walkthrough</a><a href="#contact">Contact</a>
       </nav>
       <div class="social" aria-label="Social media">
         <a class="soc" data-social="instagram" href="#" aria-label="Alvarado Style on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c2.7 0 3 0 4 .1 1 0 1.5.2 1.9.3.5.2.8.4 1.2.8.4.4.6.7.8 1.2.1.4.3.9.3 1.9.1 1 .1 1.3.1 4s0 3-.1 4c0 1-.2 1.5-.3 1.9-.2.5-.4.8-.8 1.2-.4.4-.7.6-1.2.8-.4.1-.9.3-1.9.3-1 .1-1.3.1-4 .1s-3 0-4-.1c-1 0-1.5-.2-1.9-.3-.5-.2-.8-.4-1.2-.8-.4-.4-.6-.7-.8-1.2-.1-.4-.3-.9-.3-1.9-.1-1-.1-1.3-.1-4s0-3 .1-4c0-1 .2-1.5.3-1.9.2-.5.4-.8.8-1.2.4-.4.7-.6 1.2-.8.4-.1.9-.3 1.9-.3 1-.1 1.3-.1 4-.1M12 0C9.3 0 8.9 0 7.9.1 6.8.1 6.1.3 5.5.5c-.7.2-1.2.6-1.8 1.1C3.1 2.2 2.8 2.8 2.5 3.4 2.3 4 2.1 4.7 2.1 5.8 2 6.9 2 7.3 2 10v4c0 2.7 0 3.1.1 4.1 0 1.1.2 1.8.5 2.4.3.7.6 1.2 1.2 1.8.5.5 1.1.9 1.8 1.2.6.2 1.3.4 2.4.5 1 .1 1.4.1 4.1.1s3.1 0 4.1-.1c1.1 0 1.8-.2 2.4-.5.7-.3 1.2-.6 1.8-1.2.5-.5.9-1.1 1.2-1.8.2-.6.4-1.3.5-2.4.1-1 .1-1.4.1-4.1v-4c0-2.7 0-3.1-.1-4.1 0-1.1-.2-1.8-.5-2.4-.3-.7-.6-1.2-1.2-1.8C19.8 1.1 19.2.8 18.5.5 17.9.3 17.2.1 16.1.1 15.1 0 14.7 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg></a>
