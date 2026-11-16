@@ -135,12 +135,12 @@ header.nav.solid { background: var(--navy); box-shadow: 0 1px 0 color-mix(in srg
 .hero-glow { position: absolute; inset: 0; z-index: -1; background:
   linear-gradient(to bottom, transparent 72%, var(--navy-deep) 100%),
   radial-gradient(ellipse 70% 60% at 50% 42%, var(--glow) 0%, var(--navy) 40%, var(--navy-deep) 68%, var(--night) 100%); }
-/* Optional video behind the opening screen (HERO_VIDEO in the script). Phones and reduced-motion users get the still image only. */
-.hero-video { position: absolute; inset: 0; z-index: -2; overflow: hidden; background: var(--night) center / cover no-repeat; }
-.hero-video video { display: block; width: 100%; height: 100%; object-fit: cover; }
-.hero.has-video .hero-glow { background: linear-gradient(to bottom, rgba(2, 3, 18, 0.46) 0%, rgba(13, 15, 66, 0.56) 55%, var(--navy-deep) 100%), radial-gradient(ellipse 70% 60% at 50% 42%, rgba(20, 22, 91, 0.3) 0%, rgba(2, 3, 18, 0.6) 100%); }
-.hero.play .hero-video { animation: as-fade 3.2s ease-in .2s both; }
-@media (max-width: 760px), (prefers-reduced-motion: reduce) { .hero-video video { display: none; } }
+/* Optional backdrop behind the opening screen (HERO_BACKDROP in the script): a still image, plus a muted clip on desktop and tablet only. */
+.hero-backdrop { position: absolute; inset: 0; z-index: -2; overflow: hidden; background: var(--night) center / cover no-repeat; }
+.hero-backdrop video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.hero.has-backdrop .hero-glow { background: linear-gradient(to bottom, rgba(2, 3, 18, 0.46) 0%, rgba(13, 15, 66, 0.56) 55%, var(--navy-deep) 100%), radial-gradient(ellipse 70% 60% at 50% 42%, rgba(20, 22, 91, 0.3) 0%, rgba(2, 3, 18, 0.6) 100%); }
+.hero.play .hero-backdrop { animation: as-fade 3.2s ease-in .2s both; }
+@media (max-width: 760px), (prefers-reduced-motion: reduce) { .hero-backdrop video { display: none; } }
 .hero-inner { display: grid; justify-items: center; gap: 24px; padding-inline: 20px; max-width: 900px; }
 .hero-title { display: grid; justify-items: center; gap: 26px; }
 .hero-mark { position: relative; display: block; width: min(76vw, 500px); filter: drop-shadow(0 0 40px rgba(80, 100, 255, 0.18)); }
@@ -513,7 +513,7 @@ footer nav a:hover { color: var(--on-navy); }
 <main id="main">
 <div data-view="home" id="view-home">
 <section class="hero play" id="top" aria-label="Alvarado Style">
-  <div class="hero-video" id="hero-video" aria-hidden="true" hidden></div>
+  <div class="hero-backdrop" id="hero-backdrop" aria-hidden="true" hidden></div>
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="hero-inner">
     <h1 class="hero-title">
@@ -1167,9 +1167,10 @@ footer nav a:hover { color: var(--on-navy); }
 // FormSubmit (formsubmit.co), which emails each one. Leave empty and the form stays a preview that sends nothing.
 const QUOTE_EMAIL = 'my@alvaradostyle.com';
 
-// Short muted clip behind the opening screen, and a still image from it. Leave src empty for no video.
-// Phones and people who prefer reduced motion see the still image only.
-const HERO_VIDEO = { src: 'video/hero.mp4', poster: 'video/hero-poster.jpg' };
+// Backdrop behind the opening screen: a still image (position = the part to keep in view, as CSS background-position)
+// and, optionally, a short muted clip that plays over it on desktop and tablet. Phones and people who prefer reduced
+// motion see the image only. Leave both empty for the plain navy opening.
+const HERO_BACKDROP = { image: 'photos/hero/van.jpg', position: '38% 45%', video: '' };
 
 const SOCIAL = {
   instagram: '',
@@ -1404,16 +1405,19 @@ const FEATURED = { photo: 'video/hero-poster.jpg', alt: 'Drone view of a framed 
   /* Opening-screen video */
   let heroVid = null;
   const heroPlay = () => { if (heroVid && getComputedStyle(heroVid).display !== 'none') heroVid.play().catch(() => {}); };
-  if (HERO_VIDEO.src) {
-    const box = document.getElementById('hero-video');
-    box.hidden = false; hero.classList.add('has-video');
-    if (HERO_VIDEO.poster) box.style.backgroundImage = 'url("' + HERO_VIDEO.poster + '")';
-    const wantsVideo = !matchMedia('(max-width: 760px)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (HERO_BACKDROP.image || HERO_BACKDROP.video) {
+    const box = document.getElementById('hero-backdrop');
+    box.hidden = false; hero.classList.add('has-backdrop');
+    if (HERO_BACKDROP.image) {
+      box.style.backgroundImage = 'url("' + HERO_BACKDROP.image + '")';
+      if (HERO_BACKDROP.position) box.style.backgroundPosition = HERO_BACKDROP.position;
+    }
+    const wantsVideo = !!HERO_BACKDROP.video && !matchMedia('(max-width: 760px)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (wantsVideo) {
       heroVid = el('video', { muted: '', loop: '', playsinline: '', preload: 'metadata', 'aria-hidden': 'true', tabindex: '-1' });
       heroVid.muted = true;
-      if (HERO_VIDEO.poster) heroVid.setAttribute('poster', HERO_VIDEO.poster);
-      heroVid.appendChild(el('source', { src: HERO_VIDEO.src, type: 'video/mp4' }));
+      if (HERO_BACKDROP.image) heroVid.setAttribute('poster', HERO_BACKDROP.image);
+      heroVid.appendChild(el('source', { src: HERO_BACKDROP.video, type: 'video/mp4' }));
       box.appendChild(heroVid);
       heroPlay();
       if ('IntersectionObserver' in window) new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting && document.body.dataset.page === 'home') heroPlay(); else heroVid.pause(); }), { threshold: 0.05 }).observe(hero);
