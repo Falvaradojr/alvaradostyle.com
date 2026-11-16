@@ -917,7 +917,7 @@ footer nav a:hover { color: var(--on-navy); }
       </div>
       <div class="reach">
         <div class="reach-row"><span>Phone</span><b id="r-phone">848-223-1364</b><button class="copy" type="button" data-copy="r-phone">Copy</button></div>
-        <div class="reach-row"><span>Email</span><b id="r-email">bids@alvaradostyle.com</b><button class="copy" type="button" data-copy="r-email">Copy</button></div>
+        <div class="reach-row"><span>Email</span><b id="r-email">my@alvaradostyle.com</b><button class="copy" type="button" data-copy="r-email">Copy</button></div>
         <div class="reach-row"><span>NJ HIC #</span><b>13VH00000000</b></div>
         <div class="reach-row"><span>Follow</span>
           <div class="social social-sm">
@@ -929,20 +929,20 @@ footer nav a:hover { color: var(--on-navy); }
       </div>
     </div>
 
-    <form class="quote" id="quote">
+    <form class="quote" id="quote" method="POST">
       <h3>Get a quick quote</h3>
       <p>Tell us what you're thinking. We'll call you back to set up a walkthrough.</p>
       <div class="form-2">
-        <div class="field"><label for="f-name">Name</label><input id="f-name" required autocomplete="name"></div>
-        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" required autocomplete="tel" inputmode="tel"></div>
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" required autocomplete="name"></div>
+        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" required autocomplete="tel" inputmode="tel"></div>
       </div>
       <div class="form-2">
         <div class="field"><label for="f-type">I am a</label>
-          <select id="f-type"><option>Homeowner</option><option>Home buyer</option><option>Investor / flipper</option><option>Developer</option><option>Landlord / property manager</option><option>Realtor</option></select></div>
-        <div class="field"><label for="f-addr">Town or address</label><input id="f-addr" placeholder="e.g. Toms River"></div>
+          <select id="f-type" name="type"><option>Homeowner</option><option>Home buyer</option><option>Investor / flipper</option><option>Developer</option><option>Landlord / property manager</option><option>Realtor</option></select></div>
+        <div class="field"><label for="f-addr">Town or address</label><input id="f-addr" name="address" placeholder="e.g. Toms River"></div>
       </div>
       <div class="field"><label for="f-job">What do you need?</label>
-        <select id="f-job">
+        <select id="f-job" name="job">
           <option value="keystone">Keystone Walkthrough before I buy</option>
           <option value="quote">Quick quote on a project</option>
           <option value="idea">I just have an idea</option>
@@ -952,9 +952,14 @@ footer nav a:hover { color: var(--on-navy); }
           <option value="structural">Beam or structural work (Structural)</option>
           <option value="demo">Demolition (Demo)</option>
         </select></div>
-      <div class="field"><label for="f-msg">What are you planning?</label><textarea id="f-msg" rows="4" placeholder="The house, the idea, your budget and timeline"></textarea></div>
-      <button class="btn btn-cta" type="submit" style="justify-self: start">Send</button>
-      <p class="form-msg" id="f-out" hidden></p>
+      <div class="field"><label for="f-msg">What are you planning?</label><textarea id="f-msg" name="message" rows="4" placeholder="The house, the idea, your budget and timeline"></textarea></div>
+      <input type="hidden" name="_subject" value="Quote request from alvaradostyle.com">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://alvaradostyle.com/#sent">
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+      <button class="btn btn-cta" type="submit" id="f-send" style="justify-self: start">Send</button>
+      <p class="form-msg" id="f-out" role="status" aria-live="polite" hidden></p>
     </form>
   </div>
 </section>
@@ -1235,6 +1240,10 @@ footer nav a:hover { color: var(--on-navy); }
 /* ---- Site settings: edit these, nothing below needs to change ---- */
 
 // Paste the full profile links here. An empty value shows the icon dimmed with no link.
+// Where quote requests go. Set to the inbox that should receive them; requests are delivered by
+// FormSubmit (formsubmit.co), which emails each one. Leave empty and the form stays a preview that sends nothing.
+const QUOTE_EMAIL = 'my@alvaradostyle.com';
+
 const SOCIAL = {
   instagram: '',
   tiktok: '',
@@ -1449,6 +1458,10 @@ const FEATURED = { photo: '', alt: '', title: '', location: '', divisions: '', p
   document.querySelectorAll('.photo-slot[data-photo]').forEach(fillSlot);
   renderFeatured();
 
+  /* Quote form messages (also used by the #sent return link below) */
+  const sayOut = t => { const out = document.getElementById('f-out'); out.textContent = t; out.hidden = false; };
+  const SENT_MSG = "Thanks, we got it. We'll call you back to set up a walkthrough. Need us sooner? Call or text 848-223-1364.";
+
   /* Division pages: #construction, #concepts, #structural and #demo show their own page; anything else is the homepage */
   const VIEWS = ['construction', 'concepts', 'structural', 'demo'];
   const stopIntro = () => { hero.classList.remove('play'); nav.classList.remove('intro'); };
@@ -1461,6 +1474,9 @@ const FEATURED = { photo: '', alt: '', title: '', location: '', divisions: '', p
     if (view !== 'home') {
       stopIntro();
       window.scrollTo({ top: 0, behavior: 'instant' });
+    } else if (h === 'sent') {
+      sayOut(SENT_MSG);
+      requestAnimationFrame(() => document.getElementById('contact').scrollIntoView());
     } else if (h) {
       const t = document.getElementById(h);
       if (t) requestAnimationFrame(() => t.scrollIntoView());
@@ -1504,11 +1520,34 @@ const FEATURED = { photo: '', alt: '', title: '', location: '', divisions: '', p
   }));
   function selectText(el) { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
 
-  document.getElementById('quote').addEventListener('submit', e => {
+  /* Quote form: sends through FormSubmit to QUOTE_EMAIL. Normal path is an in-page (AJAX) send; if the
+     service answers with anything but success (for example before the inbox is activated), the form is
+     posted the ordinary way so FormSubmit can show its own activation page. */
+  const quoteForm = document.getElementById('quote');
+  if (QUOTE_EMAIL) quoteForm.action = 'https://formsubmit.co/' + QUOTE_EMAIL;
+  quoteForm.addEventListener('submit', async e => {
     e.preventDefault();
-    const out = document.getElementById('f-out');
-    out.textContent = 'Thanks. This is a preview of the form, so nothing was sent yet. Call or text 848-223-1364 to reach us today.';
-    out.hidden = false;
+    const form = e.target, btn = document.getElementById('f-send');
+    if (!QUOTE_EMAIL) { sayOut('Thanks. This is a preview of the form, so nothing was sent yet. Call or text 848-223-1364 to reach us today.'); return; }
+    if (form._honey.value) { sayOut('Thanks.'); return; }
+    const job = form.job.options[form.job.selectedIndex].textContent;
+    form._subject.value = 'Quote request from alvaradostyle.com: ' + job;
+    const data = { name: form.name.value.trim(), phone: form.phone.value.trim(), type: form.type.value, address: form.address.value.trim(), job, message: form.message.value.trim(),
+      _subject: form._subject.value, _template: 'table', _captcha: 'false' };
+    btn.disabled = true; btn.textContent = 'Sending…';
+    let r = null;
+    try {
+      r = await fetch('https://formsubmit.co/ajax/' + QUOTE_EMAIL, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) });
+      const j = await r.json().catch(() => ({}));
+      if (r.ok && String(j.success) === 'true') {
+        sayOut("Thanks, we got it. We'll call you back at " + data.phone + ' to set up a walkthrough. Need us sooner? Call or text 848-223-1364.');
+        form.reset();
+      } else {
+        form.submit();
+      }
+    } catch (err) {
+      sayOut("Sorry, that didn't go through. Please call or text 848-223-1364 and we'll take it from there.");
+    } finally { btn.disabled = false; btn.textContent = 'Send'; }
   });
 })();
 </script>
