@@ -135,6 +135,12 @@ header.nav.solid { background: var(--navy); box-shadow: 0 1px 0 color-mix(in srg
 .hero-glow { position: absolute; inset: 0; z-index: -1; background:
   linear-gradient(to bottom, transparent 72%, var(--navy-deep) 100%),
   radial-gradient(ellipse 70% 60% at 50% 42%, var(--glow) 0%, var(--navy) 40%, var(--navy-deep) 68%, var(--night) 100%); }
+/* Optional video behind the opening screen (HERO_VIDEO in the script). Phones and reduced-motion users get the still image only. */
+.hero-video { position: absolute; inset: 0; z-index: -2; overflow: hidden; background: var(--night) center / cover no-repeat; }
+.hero-video video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.hero.has-video .hero-glow { background: linear-gradient(to bottom, rgba(2, 3, 18, 0.46) 0%, rgba(13, 15, 66, 0.56) 55%, var(--navy-deep) 100%), radial-gradient(ellipse 70% 60% at 50% 42%, rgba(20, 22, 91, 0.3) 0%, rgba(2, 3, 18, 0.6) 100%); }
+.hero.play .hero-video { animation: as-fade 3.2s ease-in .2s both; }
+@media (max-width: 760px), (prefers-reduced-motion: reduce) { .hero-video video { display: none; } }
 .hero-inner { display: grid; justify-items: center; gap: 24px; padding-inline: 20px; max-width: 900px; }
 .hero-title { display: grid; justify-items: center; gap: 26px; }
 .hero-mark { position: relative; display: block; width: min(76vw, 500px); filter: drop-shadow(0 0 40px rgba(80, 100, 255, 0.18)); }
@@ -506,6 +512,7 @@ footer nav a:hover { color: var(--on-navy); }
 <main id="main">
 <div data-view="home" id="view-home">
 <section class="hero play" id="top" aria-label="Alvarado Style">
+  <div class="hero-video" id="hero-video" aria-hidden="true" hidden></div>
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="hero-inner">
     <h1 class="hero-title">
@@ -1159,6 +1166,10 @@ footer nav a:hover { color: var(--on-navy); }
 // FormSubmit (formsubmit.co), which emails each one. Leave empty and the form stays a preview that sends nothing.
 const QUOTE_EMAIL = 'my@alvaradostyle.com';
 
+// Short muted clip behind the opening screen, and a still image from it. Leave src empty for no video.
+// Phones and people who prefer reduced motion see the still image only.
+const HERO_VIDEO = { src: 'video/hero.mp4', poster: 'video/hero-poster.jpg' };
+
 const SOCIAL = {
   instagram: '',
   tiktok: '',
@@ -1373,6 +1384,25 @@ const FEATURED = { photo: '', alt: '', title: '', location: '', divisions: '', p
   document.querySelectorAll('.photo-slot[data-photo]').forEach(fillSlot);
   renderFeatured();
 
+  /* Opening-screen video */
+  let heroVid = null;
+  const heroPlay = () => { if (heroVid && getComputedStyle(heroVid).display !== 'none') heroVid.play().catch(() => {}); };
+  if (HERO_VIDEO.src) {
+    const box = document.getElementById('hero-video');
+    box.hidden = false; hero.classList.add('has-video');
+    if (HERO_VIDEO.poster) box.style.backgroundImage = 'url("' + HERO_VIDEO.poster + '")';
+    const wantsVideo = !matchMedia('(max-width: 760px)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (wantsVideo) {
+      heroVid = el('video', { muted: '', loop: '', playsinline: '', preload: 'metadata', 'aria-hidden': 'true', tabindex: '-1' });
+      heroVid.muted = true;
+      if (HERO_VIDEO.poster) heroVid.setAttribute('poster', HERO_VIDEO.poster);
+      heroVid.appendChild(el('source', { src: HERO_VIDEO.src, type: 'video/mp4' }));
+      box.appendChild(heroVid);
+      heroPlay();
+      if ('IntersectionObserver' in window) new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting && document.body.dataset.page === 'home') heroPlay(); else heroVid.pause(); }), { threshold: 0.05 }).observe(hero);
+    }
+  }
+
   /* Quote form messages (also used by the #sent return link below) */
   const sayOut = t => { const out = document.getElementById('f-out'); out.textContent = t; out.hidden = false; };
   const SENT_MSG = "Thanks, we got it. We'll call you back to set up a walkthrough. Need us sooner? Call or text 732-470-1583.";
@@ -1385,6 +1415,7 @@ const FEATURED = { photo: '', alt: '', title: '', location: '', divisions: '', p
     const view = VIEWS.includes(h) ? h : 'home';
     document.querySelectorAll('[data-view]').forEach(v => { v.hidden = v.dataset.view !== view; });
     document.body.dataset.page = view;
+    if (heroVid) { if (view === 'home') heroPlay(); else heroVid.pause(); }
     document.querySelectorAll('.nav-links a, .menu a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + view));
     if (view !== 'home') {
       stopIntro();
