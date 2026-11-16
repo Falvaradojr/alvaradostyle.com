@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Alvarado Style Services</title>
-<meta name="description" content="Alvarado Style Services: investor and family focused construction in Monmouth and Ocean County, NJ. Construction, Concepts, Structural and Demo divisions, 35 years building in New Jersey. Call or text 732-470-1583.">
+<meta name="description" content="Alvarado Style Services: investor and family focused construction in Monmouth and Ocean County, NJ. Building, Concepts, Structural and Demo divisions, 35 years building in New Jersey. Call or text 732-470-1583.">
 <meta name="theme-color" content="#14165b">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Alvarado Style Services">
-<meta property="og:description" content="Alvarado Style Services: investor and family focused construction in Monmouth and Ocean County, NJ. Construction, Concepts, Structural and Demo divisions, 35 years building in New Jersey. Call or text 732-470-1583.">
+<meta property="og:description" content="Alvarado Style Services: investor and family focused construction in Monmouth and Ocean County, NJ. Building, Concepts, Structural and Demo divisions, 35 years building in New Jersey. Call or text 732-470-1583.">
 
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -483,6 +483,7 @@ footer nav a:hover { color: var(--on-navy); }
       <svg viewBox="0 0 347 294" aria-hidden="true" focusable="false"><use href="#as-mark"/></svg>
     </a>
     <nav class="nav-links" aria-label="Main">
+      <a class="nav-sec" href="#building">Building</a>
       <a class="nav-sec" href="#concepts">Concepts</a>
       <a class="nav-sec" href="#structural">Structural</a>
       <a class="nav-sec" href="#demo">Demo</a>
@@ -491,10 +492,10 @@ footer nav a:hover { color: var(--on-navy); }
     </nav>
   </div>
   <nav class="menu" id="menu" aria-label="Menu" hidden>
+    <a href="#building">Building</a>
     <a href="#concepts">Concepts</a>
     <a href="#structural">Structural</a>
     <a href="#demo">Demo</a>
-    <a href="#construction">Construction</a>
     <a href="#walkthrough">Walkthrough</a>
     <a href="#contact">Contact</a>
     <a class="menu-phone" href="tel:+17324701583">Call or text 732-470-1583</a>
@@ -540,9 +541,9 @@ footer nav a:hover { color: var(--on-navy); }
       <p>Alvarado Style Services is the general contractor. Each division is a specialized department under the same roof, so a project moves through demolition, structure and finish on one schedule with one point of contact.</p>
     </div>
     <div class="div-grid">
-      <a class="div-panel" href="#construction">
+      <a class="div-panel" href="#building">
         <div class="photo-slot" data-photo="div-construction" data-note="Finished exterior or whole-house renovation"></div>
-        <div class="div-body"><span class="c">CONSTRUCTION</span><p>Renovations, additions and new builds, managed from permits to punch list.</p><span class="more">See Construction</span></div>
+        <div class="div-body"><span class="c">BUILDING</span><p>Renovations, additions and new builds, managed from permits to punch list.</p><span class="more">See Building</span></div>
       </a>
       <a class="div-panel" href="#concepts">
         <div class="photo-slot" data-photo="div-concepts" data-note="Finished open-concept living space"></div>
@@ -729,12 +730,12 @@ footer nav a:hover { color: var(--on-navy); }
 </section>
 </div>
 
-<div data-view="construction" id="view-construction" hidden>
+<div data-view="building" id="view-building" hidden>
 <section class="page-hero">
   <div class="wrap">
     <div class="page-copy">
-      <p class="crumb"><a href="#top">Alvarado Style Services</a><span>/</span><span>Construction</span></p>
-      <h1>Construction</h1>
+      <p class="crumb"><a href="#top">Alvarado Style Services</a><span>/</span><span>Building</span></p>
+      <h1>Building</h1>
       <p class="lede">General contracting for renovations, additions and new builds across Monmouth and Ocean County. One company runs the job, coordinates the trades and hands you a finished property.</p>
       <div class="hero-ctas"><a class="btn btn-gold" href="#contact" data-need="build">Get a quote</a><a class="btn btn-ghost" href="tel:+17324701583">Call 732-470-1583</a></div>
     </div>
@@ -947,7 +948,7 @@ footer nav a:hover { color: var(--on-navy); }
       <div>
         <p class="foot-tag">Alvarado Style Services</p>
         <p>Investor &amp; Family Focused Construction</p>
-        <p class="foot-divs"><a href="#construction">Construction</a> · <a href="#concepts">Concepts</a> · <a href="#structural">Structural</a> · <a href="#demo">Demo</a></p>
+        <p class="foot-divs"><a href="#building">Building</a> · <a href="#concepts">Concepts</a> · <a href="#structural">Structural</a> · <a href="#demo">Demo</a></p>
         <p>Monmouth and Ocean County, NJ · 732-470-1583</p>
       </div>
     </div>
@@ -1024,7 +1025,7 @@ const PROJECTS = [
   { id: 'd-fixtures', category: 'demo', title: 'Finish and fixture removal', note: 'Kitchen or bath stripped for remodel', placeholder: true, photos: [] }
 ];
 
-const CATEGORY_NAMES = { construction: 'Construction', concepts: 'Concepts', structural: 'Structural', demo: 'Demo' };
+const CATEGORY_NAMES = { construction: 'Building', concepts: 'Concepts', structural: 'Structural', demo: 'Demo' };
 
 // Large photo slots around the site. Put a file path in src to replace that placeholder.
 // Keys: div-* are the four division panels on the homepage, page-* are the division page headers,
@@ -1299,11 +1300,11 @@ const FEATURED = { photo: 'video/featured-poster.jpg', alt: 'Drone view of a fra
   const sayOut = t => { const out = document.getElementById('f-out'); out.textContent = t; out.hidden = false; };
   const SENT_MSG = "Thanks, we got it. We'll call you back to set up a walkthrough. Need us sooner? Call or text 732-470-1583.";
 
-  /* Division pages: #construction, #concepts, #structural and #demo show their own page; anything else is the homepage */
-  const VIEWS = ['construction', 'concepts', 'structural', 'demo'];
+  /* Division pages: #building, #concepts, #structural and #demo show their own page; anything else is the homepage */
+  const VIEWS = ['building', 'concepts', 'structural', 'demo'];
   const stopIntro = () => { hero.classList.remove('play'); nav.classList.remove('intro'); };
   function route() {
-    const h = decodeURIComponent(location.hash.slice(1));
+    const h = decodeURIComponent(location.hash.slice(1)).replace(/^construction$/, 'building'); // the old Construction link still opens the Building page
     const view = VIEWS.includes(h) ? h : 'home';
     document.querySelectorAll('[data-view]').forEach(v => { v.hidden = v.dataset.view !== view; });
     document.body.dataset.page = view;
