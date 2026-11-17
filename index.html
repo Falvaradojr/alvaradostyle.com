@@ -796,7 +796,10 @@ footer.bg-window { background: rgba(13, 15, 66, 0.9); }
 /* Contact page: big tiles right under the page top */
 .ways-sec { background: var(--bg); padding-top: clamp(36px, 5vw, 56px); }
 .page .contact-page { padding-top: 32px; }
-.ways { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 12px; }
+.ways { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; } /* one, two or three across; a short last row sits centred */
+.ways > .way { flex: 0 1 100%; }
+@media (min-width: 580px) { .ways > .way { flex-basis: calc((100% - 12px) / 2); } }
+@media (min-width: 900px) { .ways > .way { flex-basis: calc((100% - 24px) / 3); } } /* the email needs about 252 px, so never four across */
 .way { display: flex; align-items: center; gap: 14px; min-width: 0; padding: 16px 18px; background: var(--surface); border: 1px solid var(--line); color: var(--ink); text-decoration: none; transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease; }
 .way:hover, .way:focus-visible { border-color: var(--navy); box-shadow: 0 10px 24px -14px rgba(20, 22, 91, 0.45); transform: translateY(-2px); }
 .way-ic { flex: none; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--navy); color: var(--gold); }
@@ -1249,11 +1252,11 @@ const SITE_BG = { video: 'video/site-bg.mp4', videoTall: 'video/site-bg-tall.mp4
 // A profile shows as soon as its link is here: Contact page tiles, the home closing call, the footer of every page,
 // the phone menu and the Contact "Follow" row. '' keeps it hidden. Never put in a link he has not given.
 const SOCIAL = {
-  instagram: '',
+  instagram: 'https://www.instagram.com/alvarado_style_/',
   facebook: '',
   tiktok: '',
   youtube: '',
-  google: '',
+  google: 'https://share.google/PmhdQYhdgPz1S4u50',
   yelp: '',
   houzz: '',
   linkedin: ''
