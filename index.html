@@ -790,6 +790,35 @@ footer.bg-window { background: rgba(13, 15, 66, 0.9); }
 @media (prefers-reduced-motion: reduce) { .dg-pulses, .dg-glow { display: none; } }
 @keyframes dg-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
 @keyframes dg-pop { from { opacity: 0; transform: scale(0.7); } to { opacity: 1; transform: none; } }
+
+/* ---- Every way to reach us (2026-11-17 evening) ---- */
+.ic-line { fill: none !important; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+/* Contact page: big tiles right under the page top */
+.ways-sec { background: var(--bg); padding-top: clamp(36px, 5vw, 56px); }
+.page .contact-page { padding-top: 32px; }
+.ways { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 12px; }
+.way { display: flex; align-items: center; gap: 14px; min-width: 0; padding: 16px 18px; background: var(--surface); border: 1px solid var(--line); color: var(--ink); text-decoration: none; transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease; }
+.way:hover, .way:focus-visible { border-color: var(--navy); box-shadow: 0 10px 24px -14px rgba(20, 22, 91, 0.45); transform: translateY(-2px); }
+.way-ic { flex: none; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--navy); color: var(--gold); }
+.way-ic svg { width: 22px; height: 22px; fill: currentColor; }
+.way-t { display: grid; gap: 2px; min-width: 0; }
+.way-t b { font-family: var(--caps); font-weight: 700; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; }
+.way-t small { font-size: 15.5px; color: var(--muted); overflow-wrap: anywhere; }
+@media (max-width: 900px) { .contact-page .contact { grid-template-areas: "form" "walk" "reach"; } }
+/* Home closing call: Call / Text / Email and each profile as pills */
+.ways-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 4px; }
+.ways-row a { display: inline-flex; align-items: center; gap: 9px; padding: 11px 18px; border: 1px solid rgba(255, 255, 255, 0.4); background: rgba(2, 3, 18, 0.35); color: #ffffff; text-decoration: none; font-weight: 600; font-size: 15.5px; transition: border-color 0.15s ease, color 0.15s ease; }
+.ways-row a:hover, .ways-row a:focus-visible { border-color: var(--gold); color: var(--gold-bright); }
+.ways-row svg { width: 18px; height: 18px; fill: currentColor; }
+/* Footer: the contact line as links */
+.foot-reach a { color: var(--on-navy); text-decoration: none; border-bottom: 1px solid rgba(255, 255, 255, 0.35); }
+.foot-reach a:hover, .foot-reach a:focus-visible { color: var(--gold-bright); border-color: var(--gold); }
+/* Profile icon rows wrap when many profiles are set (footer, Follow row, menu) */
+.social { flex-wrap: wrap; }
+/* Phone menu: the email under the phone, then the profiles */
+.menu .menu-mail { color: var(--gold); border-bottom: 0; padding-top: 0; letter-spacing: 0.02em; overflow-wrap: anywhere; }
+.menu .menu-social { padding: 6px 0 2px; }
+.menu .menu-social a { padding: 0; border: 1px solid var(--on-navy-line); }
 </style>
 
 <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
@@ -829,6 +858,8 @@ footer.bg-window { background: rgba(13, 15, 66, 0.9); }
     <a href="#our-work">Our work</a>
     <a href="#contact">Contact</a>
     <a class="menu-phone" href="tel:+17324701583">Call or text 732-470-1583</a>
+    <a class="menu-mail" href="mailto:my@alvaradostyle.com">Email my@alvaradostyle.com</a>
+    <div class="social menu-social" aria-label="Social media" data-social-list></div>
   </nav>
 </header>
 
@@ -938,7 +969,8 @@ footer.bg-window { background: rgba(13, 15, 66, 0.9); }
   <div class="wrap" data-reveal>
     <h2>Let&#8217;s get your project moving.</h2>
     <p>One conversation. One coordinated team. Let&#8217;s talk about what you&#8217;re building.</p>
-    <div class="cta-row"><a class="btn btn-gold" href="#contact" data-need="quote">Contact Alvarado Style</a><p class="phone-line">Or call or text <b>732-470-1583</b></p></div>
+    <div class="cta-row"><a class="btn btn-gold" href="#contact" data-need="quote">Contact Alvarado Style</a></div>
+    <div class="ways-row" data-ways="pills" aria-label="Other ways to reach us"><a href="tel:+17324701583"><svg class="ic-line" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>Call 732-470-1583</span></a><a href="sms:+17324701583"><svg class="ic-line" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H8l-4 4M8 11h.01M12 11h.01M16 11h.01"/></svg><span>Text us</span></a><a href="mailto:my@alvaradostyle.com"><svg class="ic-line" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7zm0 0 9 6 9-6"/></svg><span>Email us</span></a></div>
   </div>
 </section>
 </div>
@@ -1097,6 +1129,13 @@ footer.bg-window { background: rgba(13, 15, 66, 0.9); }
     </div>
   </div>
 </section>
+<section class="ways-sec" aria-label="Ways to reach us">
+  <div class="wrap"><div class="ways" data-ways="tiles">
+    <a class="way" href="tel:+17324701583"><span class="way-ic"><svg class="ic-line" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><span class="way-t"><b>Call</b><small>732-470-1583</small></span></a>
+    <a class="way" href="sms:+17324701583"><span class="way-ic"><svg class="ic-line" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H8l-4 4M8 11h.01M12 11h.01M16 11h.01"/></svg></span><span class="way-t"><b>Text</b><small>732-470-1583</small></span></a>
+    <a class="way" href="mailto:my@alvaradostyle.com"><span class="way-ic"><svg class="ic-line" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7zm0 0 9 6 9-6"/></svg></span><span class="way-t"><b>Email</b><small>my@alvaradostyle.com</small></span></a>
+  </div></div>
+</section>
 <section class="section contact-page" id="contact-us">
   <div class="wrap contact">
     <form class="quote" id="quote" method="POST" data-reveal>
@@ -1144,11 +1183,7 @@ footer.bg-window { background: rgba(13, 15, 66, 0.9); }
         <div class="reach-row"><span>Email</span><b id="r-email">my@alvaradostyle.com</b><button class="copy" type="button" data-copy="r-email">Copy</button></div>
         <div class="reach-row"><span>NJ HIC #</span><b>13VH08818400</b></div>
         <div class="reach-row"><span>Follow</span>
-          <div class="social social-sm">
-            <a class="soc" data-social="instagram" href="#" aria-label="Alvarado Style on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c2.7 0 3 0 4 .1 1 0 1.5.2 1.9.3.5.2.8.4 1.2.8.4.4.6.7.8 1.2.1.4.3.9.3 1.9.1 1 .1 1.3.1 4s0 3-.1 4c0 1-.2 1.5-.3 1.9-.2.5-.4.8-.8 1.2-.4.4-.7.6-1.2.8-.4.1-.9.3-1.9.3-1 .1-1.3.1-4 .1s-3 0-4-.1c-1 0-1.5-.2-1.9-.3-.5-.2-.8-.4-1.2-.8-.4-.4-.6-.7-.8-1.2-.1-.4-.3-.9-.3-1.9-.1-1-.1-1.3-.1-4s0-3 .1-4c0-1 .2-1.5.3-1.9.2-.5.4-.8.8-1.2.4-.4.7-.6 1.2-.8.4-.1.9-.3 1.9-.3 1-.1 1.3-.1 4-.1M12 0C9.3 0 8.9 0 7.9.1 6.8.1 6.1.3 5.5.5c-.7.2-1.2.6-1.8 1.1C3.1 2.2 2.8 2.8 2.5 3.4 2.3 4 2.1 4.7 2.1 5.8 2 6.9 2 7.3 2 10v4c0 2.7 0 3.1.1 4.1 0 1.1.2 1.8.5 2.4.3.7.6 1.2 1.2 1.8.5.5 1.1.9 1.8 1.2.6.2 1.3.4 2.4.5 1 .1 1.4.1 4.1.1s3.1 0 4.1-.1c1.1 0 1.8-.2 2.4-.5.7-.3 1.2-.6 1.8-1.2.5-.5.9-1.1 1.2-1.8.2-.6.4-1.3.5-2.4.1-1 .1-1.4.1-4.1v-4c0-2.7 0-3.1-.1-4.1 0-1.1-.2-1.8-.5-2.4-.3-.7-.6-1.2-1.2-1.8C19.8 1.1 19.2.8 18.5.5 17.9.3 17.2.1 16.1.1 15.1 0 14.7 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg></a>
-            <a class="soc" data-social="tiktok" href="#" aria-label="Alvarado Style on TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 1h-3.5v14.3a3 3 0 1 1-3-3c.3 0 .7 0 1 .1V8.8a6.6 6.6 0 0 0-1-.1 6.5 6.5 0 1 0 6.5 6.5V8.4a8.4 8.4 0 0 0 4.9 1.6V6.5a4.9 4.9 0 0 1-4.9-4.9V1z"/></svg></a>
-            <a class="soc" data-social="facebook" href="#" aria-label="Alvarado Style on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 22v-8.2h2.8l.4-3.3h-3.2V8.4c0-.9.3-1.6 1.6-1.6h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.4v3.3h2.8V22h3.4z"/></svg></a>
-          </div>
+          <div class="social social-sm" data-social-list></div>
         </div>
       </div>
       <p class="towns-line"><b>Monmouth and Ocean County.</b> Toms River, Brick, Lakewood, Point Pleasant, Wall, Howell, Freehold, Manalapan, Long Branch, Asbury Park, Red Bank and Jackson, and we travel for the right project.</p>
@@ -1166,18 +1201,15 @@ footer.bg-window { background: rgba(13, 15, 66, 0.9); }
         <p class="foot-tag">Alvarado Style Services</p>
         <p>Construction for Investors and Homeowners</p>
         <p class="foot-divs"><a href="#building">Building</a> · <a href="#concepts">Concepts</a> · <a href="#structural">Structural</a> · <a href="#demo">Demo</a></p>
-        <p>Monmouth and Ocean County, NJ · 732-470-1583 · NJ HIC # 13VH08818400</p>
+        <p class="foot-reach"><a href="tel:+17324701583">Call or text 732-470-1583</a> · <a href="mailto:my@alvaradostyle.com">my@alvaradostyle.com</a></p>
+        <p>Monmouth and Ocean County, NJ · NJ HIC # 13VH08818400</p>
       </div>
     </div>
     <div class="foot-links">
       <nav aria-label="Footer">
         <a href="#top">Home</a><a href="#what-we-do">What we do</a><a href="#our-work">Our work</a><a href="#contact">Contact</a>
       </nav>
-      <div class="social" aria-label="Social media">
-        <a class="soc" data-social="instagram" href="#" aria-label="Alvarado Style on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c2.7 0 3 0 4 .1 1 0 1.5.2 1.9.3.5.2.8.4 1.2.8.4.4.6.7.8 1.2.1.4.3.9.3 1.9.1 1 .1 1.3.1 4s0 3-.1 4c0 1-.2 1.5-.3 1.9-.2.5-.4.8-.8 1.2-.4.4-.7.6-1.2.8-.4.1-.9.3-1.9.3-1 .1-1.3.1-4 .1s-3 0-4-.1c-1 0-1.5-.2-1.9-.3-.5-.2-.8-.4-1.2-.8-.4-.4-.6-.7-.8-1.2-.1-.4-.3-.9-.3-1.9-.1-1-.1-1.3-.1-4s0-3 .1-4c0-1 .2-1.5.3-1.9.2-.5.4-.8.8-1.2.4-.4.7-.6 1.2-.8.4-.1.9-.3 1.9-.3 1-.1 1.3-.1 4-.1M12 0C9.3 0 8.9 0 7.9.1 6.8.1 6.1.3 5.5.5c-.7.2-1.2.6-1.8 1.1C3.1 2.2 2.8 2.8 2.5 3.4 2.3 4 2.1 4.7 2.1 5.8 2 6.9 2 7.3 2 10v4c0 2.7 0 3.1.1 4.1 0 1.1.2 1.8.5 2.4.3.7.6 1.2 1.2 1.8.5.5 1.1.9 1.8 1.2.6.2 1.3.4 2.4.5 1 .1 1.4.1 4.1.1s3.1 0 4.1-.1c1.1 0 1.8-.2 2.4-.5.7-.3 1.2-.6 1.8-1.2.5-.5.9-1.1 1.2-1.8.2-.6.4-1.3.5-2.4.1-1 .1-1.4.1-4.1v-4c0-2.7 0-3.1-.1-4.1 0-1.1-.2-1.8-.5-2.4-.3-.7-.6-1.2-1.2-1.8C19.8 1.1 19.2.8 18.5.5 17.9.3 17.2.1 16.1.1 15.1 0 14.7 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg></a>
-        <a class="soc" data-social="tiktok" href="#" aria-label="Alvarado Style on TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 1h-3.5v14.3a3 3 0 1 1-3-3c.3 0 .7 0 1 .1V8.8a6.6 6.6 0 0 0-1-.1 6.5 6.5 0 1 0 6.5 6.5V8.4a8.4 8.4 0 0 0 4.9 1.6V6.5a4.9 4.9 0 0 1-4.9-4.9V1z"/></svg></a>
-        <a class="soc" data-social="facebook" href="#" aria-label="Alvarado Style on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 22v-8.2h2.8l.4-3.3h-3.2V8.4c0-.9.3-1.6 1.6-1.6h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.4v3.3h2.8V22h3.4z"/></svg></a>
-      </div>
+      <div class="social" aria-label="Social media" data-social-list></div>
     </div>
   </div>
 </footer>
@@ -1213,10 +1245,18 @@ const HERO_BACKDROP = { image: 'photos/hero/van.jpg', focus: { x: 0.07, y: 0.23,
 // begins, so it starts on the poster frame. Set video and videoTall to '' to keep only the still.
 const SITE_BG = { video: 'video/site-bg.mp4', videoTall: 'video/site-bg-tall.mp4', poster: 'video/site-bg-poster.jpg', posterTall: 'video/site-bg-poster-tall.jpg', start: 11 };
 
+// His profiles: paste each full https link between the quotes, for example instagram: 'https://www.instagram.com/...'.
+// A profile shows as soon as its link is here: Contact page tiles, the home closing call, the footer of every page,
+// the phone menu and the Contact "Follow" row. '' keeps it hidden. Never put in a link he has not given.
 const SOCIAL = {
   instagram: '',
+  facebook: '',
   tiktok: '',
-  facebook: ''
+  youtube: '',
+  google: '',
+  yelp: '',
+  houzz: '',
+  linkedin: ''
 };
 
 // Each project is one entry. Photos live in photos/<project-id>/ next to this page.
@@ -1294,16 +1334,28 @@ const FEATURED = { photo: 'video/featured-poster.jpg', alt: 'Drone view of a fra
   onScroll();
 
   /* Social links */
-  /* A profile shows once its link is in SOCIAL; until then it stays out of sight, so nothing on the page leads nowhere. */
-  document.querySelectorAll('[data-social]').forEach(a => {
-    const url = (SOCIAL[a.dataset.social] || '').trim();
-    if (/^https:\/\//.test(url)) { a.href = url; a.target = '_blank'; a.rel = 'noopener'; a.hidden = false; }
-    else a.hidden = true;
+  /* Every way to reach us. A profile from SOCIAL joins the Contact page tiles, the home closing call, the footer, the phone
+     menu and the Follow row once its https link is set; an empty one shows nowhere, so nothing on the page leads nowhere. */
+  const SOCIAL_META = {
+    instagram: { name: 'Instagram', detail: 'Follow us', d: 'M12 2.2c2.7 0 3 0 4 .1 1 0 1.5.2 1.9.3.5.2.8.4 1.2.8.4.4.6.7.8 1.2.1.4.3.9.3 1.9.1 1 .1 1.3.1 4s0 3-.1 4c0 1-.2 1.5-.3 1.9-.2.5-.4.8-.8 1.2-.4.4-.7.6-1.2.8-.4.1-.9.3-1.9.3-1 .1-1.3.1-4 .1s-3 0-4-.1c-1 0-1.5-.2-1.9-.3-.5-.2-.8-.4-1.2-.8-.4-.4-.6-.7-.8-1.2-.1-.4-.3-.9-.3-1.9-.1-1-.1-1.3-.1-4s0-3 .1-4c0-1 .2-1.5.3-1.9.2-.5.4-.8.8-1.2.4-.4.7-.6 1.2-.8.4-.1.9-.3 1.9-.3 1-.1 1.3-.1 4-.1M12 0C9.3 0 8.9 0 7.9.1 6.8.1 6.1.3 5.5.5c-.7.2-1.2.6-1.8 1.1C3.1 2.2 2.8 2.8 2.5 3.4 2.3 4 2.1 4.7 2.1 5.8 2 6.9 2 7.3 2 10v4c0 2.7 0 3.1.1 4.1 0 1.1.2 1.8.5 2.4.3.7.6 1.2 1.2 1.8.5.5 1.1.9 1.8 1.2.6.2 1.3.4 2.4.5 1 .1 1.4.1 4.1.1s3.1 0 4.1-.1c1.1 0 1.8-.2 2.4-.5.7-.3 1.2-.6 1.8-1.2.5-.5.9-1.1 1.2-1.8.2-.6.4-1.3.5-2.4.1-1 .1-1.4.1-4.1v-4c0-2.7 0-3.1-.1-4.1 0-1.1-.2-1.8-.5-2.4-.3-.7-.6-1.2-1.2-1.8C19.8 1.1 19.2.8 18.5.5 17.9.3 17.2.1 16.1.1 15.1 0 14.7 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z' },
+    facebook: { name: 'Facebook', detail: 'Follow us', d: 'M13.6 22v-8.2h2.8l.4-3.3h-3.2V8.4c0-.9.3-1.6 1.6-1.6h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.4v3.3h2.8V22h3.4z' },
+    tiktok: { name: 'TikTok', detail: 'Follow us', d: 'M16.6 1h-3.5v14.3a3 3 0 1 1-3-3c.3 0 .7 0 1 .1V8.8a6.6 6.6 0 0 0-1-.1 6.5 6.5 0 1 0 6.5 6.5V8.4a8.4 8.4 0 0 0 4.9 1.6V6.5a4.9 4.9 0 0 1-4.9-4.9V1z' },
+    youtube: { name: 'YouTube', detail: 'Watch our videos', d: 'M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z' },
+    google: { name: 'Google', detail: 'Find us on Google', d: 'M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z' },
+    yelp: { name: 'Yelp', detail: 'Find us on Yelp', d: 'm7.6885 15.1415-3.6715.8483c-.3769.0871-.755.183-1.1452.155-.2611-.0188-.5122-.0414-.7606-.213a1.179 1.179 0 0 1-.331-.3594c-.3486-.5519-.3656-1.3661-.3697-2.0004a6.2874 6.2874 0 0 1 .3314-2.0642 1.857 1.857 0 0 1 .1073-.2474 2.3426 2.3426 0 0 1 .1255-.2165 2.4572 2.4572 0 0 1 .1563-.1975 1.1736 1.1736 0 0 1 .399-.2831 1.082 1.082 0 0 1 .4592-.0837c.2355.0016.5139.052.91.1734.0555.0191.1237.0382.1856.0572.3277.1013.7048.2404 1.1499.3987.6863.2404 1.3663.487 2.0463.7397l1.2117.4423c.2217.0807.4363.18.6412.297.174.0984.3273.2298.4512.387a1.217 1.217 0 0 1 .192.4309 1.2205 1.2205 0 0 1-.872 1.4522c-.0468.0151-.0852.0239-.1085.0293l-1.105.2553-.0031-.001zM18.8208 7.565a1.8506 1.8506 0 0 0-.2042-.1754 2.4082 2.4082 0 0 0-.2077-.1394 2.3607 2.3607 0 0 0-.2269-.109 1.1705 1.1705 0 0 0-.482-.0796 1.0862 1.0862 0 0 0-.4498.1263c-.2107.1048-.4388.2732-.742.5551-.042.0417-.0947.0886-.142.133-.2502.2351-.5286.5252-.8599.863a114.6363 114.6363 0 0 0-1.5166 1.5629l-.8962.9293a4.1897 4.1897 0 0 0-.4466.5483 1.541 1.541 0 0 0-.2364.5459 1.2199 1.2199 0 0 0 .0107.4518l.0046.02a1.218 1.218 0 0 0 1.4184.923 1.162 1.162 0 0 0 .1105-.0213l4.7781-1.104c.3766-.087.7587-.1667 1.097-.3631.2269-.1316.4428-.262.5909-.5252a1.1793 1.1793 0 0 0 .1405-.4683c.0733-.6512-.2668-1.3908-.5403-1.963a6.2792 6.2792 0 0 0-1.2001-1.7103zM8.9703.0754a8.6724 8.6724 0 0 0-.83.1564c-.2754.066-.548.1383-.8146.2236-.868.2844-2.0884.8063-2.295 1.8065-.1165.5655.1595 1.1439.3737 1.66.2595.6254.614 1.1889.9373 1.7777.8543 1.5545 1.7245 3.0993 2.5922 4.6457.259.4617.5416 1.0464 1.043 1.2856a1.058 1.058 0 0 0 .1013.0383c.2248.0851.4699.1016.7041.0471a4.3015 4.3015 0 0 0 .0418-.0097 1.2136 1.2136 0 0 0 .5658-.3397 1.1033 1.1033 0 0 0 .079-.0822c.3463-.435.3454-1.0833.3764-1.6134.1042-1.771.2139-3.5423.3009-5.3142.0332-.6712.1055-1.3333.0655-2.0096-.0328-.5579-.0368-1.1984-.3891-1.6563-.6218-.8073-1.9476-.741-2.8523-.6158zm2.084 15.9505a1.1053 1.1053 0 0 0-1.2306-.4145 1.1398 1.1398 0 0 0-.1526.0633 1.4806 1.4806 0 0 0-.2171.1354c-.1992.1475-.3668.3392-.5196.5315-.0386.049-.074.1143-.12.1562l-.7686 1.0573a113.9168 113.9168 0 0 0-1.2913 1.789c-.278.3895-.5184.7184-.7083 1.0094-.036.0547-.0734.116-.1075.1647-.2277.3522-.3566.6092-.4228.8381a1.0945 1.0945 0 0 0-.046.4721c.0211.1655.0768.3246.1635.467.046.0715.0957.1406.1487.207a2.334 2.334 0 0 0 .1754.1825 1.843 1.843 0 0 0 .2108.1732c.5304.369 1.1112.6342 1.722.8391a6.0958 6.0958 0 0 0 1.5716.3004c.091.0046.1821.0025.2728-.006a2.3878 2.3878 0 0 0 .2506-.0351 2.3862 2.3862 0 0 0 .2447-.071 1.1927 1.1927 0 0 0 .4175-.2658c.1127-.113.1994-.249.2541-.3989.0889-.2214.1473-.5026.1857-.92.0034-.0593.0118-.1305.0177-.1958.0304-.3463.0443-.7531.0666-1.2315.0375-.7357.067-1.4681.0903-2.2026 0 0 .0495-1.3053.0494-1.306.0113-.3008.002-.6342-.0814-.9336a1.396 1.396 0 0 0-.1756-.4054zm8.6754 2.0439c-.1605-.176-.3878-.3514-.7462-.5682-.0518-.0288-.1124-.0674-.1684-.1009-.2985-.1795-.658-.3684-1.078-.5965a120.7615 120.7615 0 0 0-1.9427-1.042l-1.1515-.6107c-.0597-.0175-.1203-.0607-.1766-.0878-.2212-.1058-.4558-.2045-.6992-.2498a1.4915 1.4915 0 0 0-.2545-.0265 1.1527 1.1527 0 0 0-.1648.01 1.1077 1.1077 0 0 0-.9227.9133 1.4186 1.4186 0 0 0 .0159.439c.0563.3065.1932.6096.3346.875l.615 1.1526c.3422.65.6884 1.2963 1.0435 1.9406.229.4202.4196.7799.5982 1.078.0338.056.0721.1163.1011.1682.2173.3584.392.584.569.7458.1146.1107.252.195.4026.247.1583.0525.326.071.4919.0546a2.368 2.368 0 0 0 .251-.0435c.0817-.022.1622-.048.241-.0784a1.863 1.863 0 0 0 .2475-.1143 6.1018 6.1018 0 0 0 1.2818-.9597c.4596-.4522.8659-.9454 1.182-1.51.044-.08.0819-.163.1138-.2483a2.49 2.49 0 0 0 .0773-.2411c.0186-.083.033-.1669.0429-.2513a1.188 1.188 0 0 0-.0565-.491 1.0933 1.0933 0 0 0-.248-.4041zm2.86 3.742a.8523.8523 0 0 1-.111.4236c-.074.132-.178.2377-.3115.3172a.8428.8428 0 0 1-.4385.119.847.847 0 0 1-.4373-.1179.8526.8526 0 0 1-.3125-.3171.8548.8548 0 0 1-.111-.4248c0-.1526.038-.2958.1143-.4294a.8405.8405 0 0 1 .315-.3159.849.849 0 0 1 .4315-.1156.8514.8514 0 0 1 .4294.1144.84.84 0 0 1 .316.3148.8494.8494 0 0 1 .1156.4317zm-.1202 0c0-.1328-.0332-.256-.0996-.3698s-.1564-.2038-.2702-.2702a.7125.7125 0 0 0-.371-.1007.7204.7204 0 0 0-.3698.0996.7487.7487 0 0 0-.2713.2702.7181.7181 0 0 0-.0996.3709c0 .132.0332.2557.0996.371a.7355.7355 0 0 0 .2713.2713.7354.7354 0 0 0 .3698.0985.7205.7205 0 0 0 .3698-.0996.7423.7423 0 0 0 .2702-.2691.7186.7186 0 0 0 .1008-.3721zm-.577.0584.2724.4522h-.1922l-.237-.4052h-.1546v.4052h-.1695v-1.02h.2988c.1268 0 .2195.0247.2783.0744.0595.0496.0892.1252.0892.2267a.2785.2785 0 0 1-.0492.1625c-.032.0466-.0775.0813-.1362.1042zm-.0412-.1408a.1532.1532 0 0 0 .056-.1214c0-.0573-.0164-.0981-.0491-.1225-.0329-.0251-.0847-.0377-.1557-.0377h-.1214v.3285h.1237c.061 0 .1098-.0157.1465-.047z' },
+    houzz: { name: 'Houzz', detail: 'Find us on Houzz', d: 'M1.27 0V24H9.32V16.44H14.68V24H22.73V10.37L6.61 5.75V0H1.27Z' },
+    linkedin: { name: 'LinkedIn', detail: 'Connect with us', d: 'M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z' }
+  };
+  const profiles = Object.keys(SOCIAL_META).map(k => Object.assign({ k, url: String(SOCIAL[k] || '').trim() }, SOCIAL_META[k])).filter(p => /^https:\/\/[^\s"'<>]+$/.test(p.url));
+  const socIcon = d => '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="' + d + '"/></svg>';
+  const socDetail = p => { const m = p.url.match(/(?:instagram\.com|tiktok\.com)\/@?([A-Za-z0-9._]{2,30})/); return m ? '@' + m[1] : p.detail; };
+  const socLink = (p, cls, html) => { const a = document.createElement('a'); if (cls) a.className = cls; a.href = p.url; a.target = '_blank'; a.rel = 'noopener'; a.innerHTML = html; return a; };
+  document.querySelectorAll('[data-social-list]').forEach(box => {
+    profiles.forEach(p => { const a = socLink(p, 'soc', socIcon(p.d)); a.setAttribute('aria-label', 'Alvarado Style on ' + p.name); a.title = p.name; box.appendChild(a); });
+    box.hidden = !profiles.length; const row = box.closest('.reach-row'); if (row) row.hidden = !profiles.length;
   });
-  document.querySelectorAll('.social').forEach(s => {
-    const any = !!s.querySelector('[data-social]:not([hidden])'); s.hidden = !any;
-    const row = s.closest('.reach-row'); if (row) row.hidden = !any;
-  });
+  document.querySelectorAll('[data-ways="tiles"]').forEach(box => profiles.forEach(p => box.appendChild(socLink(p, 'way', '<span class="way-ic">' + socIcon(p.d) + '</span><span class="way-t"><b>' + p.name + '</b><small>' + socDetail(p) + '</small></span>'))));
+  document.querySelectorAll('[data-ways="pills"]').forEach(box => profiles.forEach(p => box.appendChild(socLink(p, '', socIcon(p.d) + '<span>' + p.name + '</span>'))));
 
   /* Our Work: cards */
   const el = (tag, attrs, children) => {
