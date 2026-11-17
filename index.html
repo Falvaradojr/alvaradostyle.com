@@ -13,12 +13,12 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yellowtail&family=Cinzel:wght@500;700;800&family=Source+Sans+3:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yellowtail&family=Cinzel:wght@500;700;800&family=Cormorant+Garamond:wght@500;600&family=Source+Sans+3:wght@400;600;700&display=swap">
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
 <style>
-/* Layout: cinematic dark logo intro, division lockups, Keystone Walkthrough (free walkthrough, then the written quote), house cutaway of what we check, process, quick quote. Palette from the logo: royal navy, white, antique gold. */
+/* Layout (2026-11-17, four pages): Home (logo intro over the van, our difference, four divisions, our work, one closing call), What we do (the four divisions and what each handles, how the work is managed), Our work (photo portfolio), Contact (form, walkthrough, phone and email). Palette from the logo: royal navy, white, antique gold. */
 :root {
   --bg: #f5f4f0;
   --surface: #ffffff;
@@ -127,7 +127,7 @@ header.nav.solid { background: var(--navy); box-shadow: 0 1px 0 color-mix(in srg
 .menu { position: absolute; left: 0; right: 0; top: 100%; display: grid; gap: 2px; padding: 6px 20px 18px; background: var(--navy); border-top: 1px solid color-mix(in srgb, var(--gold) 40%, transparent); box-shadow: 0 18px 30px -18px rgba(0, 0, 0, 0.6); }
 .menu a { text-decoration: none; font-weight: 600; font-size: 16px; color: var(--on-navy); padding: 10px 0; border-bottom: 1px solid var(--on-navy-line); }
 .menu .menu-phone { color: var(--gold); border-bottom: 0; letter-spacing: 0.04em; }
-@media (max-width: 1040px) { .nav-links .nav-sec { display: none; } .menu-btn { display: inline-grid; place-items: center; } .nav .wrap { gap: 10px; } .nav-logo { margin-right: auto; } }
+@media (max-width: 700px) { .nav-links .nav-sec { display: none; } .menu-btn { display: inline-grid; place-items: center; } .nav .wrap { gap: 10px; } .nav-logo { margin-right: auto; } }
 @media (max-width: 560px) { .nav-links .nav-phone { display: none; } .nav-logo { width: 66px; } }
 
 /* Hero: dark, the logo collapses in like a shadow, then appears */
@@ -273,6 +273,74 @@ header.nav.solid { background: var(--navy); box-shadow: 0 1px 0 color-mix(in srg
 @media (max-width: 640px) { .checks { grid-template-columns: 1fr; } .ba { grid-template-columns: 1fr; } .audience { grid-template-columns: 1fr; } .inc { min-width: 0; font-size: 14.5px; } .inc th, .inc td { padding: 10px 8px; } .inc th:not(:first-child), .inc td:not(:first-child) { width: 62px; } }
 
 /* Keystone Walkthrough */
+/* Division pages, art direction of 2026-11-16: editorial serif headlines, hairline details, large photography, more air. Scoped to .page. */
+.page { --serif: "Cormorant Garamond", "Times New Roman", serif; }
+.page .section { padding-block: 108px; }
+.page .section-head { gap: 18px; max-width: 820px; margin-bottom: 56px; }
+.page .section-head h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(38px, 4.8vw, 62px); letter-spacing: -0.005em; line-height: 1.04; }
+.page .section-head p { font-size: 18px; max-width: 58ch; }
+.page .eyebrow { font-weight: 500; font-size: 12px; letter-spacing: 0.34em; }
+.page .page-hero { position: relative; background: var(--night); color: var(--on-navy); padding: 0; }
+.page .page-hero .wrap { display: block; }
+.page .page-photo { width: 100%; height: clamp(540px, 84vh, 920px); aspect-ratio: auto; border: 0; }
+.page .page-hero::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 260px; background: linear-gradient(to bottom, rgba(2, 3, 18, 0.78), rgba(2, 3, 18, 0.35) 45%, rgba(2, 3, 18, 0)); z-index: 1; pointer-events: none; }
+.page .page-hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 62%; background: linear-gradient(to top, rgba(2, 3, 18, 0.86) 0%, rgba(2, 3, 18, 0.55) 45%, transparent 100%); pointer-events: none; }
+.page .page-hero .crumb, .page .page-hero .crumb a, .page .page-hero .lede { text-shadow: 0 1px 14px rgba(2, 3, 18, 0.7), 0 0 2px rgba(2, 3, 18, 0.5); }
+.page .page-hero .wrap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; }
+.page .page-title { display: grid; gap: 20px; justify-items: start; max-width: 880px; padding-block: 0 60px; }
+.page .crumb { font-family: var(--caps); font-weight: 500; font-size: 11.5px; letter-spacing: 0.3em; color: rgba(255, 255, 255, 0.72); }
+.page .crumb a { color: var(--gold); }
+.page .page-hero h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(60px, 9.5vw, 128px); letter-spacing: -0.01em; line-height: 0.95; color: #ffffff; }
+.page .page-hero .lede { font-size: 19px; color: rgba(255, 255, 255, 0.82); max-width: 48ch; }
+.page .hero-ctas { gap: 14px 28px; align-items: center; }
+.page .link-line { font-family: var(--caps); font-weight: 700; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; color: inherit; padding-bottom: 4px; border-bottom: 1px solid var(--gold); }
+.page .link-line:hover { border-bottom-color: currentColor; }
+.page .page-jump { background: var(--bg); border-bottom: 1px solid var(--line); }
+.page .page-jump .wrap { display: flex; gap: 34px; overflow-x: auto; padding-block: 18px; scrollbar-width: none; }
+.page .page-jump a { flex: none; font-family: var(--caps); font-weight: 700; font-size: 11.5px; letter-spacing: 0.28em; text-transform: uppercase; text-decoration: none; color: var(--muted); }
+.page .page-jump a:hover { color: var(--gold-ink); }
+.page .page-hero + .page-jump + .section, .page .page-jump + .section { padding-top: 96px; }
+.page .list-ed { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 64px; border-top: 1px solid var(--line); }
+.page .list-ed li { display: grid; grid-template-columns: 40px 1fr; gap: 16px; padding: 24px 0; border-bottom: 1px solid var(--line); min-width: 0; }
+.page .list-ed .n { font-family: var(--caps); font-size: 12px; font-weight: 700; letter-spacing: 0.2em; color: var(--gold-ink); padding-top: 9px; }
+.page .list-ed h3 { font-family: var(--serif); font-size: 27px; font-weight: 600; letter-spacing: 0; line-height: 1.1; }
+.page .list-ed p { color: var(--muted); font-size: 15.5px; margin-top: 5px; }
+.page .steps { gap: 44px 40px; border-top: 1px solid var(--line); }
+.page .step { position: relative; border-top: 0; padding-top: 30px; }
+.page .step::before { content: ""; position: absolute; top: -1px; left: 0; width: 44px; height: 1px; background: var(--gold); }
+.page .step-n { font-weight: 500; }
+.page .step h3 { font-family: var(--serif); font-size: 27px; font-weight: 600; letter-spacing: 0; }
+.page .on-navy .steps { border-top-color: var(--on-navy-line); }
+.page .on-navy .step::before { background: var(--gold); }
+.page .audience { gap: 40px; }
+.page .audience > div { border-top: 1px solid var(--line); padding-top: 20px; }
+.page .audience h3 { font-family: var(--serif); font-size: 25px; font-weight: 600; letter-spacing: 0; }
+.page .tiers { gap: 48px; }
+.page .tier { border: 0; border-top: 1px solid var(--gold); background: transparent; padding: 24px 0 0; gap: 10px; }
+.page .tier h3 { font-family: var(--serif); font-size: 29px; font-weight: 600; letter-spacing: 0; }
+.page .tier ul { padding-left: 16px; }
+.page .inc th { font-weight: 700; }
+.page .checks { gap: 14px 40px; }
+.page .checks svg { stroke-width: 1.8; }
+.page .ba { gap: 16px; }
+.page .ba-copy { font-family: var(--serif); font-size: 23px; line-height: 1.35; color: var(--ink); max-width: 60ch; margin-top: 36px; }
+.page .work { background: var(--bg); }
+.page .work-grid { gap: 32px 24px; }
+.page .proj:not(.is-placeholder) { border: 0; background: transparent; }
+.page .proj:not(.is-placeholder) .proj-body { padding: 14px 0 0; }
+.page .page-cta { padding-block: 128px; }
+.page .page-cta .section-head { margin-bottom: 32px; }
+.page .page-cta .section-head h2 { font-size: clamp(40px, 5.4vw, 72px); }
+.page .page-cta .phone-line { margin-top: 26px; }
+.page .page-next { border-top: 1px solid var(--line); background: var(--bg); }
+.page .page-next .wrap { display: flex; justify-content: space-between; gap: 24px; padding-block: 30px; }
+.page .page-next a { display: grid; gap: 6px; text-decoration: none; font-family: var(--serif); font-size: 30px; font-weight: 600; line-height: 1; }
+.page .page-next a small { font-family: var(--caps); font-size: 11px; font-weight: 700; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-ink); }
+.page .page-next a:last-child { text-align: right; justify-items: end; }
+.page .page-next a:hover { color: var(--gold-ink); }
+@media (max-width: 900px) { .page .section { padding-block: 80px; } .page .page-title { padding-block: 0 40px; gap: 16px; } .page .page-cta { padding-block: 96px; } .page .tiers { gap: 32px; } }
+@media (max-width: 760px) { .page .page-photo { height: clamp(520px, 78vh, 760px); } .page .page-hero h1 { font-size: clamp(52px, 15vw, 76px); } .page .page-hero .lede { font-size: 17px; } .page .list-ed { grid-template-columns: 1fr; gap: 0; } .page .steps { gap: 28px; } .page .page-next a { font-size: 24px; } .page .page-jump .wrap { gap: 24px; } }
+
 /* Keystone Walkthrough: one dark panel, the lead on the left and the two-step offer on the right */
 .ks-panel { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; background: var(--navy-deep); color: var(--on-navy); border: 1px solid var(--on-navy-line); outline: 1px solid var(--gold); outline-offset: -10px; padding: 56px; }
 .ks-panel .eyebrow { color: var(--gold); }
@@ -458,6 +526,270 @@ footer nav a:hover { color: var(--on-navy); }
   html { scroll-behavior: auto; }
   .hero.play *, .nav.intro, .spot .spot-ring { animation: none !important; }
 }
+
+/* ===== Four pages, 2026-11-17 ("Simplify, modernize, strengthen"): Home, What we do, Our work, Contact.
+   Same palette, logo and van opening; the editorial serif carries the headlines; light and navy sections alternate. ===== */
+:root { --serif: "Cormorant Garamond", "Times New Roman", Georgia, serif; }
+.eyebrow { display: flex; align-items: center; gap: 12px; }
+.eyebrow::before { content: ""; flex: none; width: 28px; height: 1px; margin: 0; background: currentColor; }
+.eyebrow::after { content: none; }
+.section-head h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(36px, 4.6vw, 60px); letter-spacing: -0.005em; line-height: 1.04; text-wrap: balance; }
+.section-head p { font-size: 18px; }
+.section-head p.eyebrow { font-size: 13px; max-width: none; color: var(--gold-ink); }
+.on-navy .section-head p.eyebrow, .divisions .section-head p.eyebrow { color: var(--gold); }
+.page .section-head p.eyebrow { font-size: 12px; }
+@media (max-width: 520px) { .eyebrow, .section-head p.eyebrow, .page .section-head p.eyebrow { font-size: 12px; letter-spacing: 0.2em; gap: 10px; } .eyebrow::before { width: 18px; } }
+form.quote h3, .gal-head h3 { font-family: var(--serif); font-weight: 600; font-size: 30px; letter-spacing: 0; line-height: 1.08; }
+#featured, #walkthrough, #quote { scroll-margin-top: calc(var(--nav-h) + 12px); }
+.nav-links .nav-sec { white-space: nowrap; }
+.nav-links a.btn.active { color: var(--navy); background: var(--gold-bright); } /* Contact is the gold button: open, it stays readable */
+.menu a.active { color: var(--gold); }
+@media (max-width: 1100px) { .nav-links { gap: 18px; } }
+
+/* Opening screen: same van, logo intro and tagline as the live site, then his one-line lede and two buttons
+   (his opening slogan headline was removed at his request on 2026-11-17; do not bring it back) */
+.hero-inner { max-width: 980px; }
+.hero-lede { max-width: 56ch; font-size: clamp(16px, 1.45vw, 18.5px); text-wrap: balance; }
+.section-head h2 > span, .final-cta h2 > span { display: inline-block; }
+@media (max-width: 560px) { .hero .hero-ctas { flex-direction: column; align-items: center; } .hero .hero-ctas .btn { width: min(100%, 300px); } }
+
+/* Home 2. Our difference: the words beside one picture of the operation */
+.diff { background: var(--bg); }
+.diff-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 56px; align-items: center; }
+.diff .section-head { margin-bottom: 0; }
+.diff .section-head h2 { font-size: clamp(34px, 4.2vw, 54px); } /* "One management team." keeps to one line beside the diagram */
+.org { margin: 0; padding: 34px 28px 30px; background: var(--navy); color: var(--on-navy); box-shadow: inset 0 3px 0 var(--gold); min-width: 0; }
+.dg { display: block; width: 100%; max-width: 480px; height: auto; margin-inline: auto; overflow: visible; }
+.dg-line { fill: none; stroke: var(--gold); stroke-width: 1.4; }
+.dg-node rect { fill: rgba(255, 255, 255, 0.07); stroke: rgba(201, 166, 107, 0.75); stroke-width: 1.2; }
+.dg-node text, .dg-you text { font: 600 13px var(--body); text-anchor: middle; fill: #ffffff; }
+.dg-you circle { fill: var(--navy); stroke: #ffffff; stroke-width: 1.5; }
+.dg-you text { font-weight: 700; }
+.dg-mgmt rect { fill: var(--gold); }
+.dg-mgmt text { font: 700 12px var(--caps); letter-spacing: 0.14em; fill: #14165b; text-anchor: middle; }
+.dg-base rect { fill: none; stroke: rgba(255, 255, 255, 0.32); stroke-width: 1.2; }
+.dg-base text { font: 700 11px var(--body); letter-spacing: 0.22em; fill: rgba(255, 255, 255, 0.78); text-anchor: middle; }
+@media (max-width: 900px) { .diff-grid { grid-template-columns: 1fr; gap: 36px; } }
+@media (max-width: 520px) { .org { padding: 24px 12px 20px; } }
+
+/* Home 3. Capabilities: the four division tiles on navy, each linking to its part of What we do */
+.divisions .section-head { margin-bottom: 40px; }
+.divisions .div-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.divisions .div-panel .photo-slot { aspect-ratio: 1 / 1; }
+.divisions .div-panel .photo-slot.has-video { aspect-ratio: 1 / 1 !important; } /* a clip fills its tile like the photos, so the row stays even */
+.div-id { display: flex; align-items: center; gap: 10px; color: var(--gold); }
+.div-id svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.div-n { font-family: var(--caps); font-weight: 700; font-size: 12px; letter-spacing: 0.24em; }
+.divisions .div-body { display: flex; flex-direction: column; gap: 8px; }
+.divisions .div-body .more { margin-top: auto; padding-top: 10px; } /* the See links line up along the bottom of the row */
+.divisions .div-body .c { font-family: var(--serif); font-weight: 600; font-size: 31px; letter-spacing: 0; line-height: 1.05; }
+@media (max-width: 1040px) { .divisions .div-grid { grid-template-columns: 1fr 1fr; } .divisions .div-panel .photo-slot { aspect-ratio: 16 / 10; } .divisions .div-panel .photo-slot.has-video { aspect-ratio: 16 / 10 !important; } }
+@media (max-width: 760px) { .divisions .div-panel .photo-slot.is-tall { aspect-ratio: 4 / 5 !important; } }
+@media (max-width: 640px) { .divisions .div-grid { grid-template-columns: 1fr; } }
+
+/* Home 5. Our work: his headline, three large photos, one button (the drone flight moved up to part 2) */
+.work-home { background: var(--bg); }
+.work-home .feat { border: 0; }
+.work-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+.work-strip a { display: block; min-width: 0; text-decoration: none; }
+.work-strip .photo-slot { aspect-ratio: 4 / 3; }
+.work-strip a:hover .photo-slot img, .work-strip a:focus-visible .photo-slot img { transform: scale(1.03); }
+.work-more { display: flex; justify-content: center; margin-top: 40px; }
+@media (max-width: 760px) { .work-strip { grid-template-columns: 1fr; } }
+
+/* Home 5. The one closing call */
+.final-cta { text-align: center; padding-block: 112px; }
+.final-cta .wrap { display: grid; justify-items: center; gap: 20px; max-width: 900px; }
+.final-cta h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(40px, 5.6vw, 72px); line-height: 1.02; letter-spacing: -0.01em; text-wrap: balance; }
+.final-cta p { color: var(--on-navy-muted); font-size: 19px; max-width: 46ch; }
+.final-cta .cta-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 14px 28px; margin-top: 10px; }
+.final-cta .phone-line { font-size: 16px; }
+.final-cta .phone-line b { color: var(--on-navy); user-select: all; }
+@media (max-width: 640px) { .final-cta { padding-block: 84px; } }
+
+/* Pages: What we do keeps a photo top; Our work and Contact open on a short navy band */
+.page .page-hero.short .page-photo { height: clamp(400px, 62vh, 660px); height: clamp(400px, 62svh, 660px); }
+.page .page-hero.plain { background: var(--navy-deep); padding-block: calc(var(--nav-h) + 64px) 56px; }
+.page .page-hero.plain::before, .page .page-hero.plain::after { content: none; }
+.page .page-hero.plain .wrap { position: static; }
+.page .page-hero.plain .page-title { padding-block: 0; }
+.page .page-hero.plain h1 { font-size: clamp(52px, 7.5vw, 96px); }
+.page .page-hero .lede { text-wrap: balance; }
+.page .page-hero.plain .lede { text-shadow: none; }
+.page .page-hero .lede a { color: var(--gold); text-decoration: none; border-bottom: 1px solid currentColor; white-space: nowrap; }
+.page .page-end { padding-block: 72px; background: var(--bg); border-top: 1px solid var(--line); }
+.page-end .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 32px; }
+.page-end h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(30px, 3.6vw, 46px); line-height: 1.06; }
+@media (max-width: 640px) { .page .page-hero.plain { padding-block: calc(var(--nav-h) + 40px) 40px; } .page .page-end { padding-block: 56px; } }
+
+/* What we do: one block per division, photo beside what it handles */
+.page .wd { background: var(--surface); padding-block: 88px; }
+.page .wd.alt { background: var(--bg); }
+.wd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.wd.flip .wd-media { order: 2; }
+.wd-media { min-width: 0; }
+.wd-media .photo-slot { aspect-ratio: 4 / 3; }
+.wd-body { display: grid; gap: 14px; align-content: start; min-width: 0; }
+.wd-body .div-id { color: var(--gold-ink); }
+.wd-body h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(42px, 4.8vw, 62px); line-height: 1; letter-spacing: -0.005em; }
+.wd-lede { font-size: 18px; color: var(--muted); max-width: 50ch; text-wrap: pretty; }
+.wd-list { list-style: none; margin: 6px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 28px; border-top: 1px solid var(--line); }
+.wd-list li { padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 16px; font-weight: 600; line-height: 1.35; min-width: 0; }
+.wd-ways { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 8px; }
+.wd-ways div { display: grid; gap: 4px; align-content: start; padding-top: 12px; border-top: 1px solid var(--gold); min-width: 0; }
+.wd-ways b { font-family: var(--serif); font-size: 22px; font-weight: 600; line-height: 1.1; }
+.wd-ways span { font-size: 14.5px; color: var(--muted); }
+.wd-note { font-size: 15px; color: var(--muted); }
+.wd-note b { color: var(--ink); font-weight: 600; }
+@media (max-width: 900px) { .wd-grid { grid-template-columns: 1fr; gap: 28px; } .wd.flip .wd-media { order: 0; } .page .wd { padding-block: 64px; } }
+@media (max-width: 560px) { .wd-list { grid-template-columns: 1fr; } .wd-ways { grid-template-columns: 1fr; } }
+
+/* What we do: how the work is managed */
+.managed-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 56px; align-items: center; }
+.managed-copy { min-width: 0; }
+.managed .section-head { margin-bottom: 30px; }
+.flow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--on-navy-line); }
+.flow li { display: grid; gap: 6px; align-content: start; padding: 16px 14px 4px 0; min-width: 0; }
+.flow li + li { padding-left: 14px; border-left: 1px solid var(--on-navy-line); }
+.flow .n { font-family: var(--caps); font-size: 11.5px; font-weight: 700; letter-spacing: 0.22em; color: var(--gold); }
+.flow b { font-family: var(--serif); font-size: 23px; font-weight: 600; line-height: 1.05; }
+.flow li > span:last-child { font-size: 14px; color: var(--on-navy-muted); }
+.managed .photo-slot { aspect-ratio: 4 / 5; border: 1px solid var(--on-navy-line); }
+@media (max-width: 1000px) { .managed-grid { grid-template-columns: 1fr; gap: 36px; } .managed .photo-slot { aspect-ratio: 16 / 10; } }
+@media (max-width: 760px) {
+  .flow { grid-template-columns: 1fr; }
+  .flow li, .flow li + li { grid-template-columns: 36px 1fr; column-gap: 10px; row-gap: 2px; padding: 12px 0; border-left: 0; border-bottom: 1px solid var(--on-navy-line); }
+  .flow .n { grid-row: 1 / span 2; padding-top: 7px; }
+  .flow b, .flow li > span:last-child { grid-column: 2; }
+}
+
+/* Our work: big photos, a title each, filters by kind of work */
+.page .portfolio { background: var(--bg); padding-top: 64px; }
+.work-filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 26px; }
+.work-filters button { font: inherit; font-family: var(--caps); font-weight: 700; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; padding: 10px 16px; border: 1px solid var(--line); background: transparent; color: var(--muted); cursor: pointer; transition: border-color .15s ease, color .15s ease; }
+.work-filters button:hover { border-color: var(--gold); color: var(--ink); }
+.work-filters button[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #ffffff; }
+.page .portfolio .work-grid { grid-template-columns: repeat(2, 1fr); gap: 34px 24px; }
+.portfolio .proj-media { aspect-ratio: 4 / 3; }
+.portfolio .proj.wide { grid-column: 1 / -1; }
+.portfolio .proj.wide .proj-media { aspect-ratio: 16 / 8; }
+.portfolio .proj-body b { font-family: var(--serif); font-size: 26px; font-weight: 600; line-height: 1.1; }
+.portfolio .proj-body span { order: -1; font-family: var(--caps); font-size: 11.5px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-ink); }
+.portfolio .proj[hidden] { display: none; }
+@media (max-width: 760px) { .page .portfolio .work-grid { grid-template-columns: 1fr; } .portfolio .proj.wide .proj-media { aspect-ratio: 4 / 3; } }
+
+/* Contact: the form, the walkthrough option and the ways to reach us */
+.page .contact-page { background: var(--bg); padding-top: 64px; }
+.contact-page .contact { grid-template-columns: 1.1fr 0.9fr; grid-template-areas: "form walk" "form reach"; gap: 28px 48px; align-items: start; }
+.contact-page form.quote { grid-area: form; }
+.contact-page .ks-card { grid-area: walk; }
+.contact-page .reach-box { grid-area: reach; display: grid; gap: 18px; min-width: 0; }
+.ks-card { display: grid; gap: 14px; padding: 30px; background: var(--navy-deep); color: var(--on-navy); outline: 1px solid color-mix(in srgb, var(--gold) 70%, transparent); outline-offset: -9px; min-width: 0; }
+.ks-card .eyebrow { color: var(--gold); }
+.ks-card h3 { font-family: var(--serif); font-weight: 500; font-size: clamp(28px, 3vw, 36px); line-height: 1.08; }
+.ks-card > p:not(.eyebrow) { color: var(--on-navy-muted); }
+.ks-card .ks-step { grid-template-columns: 84px 1fr; padding: 16px 18px; }
+.ks-card .ks-cta { margin-top: 4px; }
+.towns-line { color: var(--muted); font-size: 15px; }
+.towns-line b { color: var(--ink); font-weight: 600; }
+.field label small { font-weight: 600; letter-spacing: 0.06em; text-transform: none; color: var(--muted); opacity: 0.8; margin-left: 4px; }
+footer { border-top: 1px solid var(--on-navy-line); }
+@media (max-width: 900px) { .contact-page .contact { grid-template-columns: 1fr; grid-template-areas: "reach" "form" "walk"; } }
+@media (max-width: 520px) {
+  .ks-card { padding: 26px 18px; } form.quote { padding: 22px 18px; } .ks-card .ks-step { grid-template-columns: 1fr; gap: 6px; }
+  .contact-page .reach { padding: 18px 16px; } .contact-page .reach-row { grid-template-columns: 60px minmax(0, 1fr) auto; gap: 10px; } .contact-page .reach-row b { font-size: 15.5px; } /* the email fits on one line */
+}
+
+/* A small rise as a block scrolls up into view. Every block is fully visible at rest; the script only plays the rise for
+   blocks still below the screen when they come near, so nothing waits hidden and nothing on screen flickers. */
+@keyframes as-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.rv-play { animation: as-up .8s cubic-bezier(.2, .7, .2, 1) both; }
+@media (prefers-reduced-motion: reduce) { .rv-play { animation: none !important; } }
+
+/* ===== Drone flight behind the whole site: fixed under the page; the navy bands are tinted windows onto it ===== */
+:root { --win: rgba(13, 15, 66, 0.42); --win-deep: rgba(13, 15, 66, 0.8); }
+.site-bg { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; background: var(--night) var(--site-bg-img, none) center / cover no-repeat; }
+.site-bg video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.site-bg::after { content: ""; position: absolute; inset: 0; background: rgba(2, 3, 18, 0.22); }
+.divisions.bg-window, .managed.bg-window { background: var(--win-deep); }
+.final-cta.bg-window { background: radial-gradient(ellipse 62% 58% at 50% 50%, rgba(2, 3, 18, 0.42), transparent 100%), linear-gradient(to bottom, var(--win-deep), var(--win) 30%, var(--win) 70%, var(--win-deep)); padding-block: clamp(128px, 20vh, 220px); }
+.final-cta h2, .page .page-hero.plain h1, .page .page-end h2 { text-shadow: 0 2px 24px rgba(2, 3, 18, 0.55); }
+footer.bg-window { background: rgba(13, 15, 66, 0.9); }
+/* Our work and Contact open on the flight */
+.page .page-hero.plain.bg-window { background: var(--win); min-height: clamp(380px, 58vh, 580px); display: grid; align-items: end; padding-block: calc(var(--nav-h) + 72px) 64px; }
+.page .page-hero.plain.bg-window::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 200px; background: linear-gradient(to bottom, rgba(2, 3, 18, 0.5), transparent); pointer-events: none; }
+.page .page-hero.plain.bg-window::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 75%; background: linear-gradient(to top, rgba(2, 3, 18, 0.62), rgba(2, 3, 18, 0.3) 55%, transparent); pointer-events: none; }
+.page .page-hero.plain.bg-window .wrap { position: relative; z-index: 1; width: 100%; }
+.page .page-hero.plain .lede { color: rgba(255, 255, 255, 0.86); }
+.page .page-hero.plain.bg-window .lede a { color: var(--gold-bright); }
+.final-cta.bg-window p { color: rgba(255, 255, 255, 0.94); }
+/* the closing strip of each page: one line and one button over the flight */
+.page .page-end.bg-window { background: linear-gradient(to right, rgba(2, 3, 18, 0.5), transparent 70%), var(--win); color: var(--on-navy); border-top: 0; padding-block: clamp(96px, 16vh, 168px); }
+.page .page-end.bg-window h2 { color: #ffffff; }
+/* Home, our work: one large photo and two beside it */
+.work-strip { grid-template-columns: 2fr 1fr; grid-template-rows: auto auto; }
+.work-strip a:first-child { grid-row: span 2; }
+.work-strip a:first-child .photo-slot { aspect-ratio: auto; height: 100%; min-height: 100%; }
+.work-strip .photo-slot { aspect-ratio: 4 / 3; }
+@media (max-width: 760px) {
+  .work-strip { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .work-strip a:first-child { grid-row: auto; grid-column: 1 / -1; }
+  .work-strip a:first-child .photo-slot { aspect-ratio: 4 / 3; height: auto; min-height: 0; }
+  .work-strip .photo-slot { aspect-ratio: 1 / 1; }
+}
+
+/* ---- 2026-11-17 evening: no slogan on the opening screen, featured project second, a livelier Our difference ---- */
+.hero-mark { width: min(76vw, 500px, 54vh); width: min(76vw, 500px, 54svh); }
+
+/* Home 2. Featured project: his drone flight right after the opening screen, on navy like a screen */
+.feature-home { background: var(--navy); color: var(--on-navy); padding-block: clamp(40px, 6vw, 84px); }
+.feature-home .feat { border: 0; }
+@media (min-width: 761px) { .feature-home .feat { box-shadow: 0 40px 90px -40px rgba(2, 3, 18, 0.95); } }
+@media (max-width: 760px) {
+  .feature-home { padding-block: 0; }
+  .feature-home > .wrap { padding-inline: 0; }
+  .feature-home .feat-cap { position: static; background: var(--navy); padding: 16px 20px 26px; }
+}
+
+/* Home 3. Our difference: bigger words, his three numbers, a faint blueprint grid, the diagram drawn as the work flows */
+.diff { background-color: var(--bg); background-image: linear-gradient(color-mix(in srgb, var(--ink) 6%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, var(--ink) 6%, transparent) 1px, transparent 1px); background-size: 36px 36px; background-position: center top; }
+.diff-grid { grid-template-columns: 1.1fr 1fr; }
+.diff .section-head h2 { font-size: clamp(40px, 4.1vw, 56px); line-height: 1.04; } /* each sentence keeps to one line */
+@media (max-width: 900px) { .diff-grid { grid-template-columns: 1fr; } .diff .section-head h2 { font-size: clamp(31px, 8.2vw, 56px); } }
+.diff .section-head h2 em { font-style: italic; color: var(--gold-ink); padding-right: 0.05em; }
+.diff-stats { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 18px 44px; margin: 34px 0 0; padding-top: 26px; border-top: 1px solid var(--line); }
+.diff-stats div { min-width: 0; max-width: 16ch; }
+.diff-stats dt { font-family: var(--serif); font-weight: 500; font-size: clamp(48px, 5.2vw, 70px); line-height: 0.85; color: var(--gold-ink); font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
+.diff-stats dd { margin: 12px 0 0; font-size: 14.5px; line-height: 1.4; color: var(--muted); }
+@media (max-width: 520px) { .diff-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px 18px; } .diff-stats dd { font-size: 13.5px; } }
+.org { padding: 36px 28px 30px; }
+.dg { max-width: 500px; }
+.dg-line { fill: none; stroke: var(--gold); stroke-width: 1.4; }
+.dg-you circle { fill: var(--navy); stroke: #ffffff; stroke-width: 1.5; }
+.dg-you text { font: 700 13px var(--body); fill: #ffffff; text-anchor: middle; }
+.dg-hub rect { fill: var(--gold); }
+.dg-hub text { font: 700 12px var(--caps); letter-spacing: 0.14em; fill: #14165b; text-anchor: middle; }
+.dg-disc { fill: rgba(255, 255, 255, 0.07); stroke: rgba(201, 166, 107, 0.85); stroke-width: 1.3; }
+.dg-ic path { fill: none; stroke: #ffffff; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.dg-div text { font: 600 13px var(--body); fill: #ffffff; text-anchor: middle; }
+.dg-base rect { fill: none; stroke: rgba(255, 255, 255, 0.32); stroke-width: 1.2; }
+.dg-base text { font: 700 11px var(--body); letter-spacing: 0.22em; fill: rgba(255, 255, 255, 0.78); text-anchor: middle; }
+.dg-ring { fill: none; stroke: var(--gold-bright); stroke-width: 1.4; }
+.dg-pulse { fill: var(--gold-bright); }
+@media (prefers-reduced-motion: no-preference) {
+  .org.rv-play .dg-line { stroke-dasharray: 1; animation: dg-draw 0.6s ease-out both; }
+  .org.rv-play .dg-line.l1 { animation-delay: 0.45s; }
+  .org.rv-play .dg-line.l2 { animation-delay: 0.95s; animation-duration: 0.8s; }
+  .org.rv-play .dg-line.l3 { animation-delay: 1.75s; }
+  .org.rv-play .dg-you, .org.rv-play .dg-hub, .org.rv-play .dg-div, .org.rv-play .dg-base { transform-box: fill-box; transform-origin: center; animation: dg-pop 0.55s cubic-bezier(0.2, 0.7, 0.3, 1.2) both; }
+  .org.rv-play .dg-you { animation-delay: 0.25s; }
+  .org.rv-play .dg-hub { animation-delay: 0.75s; }
+  .org.rv-play .dg-div { animation-delay: calc(1.45s + var(--i) * 0.09s); }
+  .org.rv-play .dg-base { animation-delay: 2.05s; }
+}
+@media (prefers-reduced-motion: reduce) { .dg-pulses, .dg-glow { display: none; } }
+@keyframes dg-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes dg-pop { from { opacity: 0; transform: scale(0.7); } to { opacity: 1; transform: none; } }
 </style>
 
 <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
@@ -473,6 +805,7 @@ footer nav a:hover { color: var(--on-navy); }
 </svg>
 
 <a class="skip" href="#main">Skip to content</a>
+<div class="site-bg" id="site-bg" aria-hidden="true"></div>
 <header class="nav intro" id="nav">
   <div class="wrap">
     <button class="menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="Menu">
@@ -483,20 +816,17 @@ footer nav a:hover { color: var(--on-navy); }
       <svg viewBox="0 0 347 294" aria-hidden="true" focusable="false"><use href="#as-mark"/></svg>
     </a>
     <nav class="nav-links" aria-label="Main">
-      <a class="nav-sec" href="#building">Building</a>
-      <a class="nav-sec" href="#concepts">Concepts</a>
-      <a class="nav-sec" href="#structural">Structural</a>
-      <a class="nav-sec" href="#demo">Demo</a>
+      <a class="nav-sec" href="#top">Home</a>
+      <a class="nav-sec" href="#what-we-do">What we do</a>
+      <a class="nav-sec" href="#our-work">Our work</a>
       <a class="nav-phone" href="tel:+17324701583"><small>Call us</small>732-470-1583</a>
-      <a class="btn btn-gold" href="#contact">Get a quote</a>
+      <a class="btn btn-gold" href="#contact">Contact</a>
     </nav>
   </div>
   <nav class="menu" id="menu" aria-label="Menu" hidden>
-    <a href="#building">Building</a>
-    <a href="#concepts">Concepts</a>
-    <a href="#structural">Structural</a>
-    <a href="#demo">Demo</a>
-    <a href="#walkthrough">Walkthrough</a>
+    <a href="#top">Home</a>
+    <a href="#what-we-do">What we do</a>
+    <a href="#our-work">Our work</a>
     <a href="#contact">Contact</a>
     <a class="menu-phone" href="tel:+17324701583">Call or text 732-470-1583</a>
   </nav>
@@ -518,169 +848,297 @@ footer nav a:hover { color: var(--on-navy); }
       </span>
       <span class="hero-tag">Construction for Investors and Homeowners</span>
     </h1>
-    <p class="hero-lede">35 years of construction experience in New Jersey. From property evaluations to full renovations, get an experienced contractor's perspective before you move forward.</p>
+    <p class="hero-lede">One company bringing construction, specialized divisions, management, and logistics together to take your project from start to finish.</p>
     <div class="hero-ctas">
-      <a class="btn btn-gold" href="#contact" data-need="keystone">Book a walkthrough</a>
-      <a class="btn btn-ghost" href="#walkthrough">See how it works</a>
+      <a class="btn btn-gold" href="#what-we-do">Explore what we do</a>
+      <a class="btn btn-ghost" href="#contact" data-need="quote">Start your project</a>
     </div>
   </div>
   <span class="cue" aria-hidden="true"></span>
 </section>
 
-<section class="featured" id="featured" aria-label="Featured project">
-  <div class="wrap">
-    <div class="feat" id="feat"></div>
+<section class="feature-home" id="featured" aria-label="Featured project">
+  <div class="wrap"><div class="featured-block" data-reveal><div class="feat" id="feat"></div></div></div>
+</section>
+
+<section class="section diff" id="difference">
+  <div class="wrap diff-grid">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Our difference</p>
+      <h2><span><em>One</em> company.</span> <span><em>One</em> management team.</span></h2>
+      <p>Forget coordinating multiple contractors. We bring the people, specialized divisions, and management together under one company to manage the entire project.</p>
+      <dl class="diff-stats">
+        <div><dt>35</dt><dd>years of construction experience in New Jersey</dd></div>
+        <div><dt>4</dt><dd>specialized divisions</dd></div>
+        <div><dt>1</dt><dd>management team</dd></div>
+      </dl>
+    </div>
+    <figure class="org" data-reveal>
+        <svg class="dg" viewBox="0 0 360 306" role="img" aria-label="How Alvarado Style works: you deal with one management team, which runs the four divisions, the crews and the logistics">
+          <path class="dg-line l1" pathLength="1" d="M180 48V86"/>
+          <path class="dg-line l2" pathLength="1" d="M180 126V148M54 148H306M54 148V164M138 148V164M222 148V164M306 148V164"/>
+          <path class="dg-line l3" pathLength="1" d="M54 244V264M138 244V264M222 244V264M306 244V264"/>
+          <g class="dg-glow" aria-hidden="true"><circle class="dg-ring" cx="180" cy="26" r="27" opacity="0"><animate attributeName="opacity" begin="2.2s" dur="3.6s" repeatCount="indefinite" values="0;0;0.95;0;0" keyTimes="0;0.001;0.01;0.12;1"/></circle><rect class="dg-ring" x="21" y="81" width="318" height="50" rx="25" opacity="0"><animate attributeName="opacity" begin="2.2s" dur="3.6s" repeatCount="indefinite" values="0;0;0.95;0;0" keyTimes="0;0.19;0.22;0.34;1"/></rect><circle class="dg-ring" cx="54" cy="190" r="32" opacity="0"><animate attributeName="opacity" begin="2.2s" dur="3.6s" repeatCount="indefinite" values="0;0;0.95;0;0" keyTimes="0;0.49;0.52;0.64;1"/></circle><circle class="dg-ring" cx="138" cy="190" r="32" opacity="0"><animate attributeName="opacity" begin="2.2s" dur="3.6s" repeatCount="indefinite" values="0;0;0.95;0;0" keyTimes="0;0.49;0.52;0.64;1"/></circle><circle class="dg-ring" cx="222" cy="190" r="32" opacity="0"><animate attributeName="opacity" begin="2.2s" dur="3.6s" repeatCount="indefinite" values="0;0;0.95;0;0" keyTimes="0;0.49;0.52;0.64;1"/></circle><circle class="dg-ring" cx="306" cy="190" r="32" opacity="0"><animate attributeName="opacity" begin="2.2s" dur="3.6s" repeatCount="indefinite" values="0;0;0.95;0;0" keyTimes="0;0.49;0.52;0.64;1"/></circle><rect class="dg-ring" x="9" y="259" width="342" height="44" rx="4" opacity="0"><animate attributeName="opacity" begin="2.2s" dur="3.6s" repeatCount="indefinite" values="0;0;0.95;0;0" keyTimes="0;0.71;0.74;0.86;1"/></rect></g>
+          <g class="dg-you"><circle cx="180" cy="26" r="22"/><text x="180" y="31">You</text></g>
+          <g class="dg-hub"><rect x="26" y="86" width="308" height="40" rx="20"/><text x="180" y="110.5">ALVARADO STYLE MANAGEMENT</text></g>
+          <g class="dg-div" style="--i:0"><circle class="dg-disc" cx="54" cy="190" r="26"/><svg class="dg-ic" x="40" y="176" width="28" height="28" viewBox="0 0 32 32"><path d="M4 15 16 5l12 10"/><path d="M7 13v14h18V13"/><path d="M11 27V17M16 27V12M21 27V17M7 21h18"/></svg><text x="54" y="236">Building</text></g>
+          <g class="dg-div" style="--i:1"><circle class="dg-disc" cx="138" cy="190" r="26"/><svg class="dg-ic" x="124" y="176" width="28" height="28" viewBox="0 0 32 32"><path d="M5 5h22v22H5z"/><path d="M16 5v7M16 21v6M5 18h6"/><path d="M16 13.5v6" stroke-dasharray="1.5 2.5"/></svg><text x="138" y="236">Concepts</text></g>
+          <g class="dg-div" style="--i:2"><circle class="dg-disc" cx="222" cy="190" r="26"/><svg class="dg-ic" x="208" y="176" width="28" height="28" viewBox="0 0 32 32"><path d="M3 8h26v5H3z"/><path d="M8 13v15M24 13v15M5 28h6M21 28h6"/></svg><text x="222" y="236">Structural</text></g>
+          <g class="dg-div" style="--i:3"><circle class="dg-disc" cx="306" cy="190" r="26"/><svg class="dg-ic" x="292" y="176" width="28" height="28" viewBox="0 0 32 32"><path d="m18.5 4.5 9 9-3.5 3.5-9-9z"/><path d="M17.2 10.8 5 23l4 4 12.2-12.2"/></svg><text x="306" y="236">Demo</text></g>
+          <g class="dg-base"><rect x="14" y="264" width="332" height="34" rx="2"/><text x="180" y="285.5">CREWS · LOGISTICS · EQUIPMENT</text></g>
+          <g class="dg-pulses" aria-hidden="true"><circle class="dg-pulse" r="3.4" opacity="0"><animateMotion path="M180 48 V86" begin="2.2s" dur="3.6s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.01;0.2;1"/><animate attributeName="opacity" begin="2.2s" dur="3.6s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.005;0.02;0.18;0.22;1"/></circle><circle class="dg-pulse" r="3.4" opacity="0"><animateMotion path="M180 126 V148 H54 V164" begin="2.2s" dur="3.6s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.25;0.5;1"/><animate attributeName="opacity" begin="2.2s" dur="3.6s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.24;0.26;0.48;0.52;1"/></circle><circle class="dg-pulse" r="3.4" opacity="0"><animateMotion path="M180 126 V148 H138 V164" begin="2.2s" dur="3.6s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.25;0.5;1"/><animate attributeName="opacity" begin="2.2s" dur="3.6s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.24;0.26;0.48;0.52;1"/></circle><circle class="dg-pulse" r="3.4" opacity="0"><animateMotion path="M180 126 V148 H222 V164" begin="2.2s" dur="3.6s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.25;0.5;1"/><animate attributeName="opacity" begin="2.2s" dur="3.6s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.24;0.26;0.48;0.52;1"/></circle><circle class="dg-pulse" r="3.4" opacity="0"><animateMotion path="M180 126 V148 H306 V164" begin="2.2s" dur="3.6s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.25;0.5;1"/><animate attributeName="opacity" begin="2.2s" dur="3.6s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.24;0.26;0.48;0.52;1"/></circle><circle class="dg-pulse" r="3.4" opacity="0"><animateMotion path="M54 244 V264" begin="2.2s" dur="3.6s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.6;0.72;1"/><animate attributeName="opacity" begin="2.2s" dur="3.6s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.59;0.61;0.7;0.74;1"/></circle><circle class="dg-pulse" r="3.4" opacity="0"><animateMotion path="M138 244 V264" begin="2.2s" dur="3.6s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.6;0.72;1"/><animate attributeName="opacity" begin="2.2s" dur="3.6s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.59;0.61;0.7;0.74;1"/></circle><circle class="dg-pulse" r="3.4" opacity="0"><animateMotion path="M222 244 V264" begin="2.2s" dur="3.6s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.6;0.72;1"/><animate attributeName="opacity" begin="2.2s" dur="3.6s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.59;0.61;0.7;0.74;1"/></circle><circle class="dg-pulse" r="3.4" opacity="0"><animateMotion path="M306 244 V264" begin="2.2s" dur="3.6s" repeatCount="indefinite" calcMode="linear" keyPoints="0;0;1;1" keyTimes="0;0.6;0.72;1"/><animate attributeName="opacity" begin="2.2s" dur="3.6s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0;0.59;0.61;0.7;0.74;1"/></circle></g>
+        </svg>
+    </figure>
   </div>
 </section>
 
-<section class="divisions" id="divisions">
+<section class="section divisions bg-window" id="divisions">
   <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Our company</p>
-      <h2>One company. Four divisions.</h2>
-      <p>Alvarado Style Services brings four specialized divisions together under one management company. Each division operates as part of the same organization, supported by management, supervisors, crew leaders, and field teams working together to coordinate every project.</p>
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Our capabilities</p>
+      <h2>Four specialized divisions.</h2>
     </div>
-    <div class="div-grid">
-      <a class="div-panel" href="#building">
-        <div class="photo-slot" data-photo="div-construction" data-note="Finished exterior or whole-house renovation"></div>
-        <div class="div-body"><span class="c">BUILDING</span><p>Renovations, additions and new builds, managed from permits to punch list.</p><span class="more">See Building</span></div>
-      </a>
-      <a class="div-panel" href="#concepts">
-        <div class="photo-slot" data-photo="div-concepts" data-note="Finished open-concept living space"></div>
-        <div class="div-body"><span class="c">CONCEPTS</span><p>Open-floor-plan transformations and interior remodeling.</p><span class="more">See Concepts</span></div>
-      </a>
-      <a class="div-panel" href="#structural">
-        <div class="photo-slot" data-photo="div-structural" data-note="LVL beam set in an opened wall"></div>
-        <div class="div-body"><span class="c">STRUCTURAL</span><p>LVL beams, flitch plates and headers, supplied or installed.</p><span class="more">See Structural</span></div>
-      </a>
-      <a class="div-panel" href="#demo">
-        <div class="photo-slot" data-photo="div-demo" data-note="Gutted interior, cleared and swept"></div>
-        <div class="div-body"><span class="c">DEMO</span><p>Interior and selective demolition, cleared and broom-clean.</p><span class="more">See Demo</span></div>
-      </a>
+    <div class="div-grid" data-reveal>
+        <a class="div-panel" href="#building">
+          <div class="photo-slot" data-photo="div-construction" data-note="Finished exterior or whole-house renovation"></div>
+          <div class="div-body"><span class="div-id"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 15 16 5l12 10"/><path d="M7 13v14h18V13"/><path d="M11 27V17M16 27V12M21 27V17M7 21h18"/></svg><span class="div-n">01</span></span><span class="c">Building</span><p>Renovations, additions and new builds, managed from permits to punch list.</p><span class="more">See Building</span></div>
+        </a>
+        <a class="div-panel" href="#concepts">
+          <div class="photo-slot" data-photo="div-concepts" data-note="Finished open-concept living space"></div>
+          <div class="div-body"><span class="div-id"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 5h22v22H5z"/><path d="M16 5v7M16 21v6M5 18h6"/><path d="M16 13.5v6" stroke-dasharray="1.5 2.5"/></svg><span class="div-n">02</span></span><span class="c">Concepts</span><p>Open-floor-plan transformations and interior remodeling.</p><span class="more">See Concepts</span></div>
+        </a>
+        <a class="div-panel" href="#structural">
+          <div class="photo-slot" data-photo="div-structural" data-note="LVL beam set in an opened wall"></div>
+          <div class="div-body"><span class="div-id"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 8h26v5H3z"/><path d="M8 13v15M24 13v15M5 28h6M21 28h6"/></svg><span class="div-n">03</span></span><span class="c">Structural</span><p>LVL beams, flitch plates and headers, supplied or installed.</p><span class="more">See Structural</span></div>
+        </a>
+        <a class="div-panel" href="#demo">
+          <div class="photo-slot" data-photo="div-demo" data-note="Gutted interior, cleared and swept"></div>
+          <div class="div-body"><span class="div-id"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m18.5 4.5 9 9-3.5 3.5-9-9z"/><path d="M17.2 10.8 5 23l4 4 12.2-12.2"/></svg><span class="div-n">04</span></span><span class="c">Demo</span><p>Interior and selective demolition, cleared and broom-clean.</p><span class="more">See Demo</span></div>
+        </a>
     </div>
   </div>
 </section>
 
-<section class="section" id="walkthrough">
+<section class="section work-home" id="work">
   <div class="wrap">
-    <div class="ks-panel">
-      <div>
-        <p class="eyebrow">The Keystone Walkthrough</p>
-        <h2>An experienced opinion before you commit</h2>
-        <p class="lede">Buying a house, planning a project or just have an idea? Our team walks it with you, finds the problems early and tells you what the job really takes.</p>
-        <div class="ks-uses" aria-label="Good for"><span>Buying a home</span><span>Starting a project</span><span>Just an idea</span></div>
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Our work</p>
+      <h2><span>Proud of the work.</span> <span>Proud of the results.</span></h2>
+    </div>
+    <div class="work-strip" data-reveal>
+      <a href="#our-work" aria-label="Our work: finished two-story home"><div class="photo-slot" data-photo="page-construction"></div></a>
+      <a href="#our-work" aria-label="Our work: crew on the roof trusses"><div class="photo-slot" data-photo="work-ridge"></div></a>
+      <a href="#our-work" aria-label="Our work: crew setting roof trusses"><div class="photo-slot" data-photo="team-site"></div></a>
+    </div>
+    <div class="work-more"><a class="btn btn-cta" href="#our-work">View our work</a></div>
+  </div>
+</section>
+
+<section class="section on-navy final-cta bg-window" id="start">
+  <div class="wrap" data-reveal>
+    <h2>Let&#8217;s get your project moving.</h2>
+    <p>One conversation. One coordinated team. Let&#8217;s talk about what you&#8217;re building.</p>
+    <div class="cta-row"><a class="btn btn-gold" href="#contact" data-need="quote">Contact Alvarado Style</a><p class="phone-line">Or call or text <b>732-470-1583</b></p></div>
+  </div>
+</section>
+</div>
+
+<div data-view="what-we-do" id="view-what-we-do" class="page" hidden>
+<section class="page-hero short">
+  <div class="photo-slot page-photo" data-photo="page-what-we-do" data-note="Wide shot of a job site"></div>
+  <div class="wrap">
+    <div class="page-title">
+      <h1>What we do</h1>
+      <p class="lede">Four specialized divisions under one management team.</p>
+    </div>
+  </div>
+</section>
+<nav class="page-jump" aria-label="On this page"><div class="wrap"><a href="#building">Building</a><a href="#concepts">Concepts</a><a href="#structural">Structural</a><a href="#demo">Demo</a><a href="#managed">How the work is managed</a></div></nav>
+<section class="section wd" id="building">
+  <div class="wrap wd-grid">
+    <div class="wd-media" data-reveal><div class="photo-slot" data-photo="div-construction"></div></div>
+    <div class="wd-body" data-reveal>
+      <span class="div-id"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 15 16 5l12 10"/><path d="M7 13v14h18V13"/><path d="M11 27V17M16 27V12M21 27V17M7 21h18"/></svg><span class="div-n">01</span></span>
+      <h2>Building</h2>
+      <p class="wd-lede">Renovations, additions and new builds, managed from permits to punch list.</p>
+      <ul class="wd-list" aria-label="What Building handles">
+            <li>Full residential renovations</li>
+            <li>Additions &amp; new construction</li>
+            <li>Investor flip renovations</li>
+            <li>Multifamily renovations</li>
+            <li>ADUs &amp; in-law suites</li>
+            <li>Custom &amp; high-end homes</li>
+            <li>Exterior improvements</li>
+            <li>Energy-efficient upgrades</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="section wd alt flip" id="concepts">
+  <div class="wrap wd-grid">
+    <div class="wd-media" data-reveal><div class="photo-slot" data-photo="div-concepts"></div></div>
+    <div class="wd-body" data-reveal>
+      <span class="div-id"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 5h22v22H5z"/><path d="M16 5v7M16 21v6M5 18h6"/><path d="M16 13.5v6" stroke-dasharray="1.5 2.5"/></svg><span class="div-n">02</span></span>
+      <h2>Concepts</h2>
+      <p class="wd-lede">Open-floor-plan transformations and interior remodeling.</p>
+      <ul class="wd-list" aria-label="What Concepts handles">
+            <li>Open-floor-plan conversions</li>
+            <li>Load-bearing wall removal</li>
+            <li>Interior remodeling: kitchens, baths, basements</li>
+            <li>Room reconfigurations</li>
+            <li>Finish work: trim, flooring, tile, paint</li>
+            <li>Finish selections</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="section wd" id="structural">
+  <div class="wrap wd-grid">
+    <div class="wd-media" data-reveal><div class="photo-slot" data-photo="div-structural"></div></div>
+    <div class="wd-body" data-reveal>
+      <span class="div-id"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 8h26v5H3z"/><path d="M8 13v15M24 13v15M5 28h6M21 28h6"/></svg><span class="div-n">03</span></span>
+      <h2>Structural</h2>
+      <p class="wd-lede">LVL beams, flitch plates and headers, supplied or installed.</p>
+      <ul class="wd-list" aria-label="What Structural handles">
+            <li>LVL &amp; glulam beams</li>
+            <li>Flitch plates</li>
+            <li>Structural headers</li>
+            <li>Posts, hangers &amp; bearing</li>
+            <li>Temporary shoring</li>
+            <li>Structural repairs</li>
+      </ul>
+          <div class="wd-ways">
+            <div><b>Beam supply</b><span>Your drawings, your crew. We build the package and deliver it.</span></div>
+            <div><b>Fabricate &amp; install</b><span>We build it, shore the house, open the wall and set it.</span></div>
+            <div><b>Full structural scope</b><span>Wall removal through finish, one schedule.</span></div>
+          </div>
+          <p class="wd-note"><b>Engineering is by your engineer. We build to stamped drawings.</b> For a fast quote, send the drawing or a sketch with the span, and photos of the wall.</p>
+    </div>
+  </div>
+</section>
+<section class="section wd alt flip" id="demo">
+  <div class="wrap wd-grid">
+    <div class="wd-media" data-reveal><div class="photo-slot" data-photo="div-demo"></div></div>
+    <div class="wd-body" data-reveal>
+      <span class="div-id"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m18.5 4.5 9 9-3.5 3.5-9-9z"/><path d="M17.2 10.8 5 23l4 4 12.2-12.2"/></svg><span class="div-n">04</span></span>
+      <h2>Demo</h2>
+      <p class="wd-lede">Interior and selective demolition, cleared and broom-clean.</p>
+      <ul class="wd-list" aria-label="What Demo handles">
+            <li>Interior gut-outs</li>
+            <li>Selective demolition</li>
+            <li>Kitchen &amp; bath strip-outs</li>
+            <li>Wall removal (bearing walls with Structural)</li>
+            <li>Flooring, tile &amp; finish removal</li>
+            <li>Tear-downs: garages, additions, whole houses</li>
+            <li>Debris removal in our own trucks</li>
+            <li>Site preparation</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="section on-navy managed bg-window" id="managed">
+  <div class="wrap managed-grid">
+    <div class="managed-copy">
+      <div class="section-head" data-reveal>
+        <p class="eyebrow">One management team</p>
+        <h2>How the work is managed</h2>
+        <p>Our management team coordinates the labor, materials, logistics and schedule for every project. Supervisors and crew leaders run the work on site, and the divisions carry it out as one team.</p>
       </div>
+      <ol class="flow" data-reveal>
+        <li><span class="n">01</span><b>Plan</b><span>Assess the property, set the scope, organize the work</span></li>
+        <li><span class="n">02</span><b>Prepare</b><span>Labor, materials, logistics, scheduling and site preparation</span></li>
+        <li><span class="n">03</span><b>Execute</b><span>Our divisions and crews carry out the work</span></li>
+        <li><span class="n">04</span><b>Manage</b><span>Oversee progress and keep you informed</span></li>
+        <li><span class="n">05</span><b>Complete</b><span>Review the results, finish the details, deliver</span></li>
+      </ol>
+    </div>
+    <div class="photo-slot" data-photo="team-equipment" data-reveal></div>
+  </div>
+</section>
+<section class="section page-end bg-window">
+  <div class="wrap">
+    <h2>Tell us what you&#8217;re building.</h2>
+    <a class="btn btn-gold" href="#contact" data-need="quote">Start your project</a>
+  </div>
+</section>
+</div>
+
+<div data-view="our-work" id="view-our-work" class="page" hidden>
+<section class="page-hero plain bg-window">
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Our work</h1>
+      <p class="lede">Job sites and finished projects from our divisions and crews.</p>
+    </div>
+  </div>
+</section>
+<section class="section portfolio" id="portfolio">
+  <div class="wrap">
+    <div class="work-filters" id="work-filters" role="group" aria-label="Show projects">
+      <button type="button" data-filter="all" aria-pressed="true">All</button><button type="button" data-filter="site" aria-pressed="false">Job sites</button><button type="button" data-filter="completed" aria-pressed="false">Completed</button><button type="button" data-filter="interior" aria-pressed="false">Interiors</button><button type="button" data-filter="structural" aria-pressed="false">Structural</button><button type="button" data-filter="demolition" aria-pressed="false">Demolition</button><button type="button" data-filter="before-after" aria-pressed="false">Before and after</button>
+    </div>
+    <div class="work-grid" id="work-grid" data-cat="all"></div>
+  </div>
+</section>
+<section class="section page-end bg-window">
+  <div class="wrap">
+    <h2>Want this kind of work on your property?</h2>
+    <a class="btn btn-gold" href="#contact" data-need="quote">Start your project</a>
+  </div>
+</section>
+</div>
+
+<div data-view="contact" id="view-contact" class="page" hidden>
+<section class="page-hero plain bg-window">
+  <div class="wrap">
+    <div class="page-title">
+      <h1>Contact</h1>
+      <p class="lede">Call or text <a href="tel:+17324701583">732-470-1583</a>, or send the form and we&#8217;ll call you back.</p>
+    </div>
+  </div>
+</section>
+<section class="section contact-page" id="contact-us">
+  <div class="wrap contact">
+    <form class="quote" id="quote" method="POST" data-reveal>
+      <h3>Tell us about your project</h3>
+      <p>A few details are enough. We&#8217;ll call you back to set it up.</p>
+      <div class="form-2">
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" required autocomplete="name"></div>
+        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" required autocomplete="tel" inputmode="tel"></div>
+      </div>
+      <div class="field"><label for="f-job">What do you need?</label>
+        <select id="f-job" name="job">
+          <option value="keystone">A walkthrough (free)</option>
+          <option value="quote">A project consultation</option>
+          <option value="idea">I just have an idea</option>
+          <option value="build">New build, addition or renovation (Building)</option>
+          <option value="concepts">Remodel or open floor plan (Concepts)</option>
+          <option value="structural">Beam or structural work (Structural)</option>
+          <option value="demo">Demolition (Demo)</option>
+        </select></div>
+      <div class="field"><label for="f-addr">Town or address</label><input id="f-addr" name="address" placeholder="e.g. Toms River" autocomplete="street-address"></div>
+      <div class="field"><label for="f-msg">Anything we should know? <small>Optional</small></label><textarea id="f-msg" name="message" rows="3" placeholder="The project, your timeline, the best time to call"></textarea></div>
+      <input type="hidden" name="_subject" value="Quote request from alvaradostyle.com">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://alvaradostyle.com/#sent">
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+      <button class="btn btn-cta" type="submit" id="f-send" style="justify-self: start">Send</button>
+      <p class="form-msg" id="f-out" role="status" aria-live="polite" hidden></p>
+    </form>
+
+    <div class="ks-card" id="walkthrough" data-reveal>
+      <p class="eyebrow">The Keystone Walkthrough</p>
+      <h3>Request a walkthrough</h3>
+      <p>35 years of construction experience in New Jersey. From property evaluations to full renovations, get an experienced contractor's perspective before you move forward.</p>
       <div class="ks-offer">
         <div class="ks-step"><span class="tag">Free<small>Step 1</small></span><div><h3>The walkthrough</h3><p>We walk the property with you and point out the structure, the problems and the possibilities.</p></div></div>
         <div class="ks-step"><span class="tag">Priced<small>Step 2</small></span><div><h3>The written quote</h3><p>A priced scope you can plan around, negotiate with or build from.</p></div></div>
-        <div class="ks-cta"><a class="btn btn-gold" href="#contact" data-need="keystone">Book a free walkthrough</a><p>Or call or text <b>732-470-1583</b></p></div>
       </div>
+      <div class="ks-cta"><a class="btn btn-gold" href="#quote" data-need="keystone">Request a walkthrough</a></div>
     </div>
-  </div>
-</section>
 
-<section class="section on-navy" id="details">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Attention to detail</p>
-      <h2>What we check on every walkthrough</h2>
-      <p>35 years of opening up New Jersey houses shows where problems hide. These are the places our team looks first.</p>
-    </div>
-    <div class="detail-grid">
-      <figure class="cutaway">
-        <svg viewBox="0 0 640 470" role="img" aria-labelledby="cw-title">
-          <title id="cw-title">Cutaway drawing of a two-story house marking the eight places we check: roof and attic, bathroom floors, bearing walls, window and door headers, flood elevation, sill plate, electrical panel and foundation.</title>
-          <rect class="cw-ground" x="0" y="340" width="640" height="130"/>
-          <path class="cw-water" d="M-10 306q10-6 20 0t20 0t20 0t20 0t20 0t20 0t20 0V340H-10Z"/>
-          <path class="cw-water" d="M510 306q10-6 20 0t20 0t20 0t20 0t20 0t20 0t20 0V340H510Z"/>
-          <path class="cw-line" d="M0 340H130M510 340H640"/>
-          <path class="cw-bfe" d="M0 292H640"/>
-          <text class="cw-label" x="8" y="284">BASE FLOOD ELEVATION</text>
-
-          <rect class="cw-fill" x="142" y="336" width="356" height="104"/>
-          <path class="cw-solid" d="M130 328h12v112h-12zM498 328h12v112h-12z"/>
-          <rect class="cw-solid" x="130" y="440" width="380" height="8"/>
-          <rect class="cw-solid" x="122" y="448" width="28" height="10"/>
-          <rect class="cw-solid" x="490" y="448" width="28" height="10"/>
-          <rect class="cw-struct" x="308" y="324" width="24" height="12"/>
-          <rect class="cw-struct" x="316" y="336" width="8" height="104"/>
-          <rect class="cw-fill" x="160" y="356" width="28" height="40" rx="2"/>
-          <path class="cw-line cw-thin" d="M166 365h16M166 372h16M166 379h16M166 386h16M174 356v-20"/>
-          <path class="cw-line" d="M372 440h12v-16h12v-16h12v-16h12v-16h12v-16h12v-16h12v-16"/>
-          <path class="cw-line cw-thin" d="M386 440L464 336"/>
-          <path class="cw-crack" d="M505 344l-4 10 5 9-5 11 4 10-3 10"/>
-          <path class="cw-water-line" d="M462 437h30"/>
-
-          <rect class="cw-struct" x="130" y="324" width="12" height="4"/>
-          <rect class="cw-struct" x="498" y="324" width="12" height="4"/>
-          <rect class="cw-fill" x="130" y="316" width="380" height="8"/>
-
-          <rect class="cw-fill" x="130" y="216" width="10" height="100"/>
-          <rect class="cw-fill" x="500" y="216" width="10" height="100"/>
-          <rect class="cw-struct" x="316" y="216" width="8" height="100"/>
-          <rect class="cw-glass" x="168" y="252" width="56" height="46"/>
-          <path class="cw-line cw-thin" d="M196 252v46M168 275h56"/>
-          <rect class="cw-struct" x="160" y="242" width="72" height="10"/>
-          <rect class="cw-fill" x="430" y="244" width="40" height="72"/>
-          <circle class="cw-knob" cx="462" cy="282" r="2.5"/>
-          <rect class="cw-struct" x="424" y="234" width="52" height="10"/>
-
-          <rect class="cw-fill" x="130" y="208" width="380" height="8"/>
-          <rect class="cw-fill" x="130" y="120" width="10" height="88"/>
-          <rect class="cw-fill" x="500" y="120" width="10" height="88"/>
-          <rect class="cw-struct" x="316" y="120" width="8" height="88"/>
-          <rect class="cw-glass" x="168" y="146" width="56" height="42"/>
-          <path class="cw-line cw-thin" d="M196 146v42M168 167h56"/>
-          <rect class="cw-struct" x="160" y="136" width="72" height="10"/>
-          <rect class="cw-glass" x="392" y="134" width="56" height="30"/>
-          <rect class="cw-struct" x="384" y="124" width="72" height="10"/>
-          <path class="cw-fill" d="M372 182h104v12a14 14 0 0 1-14 14h-76a14 14 0 0 1-14-14z"/>
-          <path class="cw-line cw-thin" d="M466 182v-12h-9"/>
-
-          <rect class="cw-fill" x="130" y="114" width="380" height="6"/>
-          <path class="cw-line cw-thin" d="M154 110q4.5-6 9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0t9 0"/>
-          <path class="cw-fill" d="M104 122L320 24L536 122H518L320 42L122 122Z"/>
-
-          <g aria-hidden="true">
-            <g class="spot" data-spot="1" transform="translate(320 80)"><circle class="spot-ring" r="15"/><circle class="spot-dot" r="15"/><text y="5">1</text></g>
-            <g class="spot" data-spot="2" transform="translate(424 212)"><circle class="spot-ring" r="15" style="animation-delay: .3s"/><circle class="spot-dot" r="15"/><text y="5">2</text></g>
-            <g class="spot" data-spot="3" transform="translate(320 262)"><circle class="spot-ring" r="15" style="animation-delay: .6s"/><circle class="spot-dot" r="15"/><text y="5">3</text></g>
-            <g class="spot" data-spot="4" transform="translate(196 247)"><circle class="spot-ring" r="15" style="animation-delay: .9s"/><circle class="spot-dot" r="15"/><text y="5">4</text></g>
-            <g class="spot" data-spot="5" transform="translate(585 306)"><circle class="spot-ring" r="15" style="animation-delay: 1.2s"/><circle class="spot-dot" r="15"/><text y="5">5</text></g>
-            <g class="spot" data-spot="6" transform="translate(136 326)"><circle class="spot-ring" r="15" style="animation-delay: 1.5s"/><circle class="spot-dot" r="15"/><text y="5">6</text></g>
-            <g class="spot" data-spot="7" transform="translate(174 376)"><circle class="spot-ring" r="15" style="animation-delay: 1.8s"/><circle class="spot-dot" r="15"/><text y="5">7</text></g>
-            <g class="spot" data-spot="8" transform="translate(504 392)"><circle class="spot-ring" r="15" style="animation-delay: 2.1s"/><circle class="spot-dot" r="15"/><text y="5">8</text></g>
-          </g>
-        </svg>
-        <figcaption><i aria-hidden="true"></i>Gold shows the structure: headers, bearing walls, the girder and the lally column.</figcaption>
-      </figure>
-
-      <ol class="spots">
-        <li><button class="spot-item" type="button" data-spot="1"><span class="n">1</span><span><b>Roof &amp; attic</b><span class="t">Old leaks, rotted sheathing and poor venting.</span></span></button></li>
-        <li><button class="spot-item" type="button" data-spot="2"><span class="n">2</span><span><b>Bathroom floors</b><span class="t">Soft subfloor and slow leaks under tubs and toilets.</span></span></button></li>
-        <li><button class="spot-item" type="button" data-spot="3"><span class="n">3</span><span><b>Bearing walls</b><span class="t">Which walls hold the house up, before anyone plans to take one out.</span></span></button></li>
-        <li><button class="spot-item" type="button" data-spot="4"><span class="n">4</span><span><b>Headers</b><span class="t">Sagging or undersized headers over windows and doors.</span></span></button></li>
-        <li><button class="spot-item" type="button" data-spot="5"><span class="n">5</span><span><b>Flood zone</b><span class="t">At the Shore, a big enough renovation can mean raising the house. We check before you commit.</span></span></button></li>
-        <li><button class="spot-item" type="button" data-spot="6"><span class="n">6</span><span><b>Sill plate</b><span class="t">Termite and water damage where the house sits on the foundation.</span></span></button></li>
-        <li><button class="spot-item" type="button" data-spot="7"><span class="n">7</span><span><b>Electrical panel</b><span class="t">Outdated panels and old wiring that insurance companies flag.</span></span></button></li>
-        <li><button class="spot-item" type="button" data-spot="8"><span class="n">8</span><span><b>Foundation</b><span class="t">Cracks, water in the basement and grading that sends rain toward the house.</span></span></button></li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-
-<section class="section" id="contact" style="padding-top: 0">
-  <div class="wrap contact">
-    <div class="area">
-      <div class="section-head" style="margin-bottom: 0">
-        <p class="eyebrow">Monmouth / Ocean County</p>
-        <h2>Building the Jersey Shore</h2>
-        <p>We work across Monmouth and Ocean County, and travel for the right project.</p>
-      </div>
-      <div class="towns">
-        <span>Toms River</span><span>Brick</span><span>Lakewood</span><span>Point Pleasant</span><span>Wall</span><span>Howell</span><span>Freehold</span><span>Manalapan</span><span>Long Branch</span><span>Asbury Park</span><span>Red Bank</span><span>Jackson</span>
-      </div>
+    <div class="reach-box" data-reveal>
       <div class="reach">
         <div class="reach-row"><span>Phone</span><b id="r-phone">732-470-1583</b><button class="copy" type="button" data-copy="r-phone">Copy</button></div>
         <div class="reach-row"><span>Email</span><b id="r-email">my@alvaradostyle.com</b><button class="copy" type="button" data-copy="r-email">Copy</button></div>
@@ -693,255 +1151,14 @@ footer nav a:hover { color: var(--on-navy); }
           </div>
         </div>
       </div>
+      <p class="towns-line"><b>Monmouth and Ocean County.</b> Toms River, Brick, Lakewood, Point Pleasant, Wall, Howell, Freehold, Manalapan, Long Branch, Asbury Park, Red Bank and Jackson, and we travel for the right project.</p>
     </div>
-
-    <form class="quote" id="quote" method="POST">
-      <h3>Get a quick quote</h3>
-      <p>Tell us what you're thinking. We'll call you back to set up a walkthrough.</p>
-      <div class="form-2">
-        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" required autocomplete="name"></div>
-        <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" required autocomplete="tel" inputmode="tel"></div>
-      </div>
-      <div class="form-2">
-        <div class="field"><label for="f-type">I am a</label>
-          <select id="f-type" name="type"><option>Homeowner</option><option>Home buyer</option><option>Investor / flipper</option><option>Developer</option><option>Landlord / property manager</option><option>Realtor</option></select></div>
-        <div class="field"><label for="f-addr">Town or address</label><input id="f-addr" name="address" placeholder="e.g. Toms River"></div>
-      </div>
-      <div class="field"><label for="f-job">What do you need?</label>
-        <select id="f-job" name="job">
-          <option value="keystone">Keystone Walkthrough before I buy</option>
-          <option value="quote">Quick quote on a project</option>
-          <option value="idea">I just have an idea</option>
-          <option value="build">Renovation or new build</option>
-          <option value="concepts">Remodel or open floor plan (Concepts)</option>
-          <option value="structural">Beam or structural work (Structural)</option>
-          <option value="demo">Demolition (Demo)</option>
-        </select></div>
-      <div class="field"><label for="f-msg">What are you planning?</label><textarea id="f-msg" name="message" rows="4" placeholder="The house, the idea, your budget and timeline"></textarea></div>
-      <input type="hidden" name="_subject" value="Quote request from alvaradostyle.com">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://alvaradostyle.com/#sent">
-      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
-      <button class="btn btn-cta" type="submit" id="f-send" style="justify-self: start">Send</button>
-      <p class="form-msg" id="f-out" role="status" aria-live="polite" hidden></p>
-    </form>
-  </div>
-</section>
-</div>
-
-<div data-view="building" id="view-building" hidden>
-<section class="page-hero">
-  <div class="wrap">
-    <div class="page-copy">
-      <p class="crumb"><a href="#top">Alvarado Style Services</a><span>/</span><span>Building</span></p>
-      <h1>Building</h1>
-      <p class="lede">Renovations, additions and new builds across Monmouth and Ocean County. One management team runs the job, coordinates every trade and hands you a finished property.</p>
-      <div class="hero-ctas"><a class="btn btn-gold" href="#contact" data-need="build">Get a quote</a><a class="btn btn-ghost" href="tel:+17324701583">Call 732-470-1583</a></div>
-    </div>
-    <div class="photo-slot" data-photo="page-construction" data-note="Finished whole-house renovation or new build, wide exterior shot"></div>
-  </div>
-</section>
-<section class="section">
-  <div class="wrap">
-    <div class="section-head"><p class="eyebrow">What we build</p><h2>The whole job, one management team</h2><p>From a gut renovation to a ground-up build, we price the whole scope, schedule every trade and keep a project supervisor on the job until the punch list is closed.</p></div>
-    <div class="svc-list cols-3"><div class="svc"><h3>Full residential renovations</h3><p>Gut rehabs and whole-house updates planned around how you'll live in it or sell it.</p></div><div class="svc"><h3>Additions &amp; new construction</h3><p>Ground-up homes and additions, from permit set to certificate of occupancy.</p></div><div class="svc"><h3>Investor flip renovations</h3><p>Scopes priced against your ARV, with a timeline built for a fast sale.</p></div><div class="svc"><h3>Multifamily renovations</h3><p>Unit turns and building-wide upgrades scheduled to keep rents coming in.</p></div><div class="svc"><h3>ADUs &amp; in-law suites</h3><p>Accessory dwelling units that add rent and value.</p></div><div class="svc"><h3>Custom &amp; high-end homes</h3><p>Shore homes and custom builds with the finish level the market expects.</p></div><div class="svc"><h3>Exterior improvements</h3><p>Siding, decks, roofing and entries that change the first impression.</p></div><div class="svc"><h3>Energy-efficient upgrades</h3><p>Insulation, envelope and systems upgrades that cut operating costs.</p></div></div>
-  </div>
-</section>
-<section class="section on-navy">
-  <div class="wrap">
-    <div class="section-head"><p class="eyebrow">How we run a job</p><h2>Coordinated, not pieced together</h2><p>Demolition, structure and finish work are our own divisions, so the schedule never waits on three different companies.</p></div>
-    <div class="steps"><div class="step"><span class="step-n">STEP 1</span><h3>Walkthrough &amp; quote</h3><p>We walk the property, find the hard parts and write a priced scope.</p></div><div class="step"><span class="step-n">STEP 2</span><h3>Plan &amp; permits</h3><p>Drawings, selections and permit paperwork lined up before demo day.</p></div><div class="step"><span class="step-n">STEP 3</span><h3>Build</h3><p>Demo clears it, Structural opens it, Concepts finishes it, all on one schedule under one project supervisor.</p></div><div class="step"><span class="step-n">STEP 4</span><h3>Punch &amp; handoff</h3><p>Final walk, punch list closed, and the keys back in your hands.</p></div></div>
-  </div>
-</section>
-<section class="section">
-  <div class="wrap">
-    <div class="section-head"><p class="eyebrow">Who we work with</p><h2>Built for the people who build and buy</h2></div>
-    <div class="audience">
-      <div><h3>Homeowners</h3><p>Renovations, additions and custom work, explained in plain language and priced before we start.</p></div>
-      <div><h3>Investors &amp; flippers</h3><p>Scopes priced against your ARV, timelines built for the sale, and the hard parts found before you close.</p></div>
-      <div><h3>Developers &amp; landlords</h3><p>Multifamily turns and building-wide upgrades scheduled to keep units rented.</p></div>
-      <div><h3>Builders &amp; contractors</h3><p>Need one piece of a bigger job? Structural and Demo take scopes inside your project.</p></div>
-    </div>
-  </div>
-</section>
-<section class="section page-cta">
-  <div class="wrap">
-    <div class="section-head"><p class="eyebrow">Start here</p><h2>Tell us about the project</h2><p>Send the address, what you're planning and your timeline. We'll set up a walkthrough and come back with a priced quote.</p></div>
-    <div class="hero-ctas"><a class="btn btn-gold" href="#contact" data-need="build">Get a quote</a></div>
-    <p class="phone-line">Or call or text <b>732-470-1583</b></p>
-  </div>
-</section>
-</div>
-
-<div data-view="concepts" id="view-concepts" hidden>
-<section class="page-hero">
-  <div class="wrap">
-    <div class="page-copy">
-      <p class="crumb"><a href="#top">Alvarado Style Services</a><span>/</span><span>Concepts</span></p>
-      <h1>Concepts</h1>
-      <p class="lede">Interior transformations and open-concept spaces. We take the walls out, rework the layout and finish the room, so a house lives bigger and shows better.</p>
-      <div class="hero-ctas"><a class="btn btn-gold" href="#contact" data-need="concepts">Get a quote</a><a class="btn btn-ghost" href="tel:+17324701583">Call 732-470-1583</a></div>
-    </div>
-    <div class="photo-slot" data-photo="page-concepts" data-note="Finished open-concept kitchen and living room"></div>
-  </div>
-</section>
-<section class="section work">
-  <div class="wrap">
-    <div class="section-head"><p class="eyebrow">Before and after</p><h2>The difference a layout makes</h2></div>
-    <div class="ba">
-      <figure><figcaption>Before</figcaption><div class="photo-slot" data-photo="concepts-before" data-note="The room before: wall in place, closed-off kitchen"></div></figure>
-      <figure><figcaption>After</figcaption><div class="photo-slot" data-photo="concepts-after" data-note="The same room after, from the same spot: wall out, one open space"></div></figure>
-    </div>
-    <div class="ba-copy">
-      <p>Same house, same footprint. The wall between the kitchen and the living room comes out, a beam carries the load, and the finished room is one open space with sightlines front to back.</p>
-      <p>When the wall is bearing, Structural sizes and sets the beam as part of the same job. Nothing is subbed out and nothing waits.</p>
-    </div>
-  </div>
-</section>
-<section class="section">
-  <div class="wrap">
-    <div class="section-head"><p class="eyebrow">What we do</p><h2>Layouts that live bigger and appraise higher</h2></div>
-    <div class="svc-list cols-3"><div class="svc"><h3>Open-floor-plan conversions</h3><p>Walls out, sightlines open, and a layout people walk into and want.</p></div><div class="svc"><h3>Load-bearing wall removal</h3><p>When the wall holds the house up, the beam is sized to the engineer's drawing and set by Structural as part of the scope.</p></div><div class="svc"><h3>Interior remodeling</h3><p>Kitchens, baths, basements and finish work that photographs well and lasts.</p></div><div class="svc"><h3>Room reconfigurations</h3><p>Moving a kitchen, adding a bath, or turning three small rooms into one that works.</p></div><div class="svc"><h3>Finish work</h3><p>Trim, built-ins, flooring, tile and paint, done to the level the house deserves.</p></div><div class="svc"><h3>Finish selections</h3><p>Materials matched to the house and the budget, so nothing is over-built.</p></div></div>
-  </div>
-</section>
-<section class="section on-navy">
-  <div class="wrap">
-    <div class="section-head"><p class="eyebrow">How a Concepts job runs</p><h2>From closed rooms to one open space</h2></div>
-    <div class="steps"><div class="step"><span class="step-n">STEP 1</span><h3>Walkthrough</h3><p>We look at the layout, find the bearing walls and talk through what you want the space to do.</p></div><div class="step"><span class="step-n">STEP 2</span><h3>Layout &amp; price</h3><p>A plan for the new layout and a priced scope, with the structural work included.</p></div><div class="step"><span class="step-n">STEP 3</span><h3>Demo &amp; structure</h3><p>Demo opens the wall, Structural sets the beam, and the load is carried to the foundation.</p></div><div class="step"><span class="step-n">STEP 4</span><h3>Finish</h3><p>Floors patched, ceilings closed, trim and paint done. One room, ready to live in.</p></div></div>
-  </div>
-</section>
-<section class="section page-cta">
-  <div class="wrap">
-    <div class="section-head"><p class="eyebrow">Start here</p><h2>Show us the room</h2><p>Send a few photos of the space and tell us what you'd like it to become. We'll walk it with you and price the transformation.</p></div>
-    <div class="hero-ctas"><a class="btn btn-gold" href="#contact" data-need="concepts">Get a quote</a></div>
-    <p class="phone-line">Or call or text <b>732-470-1583</b></p>
-  </div>
-</section>
-</div>
-
-<div data-view="structural" id="view-structural" hidden>
-<section class="page-hero">
-  <div class="wrap">
-    <div class="page-copy">
-      <p class="crumb"><a href="#top">Alvarado Style Services</a><span>/</span><span>Structural</span></p>
-      <h1>Structural</h1>
-      <p class="lede">Beams, headers and the load path, built to the engineer's drawings. LVL beams, flitch plates and structural headers, supplied or installed, for contractors, builders and homeowners.</p>
-      <div class="hero-ctas"><a class="btn btn-gold" href="#contact" data-need="structural">Get a quote</a><a class="btn btn-ghost" href="tel:+17324701583">Call 732-470-1583</a></div>
-    </div>
-    <div class="photo-slot" data-photo="page-structural" data-note="LVL beam set in an opened wall, before drywall"></div>
-  </div>
-</section>
-<section class="section">
-  <div class="wrap">
-    <div class="section-head"><p class="eyebrow">Three ways to work with us</p><h2>Supply it, install it, or run the whole scope</h2><p>Contractors and builders can bring us one piece of their job. Homeowners can hand us the whole wall. Either way, the beam is built to the drawings.</p></div>
-    <div class="tiers">
-      <div class="tier"><h3>Beam supply</h3><p>You have the drawings and your own crew. We put together the beam package to the plan and get it to the site.</p><ul><li>LVL plies, flitch plate steel, hangers and posts</li><li>Multi-ply beams assembled to spec</li><li>Jobsite delivery</li></ul></div>
-      <div class="tier"><h3>Fabricate &amp; install</h3><p>We build the beam, shore the structure, open the wall and set it, then carry the load down to the foundation.</p><ul><li>Temporary shoring before anything comes out</li><li>Beam, posts, hangers and bearing set and inspected</li><li>Framing left ready for the next trade</li></ul></div>
-      <div class="tier"><h3>Full structural scope</h3><p>Wall removal through finish, with our other divisions on the same schedule.</p><ul><li>Demo opens the wall</li><li>Structural sets the beam</li><li>Concepts closes it up and finishes the room</li></ul></div>
-    </div>
-  </div>
-</section>
-<section class="section on-navy">
-  <div class="wrap">
-    <div class="section-head"><p class="eyebrow">Supply vs. install</p><h2>What's included</h2></div>
-    <div class="table-wrap">
-      <table class="inc">
-        <thead><tr><th>Scope</th><th>Supply</th><th>Install</th></tr></thead>
-        <tbody>
-          <tr><td>Review of the engineer's drawings</td><td class="yes"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></td><td class="yes"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></td></tr>
-          <tr><td>Material takeoff and beam package<small>LVL plies, steel plate, hangers, posts, bolts</small></td><td class="yes"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></td><td class="yes"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></td></tr>
-          <tr><td>Delivery to the jobsite</td><td class="yes"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></td><td class="yes"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></td></tr>
-          <tr><td>Temporary shoring</td><td class="no"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9h10"/></svg></td><td class="yes"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></td></tr>
-          <tr><td>Opening the wall<small>With Demo</small></td><td class="no"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9h10"/></svg></td><td class="yes"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></td></tr>
-          <tr><td>Setting the beam, posts and hangers</td><td class="no"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9h10"/></svg></td><td class="yes"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></td></tr>
-          <tr><td>Framing ready for inspection</td><td class="no"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9h10"/></svg></td><td class="yes"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></td></tr>
-          <tr><td>Patch and finish<small>With Concepts, as part of a full scope</small></td><td class="no"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4 9h10"/></svg></td><td class="yes"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg></td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="phone-line" style="margin-top: 18px">Engineering is by your engineer. We build to stamped drawings and don't provide engineering or permits for supply-only orders.</p>
-  </div>
-</section>
-<section class="section">
-  <div class="wrap">
-    <div class="section-head"><p class="eyebrow">Products and services</p><h2>What we build and set</h2></div>
-    <div class="svc-list cols-3"><div class="svc"><h3>LVL &amp; glulam beams</h3><p>Laminated veneer lumber in 1¾ in. plies, built up 2-, 3- or 4-ply, depths from 9¼ to 18 in. Set flush or dropped.</p></div><div class="svc"><h3>Flitch plates</h3><p>A steel plate bolted between lumber plies for long spans and heavy loads where an LVL alone will not do.</p></div><div class="svc"><h3>Structural headers</h3><p>Headers for new and widened window and door openings, with jack and king studs sized to the load.</p></div><div class="svc"><h3>Posts, hangers &amp; bearing</h3><p>Point loads carried through posts, hangers and bearing plates down to a footing that can take them.</p></div><div class="svc"><h3>Temporary shoring</h3><p>Shoring walls set before anything comes out, so the house is never carrying itself on hope.</p></div><div class="svc"><h3>Structural repairs</h3><p>Sagging floors, sistered joists, framing corrections and foundation work where the load path has failed.</p></div></div>
-  </div>
-</section>
-<section class="section process-band">
-  <div class="wrap">
-    <div class="section-head"><p class="eyebrow">How a beam job runs</p><h2>From drawing to inspection</h2></div>
-    <div class="steps"><div class="step"><span class="step-n">STEP 1</span><h3>Drawings &amp; quote</h3><p>Send the engineer's drawing or a sketch with the span. We price supply or install.</p></div><div class="step"><span class="step-n">STEP 2</span><h3>Shore &amp; open</h3><p>Temporary walls carry the load, then the wall comes out.</p></div><div class="step"><span class="step-n">STEP 3</span><h3>Set the beam</h3><p>Beam, posts and hangers set and bolted, load carried to the foundation.</p></div><div class="step"><span class="step-n">STEP 4</span><h3>Inspect &amp; close</h3><p>Framing inspected, then closed up by your crew or by Concepts.</p></div></div>
-  </div>
-</section>
-<section class="section">
-  <div class="wrap">
-    <div class="section-head"><p class="eyebrow">For a fast quote</p><h2>What to send us</h2></div>
-    <ul class="checks">
-      <li><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span>The engineer's drawing, or a sketch of the wall and the opening you want</span></li>
-      <li><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span>The span, and what's above it: floor, roof or both</span></li>
-      <li><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span>Photos of the wall from both sides</span></li>
-      <li><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span>Supply only, or supply and install</span></li>
-      <li><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span>The town and when you need it</span></li>
-      <li><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"/></svg><span>Who's doing the demo and the finish, if not us</span></li>
-    </ul>
-  </div>
-</section>
-<section class="section page-cta">
-  <div class="wrap">
-    <div class="section-head"><p class="eyebrow">Request a quote</p><h2>Send us the drawing</h2><p>Supply only or full install, we'll come back with a price and a date.</p></div>
-    <div class="hero-ctas"><a class="btn btn-gold" href="#contact" data-need="structural">Request a structural quote</a></div>
-    <p class="phone-line">Or call or text <b>732-470-1583</b></p>
-  </div>
-</section>
-</div>
-
-<div data-view="demo" id="view-demo" hidden>
-<section class="page-hero">
-  <div class="wrap">
-    <div class="page-copy">
-      <p class="crumb"><a href="#top">Alvarado Style Services</a><span>/</span><span>Demo</span></p>
-      <h1>Demo</h1>
-      <p class="lede">Interior and selective demolition that gets a property ready for its next stage. We take out exactly what has to go, protect what stays, and leave the site broom-clean for the build crew.</p>
-      <div class="hero-ctas"><a class="btn btn-gold" href="#contact" data-need="demo">Get a quote</a><a class="btn btn-ghost" href="tel:+17324701583">Call 732-470-1583</a></div>
-    </div>
-    <div class="photo-slot" data-photo="page-demo" data-note="Gutted interior, down to the studs and swept"></div>
-  </div>
-</section>
-<section class="section">
-  <div class="wrap">
-    <div class="section-head"><p class="eyebrow">What we remove</p><h2>Clean demolition, ready for the rebuild</h2></div>
-    <div class="svc-list cols-3"><div class="svc"><h3>Interior gut-outs</h3><p>Down to the studs, ready for inspection and rough-in.</p></div><div class="svc"><h3>Selective demolition</h3><p>Taking out exactly what has to go and protecting what stays.</p></div><div class="svc"><h3>Kitchen &amp; bath strip-outs</h3><p>Cabinets, fixtures, tile and finishes removed for the remodel.</p></div><div class="svc"><h3>Wall removal</h3><p>Non-bearing walls out in a day. Bearing walls come out with Structural, shored and ready for the beam.</p></div><div class="svc"><h3>Flooring, tile &amp; finish removal</h3><p>Old floors, tile, paneling and ceilings taken back to a clean surface.</p></div><div class="svc"><h3>Structural &amp; full tear-downs</h3><p>Garages, additions and whole houses, cleared for new construction.</p></div><div class="svc"><h3>Debris removal</h3><p>Loaded onto our own trucks and hauled away.</p></div><div class="svc"><h3>Site preparation</h3><p>Swept, cleared and ready for inspection, rough-in or the next crew.</p></div></div>
-  </div>
-</section>
-<section class="section work">
-  <div class="wrap">
-    <div class="section-head"><p class="eyebrow">Before and after</p><h2>Day one of the rebuild</h2></div>
-    <div class="ba">
-      <figure><figcaption>Before</figcaption><div class="photo-slot" data-photo="demo-before" data-note="Kitchen or room before demo"></div></figure>
-      <figure><figcaption>After</figcaption><div class="photo-slot" data-photo="demo-after" data-note="The same space stripped to the studs and swept"></div></figure>
-    </div>
-    <div class="ba-copy"><p>Demolition is the first day of the rebuild. What comes out, what stays and how clean we leave it decides how fast the next crew can start.</p></div>
-  </div>
-</section>
-<section class="section on-navy">
-  <div class="wrap">
-    <div class="section-head"><p class="eyebrow">How demo fits the job</p><h2>Protect, remove, haul, hand off</h2></div>
-    <div class="steps"><div class="step"><span class="step-n">STEP 1</span><h3>Protect</h3><p>Floors covered, finishes that stay masked off, dust barriers up.</p></div><div class="step"><span class="step-n">STEP 2</span><h3>Remove</h3><p>Exactly the scope on the sheet, with bearing walls shored before they come out.</p></div><div class="step"><span class="step-n">STEP 3</span><h3>Haul</h3><p>Debris loaded on our own trucks and off the site the same day the demo finishes.</p></div><div class="step"><span class="step-n">STEP 4</span><h3>Hand off</h3><p>Swept and ready for Structural, Concepts or your own crew.</p></div></div>
-  </div>
-</section>
-<section class="section page-cta">
-  <div class="wrap">
-    <div class="section-head"><p class="eyebrow">Need it cleared?</p><h2>Tell us what has to go</h2><p>Send a few photos and the address. We'll price the demo and the haul-away together.</p></div>
-    <div class="hero-ctas"><a class="btn btn-gold" href="#contact" data-need="demo">Get a quote</a></div>
-    <p class="phone-line">Or call or text <b>732-470-1583</b></p>
   </div>
 </section>
 </div>
 </main>
 
-<footer>
+<footer class="bg-window">
   <div class="wrap">
     <div class="foot-brand">
       <svg class="foot-logo" viewBox="0 0 347 294" role="img" aria-label="Alvarado Style"><use href="#as-mark"/></svg>
@@ -949,12 +1166,12 @@ footer nav a:hover { color: var(--on-navy); }
         <p class="foot-tag">Alvarado Style Services</p>
         <p>Construction for Investors and Homeowners</p>
         <p class="foot-divs"><a href="#building">Building</a> · <a href="#concepts">Concepts</a> · <a href="#structural">Structural</a> · <a href="#demo">Demo</a></p>
-        <p>Monmouth and Ocean County, NJ · 732-470-1583</p>
+        <p>Monmouth and Ocean County, NJ · 732-470-1583 · NJ HIC # 13VH08818400</p>
       </div>
     </div>
     <div class="foot-links">
       <nav aria-label="Footer">
-        <a href="#walkthrough">Walkthrough</a><a href="#contact">Contact</a>
+        <a href="#top">Home</a><a href="#what-we-do">What we do</a><a href="#our-work">Our work</a><a href="#contact">Contact</a>
       </nav>
       <div class="social" aria-label="Social media">
         <a class="soc" data-social="instagram" href="#" aria-label="Alvarado Style on Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c2.7 0 3 0 4 .1 1 0 1.5.2 1.9.3.5.2.8.4 1.2.8.4.4.6.7.8 1.2.1.4.3.9.3 1.9.1 1 .1 1.3.1 4s0 3-.1 4c0 1-.2 1.5-.3 1.9-.2.5-.4.8-.8 1.2-.4.4-.7.6-1.2.8-.4.1-.9.3-1.9.3-1 .1-1.3.1-4 .1s-3 0-4-.1c-1 0-1.5-.2-1.9-.3-.5-.2-.8-.4-1.2-.8-.4-.4-.6-.7-.8-1.2-.1-.4-.3-.9-.3-1.9-.1-1-.1-1.3-.1-4s0-3 .1-4c0-1 .2-1.5.3-1.9.2-.5.4-.8.8-1.2.4-.4.7-.6 1.2-.8.4-.1.9-.3 1.9-.3 1-.1 1.3-.1 4-.1M12 0C9.3 0 8.9 0 7.9.1 6.8.1 6.1.3 5.5.5c-.7.2-1.2.6-1.8 1.1C3.1 2.2 2.8 2.8 2.5 3.4 2.3 4 2.1 4.7 2.1 5.8 2 6.9 2 7.3 2 10v4c0 2.7 0 3.1.1 4.1 0 1.1.2 1.8.5 2.4.3.7.6 1.2 1.2 1.8.5.5 1.1.9 1.8 1.2.6.2 1.3.4 2.4.5 1 .1 1.4.1 4.1.1s3.1 0 4.1-.1c1.1 0 1.8-.2 2.4-.5.7-.3 1.2-.6 1.8-1.2.5-.5.9-1.1 1.2-1.8.2-.6.4-1.3.5-2.4.1-1 .1-1.4.1-4.1v-4c0-2.7 0-3.1-.1-4.1 0-1.1-.2-1.8-.5-2.4-.3-.7-.6-1.2-1.2-1.8C19.8 1.1 19.2.8 18.5.5 17.9.3 17.2.1 16.1.1 15.1 0 14.7 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg></a>
@@ -990,6 +1207,11 @@ const QUOTE_EMAIL = 'my@alvaradostyle.com';
 // the image): the image is scaled so that box fits, and a blurred copy fills any part of the screen it then leaves open.
 // Phones and people who prefer reduced motion see the image only. Leave image and video empty for the plain navy opening.
 const HERO_BACKDROP = { image: 'photos/hero/van.jpg', focus: { x: 0.07, y: 0.23, w: 0.59, h: 0.51 }, video: '' };
+// Background of the whole site: a short loop of his drone flight, fixed under the page and seen through the navy bands.
+// video is the wide copy and videoTall the upright copy for upright screens; the posters are the stills shown until it plays,
+// and instead of it for reduced motion, data saver, or a browser that refuses to autoplay. start (seconds) is where playback
+// begins, so it starts on the poster frame. Set video and videoTall to '' to keep only the still.
+const SITE_BG = { video: 'video/site-bg.mp4', videoTall: 'video/site-bg-tall.mp4', poster: 'video/site-bg-poster.jpg', posterTall: 'video/site-bg-poster-tall.jpg', start: 11 };
 
 const SOCIAL = {
   instagram: '',
@@ -1002,27 +1224,26 @@ const SOCIAL = {
 // id, category, title and photos are optional: leave out anything you don't know.
 // placeholder: true marks a slot that is waiting for real photos.
 const PROJECTS = [
-  // Example of a real project, ready to fill in:
-  // { id: 'brick-open-concept', category: 'concepts', title: 'Open-concept kitchen and living room',
-  //   type: 'Interior remodel', scope: 'Removed the bearing wall between kitchen and living room, new LVL beam, new kitchen',
-  //   services: ['Demo', 'Structural', 'Concepts'], location: 'Brick, NJ',
-  //   outcome: 'One open room with a 12 ft island', summary: 'A short paragraph about the job.',
-  //   photos: [
-  //     { src: 'photos/brick-open-concept/after-1.jpg', alt: 'Finished open kitchen and living room', before: 'photos/brick-open-concept/before-1.jpg', beforeAlt: 'The same room before, with the wall in place' },
-  //     { src: 'photos/brick-open-concept/after-2.jpg', alt: 'Kitchen island and pendant lights' }
-  //   ] }
-  { id: 'c-whole-house', category: 'construction', title: 'Whole-house renovation', note: 'Exterior and interior, before and after', placeholder: true, photos: [] },
-  { id: 'c-addition', category: 'construction', title: 'Addition or new build', note: 'Framing through finish', placeholder: true, photos: [] },
-  { id: 'c-exterior', category: 'construction', title: 'Exterior improvements', note: 'Siding, decks, roofing and entries', placeholder: true, photos: [] },
-  { id: 'k-open-plan', category: 'concepts', title: 'Open-floor-plan conversion', note: 'Before and after from the same spot', placeholder: true, photos: [] },
-  { id: 'k-kitchen', category: 'concepts', title: 'Kitchen remodel', note: 'Finished kitchen, wide shot and details', placeholder: true, photos: [] },
-  { id: 'k-bath', category: 'concepts', title: 'Bathroom remodel', note: 'Finished bath, wide shot and details', placeholder: true, photos: [] },
-  { id: 's-lvl', category: 'structural', title: 'LVL beam installation', note: 'Shoring, beam set, finished ceiling', placeholder: true, photos: [] },
-  { id: 's-flitch', category: 'structural', title: 'Flitch plate beam', note: 'Steel plate and lumber, bolted and set', placeholder: true, photos: [] },
-  { id: 's-header', category: 'structural', title: 'Header and post work', note: 'Opening framed, load carried to the floor', placeholder: true, photos: [] },
-  { id: 'd-gut', category: 'demo', title: 'Interior gut-out', note: 'Before, during and broom-clean after', placeholder: true, photos: [] },
-  { id: 'd-selective', category: 'demo', title: 'Selective demolition', note: 'What came out and what stayed', placeholder: true, photos: [] },
-  { id: 'd-fixtures', category: 'demo', title: 'Finish and fixture removal', note: 'Kitchen or bath stripped for remodel', placeholder: true, photos: [] }
+  // Real projects only, shown on Our work. kinds sets the filters: site (active job site), completed, interior, structural, demolition.
+  // A photo with a "before" shows as a before-and-after pair and adds the project to "Before and after".
+  // Optional fields shown in the gallery when known: type (project type), scope (scope of work), services (what our team handled),
+  // location, outcome (final result), summary. Leave out anything not confirmed.
+  { id: 'framing-trusses', category: 'construction', kinds: ['site'], title: 'Framing and roof trusses', photos: [
+    { src: 'photos/work/framing-wide.jpg', alt: 'Drone view of the framed building with its roof trusses going on, fall trees behind' },
+    { src: 'photos/work/framing-approach.jpg', alt: 'The job site from the air: a cleared lot leading to the framed building, fall trees around it' },
+    { src: 'photos/work/framing-site.jpg', alt: 'The site from above: the framed building on a cleared lot, a pickup truck and equipment in front' },
+    { src: 'photos/slots/team-site.jpg', alt: 'Crew setting roof trusses on a new building, fall trees behind' },
+    { src: 'photos/work/framing-trusses.jpg', alt: 'Roof trusses being set, a crew member in a safety vest on top' },
+    { src: 'photos/work/framing-ridge.jpg', alt: 'Crew members on the roof trusses, woods behind the building' },
+    { src: 'photos/work/framing-road.jpg', alt: 'Crew setting roof trusses, more trusses stacked on the ground beside the road' },
+    { src: 'photos/work/framing-close.jpg', alt: 'Close view of the roof trusses over the framed walls' },
+    { src: 'photos/work/framing-above.jpg', alt: 'Looking down on the crew working along the roof trusses' },
+    { src: 'photos/slots/team-equipment.jpg', alt: 'Crew working across the roof trusses, seen from above, with equipment and lumber beside the building' } ] },
+  { id: 'finished-home', category: 'construction', kinds: ['completed'], title: 'Finished two-story home', photos: [{ src: 'photos/slots/page-construction.jpg', alt: 'Finished two-story house with a stone base, tapered white columns and wraparound balconies, a gabled entry with green double doors and a paver driveway in front' }] },
+  { id: 'modern-kitchen', category: 'concepts', kinds: ['interior', 'completed'], title: 'Modern kitchen with a wood island', photos: [{ src: 'photos/slots/div-concepts.jpg', alt: 'Finished modern kitchen with white cabinets, a wood island and a dark marble floor' }] },
+  { id: 'shingle-home', category: 'construction', kinds: ['site'], title: 'Shingle-style home with a wraparound porch', photos: [{ src: 'photos/slots/div-construction.jpg', alt: 'New shingle-style house with a wraparound porch, exterior nearly finished' }] },
+  { id: 'pilings-framing', category: 'structural', kinds: ['structural', 'site'], title: 'Framing on pilings by the water', photos: [{ src: 'photos/slots/div-structural.jpg', alt: 'House framed on tall pilings by the water, roof framing going up under a blue sky' }] },
+  { id: 'opened-addition', category: 'demo', kinds: ['demolition', 'site'], title: 'Opened up for a renovation and addition', photos: [{ src: 'photos/slots/div-demo.jpg', alt: 'House under a major renovation and addition: the original shingled section opened up, new framing and sheathing going up with blue roof underlayment, a worker on the roof' }] }
 ];
 
 const CATEGORY_NAMES = { construction: 'Building', concepts: 'Concepts', structural: 'Structural', demo: 'Demo' };
@@ -1038,13 +1259,17 @@ const PHOTOS = {
   'div-structural': { src: 'photos/slots/div-structural.jpg', alt: 'House framed on tall pilings by the water, roof framing going up under a blue sky' },
   'div-demo': { src: 'photos/slots/div-demo.jpg', alt: 'House under a major renovation and addition: the original shingled section opened up, new framing and sheathing going up with blue roof underlayment, a worker on the roof' },
   'page-construction': { src: 'photos/slots/page-construction.jpg', alt: 'Finished two-story house with a stone base, tapered white columns and wraparound balconies, a gabled entry with green double doors and a paver driveway in front' },
-  'page-concepts': { src: '', alt: '' },
-  'page-structural': { src: '', alt: '' },
-  'page-demo': { src: '', alt: '' },
+  'page-concepts': { src: 'photos/slots/div-concepts.jpg', alt: 'Finished modern kitchen with white cabinets, a wood island and a dark marble floor' },
+  'page-structural': { src: 'photos/slots/div-structural.jpg', alt: 'House framed on tall pilings by the water, roof framing going up under a blue sky' },
+  'page-demo': { src: 'photos/slots/div-demo.jpg', alt: 'House under a major renovation and addition: the original shingled section opened up, new framing and sheathing going up with blue roof underlayment, a worker on the roof' },
   'concepts-before': { src: '', alt: '' },
   'concepts-after': { src: '', alt: '' },
   'demo-before': { src: '', alt: '' },
-  'demo-after': { src: '', alt: '' }
+  'demo-after': { src: '', alt: '' },
+  'team-site': { src: 'photos/slots/team-site.jpg', alt: 'Crew setting roof trusses on a new building, fall trees behind' },
+  'team-equipment': { src: 'photos/slots/team-equipment.jpg', alt: 'Crew working across the roof trusses, seen from above, with equipment and lumber beside the building' },
+  'page-what-we-do': { src: 'photos/work/framing-site.jpg', alt: 'The site from above: a framed building on a cleared lot, a pickup truck and equipment in front' },
+  'work-ridge': { src: 'photos/work/framing-ridge.jpg', alt: 'Crew members on the roof trusses, woods behind the building' }
 };
 
 // The big featured project at the top of the homepage. Leave photo empty to show the placeholder.
@@ -1052,12 +1277,12 @@ const PHOTOS = {
 // video (optional): a short muted clip that loops in the panel while it is on screen; photo is its still frame.
 // videoPhone (optional): a smaller copy of the same clip for phones. Reduced-motion and data-saver visitors see the still only;
 // a browser that blocks autoplay shows a play button on the still instead.
-const FEATURED = { photo: 'video/featured-poster.jpg', alt: 'Drone view of a framed building under construction, roof trusses going on', title: '', location: '', divisions: '', project: '', video: 'video/featured.mp4', videoPhone: 'video/featured-phone.mp4' };
+const FEATURED = { photo: 'video/featured-poster.jpg', alt: 'Drone view of a framed building under construction, roof trusses going on', title: '', location: '', divisions: '', project: 'framing-trusses', video: 'video/featured.mp4', videoPhone: 'video/featured-phone.mp4' };
 
 (function () {
   const nav = document.getElementById('nav');
   const hero = document.getElementById('top');
-  const onScroll = () => nav.classList.toggle('solid', window.scrollY > 40 || menu.hidden === false || document.body.dataset.page !== 'home');
+  const onScroll = () => nav.classList.toggle('solid', window.scrollY > 40 || menu.hidden === false);
   window.addEventListener('scroll', onScroll, { passive: true });
 
   const menu = document.getElementById('menu');
@@ -1069,15 +1294,15 @@ const FEATURED = { photo: 'video/featured-poster.jpg', alt: 'Drone view of a fra
   onScroll();
 
   /* Social links */
+  /* A profile shows once its link is in SOCIAL; until then it stays out of sight, so nothing on the page leads nowhere. */
   document.querySelectorAll('[data-social]').forEach(a => {
     const url = (SOCIAL[a.dataset.social] || '').trim();
-    if (url) {
-      a.href = url; a.target = '_blank'; a.rel = 'noopener';
-    } else {
-      a.setAttribute('aria-disabled', 'true');
-      a.title = 'Profile link coming soon';
-      a.addEventListener('click', e => e.preventDefault());
-    }
+    if (/^https:\/\//.test(url)) { a.href = url; a.target = '_blank'; a.rel = 'noopener'; a.hidden = false; }
+    else a.hidden = true;
+  });
+  document.querySelectorAll('.social').forEach(s => {
+    const any = !!s.querySelector('[data-social]:not([hidden])'); s.hidden = !any;
+    const row = s.closest('.reach-row'); if (row) row.hidden = !any;
   });
 
   /* Our Work: cards */
@@ -1089,10 +1314,10 @@ const FEATURED = { photo: 'video/featured-poster.jpg', alt: 'Drone view of a fra
   };
   const CAMERA = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l1.5-2.5h7L17 8h3v11H4z"/><circle cx="12" cy="13.5" r="3.5"/></svg>';
   document.querySelectorAll('.work-grid[data-cat]').forEach(grid => {
-    PROJECTS.filter(p => p.category === grid.dataset.cat).forEach(p => {
+    PROJECTS.filter(p => grid.dataset.cat === 'all' ? !!(p.photos && p.photos.length) && !p.placeholder : p.category === grid.dataset.cat).forEach(p => {
       const isPh = p.placeholder || !p.photos || !p.photos.length;
       const body = el('div', { class: 'proj-body' }, [el('b', { text: p.title })]);
-      if (p.note || p.type) body.appendChild(el('span', { text: p.note || p.type }));
+      const sub = p.note || p.type || CATEGORY_NAMES[p.category]; if (sub) body.appendChild(el('span', { text: sub }));
       let card;
       if (isPh) {
         const mark = el('div', { class: 'ph-mark' }, [el('span', { text: 'Photos coming soon' })]);
@@ -1106,6 +1331,8 @@ const FEATURED = { photo: 'video/featured-poster.jpg', alt: 'Drone view of a fra
         card = el('button', { class: 'proj', type: 'button', 'aria-haspopup': 'dialog', 'aria-label': 'Open gallery: ' + p.title }, [media, body]);
         card.addEventListener('click', () => openProject(p));
       }
+      card.dataset.cat = p.category;
+      card.dataset.kinds = (p.kinds || []).concat((p.photos || []).some(ph => ph.before) ? ['before-after'] : []).join(' ');
       grid.appendChild(card);
     });
   });
@@ -1151,7 +1378,7 @@ const FEATURED = { photo: 'video/featured-poster.jpg', alt: 'Drone view of a fra
     document.getElementById('gal-summary').hidden = !p.summary;
     const meta = document.getElementById('gal-meta');
     meta.textContent = '';
-    [['Type', p.type], ['Scope', p.scope], ['Services', Array.isArray(p.services) ? p.services.join(', ') : p.services], ['Location', p.location], ['Outcome', p.outcome]]
+    [['Project type', p.type], ['Scope of work', p.scope], ['What our team handled', Array.isArray(p.services) ? p.services.join(', ') : p.services], ['Location', p.location], ['Final result', p.outcome]]
       .filter(([, v]) => v).forEach(([k, v]) => meta.appendChild(el('div', {}, [el('span', { text: k }), el('b', { text: v })])));
     meta.hidden = !meta.children.length;
     thumbs.textContent = '';
@@ -1227,7 +1454,7 @@ const FEATURED = { photo: 'video/featured-poster.jpg', alt: 'Drone view of a fra
       addClip(slot, ph.video, ph.videoPhone, ph.src);
     } else {
       slot.classList.add('is-placeholder');
-      const mark = el('div', { class: 'ph-mark' }, [el('span', { text: 'Project photo coming soon' })]);
+      const mark = el('div', { class: 'ph-mark' }, [el('span', { text: slot.dataset.label || 'Project photo coming soon' })]);
       if (slot.dataset.note) mark.appendChild(el('small', { text: slot.dataset.note }));
       mark.insertAdjacentHTML('afterbegin', CAM);
       slot.appendChild(mark);
@@ -1300,27 +1527,28 @@ const FEATURED = { photo: 'video/featured-poster.jpg', alt: 'Drone view of a fra
   const sayOut = t => { const out = document.getElementById('f-out'); out.textContent = t; out.hidden = false; };
   const SENT_MSG = "Thanks, we got it. We'll call you back to set up a walkthrough. Need us sooner? Call or text 732-470-1583.";
 
-  /* Division pages: #building, #concepts, #structural and #demo show their own page; anything else is the homepage */
-  const VIEWS = ['building', 'concepts', 'structural', 'demo'];
+  /* Four pages: the homepage, #what-we-do, #our-work and #contact. A link to anything inside a page (#building, #quote,
+     #walkthrough) opens that page at that spot, so the old division links (#building, #concepts, #structural, #demo and
+     #construction) land on their part of What we do. #sent (the form's return link) opens Contact with the thank-you. */
+  const VIEWS = ['what-we-do', 'our-work', 'contact'];
   const stopIntro = () => { hero.classList.remove('play'); nav.classList.remove('intro'); };
+  let shownView = null;
   function route() {
-    const h = decodeURIComponent(location.hash.slice(1)).replace(/^construction$/, 'building'); // the old Construction link still opens the Building page
-    const view = VIEWS.includes(h) ? h : 'home';
+    const h = decodeURIComponent(location.hash.slice(1)).replace(/^construction$/, 'building'); // the old Construction link still opens Building
+    const target = h && !VIEWS.includes(h) ? document.getElementById(h) : null;
+    const owner = target && target.closest('[data-view]');
+    const view = h === 'sent' ? 'contact' : VIEWS.includes(h) ? h : (owner ? owner.dataset.view : 'home');
+    const moved = shownView !== null && view !== shownView;
+    shownView = view;
     document.querySelectorAll('[data-view]').forEach(v => { v.hidden = v.dataset.view !== view; });
     document.body.dataset.page = view;
     if (heroVid) { if (view === 'home') heroPlay(); else heroVid.pause(); }
     clips.forEach(v => { if (v.wanted()) v.go(); else v.pause(); });
-    document.querySelectorAll('.nav-links a, .menu a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + view));
-    if (view !== 'home') {
-      stopIntro();
-      window.scrollTo({ top: 0, behavior: 'instant' });
-    } else if (h === 'sent') {
-      sayOut(SENT_MSG);
-      requestAnimationFrame(() => document.getElementById('contact').scrollIntoView());
-    } else if (h) {
-      const t = document.getElementById(h);
-      if (t) requestAnimationFrame(() => t.scrollIntoView());
-    }
+    document.querySelectorAll('.nav-links a, .menu a').forEach(a => { const href = a.getAttribute('href'); a.classList.toggle('active', href === '#' + view || (view === 'home' && href === '#top')); });
+    if (view !== 'home') stopIntro();
+    if (h === 'sent') { sayOut(SENT_MSG); requestAnimationFrame(() => document.getElementById('quote').scrollIntoView()); }
+    else if (target) requestAnimationFrame(() => target.scrollIntoView());
+    else if (moved) window.scrollTo({ top: 0, behavior: 'instant' });
     if (!menu.hidden) setMenu(false);
     onScroll();
   }
@@ -1340,6 +1568,83 @@ const FEATURED = { photo: 'video/featured-poster.jpg', alt: 'Drone view of a fra
       setSpot(n, true);
     });
   });
+
+  /* A page link to the page already open goes back to its top */
+  document.querySelectorAll('.nav-links a[href^="#"], .menu a[href^="#"], footer a[href^="#"]').forEach(a => a.addEventListener('click', () => {
+    if (a.getAttribute('href') === location.hash && a.getAttribute('href') !== '#top') window.scrollTo({ top: 0, behavior: 'smooth' });
+  }));
+
+  /* Our work: filters by kind of work. A filter with nothing in it stays hidden; an odd count gives the first photo the full width. */
+  const workGrid = document.getElementById('work-grid'), workFilters = document.getElementById('work-filters');
+  if (workGrid && workFilters) {
+    const cards = [...workGrid.querySelectorAll('.proj')];
+    const btns = [...workFilters.querySelectorAll('button[data-filter]')];
+    const show = f => {
+      btns.forEach(x => x.setAttribute('aria-pressed', String(x.dataset.filter === f)));
+      cards.forEach(c => { c.hidden = f !== 'all' && !(c.dataset.kinds || '').split(' ').includes(f); c.classList.remove('wide'); });
+      const vis = cards.filter(c => !c.hidden);
+      if (vis.length % 2 === 1) vis[0].classList.add('wide');
+    };
+    btns.forEach(b => {
+      if (b.dataset.filter !== 'all' && !cards.some(c => (c.dataset.kinds || '').split(' ').includes(b.dataset.filter))) b.hidden = true;
+      b.addEventListener('click', () => show(b.dataset.filter));
+    });
+    if (btns.filter(b => !b.hidden).length < 3) workFilters.hidden = true;
+    show('all');
+  }
+
+  /* Blocks rise once as they scroll up into view. Only a block still below the screen when it comes near plays it;
+     anything already on screen stays put. Reduced motion skips it. */
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const io = new IntersectionObserver(es => es.forEach(x => {
+      if (!x.isIntersecting) return;
+      io.unobserve(x.target);
+      if (x.boundingClientRect.top > innerHeight - 24) x.target.classList.add('rv-play');
+    }), { rootMargin: '0px 0px 20% 0px' });
+    document.querySelectorAll('[data-reveal]').forEach(n => io.observe(n));
+  }
+
+  /* Background of the whole site (see SITE_BG). Nothing loads until the first window band comes near; it plays only while a
+     band is on screen and the page is visible, starts on the poster frame, uses the upright copy on upright screens, and stays
+     a still for reduced motion, data saver, a browser that refuses autoplay, or a clip that will not load. */
+  const siteBg = document.getElementById('site-bg');
+  if (siteBg && typeof SITE_BG === 'object' && (SITE_BG.poster || SITE_BG.video)) {
+    const tall = innerHeight > innerWidth;
+    const still = (tall && SITE_BG.posterTall) || SITE_BG.poster;
+    const clip = (tall && SITE_BG.videoTall) || SITE_BG.video;
+    const calm = matchMedia('(prefers-reduced-motion: reduce)').matches || !!(navigator.connection && navigator.connection.saveData);
+    const near = new Set(); let bgVid = null, bgOn = false;
+    const bgStart = () => {
+      if (bgOn) return; bgOn = true;
+      if (still) siteBg.style.setProperty('--site-bg-img', 'url("' + still + '")');
+      if (calm || !clip) return;
+      bgVid = document.createElement('video');
+      bgVid.muted = true; bgVid.defaultMuted = true; bgVid.loop = true; bgVid.playsInline = true;
+      ['muted', 'playsinline', 'disablepictureinpicture'].forEach(a => bgVid.setAttribute(a, ''));
+      bgVid.setAttribute('aria-hidden', 'true'); bgVid.setAttribute('tabindex', '-1'); bgVid.preload = 'auto';
+      if (still) bgVid.poster = still;
+      bgVid.addEventListener('loadedmetadata', () => { if (bgVid && SITE_BG.start && SITE_BG.start < bgVid.duration) bgVid.currentTime = SITE_BG.start; }, { once: true });
+      bgVid.addEventListener('error', () => { if (bgVid) { bgVid.remove(); bgVid = null; } });
+      bgVid.src = clip; siteBg.appendChild(bgVid); bgSync();
+    };
+    const bgSync = () => { if (!bgVid) return; if (near.size && !document.hidden) { const r = bgVid.play(); if (r && r.catch) r.catch(() => {}); } else bgVid.pause(); };
+    const bgIo = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) near.add(e.target); else near.delete(e.target); }); if (near.size) bgStart(); bgSync(); }, { rootMargin: '30% 0px' });
+    document.querySelectorAll('.bg-window').forEach(w => bgIo.observe(w));
+    document.addEventListener('visibilitychange', bgSync);
+    window.addEventListener('pageshow', bgSync);
+    ['pointerdown', 'touchend', 'keydown'].forEach(t => window.addEventListener(t, bgSync, { passive: true }));
+  }
+
+  /* Our difference: the gold pulse (SVG animation) runs only while the diagram is on screen, never for reduced motion. */
+  const dgSvg = document.querySelector('#difference svg.dg');
+  if (dgSvg && dgSvg.pauseAnimations) {
+    dgSvg.pauseAnimations();
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const dgSync = () => { const r = dgSvg.getBoundingClientRect(); if (!document.hidden && r.bottom > 0 && r.top < innerHeight) dgSvg.unpauseAnimations(); else dgSvg.pauseAnimations(); };
+      new IntersectionObserver(dgSync, { threshold: [0, 0.2] }).observe(dgSvg);
+      document.addEventListener('visibilitychange', dgSync);
+    }
+  }
 
   document.querySelectorAll('[data-need]').forEach(a => a.addEventListener('click', () => {
     document.getElementById('f-job').value = a.dataset.need;
@@ -1365,7 +1670,7 @@ const FEATURED = { photo: 'video/featured-poster.jpg', alt: 'Drone view of a fra
     if (form._honey.value) { sayOut('Thanks.'); return; }
     const job = form.job.options[form.job.selectedIndex].textContent;
     form._subject.value = 'Quote request from alvaradostyle.com: ' + job;
-    const data = { name: form.name.value.trim(), phone: form.phone.value.trim(), type: form.type.value, address: form.address.value.trim(), job, message: form.message.value.trim(),
+    const data = { name: form.name.value.trim(), phone: form.phone.value.trim(), address: form.address.value.trim(), job, message: form.message.value.trim(),
       _subject: form._subject.value, _template: 'table', _captcha: 'false' };
     btn.disabled = true; btn.textContent = 'Sending…';
     let r = null;
